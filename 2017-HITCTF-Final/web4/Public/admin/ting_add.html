@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>后台用户管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/jquery/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/editor/kindeditor-min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/editor/zh_CN.js"></script>
+<script language="javascript">
+$(document).ready(function(){
+	$("#myform").submit(function(){
+		if($gxlcms.form.empty('myform','ting_name') == false){
+			return false;
+		}
+		if($("#ting_cid").val()==0){
+			alert('请选择分类');
+			return false;
+		}
+	});
+	$("#tabs>a").click(function(){
+		var no = $(this).attr('id');
+		var n = $("#tabs>a").length;
+		showtab('tabs',no,n);
+		$("#tabs>a").removeClass("on");
+		$(this).addClass("on");
+		return false;
+	});
+	$("#getreid").click(function(){
+			if($("#reid").val()!=''){
+			window.open('index.php?s=Admin-Member-getComment-id-{$ting_id}-vid-'+$("#reid").val());
+			}																			
+	});	
+	$("#getreurl").click(function(){					  
+			if($("#ting_qreurl").val()!=''){
+			var s = $("#ting_qreurl").val();
+			s = s.replace(/\//g,"@");
+			window.open('index.php?s=Admin-Member-getComment-id-{$ting_id}-url-'+s);
+			}																			
+	});	
+	$("#anchorall").click(function(){					  
+			if($("#anchor_reurl").val()!=''){
+			var s = $("#anchor_reurl").val();
+			s = s.replace(/\//g,"@");
+			window.open('index.php?s=Admin-Getanchor-index-vid-{$ting_id}-url-'+s);
+			}																			
+	});
+	$("#getseo").click(function(){					  
+			if($("#ting_skeywords").val()!=''){
+			$.post("index.php?s=Admin-Get-seo",{name:$("#ting_skeywords").val(),}, function(data){
+				var o = eval("("+data+")");
+				$("#ting_skeywords").val(o.keywords);
+			});
+			//alert(val(o));
+		}
+		else if ($("#ting_name").val()!=''){
+			$.post("index.php?s=Admin-Get-seo",{name:$("#ting_name").val(),}, function(data){
+				var o = eval("("+data+")");
+				$("#ting_skeywords").val(o.keywords);
+			});
+}
+	});	
+		
+	
+		
+});	
+
+function changeCat(id){
+	$.ajax({
+		type:'get',
+		url:'?s=Admin-Ting-Ajaxcat-id-'+id,
+		success:function(html){
+			$("#ting_cat_list").html(html);
+		}
+	})
+}
+</script>
+</head>
+<body class="body">
+<!--图片预览框-->
+<div id="showpic" class="showpic" style="display:none;"><img name="showpic_img" id="showpic_img" width="120" height="160"></div>
+<include file="./Public/admin/plus_tags.html" />
+<gt name="ting_id" value="0">
+<form name="update" action="?s=Admin-Ting-Update" method="post" name="myform" id="myform">
+<input type="hidden" name="ting_id" value="{$ting_id}">
+<else/>
+<form name="add" action="?s=Admin-Ting-Insert" method="post" name="myform" id="myform">
+</gt> 
+<div class="title">
+	<div class="tabs" id="tabs"><a href="javascript:void(0)" class="on" id="1">作品{$ting_templatename}<a href="javascript:void(0)" id="2">其它设置</a></div>
+    <div class="right"><a href="?s=Admin-Ting-Show">返回作品管理</a></div>
+</div>
+<div class="form">
+<table border="0" cellpadding="0" cellspacing="0" class="table" id="tabs1">
+  <tr>
+ <td class="tl">作品名称：</td>
+    <td class="tr">    <input type="text" name="ting_name" id="ting_name" value="{$ting_name}" maxlength="255" error="* 名称不能为空" class="w300 ti_5">
+    <label><select name="ting_cid" id="ting_cid" style="width:100px" onchange="changeCat(this.value)"><option value=0>选择分类</option><volist name="listting" id="ppting"><option value="{$ppting.list_id}" <eq name="ppting.list_id" value="$ting_cid">selected</eq>>{$ppting.list_name}</option><volist name="ppting['son']" id="ppting"><option value="{$ppting.list_id}" <eq name="ppting.list_id" value="$ting_cid">selected</eq>>├ {$ppting.list_name}</option></volist></volist></select></label>  <label><select name="ting_status"><option value="1">显示</option><option value="0" <eq name="ting_status" value="0">selected</eq>>隐藏</option></select></label> <label><select name="ting_language" id="ting_language" class="w70"><notempty name="ting_language"><option value='{$ting_language}'>{$ting_language}</option></notempty><option value=''>对白</option><volist name="ting_language_list" id="val"> <option value="{$val}">{$val}</option></volist></select></label> 作品时长：<label><input type="text" name="ting_length" id="ting_length" maxlength="3" value="{$ting_length}" class="w50 ct" title="单位：分钟"></label></td>
+      
+  </tr>
+
+  <tr>
+
+  <tr>
+    <td class="tl">作品备注：</td>
+    <td class="tr"><input type="text" name="ting_title" id="ting_title" maxlength="255" value="{$ting_title}" class="w300 ti_5"> 
+	</td>
+  </tr>
+ <tr>
+    <td class="tl">作品拼音：</td>
+    <td class="tr"><input type="text" name="ting_letters" id="ting_letters" maxlength="255" value="{$ting_letters}" class="w300 ti_5"> 
+	</td>
+  </tr>
+    <tr >
+    <td class="tl" >更新日期：</td>
+    <td class="tr" style="position:relative"><label><input type="text" name="ting_addtime" id="ting_addtime" value="{$ting_addtime|date='Y-m-d H:i:s',###}" class="w120"> <input name="checktime" type="checkbox" style="border:none;width:auto; position:absolute; top:5px" value="1" {$checktime} title="勾选则使用系统当前时间"></label> 
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;推送到百度<input name="insertseo" type="checkbox" style="border:none;width:auto; position:absolute; top:5px"  value="5" title="勾选推送到百度"></td></td>
+  </tr>
+  <tr >
+    <td class="tl">作品主播：</td>
+    <td class="tr" id="anchor_{$ting_id}" style="position:relative"><input type="text" name="ting_anchor" id="ting_anchor" maxlength="255" value="{$ting_anchor}" class="w300 ti_5" title="可使用半角逗号,分隔">&nbsp;&nbsp;<a  href="javascript:showanchors('{$ting_id}');"  ></a></td>
+  </tr>
+  <tr>
+    <td class="tl">作品作者：</td>
+    <td class="tr"><input type="text" name="ting_author" id="ting_author" maxlength="255" value="{$ting_author}" class="w300 ti_5"> 
+	</td>
+  </tr>                
+  <tr>
+    <td class="tl">海报剧照：</td>
+    <td class="tr"><label style="float:left; margin-top:3px; margin-right:5px"><input type="text" name="ting_pic" id="ting_pic" maxlength="255" value="{$ting_pic}" class="w300 ti_5" onMouseOver="if(this.value)showpic(event,this.value,'{$Think.config.upload_path}/');" onMouseOut="hiddenpic();"></label><iframe src="?s=Admin-Upload-Show-sid-ting" scrolling="no" topmargin="0" width="280" height="26" marginwidth="0" marginheight="0" frameborder="0" align="left" style="margin-top:3px; float:left"></iframe></span></td>
+  </tr>
+  <tr>
+    <td class="tl">作品TAG：</td>
+    <td class="tr"><input type="text" name="ting_keywords" id="ting_keywords"  maxlength="255" value="{$ting_keywords}" class="w300 xy_tag ti_5"> <img src="__PUBLIC__/images/admin/edit.gif" onClick="javascript:showtags(1);" class="navpoint" ></td>
+  </tr>
+  <script language="javascript">
+	var $urln={:count($ting_url)};
+	function addurl(){
+		var $old = $("#urllist>tr:last").html();
+		$urln = $("#urllist>tr").length;
+		$old = $old.replace("播放地址"+$urln,"播放地址"+($urln+1));
+		$("#urllist>tr:last-child").after('<tr>'+$old+'</tr>');
+		$("#urllist>tr:last #ting_play").val($("#ting_play:last option").val());
+		$("#urllist>tr:last #ting_server").val($("#ting_server:last option").val());
+		$("#urllist>tr:last textarea").val('');
+	}
+	  </script>
+	 <script language="javascript">
+	 var $urldn={:count($ting_ff)};
+	function shangchuanurl(){
+		var $old = $("#sclist>tr:last").html();
+		
+		$urln = $("#sclist>tr").length;
+		$old = $old.replace($urln,($urln+1));
+		$old = $old.replace("gvid-"+$urln,"gvid-"+($urln+1));
+		$old = $old.replace("ting_zj"+$urln,"ting_zj"+($urln+1));
+		$old = $old.replace("<tr style='display:none'>"+$urln,"<tr>"+($urln+1));
+		$("#sclist>tr:last-child").after('<tr>'+$old+'</tr>');
+		$("#sclist>tr:last #ting_play").val($("#ting_play:last option").val());
+		$("#sclist>tr:last #ting_server").val($("#ting_server:last option").val());
+		$("#sclist>tr:last textarea").val('');
+	}
+  </script>
+  <!--地址列表 -->
+  <tbody id="urllist">
+
+  <volist name="ting_url" id="url" key="uu"><php>$playername=$ting_play[$uu-1];$serverdown=$ting_server[$uu-1];</php>
+  <tr>
+    <td class="tl">播放地址{$uu}<br /></td>
+    <td class="tr" style="padding-bottom:5px"><select name="ting_play[]" id="ting_play" ><volist name="ting_play_list" id="play"><option value="{$key}" <if condition="$key eq $playername">selected</if>>{$i}.{$key}.{$play[1]}</option></volist></select> <select name="ting_server[]" id="ting_server" style="width:140px"><option value="">不使用公共前缀</option><volist name="ting_server_list" id="server"><option value="{$key}" <if condition="$key eq $serverdown">selected</if>>{$server}</option></volist></select> <label style=" color:#666666">注：自定义分集名称用"$"分隔，一行一集播放地址，留空则删除该组地址。</label><br><textarea name='ting_url[]' style="width:98%;height:150px;color:#333333" >{$url}</textarea></td>
+  </tr> 
+  </volist>
+    
+  </tbody>
+ <tbody id="sclist" >
+
+
+  <tr style='display:none'>
+    <td class="tl">上传地址{$i}<br /></td>
+    <td class="tr" style="padding-bottom:5px"><select name="ting_play[]" id="ting_play" ><volist name="ting_play_list" id="play"><option value="{$key}" <if condition="$key eq $playername">selected</if>>{$i}.{$key}.{$play[1]}</option></volist></select> <select name="ting_server[]" id="ting_server" style="width:140px"><option value="">不使用公共前缀</option><volist name="ting_server_list" id="server"><option value="{$key}" <if condition="$key eq $serverdown">selected</if>>{$server}</option></volist></select> <label style=" color:#666666">注：自定义分集名称用"$"分隔，一行一集播放地址，留空则删除该组地址。</label><br><textarea name='ting_gxl[]'  id='ting_zj{$i}' style="width:98%;height:20px;color:#333333" ></textarea>
+	
+	<iframe src="?s=Admin-Upload-sc-sid-{$ting_id}-gvid-{$i}" scrolling="no" topmargin="0" width="280" height="35" marginwidth="0" marginheight="0" frameborder="0" align="left" style="margin-top:3px; float:left"></iframe></td>
+  </tr> 
+
+
+
+    
+  </tbody>
+  <!-- --> 
+    <tr>
+    <td class="tl">上传播放地址：</td>
+    <td class="tr"><a href="javascript:shangchuanurl();" style="color:#FF0000;font-weight:bold;font-size:14px"><img src="__PUBLIC__/images/admin/add.gif" border="0">继续添加上传文件</a>(上传成功后提交作品后自动更新到播放地址里)</td>
+  </tr> 
+  
+   
+     <tr>
+    <td class="tl">作品简介：</td>
+    <td class="tr padding-5050"><textarea name="ting_content" id="content" style="width:99%;height:300px;">{$ting_content}</textarea></td>
+  </tr>    
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="table" id="tabs2" style="display:none">
+  <tr>
+    <td class="tl">推荐星级：</td>
+    <td class="tr" id="abc"><input name="ting_stars" id="ting_stars" type="hidden" value="{$ting_stars}"><volist name="ting_starsarr" id="ajaxstar"><img src="__PUBLIC__/images/admin/star{$ajaxstar}.gif" onClick="addstars('ting',{$i});" id="star_{$i}" class="navpoint"></volist></td>
+  </tr>  
+  <tr>
+    <td class="tl">标题颜色：</td>
+    <td class="tr" id="abc"><select name="ting_color" id="ting_color" class="w70">
+    <notempty name="ting_color"><option value='{$ting_color}'>{$ting_color}</option></notempty><option value="">颜色</option>                               
+    <option value='#000000' style='background-color:#000000' <eq name="ting_color" value="#000000">selected</eq>></option>
+    <option value='#FFFFFF' style='background-color:#FFFFFF' <eq name="ting_color" value="#FFFFFF">selected</eq>></option>
+    <option value='#008000' style='background-color:#008000' <eq name="ting_color" value="#008000">selected</eq>></option>
+    <option value='#FFFF00' style='background-color:#FFFF00' <eq name="ting_color" value="#FFFF00">selected</eq>></option>
+    <option value='#FF0000' style='background-color:#FF0000' <eq name="ting_color" value="#FF0000">selected</eq>></option>
+    <option value='#0000FF' style='background-color:#0000FF' <eq name="ting_color" value="#0000FF">selected</eq>></option>
+    <option value=''>无色</option></select></td>
+  </tr>
+  <tr>
+    <td class="tl">首字母：</td>
+    <td class="tr"><input type="text" name="ting_letter" id="ting_letter" value="{$ting_letter}" maxlength="1" class="w50"></td>
+  </tr>
+  <tr>
+    <td class="tl">总人气：</td>
+    <td class="tr"><input type="text" name="ting_hits" id="ting_hits" maxlength="15" value="{$ting_hits}" class="w50"></td>
+  </tr>       
+  <tr>
+    <td class="tl">月人气：</td>
+    <td class="tr"><input type="text" name="ting_hits_month" id="ting_hits_month" maxlength="15" value="{$ting_hits_month}" class="w50"></td>
+  </tr> 
+  <tr>
+    <td class="tl">周人气：</td>
+    <td class="tr"><input type="text" name="ting_hits_week" id="ting_hits_week" maxlength="15" value="{$ting_hits_week}" class="w50"></td>
+  </tr>
+  <tr>
+    <td class="tl">日人气：</td>
+    <td class="tr"><input type="text" name="ting_hits_day" id="ting_hits_day" maxlength="15" value="{$ting_hits_day}" class="w50"></td>
+  </tr> 
+  <tr>
+    <td class="tl">评分值：</td>
+    <td class="tr"><input type="text" name="ting_gold" id="ting_gold" value="{$ting_gold}" maxlength="4" class="w50"></td>
+  </tr> 
+  <tr>
+    <td class="tl">评分人数：</td>
+    <td class="tr"><input type="text" name="ting_golder" id="ting_golder" value="{$ting_golder}" maxlength="8" class="w50"></td>
+  </tr> 
+  <tr>
+    <td class="tl">顶：</td>
+    <td class="tr"><input type="text" name="ting_up" id="ting_up" value="{$ting_up}" maxlength="8" class="w50"></td>
+  </tr>
+  <tr>
+    <td class="tl">踩：</td>
+    <td class="tr"><input type="text" name="ting_down" id="ting_down" value="{$ting_down}" maxlength="8" class="w50"></td>
+  </tr>
+  <tr>
+    <td class="tl">录入编辑：</td>
+    <td class="tr"><input type="text" name="ting_inputer" id="ting_inputer" value="{$ting_inputer}" maxlength="15" class="w150"></td>
+  </tr>   
+  <tr>
+    <td class="tl">独立模板：</td>
+    <td class="tr"><input type="text" name="ting_skin" id="ting_skin" value="{$ting_skin}" maxlength="25" class="w150"></td>
+  </tr>  
+  <tr>
+    <td class="tl">来源：</td>
+    <td class="tr"><input type="text" name="ting_reurl" id="ting_reurl" value="{$ting_reurl}" maxlength="150" class="w300"></td>
+  </tr>
+      <tr>              
+  <tr>
+    <td class="tl">跳转URL：</td>
+    <td class="tr"><input type="text" name="ting_jumpurl" id="ting_jumpurl" value="{$ting_jumpurl}" maxlength="150" class="w300"></td>
+  </tr>  
+</table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="table" id="tabs4" style="display:none">
+  <td class="tl">作品拼音url：</td>
+    <td class="tr"><input type="text" name="ting_letters" id="ting_letters" value="{$ting_letters}" maxlength="150" class="w300"></td>
+  </tr>
+
+</table>
+
+<ul class="footer">
+	<input type="submit" name="submit" value="提交"> <input type="reset" name="reset" value="重置">
+</ul>
+</div>
+</form>
+<include file="./Public/admin/plus_kedit.html" />
+
+<include file="./Public/admin/plus_jqmodal.html" />
+<style>
+#dia_title{height:25px;line-height:25px}
+.jqmWindow{height:500px;width:850px;top:5px;left:310px;overflow:hidden;}
+</style>
+<include file="./Public/admin/footer.html" />
+</body>
+</html>

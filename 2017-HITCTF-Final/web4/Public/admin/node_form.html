@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>自定义采集节点项目-{&web_name} </title>
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/admin/miaopuo.com/admin/css/admin_style.css'>
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/admin/miaopuo.com/admin/css/collect.css'>
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/admin/miaopuo.com/admin/css/dialog.css'>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/admin/miaopuo.com/admin/js/jquery.js"></script>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/admin/miaopuo.com/admin/js/admin_all.js"></script>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/admin/miaopuo.com/admin/js/collect.js"></script>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/admin/miaopuo.com/admin/js/dialog.js"></script>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/admin/miaopuo.com/admin/js/formvalidator.js"></script>
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+$(document).ready(function() {			
+	$.formValidator.initConfig({formid:"colform",autotip:true,onerror:function(msg,obj){art.dialog({content:msg,lock:true,width:'200',height:'50'})}});
+	$("#name").formValidator({onshow:"",onfocus:"请输入名称"}).inputValidator({min:1,onerror:"请输入采集项目名称"});
+	 if($("#fixed").attr("checked")==false){
+		 //alert('#fixed unchecked.');
+	}else{
+		 //alert('#fixed checked.');
+		 $("#pid").formValidator({onshow:"请选择栏目分类",onfocus:"请选择栏目分类",oncorrect:""}).inputValidator({min:1,onerror:"请选择栏目分类"})
+	}
+	
+ });
+function menucheck(){
+   if($("#fixed").attr("checked")==false){
+		 //alert('#fixed unchecked.');
+		 //focus on $("#_desc")
+		 $("#pid").formValidator({onshow:"请选择栏目分类",onfocus:"请选择栏目分类",oncorrect:""});
+		 return false;
+	}else{
+		// alert('#fixed checked.');
+		 $("#pid").formValidator({onshow:"请选择栏目分类",onfocus:"请选择栏目分类",oncorrect:""}).inputValidator({min:1,onerror:"请选择栏目分类"})
+	}
+}
+</script>
+
+<div class="main">
+<table width="100%" border="0" cellpadding="5" cellspacing="1" class="table">
+<tr>
+  <td colspan="6" class="table_title">
+  <ul>
+  <li><a  href="?s=Admin-Customcollect-ListShow">采集节点管理</a> </li>
+  <li><a href="?s=Admin-Customcollect-Add">添加采集节点</a></li>
+  <li><a href="?s=Admin-Customcollect-Manage-action-import">导入采集规则</a></li>
+  </ul>
+  </td>
+</tr>
+</table>
+<div class="nav clear"><ul><li id='set_1' class="now">第一步：基本参数填写</li><li id='set_2'>第二步：采集内容规则设置</li><li id='set_3'>第三步：在线模拟预览结果</li><li id='set_4'>完成并演示</li></ul></div>
+
+<ul class="tab_menu">
+<li class="on" id="tab_1" onclick="javascript:show_div('1')">基本规则</li>
+<li id="tab_2"  onclick="javascript:show_div('2')">内容规则</li>
+<li  id="tab_3"  onclick="javascript:show_div('3')" >模拟测试</li>
+
+</ul>
+<div class="clear"></div>
+<div id="content">
+<form name="colform" action="?s=Admin-Customcollect-Add" method="post" id="colform">
+<input type="hidden" name="data[nid]" value="{$id}" />
+<div class="content pad-10" id="show_div_1" style="height:auto; display:block;" >
+<div class="common-form">
+<div id="result" class="none result" style="font-family:微软雅黑,Tahoma;letter-spacing:2px"></div>
+<fieldset>
+	<legend>节点基本信息</legend>
+	<table width="90%" class="table_form" cellpadding="0" cellspacing="0" align="center">
+		<tr>
+			<td width="120" class="left">采集项目名：</td> 
+			<td>
+			<input type="text" name="data[name]" id="name"  class="input-text"  value="{$name}"></input><span id='title_result'></span>
+			</td>
+		</tr>
+		<tr>
+			<td width="120">采集目标页面编码：</td> 
+			<td>
+			<input type="radio" name="data[sourcecharset]" id="_gbk"  <if condition="$sourcecharset eq 'gbk' or $sourcecharset eq ''">checked</if> value="gbk"  class="radio"> GBK
+            <input type="radio" name="data[sourcecharset]" id="_utf-8" <eq name="sourcecharset" value="utf-8">checked="checked"</eq>  value="utf-8" class="radio"> UTF-8
+            <input type="radio" name="data[sourcecharset]" id="_big5"  <eq name="sourcecharset" value="big5">checked="checked"</eq> value="big5" class="radio"> BIG5			
+            </td>
+		</tr>
+        <tr>
+			<td width="120">数据栏目分类：</td> 
+			<td>
+			<input type="radio" name="data[menutype]"  value="1" class="radio" id='fixed' <eq name="menutype" value="1">checked="checked"</eq>  onclick="show_switch(this,'class','show');show_switch(this,'baserule2','hide');menucheck();">固定分类 
+            <input type="radio" name="data[menutype]"  value="2" class="radio"  id='intel' onclick="show_switch(this,'class','hide');show_switch(this,'baserule2','show');menucheck();" <neq name="menutype" value="1">checked="checked"</neq>  > 智能分类
+            </td>
+		</tr>
+        <tr id="class" <neq name="menutype" value="1">style="display:none;"</neq>>
+			<td width="120">所属栏目分类：</td> 
+			<td>
+		    <select name="data[cid]" id="pid" style="width:132px">
+              <option value="0" >选择栏目分类</option>
+				<volist name="channel_tree" id="ppting">
+					<gt name="ppting.list_status" value="0">
+						<option value="{$ppting.list_id}" <eq name="ppting.list_id" value="$cid" >selected</eq>>├─{$ppting.list_name}</option>
+						<volist name="ppting.son" id="ppting">
+							<option value="{$ppting.list_id}" <eq name="ppting.list_id" value="$cid">selected</eq>>├──{$ppting.list_name}</option>
+						</volist>
+					</gt>
+				</volist> 	
+            </select>
+            </td>
+		</tr>
+         <tr>
+			<td width="120">采集方式：</td> 
+			<td>
+        <input type="checkbox" name="data[direct]" id="_direct"  <if condition="$direct eq '1'">checked="checked" </if> value="1" class="radio" >采集完毕自动入库
+           
+            </td>
+		</tr>
+    
+	</table>
+</fieldset>
+<fieldset>
+	<legend>采集网址</legend>
+	<table width="90%" class="table_form"  cellpadding="0" cellspacing="0" align="center">
+		<tr>
+			<td width="120">网址类型：</td> 
+			<td>
+			<input type="radio" name="data[sourcetype]" onclick="show_url_type(this.value)" id="_1" <if condition="$sourcetype eq '1' or $sourcetype  eq ''">checked</if> value="1"  class="radio"> 序列网址
+            <input type="radio" name="data[sourcetype]" onclick="show_url_type(this.value)" id="_2"  value="2"  <eq name="sourcetype" value="2">checked="checked"</eq> class="radio"> 多个网页
+            <input type="radio" name="data[sourcetype]" onclick="show_url_type(this.value)" id="_3"  value="3"  <eq name="sourcetype" value="3">checked="checked"</eq> class="radio"> 单一网页(直接采集内容页)
+            <!--<input type="radio" name="data[sourcetype]" onclick="show_url_type(this.value)" id="_4"  value="4"  <eq name="sourcetype" value="4">checked="checked"</eq> class="radio"> 从RSS获取	-->
+            </td>
+
+		</tr>
+		<tbody id="url_type_1" <if condition="$sourcetype eq '2' or $sourcetype eq '3' or $sourcetype eq '4'">style="display:none"</if> >
+		<tr>
+			<td width="120">采集地址：</td> 
+			<td>
+			 <input type="text" name="urlpage1" id="urlpage_1" size="100"  <eq name="sourcetype" value="1">value="{$urlpage}"</eq>> <input type="button" class="button" onclick="show_url()" value="测试"><br /> 
+			 (如：http://www.xxx.com/lists/p/(*).html,页码使用<a href="javascript:insertText('urlpage_1', '(*)')">(*)</a>做为通配符。<br />
+
+			 页码从: <input type="text" name="data[pagesize_start]"  value="{$pagesize_start|default='1'}" size="4"> 到 <input type="text" name="data[pagesize_end]" value="{$pagesize_end|default='1'}" size="4"> 每次增加 <input type="text" name="data[par_num]" size="4" value="{$par_num|default='1'}">
+			</td>
+		</tr>
+		</tbody>
+		<tbody id="url_type_2"   <neq name="sourcetype" value='2'>style="display:none"</neq>>
+		<tr>
+			<td width="120">采集地址：</td> 
+			<td>
+			<textarea rows="10" cols="80" name="urlpage2" id="urlpage_2" ><eq name="sourcetype" value="2">{$urlpage}</eq></textarea> <br>每行一条</td>
+		</tr>
+		</tbody>
+		<tbody id="url_type_3"  <neq name="sourcetype" value='3'>style="display:none"</neq>>
+		<tr>
+			<td width="120">采集地址：</td> 
+			<td>
+			 <input type="text" name="urlpage3" id="urlpage_3" size="100"  <eq name="sourcetype" value="3">value="{$urlpage}"</eq>>
+			</td>
+		</tr>
+		</tbody>
+		<tbody id="url_type_4"  <neq name="sourcetype" value='4'>style="display:none"</neq>>
+		<tr>
+			<td width="120">采集地址：</td> 
+			<td>
+			 <input type="text" name="urlpage4" id="urlpage_4" size="100" <eq name="sourcetype" value="4">value="{$urlpage}"</eq>>
+			</td>
+		</tr>
+		</tbody>
+		<tr>
+			<td width="120">采集地址：</td> 
+			<td>
+			网址中必须包含 <input type="text" name="data[url_contain]"  value="{$url_contain}"> 网址中不得包含  <input type="text" name="data[url_except]"  value="{$url_except}">
+			</td>
+		</tr>
+         <tr>
+			<td width="120">获取图片方式：</td> 
+			<td>
+			<input type="radio" name="data[picmode]" id="_list"  value="1" class="radio"  <eq name="picmode" value="1">checked="checked"</eq> onclick="show_switch(this,'getpic','show');show_switch(this,'baserule8','hide');">从列表页获取 
+            <input type="radio" name="data[picmode]" id="_cont"  value="2" class="radio" onclick="show_switch(this,'getpic','hide');show_switch(this,'baserule8','show')"  <neq name="picmode" value="1">checked="checked"</neq>> 从内容页获取
+            </td>
+		</tr>
+        <tr id="getpic"  <neq name="picmode" value="1">style="display:none;"</neq>>
+			<td width="120">提取链接中图片：</td> 
+            <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr><td>
+			<textarea rows="5" cols="30" name="data[picurl1_rule]" id="picurl1_rule">{$picurl_rule}</textarea> <span class='bottom'><a href="javascript:insertText('picurl1_rule', '[内容]')" title="点击使用'[内容]'通配符">[内容]</a>	</span> </td>
+			<td width="60">过滤选项：</td> 
+			<td>
+			<textarea rows="5" cols="40" name="data[picurl1_filter]" id="picurl1_filter">{$picurl_filter}</textarea>
+			<input type="button"   value="常用规则" class="button bottom"  onclick="html_rule('data[picurl1_filter]')">
+			</td>
+           </tr>
+          </table>
+</td>
+			<!--<td>
+			从采集列表页 <textarea rows="5" cols="40" name="data[pic_start]">{$pic_start}</textarea> 到 <textarea rows="5" name="data[pic_end]" cols="40">{$pic_end}</textarea> 结束			</td>-->
+		</tr>
+        <tr>
+			<td width="120">获取网址：</td> 
+			<td>
+			从采集目标页面中 <textarea rows="5"  cols="40" name="data[url_start]" >{$url_start}</textarea> 到 <textarea rows="5" name="data[url_end]" cols="40">{$url_end}</textarea> 结束			</td>
+		</tr>
+
+	</table>
+</fieldset>
+</div>
+</div>
+
+<div class="content pad-10" id="show_div_2" style="height:auto;display:none">
+
+<div class="clear"></div>
+
+
+<div class="note" >1、匹配规则请设置开始和结束符，具体内容使用“[内容]”做为通配符 。<BR>2、过滤选项格式为“要过滤的内容[|]替换值”，要过滤的内容支持正则表达式，每行一条。<BR></div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+ <div id="col_tab"><strong>采集字段</strong>
+
+<volist name='base' id='vo' key='k'>
+<input type="checkbox" name="data[fields][]" value="{$key}"  class="radio"  id="field_{$k}"  <empty name="fields"> checked="checked"<else /><foreach name="fields" item="fo"  key='k2'><if condition="$fo eq $key">checked="checked";</if></foreach></empty>  onclick="show_switch(this,'baserule{$k}','show')"/>{$vo}
+</volist>
+</div>
+</td>
+ <td>
+ <div class="button_show clear"><input type="button" class="button" value="全部展开" onclick="$('#show_div_2').children('fieldset').children('.table_form').show()"> <input type="button" class="button" value="全部合上" onclick="$('#show_div_2').children('fieldset').children('.table_form').hide()"></div>
+ </td>
+  </tr>
+</table>
+
+<fieldset >
+	<legend><a href="javascript:void(0)" onclick="$(this).parent().parent().children('table').toggle()">可选采集规则</a></legend>
+	<table width="100%" class="table_form"  cellpadding="0"  cellspacing="0">
+<volist name='base' id='vo' key='k'>
+		<tr id="baserule{$k}" <if condition="($picmode eq '1' and $key eq 'picurl') or ($menutype eq '1' and $key eq 'cname') ">style="display:none;"</if> <notempty name='fields'><php>if(in_array($key,$fields)) {echo $key.'style=display:block';}else{echo 'style="display:none;"';}</php></notempty>>
+			<td width="120">{$vo}规则：</td> 
+			<td>
+			<textarea rows="5" cols="30" name="data[{$key}_rule]" id="{$key}_rule"><if condition="$k eq 1">{$title_rule|default="<title>[内容]</title>"}<else/><php>$a=$key.'_rule';echo $$a;</php></if></textarea> <span class='bottom'><a href="javascript:insertText('{$key}_rule', '[内容]')" title="点击使用'[内容]'通配符">[内容]</a>	</span> </td>
+			<td width="60">过滤选项：</td> 
+			<td>
+
+			<textarea rows="5" cols="40" name="data[{$key}_filter]" id="{$key}_filter"><php>$b=$key.'_filter';echo $$b;</php></textarea>
+			<input type="button"   value="常用规则" class="button bottom"  onclick="html_rule('data[{$key}_filter]')">
+			</td>
+		</tr>
+        </volist>
+	</table>
+</fieldset>
+
+<fieldset>
+	<legend><a href="javascript:void(0)" onclick="$(this).parent().parent().children('table').toggle()">播放地址规则</a></legend>
+	<table width="100%" class="table_form"  cellpadding="0" cellspacing="0" >
+
+		  <tr>
+			<td width="120">播放列表范围：</td> 
+			<td colspan="3" >
+			<input type="radio" name="data[range]" onclick="show_switch(this,'field_plist','show')" id="_1"  value="1"  <eq name="range" value="1">checked="checked"</eq>  class="radio"> 开启<input type="radio" name="data[range]"  onclick="show_switch(this,'field_plist','hide')" id="_2"  <neq name="range" value="1">checked="checked"</neq> value="2" class="radio"> 关闭</td>
+		  </tr>
+            
+           <tr id="field_plist" <neq name="range" value="1">style="display:none;"</neq>>
+			<td width="120">播放列表范围规则：</td> 
+            <td colspan="3">
+			从作品内容页面中 <textarea rows="5" cols="30" name="data[playlist_start]">{$playlist_start}</textarea> 到 <textarea rows="5" name="data[playlist_end]" cols="40">{$playlist_end}</textarea> 结束			            </td>
+		   </tr>
+           
+		   <tr>
+			<td width="120">获取播放地址方式：</td> 
+			<td colspan="3" >
+			<input type="radio" name="data[playmode]" onclick="show_switch(this,'field_playurl','show')" id="_1" <eq name="playmode" value="1">checked="checked"</eq>  value="1" class="radio"> 播放页获取单个地址
+            <input type="radio" name="data[playmode]" onclick="show_switch(this,'field_playurl','show')" id="_2" <eq name="playmode" value="2">checked="checked"</eq> value="2" class="radio"> 播放页获取所有地址
+            <input type="radio" name="data[playmode]" onclick="show_switch(this,'field_playurl','hide')" id="_3"  <if condition="$playmode neq '1' and $playmode  neq '2'">checked</if> value="3" class="radio"> 内容页直接获取地址</td>
+		   </tr>
+            
+            <tr id="field_playurl"  <if condition="$playmode eq '3' or $playmode eq ''">style="display:none;"</if>>
+			<td width="120">播放链接规则：</td> 
+           <!-- <td>
+		链接中必须包含 <input type="text" name="data[playlink_contain]"  value="{$playlink_contain}">不得包含  <input type="text" name="data[playlink_except]"  value="{$playlink_except}">
+			</td>-->
+			<td>
+			<textarea rows="5" cols="30" name="data[playlink_rule]" id="playlink_rule">{$playlink_rule}</textarea> <span class='bottom'><a href="javascript:insertText('playlink_rule', '[内容]')" title="点击使用'[内容]'通配符">[内容]</a>	</span> </td>
+			<td width="60">过滤选项：</td> 
+			<td>
+			<textarea rows="5" cols="40" name="data[playlink_filter]" id="playlink_filter">{$playlink_filter}</textarea>
+			<input type="button"   value="常用规则" class="button bottom"  onclick="html_rule('data[playlink_filter]')">
+			</td>
+		</tr>
+         <tr>
+			<td width="120">播放地址范围：</td> 
+			<td colspan="3" >
+			<input type="radio" name="data[purl_range]" onclick="show_switch(this,'field_purllist','show')" id="_1"  value="1"  <eq name="purl_range" value="1">checked="checked"</eq>  class="radio"> 开启<input type="radio" name="data[purl_range]"  onclick="show_switch(this,'field_purllist','hide')" id="_2"  <neq name="purl_range" value="1">checked="checked"</neq> value="2" class="radio"> 关闭 (选择在播放页获取作品播放地址，该功能设置才有效)</td>
+		  </tr>
+            
+           <tr id="field_purllist" <neq name="purl_range" value="1">style="display:none;"</neq>>
+			<td width="120">播放地址范围规则：</td> 
+            <td colspan="3">
+			从作品播放页面中 <textarea rows="5" cols="30" name="data[playurl_start]">{$playurl_start}</textarea> 到 <textarea rows="5" name="data[playurl_end]" cols="40">{$playurl_end}</textarea> 结束			            </td>
+		   </tr>
+          <tr >
+			<td width="120">播放地址规则：</td> 
+			<td>
+			<textarea rows="5" cols="30" name="data[playurl_rule]" id="playurl_rule">{$playurl_rule}</textarea> <span class='bottom'><a href="javascript:insertText('playurl_rule', '[内容]')" title="点击使用'[内容]'通配符">[内容]</a>	</span> </td>
+			<td width="60">过滤选项：</td> 
+			<td>
+			<textarea rows="5" cols="40" name="data[playurl_filter]" id="playurl_filter">{$playurl_filter}</textarea>
+			<input type="button"   value="常用规则" class="button bottom"  onclick="html_rule('data[playurl_filter]')">
+			</td>
+		</tr>
+        <tr>
+			<td width="120">分集名称设置方式：</td> 
+			<td colspan="3" >
+			<input type="radio" name="data[vnamemode]"  id="_1"  <neq name="vnamemode" value="2">checked="checked"</neq> value="1" class="radio" onclick="show_switch(this,'field_vname','hide')"> 系统默认设置<input type="radio" name="data[vnamemode]" onclick="show_switch(this,'field_vname','show')" <eq name="vnamemode" value="2">checked="checked"</eq> id="_2"  value="2" class="radio"> 采集分集名称</td>
+			</tr>
+          <tr id="field_vname" <neq name="vnamemode" value="2">style="display:none;"</neq>>
+			<td width="120">分集名称规则：</td> 
+			<td>
+			<textarea rows="5" cols="30" name="data[vname_rule]" id="vname_rule">{$vname_rule}</textarea> <span class='bottom'><a href="javascript:insertText('vname_rule', '[内容]')" title="点击使用'[内容]'通配符">[内容]</a>	</span> </td>
+			<td width="60">过滤选项：</td> 
+			<td>
+			<textarea rows="5" cols="40" name="data[vname_filter]" id="vname_filter">{$vname_filter}</textarea>
+			<input type="button"   value="常用规则" class="button bottom"  onclick="html_rule('data[vname_filter]')">
+			</td>
+		</tr>
+	</table>
+
+</fieldset>
+
+
+</div>
+
+<div class="content pad-10" id="show_div_3" style="height:auto;display:none">
+<table width="100%"  class="table_form"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="2">测试采集结果预览</td>
+  </tr>
+    <tr>
+    <td width="20%">确定要预览吗？<span class="red" id="curren_url"></span></td>
+     <td  align="left"><input type="submit" id="test" value="预览" class="bginput"  onclick="colform.action='?s=Admin-Customcollect-ColTest';"  ></td>
+  </tr>
+
+</table>
+
+
+</div>
+
+    <div class="clear"></div>
+    <input name="dosubmit" type="submit" id="dosubmit" value="确认提交" class="button" style="margin-top:10px;">
+
+
+</form>
+
+</div>
+</div>
+<script type="text/javascript">
+<!--
+function html_rule(id, type) {
+	art.dialog({id:'test_url',content:'<ul class="ib"><volist name="files" id="fvo" key="k"><li><input type="checkbox" name="filter" id="_{$k}" class="radio" value="{$fvo}"> {$key}</li></volist><ul><div class="clear"></div><center><input type="button" value="全/反选" class="button"  onclick="selectall(1)" ></center>', width:'450', height:'120', lock: false}, function(){var old = $("textarea[name='"+id+"']").val();var str = '';$("input[name='filter']:checked").each(function(){str+=$(this).val()+"\\n";});$((type == 1 ? "#"+id :"textarea[name='"+id+"']")).val((old ? old+"\n" : '')+str);}, function(){art.dialog({id:'test_url'}).close()});
+}
+
+-->
+</script>
+</body>
+</html>

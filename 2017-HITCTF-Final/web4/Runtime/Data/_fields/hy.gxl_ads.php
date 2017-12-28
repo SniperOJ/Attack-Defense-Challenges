@@ -1,0 +1,1 @@
+a:5:{i:0;s:6:"ads_id";i:1;s:8:"ads_name";i:2;s:11:"ads_content";s:3:"_pk";s:6:"ads_id";s:5:"_type";a:3:{s:6:"ads_id";s:20:"smallint(4) unsigned";s:8:"ads_name";s:11:"varchar(50)";s:11:"ads_content";s:4:"text";}}

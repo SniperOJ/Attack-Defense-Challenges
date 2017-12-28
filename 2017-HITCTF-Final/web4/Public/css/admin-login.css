@@ -1,0 +1,11 @@
+body { background:#fff; }
+td { font-size:12px; height:30px;}
+input { border:1px solid #999; }
+.button { color: #135294; border:1px solid #666; height:21px; line-height:18px; background:url("../images/admin/button_bg.gif"); cursor:pointer}
+div#nifty{margin: 0 10%;background: #ABD4EF;width: 420px;word-break:break-all; margin-top:100px;}
+b.rtop, b.rbottom{display:block;background: #FFF}
+b.rtop b, b.rbottom b{display:block;height: 1px;overflow: hidden; background: #ABD4EF}
+b.r1{margin: 0 5px}
+b.r2{margin: 0 3px}
+b.r3{margin: 0 2px}
+b.rtop b.r4, b.rbottom b.r4{margin: 0 1px;height: 2px}

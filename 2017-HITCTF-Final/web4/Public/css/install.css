@@ -1,0 +1,107 @@
+/*公共部分*/
+body {
+	font-size:12px;
+	color : #000;
+	font-family : tahoma, 宋体, fantasy;
+	text-align : center;
+	background:#c9defa;
+	padding:0px auto;
+	margin:0px auto;
+}
+td {
+	font-size:12px;
+}
+.navpoint {
+	cursor: hand;
+}
+.install {
+	text-align:left;
+	width:760px;
+	padding-top:30px;
+	margin:0px auto;
+	padding:0px auto;
+}
+.next {
+	text-align:center;
+	padding-top:20px;
+}
+.next input {
+	height:35px;
+	border:0;
+	    background-color: #000;
+	width:107px;
+	cursor:pointer;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+}
+.title {
+	width:100%;
+	height:30px;
+	background-color:#000;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:3px;
+	clear:both;
+	line-height: 30px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #8cc0e7;
+}
+.title .left {
+	width:20px;
+	height:30px;
+	float:left;
+	background-color:#000;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.title .txt {
+	height:30px;
+	float:left;
+	line-height:30px;
+	font-size:14px;
+	font-weight:bold;
+	letter-spacing:1px;
+	padding-right:20px;
+	font-family: Arial;
+	color: #fff;
+	background-color: #FFF;
+	background-color:#000;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+.title .nav {
+	height:30px;
+	float:right;
+	line-height:30px;
+	font-size:12px;
+	font-weight:bold;
+	letter-spacing:1px;
+	padding-right:20px;
+}
+.table {
+	width:100%;
+	height:30px;
+	margin:0 auto 3px auto;
+	line-height:30px;
+	background: #515456;
+}
+.table .left {
+	width:20%;
+	background:#FFF;
+	padding-left:10px
+}
+.table .right {
+	background:#FFFFFF;
+}
+.table .tbtitle {
+	background:#FFF;
+	height:25px;
+	text-align:center;
+	font-size:14px;
+	color:#0033FF;
+}
+.table .tbtxt {
+	background:#FFFFFF;
+}

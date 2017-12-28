@@ -1,0 +1,13 @@
+<volist name="list_star" id="star"><li style="width:100%"><span>
+{$ppting.topic_oid}
+<gt name='star.newsrel_oid' value='$min_oid'>
+<a href="javascript:void(0);" onclick="news_star({$star.star_id},'down',{$list_star[$key+1]['star_id']})" class="up" title="排序往下一位">下</a>&nbsp;
+</gt>
+<lt name='star.newsrel_oid' value='$max_oid'>
+<a href="javascript:void(0);" onclick="news_star({$star.star_id},'up',{$list_star[$key-1]['star_id']})" class="down" title="排序往上一位">上</a>&nbsp;
+</lt>
+<a href="javascript:void(0);" onclick="news_star({$star.star_id},'del',{$star.star_id});" title="从新闻里移除明星">删</a>
+</span>
+<label>{$star.star_id}</label><a href="{:gxl_star_url('read',$star['star_id'],$star['star_pyname'],1)}" target="_blank" title="{$star.star_name}">{$star.star_name|msubstr=0,26}</a></li>
+</volist>
+<script language="javascript">$('#count').html('{$count}');</script>

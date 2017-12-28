@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>广告管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/jquery/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+</head>
+<body class="body">
+<table border="0" cellpadding="0" cellspacing="0" class="table">
+<thead><tr><th colspan="2" class="r"><span style="float:left">网站广告管理</span><span style="float:right"><a href="?s=Admin-Ads-Add">添加广告</a></span></th></tr></thead>
+<form action="?s=Admin-Ads-Update" method="post" name="myform" id="myform">
+  <volist name="list_ads" id="ppting"><input name="ads_id[{$ppting.ads_id}]" type="hidden" value="{$ppting.ads_id}">
+  <tbody>
+  <tr>
+    <td width="250" class="l pd">广告标识：<input name="ads_name[{$ppting.ads_id}]" type="text" value="{$ppting.ads_name}" maxlength="25" class="w150" style="color:#003366;font-weight:bold"><br>调用代码：<input type="text" value="<literal>{:</literal>adurl('{$ppting.ads_name}')}" maxlength="50" class="w150"></td>
+    <td class="r" style="padding:5px"><span style="float:left;width:90%;"><textarea name="ads_content[{$ppting.ads_id}]" style=" width:95%;height:60px">{$ppting.ads_content|htmlspecialchars}</textarea></span> <label style="float:left; padding-top:5px; padding-left:10px"><a href="?s=Admin-Ads-View-id-{$ppting.ads_id}" target="_blank">预览广告</a><br /><a href="?s=Admin-Ads-Del-id-{$ppting.ads_id}" onClick="return confirm('确定删除该广告吗?')">删除广告</a></label></td>
+  </tr>
+  </tbody>
+  </volist> 
+  <tfoot>
+    <tr>
+      <td colspan="2" class="r"><input type="button" class="submit" value="批量修改" onClick="post('?s=Admin-Ads-Update');"> <input class="submit" type="reset" name="Input" value="重置" > 注：提交时如果"广告标识"为空则删除该对应的广告位</td>
+    </tr>  
+  </tfoot>
+</form>       
+</table>
+<include file="./Public/admin/footer.html" />
+</body>
+</html>

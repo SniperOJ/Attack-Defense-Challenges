@@ -1,0 +1,125 @@
+<script language="javascript">
+// 显示标签框
+function showactors(id){
+	var offset = $("#actor_"+id).offset();
+	var left = offset.left-15;
+	var top = offset.top;
+	var html = $.ajax({
+		url: "?s=Admin-Actor-Showajax-id-"+id,
+		async: false
+	}).responseText;
+	$("#showactors").html(html);
+	$("#showactors").css({left:left,top:top,display:""});
+}
+function listshowactors(id){
+	alert(id);
+	var offset = $("#id"+id).offset();
+	var left = offset.left+30;
+	var top = offset.top;
+	var html = $.ajax({
+		url: "?s=Admin-Actor-Showajax-id-"+id,
+		async: false
+	}).responseText;
+	$("#showactors").html(html);
+	$("#showactors").css({left:left,top:top,display:""});
+}
+// 关闭标签框
+function actor_close(){
+	$("#showactors").css('display','none');
+}
+//编辑演员
+function editactor(id){
+	$("#info_"+id).after('<tbody id="edit_'+id+'"><tr><td colspan=5>'+$("#hidactor").html()+'</td></tr></tbody>');
+	$("#edit_"+id+" #actor_name").val($("#actorname_"+id).text());
+	$("#edit_"+id+" #actor_star").val($("#actorstar_"+id).text());
+	$("#edit_"+id+" #actor_pic").val($("#actorid_"+id).attr('data'));
+	$("#edit_"+id+" #actor_content").val($("#actorcontent_"+id).text());
+	$("#edit_"+id+" .sub").text('更新');
+	$("#edit_"+id+" #upload").attr("src","?s=Admin-Upload-Show-sid-actor-sf-1-fileback-edit_"+id+".actor_pic");  
+	$("#edit_"+id+" .sub").click(function(e){
+		if($("#edit_"+id+" #actor_name").val()=='' && $("#edit_"+id+" #actor_star").val()=='' && $("#edit_"+id+" #actor_pic").val()=='' && $("#edit_"+id+" #actor_content").val()==''){
+			$(".status").text('所有数据都未填写。');
+			return;
+		}
+		var $data = "actor_id="+id+"&actor_name="+$("#edit_"+id+" #actor_name").val()+"&actor_star="+$("#edit_"+id+" #actor_star").val()+"&actor_content="+$("#edit_"+id+" #actor_content").val()+"&actor_pic="+$("#edit_"+id+" #actor_pic").val()+"&actor_vid="+$("#edit_"+id+" #actor_vid").val();
+		$.ajax({
+			type: 'post',
+			url: '/index.php?s=Admin-actor-update',
+			data: $data,
+			dataType:'json',
+			success:function($string){
+				//$("#edit_"+id).remove();
+				if($string.status == 1){
+					actor_close()
+					showactors($("#edit_"+id+" #actor_vid").val())
+				}else{
+					$("#status").text($string.info);
+				}
+			}
+		});
+	});
+	$("#edit_"+id+" .qx").click(function(e){
+		$("#edit_"+id).remove();
+	});
+}
+function addactor(id){
+	$("#hidactor").show();
+	$("#hidactor .sub").text('添加');
+	//清空
+	$("#hidactor #actor_name").val('');
+	$("#hidactor #actor_star").val('');
+	$("#hidactor #actor_content").val('');
+	$("#hidactor #actor_pic").val('');
+	//
+	$("#hidactor .sub").click(function(e){
+		if($("#hidactor #actor_name").val()=='' && $("#hidactor #actor_star").val()=='' && $("#hidactor #actor_content").val()==''  && $("#hidactor #actor_pic").val()==''){
+			$(".status").text('所有数据都未填写。');
+			return;
+		}
+		var $data = "actor_name="+$("#hidactor #actor_name").val()+"&actor_star="+$("#hidactor #actor_star").val()+"&actor_content="+$("#hidactor #actor_content").val()+"&actor_pic="+$("#hidactor #actor_pic").val()+"&actor_vid="+$("#hidactor #actor_vid").val();
+		$.ajax({
+			type: 'post',
+			url: '/index.php?s=Admin-actor-add',
+			data: $data,
+			dataType:'json',
+			success:function($string){
+				if($string.status == 1){
+					actor_close()
+					showactors($("#hidactor #actor_vid").val())
+				}else{
+					$(".status").text($string.info);
+				}
+				//window.location.reload();
+
+			}
+		});
+	});
+	$("#hidactor .qx").click(function(e){
+		$("#hidactor").hide();
+	});
+}
+function delactor(id){
+	if(confirm("确定删除么?")){
+		var $data = "actor_id="+id;
+		$.ajax({
+			type: 'post',
+			url: '/index.php?s=Admin-actor-del',
+			data: $data,
+			dataType:'json',
+			success:function($string){		
+				if($string.status == 1){
+					$(".status").text($string.info);
+					$("#info_"+id).remove();
+					//actor_close()
+					//showactors()
+				}else{
+					$(".status").text($string.info);
+				}
+			}
+		});
+	}
+}
+
+</script>
+<!--标签选择框-->
+<div id="showactors" style="position:absolute;display:none;" class="showactors"><a href="javascript:tag_close()">关闭</a></div>

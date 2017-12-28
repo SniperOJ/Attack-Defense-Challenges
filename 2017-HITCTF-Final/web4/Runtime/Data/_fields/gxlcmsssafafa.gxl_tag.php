@@ -1,0 +1,1 @@
+a:4:{i:0;s:6:"tag_id";i:1;s:7:"tag_sid";i:2;s:8:"tag_name";s:5:"_type";a:3:{s:6:"tag_id";s:12:"mediumint(8)";s:7:"tag_sid";s:10:"tinyint(1)";s:8:"tag_name";s:11:"varchar(50)";}}

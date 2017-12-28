@@ -1,0 +1,35 @@
+<!--专题管理ajax相关操作 -->
+<script language="javascript">
+function special_ting($did,$type,$lastdid){
+	$.ajax({
+		type: 'get',
+		cache: false,
+		url: "?s=Admin-Special-Ajax-type-"+$type+"-sid-1-tid-{$tid}-did-"+$did+"-lastdid-"+$lastdid,
+		timeout: 3000, 
+		success:function($html){
+			$('#specialhtml').html($html);
+		}
+	});
+}
+function special_news($did,$type,$lastdid){
+	$.ajax({
+		type: 'get',
+		cache: false,
+		url: "?s=Admin-Special-Ajax-type-"+$type+"-sid-2-tid-{$tid}-did-"+$did+"-lastdid-"+$lastdid,
+		timeout: 3000, 
+		success:function($html){
+			$('#specialhtml').html($html);
+		}
+	});
+}
+</script>
+<style>
+ul{ float:left; text-align:left; width:100%; overflow: hidden; position:relative}
+ul li{ float:left;  margin-left:5px; line-height:21px; height:21px; clear:both; color:#999}
+ul li span{ position:absolute; right:5px;}
+ul li label{ float:left; margin-right:5px}
+.count{color:#FF0000; padding:0px 2px}
+a.up{color:green; }
+a.down{ color:red; }
+a.adds{ color:blue}
+</style>

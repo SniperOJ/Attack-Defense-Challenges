@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>后台用户管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/jquery/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+<script type="text/javascript" src="__PUBLIC__/artDialog/artDialog.js?skin=blue"></script>
+<script type="text/javascript" src="__PUBLIC__/artDialog/plugins/iframeTools.js"></script>
+<script language="javascript">
+function changeurl(cid,continu,player,stars,status){
+	self.location.href='?s=Admin-Ting-Show-cid-'+cid+'-continu-'+continu+'-player-'+player+'-stars-'+stars+'-status-'+status+'-iffilm-{$isfilm}-url-{$url}-type-{$type}-order-{$order}';
+}
+$(document).ready(function(){
+	$gxlcms.show.table();
+	$('#continu').click(function(){
+		changeurl('',1,'','','');
+	});	
+	$('#selectcid').change(function(){
+		changeurl($(this).val(),'','','','');
+	});
+	$('#selectemplateayer').change(function(){
+		changeurl('','',$(this).val(),'','');
+	});
+	$('#selectstars').change(function(){
+		changeurl('','','',$(this).val(),'');
+	});	
+    //弹出式修改栏目
+
+    $(".J_mcid").click(function(){
+
+        var _this = $(this);
+        art.dialog.load(_this.data('url'),false);
+    })
+	 $(".J_actor").click(function(){
+        var _this = $(this);
+        art.dialog.load(_this.data('url'),false);
+    })
+});
+function createhtml(id){
+	var offset = $("#html_"+id).offset();
+	var left = (offset.left/2)+50;
+	var top = offset.top+15;
+	var html = $.ajax({
+		url: '?s=Admin-Create-tingid-id-'+id,
+		async: false
+	}).responseText;
+	$("#htmltags").html(html);
+	$("#htmltags").css({left:left,top:top,display:""});	
+	window.setTimeout(function(){
+		$("#htmltags").hide();
+	},1000);
+}
+</script>
+<style>
+label.ting_input_show{ position:relative;margin-top:5px}
+label.ting_ids{ margin:0px 5px;}
+label.ting_play {float:right;color:#666;margin-right:5px}
+label sup {color:#990000;font-size:13px;}
+</style>
+</head>
+<body class="body">
+<!--生成静态预览框-->
+<div id="htmltags" style="position:absolute;display:none;" class="htmltags"></div>
+<!--图片预览框-->
+<div id="showpic" class="showpic" style="display:none;z-index:9;"><img name="showpic_img" id="showpic_img" width="75" height="75"></div>
+<!--背景灰色变暗-->
+<div id="showbg" style="position:absolute;left:0px;top:0px;filter:Alpha(Opacity=0);opacity:0.0;background-color:#fff;z-index:8;"></div>
+
+<table border="0" cellpadding="0" cellspacing="0" class="table">
+<form action="?s=Admin-Ting-Show" method="post" name="myform" id="myform">
+<thead><tr><th class="r"><span style="float:left">作品管理(<a href="#" onClick="if(confirm('请勿在高峰期执行该操作!')){divwindow('?s=Admin-Pic-Down','下载网络图片');}else{return false}" style="color:#990000;">下载网络图片</a>)</span><span class="right"><a href="?s=Admin-Ting-Add" style="float:right">添加作品</a></span></th></tr></thead>
+  <tr>
+    <td class="tr ct" style="height:40px"><input type="button" value="所有" class="submit" onClick="changeurl('','','','','');"> <input type="button" name="continu" id="continu" value="连载中" class="submit"> <input type="button" value="未审核" class="submit" onClick="changeurl('','','','',2);"> <input type="button" value="已审核" class="submit" onClick="changeurl('','','','',1);"> <select name="selectcid" id="selectcid">
+<option value="">按分类查看</option><volist name="list_ting" id="ppting"><option value="{$ppting.list_id}" <eq name="ppting.list_id" value="$cid">selected</eq>>{$ppting.list_name}</option><volist name="ppting['son']" id="ppting"><option value="{$ppting.list_id}" <eq name="ppting.list_id" value="$cid">selected</eq>>├ {$ppting.list_name}</option></volist></volist></select> <select name="selectemplateayer" id="selectemplateayer"><option value="0">按来源查看</option><volist name="playtree" id="ppting" > <option value='{$key}' <eq name="key" value="$player">selected</eq>>{$ppting[1]}</option></volist></select> <select name="selectstars" id="selectstars"><option value="0">按星级查看</option><option value="5" <eq name="stars" value="5">selected</eq>>五星</option><option value="4" <eq name="stars" value="4">selected</eq>>四星</option><option value="3" <eq name="stars" value="3">selected</eq>>三星</option><option value="2" <eq name="stars" value="2">selected</eq>>二星</option><option value="1" <eq name="stars" value="1">selected</eq>>一星</option></select> <input type="text" name="wd" id="wd" maxlength="20" value="{$wd|default='输入关键字搜索作品'|urldecode}" onClick="this.select();" style="color:#666666"> <input type="button" value="搜索" class="submit" onClick="post('?s=Admin-Ting-Show');"></td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="table">
+  <thead>
+    <tr class="ct">
+      <th class="l"><span style="float:left">ID <eq name="orders" value="ting_id desc"><a href="?s=Admin-Ting-Show-cid-{$cid}-continu-{$continu}-player-{$player}-stars-{$stars}-status-{$status}-iffilm-{$isfilm}-url-{$url}-type-id-order-asc"><img src="__PUBLIC__/images/admin/up.gif" border="0" alt="点击按ID升序排列"></a><else /><a href="?s=Admin-Ting-Show-cid-{$cid}-continu-{$continu}-player-{$player}-stars-{$stars}-status-{$status}-iffilm-{$isfilm}-url-{$url}-type-id-order-desc"><img src="__PUBLIC__/images/admin/down.gif" border="0" alt="点击按ID降序排列"></a></eq></span>作品名称</th>
+   
+  <th class="l" width="120">分类</th>
+      <th class="l" width="120">人气<eq name="orders" value="ting_hits desc"><a href="?s=Admin-Ting-Show-cid-{$cid}-continu-{$continu}-player-{$player}-stars-{$stars}-status-{$status}-iffilm-{$isfilm}-url-{$url}-type-hits-order-asc"><img src="__PUBLIC__/images/admin/up.gif" border="0" alt="点击按人气升序排列"></a><else /><a href="?s=Admin-Ting-Show-cid-{$cid}-continu-{$continu}-player-{$player}-stars-{$stars}-status-{$status}-iffilm-{$isfilm}-url-{$url}-type-hits-order-desc"><img src="__PUBLIC__/images/admin/down.gif" border="0" alt="点击按人气降序排列"></a></eq></th>
+      <th class="l" width="120">评分<eq name="orders" value="ting_gold desc"><a href="?s=Admin-Ting-Show-cid-{$cid}-continu-{$continu}-player-{$player}-stars-{$stars}-status-{$status}-iffilm-{$isfilm}-url-{$url}-type-gold-order-asc"><img src="__PUBLIC__/images/admin/up.gif" border="0" alt="点击按评分升序排列"></a><else /><a href="?s=Admin-Ting-Show-cid-{$cid}-continu-{$continu}-player-{$player}-stars-{$stars}-status-{$status}-iffilm-{$isfilm}-url-{$url}-type-gold-order-desc"><img src="__PUBLIC__/images/admin/down.gif" border="0" alt="点击按评分降序排列"></a></eq></th>
+      <th class="l" width="130">作品权重<eq name="orders" value="ting_stars desc"><a href="?s=Admin-Ting-Show-cid-{$cid}-continu-{$continu}-player-{$player}-stars-{$stars}-status-{$status}-iffilm-{$isfilm}-url-{$url}-type-stars-order-asc"><img src="__PUBLIC__/images/admin/up.gif" border="0" alt="点击按星级升序排列"></a><else /><a href="?s=Admin-Ting-Show-cid-{$cid}-continu-{$continu}-player-{$player}-stars-{$stars}-status-{$status}-iffilm-{$isfilm}-url-{$url}-type-stars-order-desc"><img src="__PUBLIC__/images/admin/down.gif" border="0" alt="点击按星级降序排列"></a></eq></th>
+      <th class="l" width="90">更新时间<eq name="orders" value="ting_addtime desc"><a href="?s=Admin-Ting-Show-cid-{$cid}-continu-{$continu}-player-{$player}-stars-{$stars}-status-{$status}-iffilm-{$isfilm}-url-{$url}-type-addtime-order-asc"><img src="__PUBLIC__/images/admin/up.gif" border="0" alt="点击按时间升序排列"></a><else /><a href="?s=Admin-Ting-Show-cid-{$cid}-continu-{$continu}-player-{$player}-stars-{$stars}-status-{$status}-iffilm-{$isfilm}-url-{$url}-type-addtime-order-desc"><img src="__PUBLIC__/images/admin/down.gif" border="0" alt="点击按时间降序排列"></a></eq></th>
+      <th class="r" width="100">相关操作</th>
+    </tr>
+  </thead>
+  <volist name="list" id="ppting">
+  <tbody style="position:relative">
+  <tr>
+    <td class="l pd">
+    <label class="ting_input_show fl"><input name='ids[]' type='checkbox' value='{$ppting.ting_id}' class="noborder" checked></label>
+    <label class="fl">作品[{$ppting.ting_id}] ：</label>
+    <label class="fl ting_ids"><if condition="C('url_html') gt 0"><a href="javascript:createhtml('{$ppting.ting_id}');" id="html_{$ppting.ting_id}"><font color="green">生成</font></a></if><a href="{$ppting.ting_url}" onMouseOver="showpic(event,'{$ppting.ting_pic}','{$Think.config.upload_path}/');" onMouseOut="hiddenpic();" target="_blank">{$ppting.ting_name}</a></label>
+  
+ 
+    </td>
+ <td class="l ct J_mcid" data-url="{$ppting.list_url}"><a href="{$ppting.list_url}">{$ppting.ting_cid|getlistname}</a></td>
+    <td class="l ct">{$ppting.ting_hits}</td>
+    <td class="l ct">{$ppting.ting_gold}</td>
+    <td class="l ct"><volist name="ppting['ting_starsarr']" id="ajaxstar"><img src="__PUBLIC__/images/admin/star{$ajaxstar}.gif" onClick="setstars('Ting',{$ppting.ting_id},{$i});" id="star_{$ppting.ting_id}_{$i}" class="navpoint"></volist></td>
+    <td class="l ct">{$ppting.ting_addtime|date='Y-m-d',###}</td>
+    <td class="r ct"><a href="?s=Admin-Ting-Add-id-{$ppting.ting_id}" title="点击修改作品">编辑</a> <a href="?s=Admin-Ting-Del-id-{$ppting.ting_id}" onClick="return confirm('确定删除该作品吗?')" title="点击删除作品">删除</a>  <eq name="ppting.ting_status" value="1"><a href="?s=Admin-Ting-Status-id-{$ppting.ting_id}-value-0" title="点击隐藏作品">隐藏</a><else /><a href="?s=Admin-Ting-Status-id-{$ppting.ting_id}-value-1" title="点击显示作品"><font color="red">显示</font></a></eq></td>
+  </tr>
+  </tbody>
+  </volist>
+    <tr>
+      <td colspan="9" class="r pages">{$pages}</td>
+    </tr>   
+  <tfoot>
+    <tr>
+    <php>print_r($ppting['son']) ;</php>
+      <td colspan="9" class="r"><input type="button" value="全选" class="submit" onClick="checkall('all');"> <input name="" type="button" value="反选" class="submit" onClick="checkall();"> <eq name="Think.config.url_html" value="1"><input type="button" value="生成静态" name="createhtml" id="createhtml" class="submit" onClick="post('?s=Admin-Ting-Create');"/></eq> <input type="button" value="批量删除" class="submit" onClick="if(confirm('删除后将无法还原,确定要删除吗?')){post('?s=Admin-Ting-Delall');}else{return false;}"> <input type="button" value="批量移动" class="submit" onClick="$('#psetcid').show();"> <span style="display:none" id="psetcid"><select name="pestcid"><option value="">选择目标分类</option><volist name="list_ting" id="ppting"><option value="{$ppting.list_id}" <eq name="ppting.list_id" value="$cid">selected</eq>>{$ppting.list_name}</option><volist name="ppting['son']" id="ppting"><option value="{$ppting.list_id}" <eq name="ppting.list_id" value="$cid">selected</eq>>├ {$ppting.list_name}</option></volist></volist></select> <input type="button" class="submit" value="确定转移" onClick="post('?s=Admin-Ting-Pestcid');"/></span><input type="button" value="批量审核" class="submit" onClick="if(confirm('确定要批量审核吗?')){post('?s=Plus-My-Statusall');}else{return false;}"></td>
+    </tr>  
+  </tfoot>
+  </form>
+</table>
+<include file="./Public/admin/plus_jqmodal.html" />
+<style>
+#dia_title{height:25px;line-height:25px}
+.jqmWindow{height:500px;width:850px;top:5px;left:310px;overflow:hidden}
+</style>
+<include file="./Public/admin/footer.html" />
+</body>
+</html>

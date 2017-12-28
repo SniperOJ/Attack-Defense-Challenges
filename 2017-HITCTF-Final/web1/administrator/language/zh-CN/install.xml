@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.7" client="administrator" type="language" method="upgrade">
+	<name>Chinese Simplified (zh-CN)</name>
+	<tag>zh-CN</tag>
+	<version>3.8.0.1</version>
+	<creationDate>2017年9月</creationDate>
+	<author>Joomla! 中文社区(www.ijoomla.cn) - 周永建 </author>
+	<authorEmail>zhou_yongjian@hotmail.com</authorEmail>
+	<authorUrl>www.ijoomla.cn</authorUrl>
+	<copyright>版权所有 (C) 2017 Joomla!中文社区 最靠谱的中文翻译 </copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<description>zh-CN 管理后台简体中文语言</description>
+	<files>
+		<folder>/</folder>
+		<filename file="meta">install.xml</filename>
+	</files>
+	<params />
+</extension>

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>资源库列表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/jquery/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+<script language="javascript">
+function changeurl($cid,$hour){
+	self.location.href = getjumpurl($cid,$hour);
+}
+function getjumpurl($action,$cid,$hour){
+
+	return '?s=Admin-Caiji-{$Think.ACTION_NAME}-action-'+$action+'-fid-{$fid}-xmlurl-{$xmlurl}-reurl-{$reurl}-tingids-{$tingids}-play-{$play}-inputer-{$inputer}-cid-'+$cid+'-wd-{$wd}-h-'+$hour;
+}
+$(document).ready(function(){
+	$gxlcms.show.table();
+
+	if('{$inputer}' == 'vip'){
+		$('#myform')[0].action = $('#myform')[0].action.replace(/Admin-Caiji/, 'Admin-Caijizanpian');
+		$('.table .ct a').each(function(){
+			this.href = this.href.replace(/Admin-Caiji/, 'Admin-Caijizanpian');
+		});
+	}
+		else if('{$inputer}' == 'story'){
+		$('#myform')[0].action = $('#myform')[0].action.replace(/Admin-Caiji/, 'Admin-Caijijuqing');
+		$('.table .ct a').each(function(){
+			this.href = this.href.replace(/Admin-Caiji/, 'Admin-Caijijuqing');
+		});
+	}
+});
+</script>
+</head>
+<body class="body">
+<!--背景灰色变暗-->
+<div id="showbg" style="position:absolute;left:0px;top:0px;filter:Alpha(Opacity=0);opacity:0.0;background-color:#fff;z-index:8;"></div>
+<!--绑定分类表单框-->
+<div id="setbind" style="position:absolute;display:none;background: #85BFDC;padding:4px 5px 5px 5px;z-index:9;"></div>
+<form action="?s=Admin-Caiji-{$Think.ACTION_NAME}" method="post" name="myform" id="myform">
+<table border="0" cellpadding="0" cellspacing="0" class="table" style="border-bottom:1px solid #cad9ea">
+<thead><tr><th colspan="6" class="r"><span style="float:left">分类绑定设置 <notempty name="cid" value="0"><a href="javascript:changeurl('','');"><font color="red">查看全部资源</font></a></notempty></span><span style="float:right"><a href="?s=Admin-Caiji-Show">返回资源库列表</a></span></th></tr></thead>
+  <tr><volist name="list_class" id="ppting">
+  <if condition="$i neq 1 and $i%6 eq 1"></tr><tr></if>
+  <td class="ct"><a href="?s=Admin-Caiji-{$Think.ACTION_NAME}-fid-{$fid}-xmlurl-{$xmlurl}-reurl-{$reurl}-play-{$play}-inputer-{$inputer}-cid-{$ppting.list_id}-wd-{$wd}">{$ppting.list_name}</a> <a href="javascript:void(0)" onClick="setbind(event,'{$ppting.list_id}','{$ppting.bind_id}');" id="bind_{$ppting.bind_id}"><if condition="gxl_bind_id($ppting['bind_id']) gt 0"><font color="green">已绑定</font><else /><font color="red">未绑定</font></if></a></td>
+  </volist>
+  </tr>
+  <tr><td colspan="6" class="ct"><input type="button" value="全选" class="submit" onClick="checkall('all');"> <input name="" type="button" value="反选" class="submit" onClick="checkall();"> <input type="button" value="采集" class="submit" onClick="post(getjumpurl('ids','',''));"> <input type="button" value="采集当天" class="submit" onClick="post(getjumpurl('day','',24));"> <notempty name="cid" value="0"><input type="button" value="采集本类" class="submit" onClick="post(getjumpurl('all','{$cid}',''));"></notempty> <input type="button" value="采集所有" class="submit" onClick="post(getjumpurl('all','',''));"> <input type="text" name="wd" id="wd" maxlength="20" value="{$wd|urldecode}" onClick="this.select();" style="color:#666666"> <input type="button" value="搜索" class="submit" onClick="post(getjumpurl('','',''));"></td>
+  </tr>  
+</table>
+<br />
+<table border="0" cellpadding="0" cellspacing="0" class="table">
+<thead>
+<tr class="ct">
+  <th class="l" ><span style="float:left;">作品资源列表</span>作品名称 </th>
+  <th class="l" width="100">来源</th>
+  <th class="r ct" width="130">更新时间</th>
+</tr>
+</thead>
+<volist name="list_ting" id="ppting">
+  <tbody>
+  <tr>
+    <td class="l pd"><input name='ids[]' type='checkbox' value='{$ppting.ting_id}' class="noborder">『{$ppting.list_name}』{$ppting.ting_name}{$ppting.ting_title} <neq name="ppting['ting_continu']" value="0"><sup>{$ppting.ting_continu}</sup></neq> <a href="?s=Admin-Ting-Show-wd-{$ppting.ting_name|msubstr=0,4|urlencode}" target="_blank" style="color:#FF0000">查</a></td>
+    <td class="l ct">{$ppting.ting_play|str_replace='$$$',' ',###}</td>
+    <td class="r ct">{$ppting.ting_addtime}</td>
+  </tr>
+  </tbody>
+  </volist>
+   <tr>
+      <td colspan="3" class="r pages">{$pagelist}</td>
+    </tr>   
+  <tfoot>
+    <tr>
+      <td colspan="3" class="r"><input type="button" value="全选" class="submit" onClick="checkall('all');"> <input name="" type="button" value="反选" class="submit" onClick="checkall();"> <input type="button" value="采集" class="submit" onClick="post(getjumpurl('ids','',''));"> <input type="button" value="采集当天" class="submit" onClick="post(getjumpurl('day','',24));"> <notempty name="cid" value="0"><input type="button" value="采集本类" class="submit" onClick="post(getjumpurl('all','{$cid}',''));"></notempty> <input type="button" value="采集所有" class="submit" onClick="post(getjumpurl('all','',''));"></td>
+    </tr>  
+  </tfoot>        
+</table>
+</form>
+<include file="./Public/admin/footer.html" />
+</body>
+</html>

@@ -1,0 +1,20 @@
+<script type="text/javascript">
+var editor;
+	KindEditor.ready(function(K) {
+	editor = K.create('#content,#ting_tvexp', {
+	resizeType : 1,
+	allowPreviewEmoticons : true,
+	allowImageUpload : true,
+	extraFileUploadParams: {
+    PHPSESSID : '<?php echo session_id() ?>',
+	sid : '<?php echo strtolower(CONTROLLER_NAME) ?>'
+    },
+	items : ['source','fontname', 'fontsize', '|','cut','copy','paste','plainpaste','|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline','removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright','justifyfull', 'insertorderedlist','insertunorderedlist','indent','outdent', 'clearhtml','selectall','|','fullscreen','|', 'emoticons', 'image','multiimage','baidumap', 'link', 'unlink','quickformat']
+				});
+			});
+//KE.show({ id : 'content'});
+var $content = $('#content').val();
+	document.getElementById("myform").onreset = function(){
+	editor.html($content);
+}
+</script>

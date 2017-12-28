@@ -1,0 +1,1 @@
+<div class="fch3 fr">全部共有<span class="fch2-num-span" id="counts">{$vod_list.0.counts}</span>个相关内容</div>

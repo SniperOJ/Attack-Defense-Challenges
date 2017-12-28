@@ -1,0 +1,21 @@
+{
+    "name": "itsgoingd/clockwork",
+    "description": "Server-side component of Clockwork, a Chrome extension for PHP development",
+    "keywords": ["debugging", "profiling", "logging", "laravel"],
+    "homepage": "http://github.com/itsgoingd/clockwork",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "itsgoingd",
+            "email": "itsgoingd@luzer.sk",
+            "homepage": "http://twitter.com/itsgoingd"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9",
+        "psr/log": "1.*"
+    },
+    "autoload": {
+        "psr-0": {"Clockwork": ""}
+    }
+}

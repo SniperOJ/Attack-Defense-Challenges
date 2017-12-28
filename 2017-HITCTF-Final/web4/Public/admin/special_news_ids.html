@@ -1,0 +1,12 @@
+<volist name="list_news" id="ppting"><li style="width:100%"><span>
+<gt name='ppting.topic_oid' value='$min_oid'>
+<a href="javascript:void(0);" onclick="special_news({$ppting.news_id},'down',{$list_news[$key+1]['news_id']})" class="up" title="排序往下一位">下</a>&nbsp;
+</gt>
+<lt name='ppting.topic_oid' value='$max_oid'>
+<a href="javascript:void(0);" onclick="special_news({$ppting.news_id},'up',{$list_news[$key-1]['news_id']})" class="down" title="排序往上一位">上</a>&nbsp;
+</lt>
+<a href="javascript:void(0);" onclick="special_news({$ppting.news_id},'del',{$ppting.news_id});" title="从专题里移除">删</a>
+</span>
+<label>{$ppting.news_id}</label><a href="{:gxl_data_url('news',$ppting['news_id'],$ppting['news_cid'],$ppting['news_name'],1,'')}" target="_blank" title="{$ppting.news_name}">{$ppting.news_name|msubstr=0,26}</a></li>
+</volist>
+<script language="javascript">$('#count').html('{$count}');</script>

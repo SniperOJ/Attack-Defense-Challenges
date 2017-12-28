@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>后台角色管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/jquery.js"></script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/editor/kindeditor-min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/editor/zh_CN.js"></script>
+<script language="javascript">
+$(document).ready(function(){
+	function randomsort() {
+		return Math.random()>.5 ? -1 : 1;
+	}
+	$("#myform").submit(function(){
+		if($gxlcms.form.empty('myform','actor_vid') == false){
+			alert('必须填写作品ID');
+			return false;
+		}
+		if($gxlcms.form.empty('myform','actor_name') == false){
+			return false;
+		}
+	});
+
+});
+</script>
+</head>
+<body class="body">
+<!--图片预览框-->
+<div id="showpic" class="showpic" style="display:none;"><img name="showpic_img" id="showpic_img" width="120" height="160"></div>
+<gt name="actor_id" value="0">
+<form name="update" action="?s=Admin-Roles-Update" method="post" name="myform" id="myform">
+<input type="hidden" name="actor_id" value="{$actor_id}">
+<else/>
+<form name="add" action="?s=Admin-Roles-Insert" method="post" name="myform" id="myform">
+</gt> 
+<div class="title">
+	<div class="tabs" id="tabs"><a href="javascript:void(0)" class="on" id="1">{$star_templatename}角色</a></div>
+    <div class="right"><a href="?s=Admin-Roles-Show">返回角色管理</a></div>
+</div>
+<div class="form">
+<table border="0" cellpadding="0" cellspacing="0" class="table" id="tabs1">
+  <tr>
+    <td class="tl">作品ID：</td>
+    <td class="tr" style="position:relative"><input type="text" name="actor_vid" id="actor_vid" value="{$actor_vid}" maxlength="100" error="* 名称不能为空" class="w100" title="填写作品对应ID"> 
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;推送到百度<input name="insertseo" type="checkbox" style="border:none;width:auto; position:absolute; top:5px"  value="5" title="勾选推送到百度"> 
+	</td>
+  </tr>  
+  <tr>
+    <td class="tl">角色名：</td>
+    <td class="tr"><input type="text" name="actor_name" id="actor_name" value="{$actor_name}" maxlength="100" error="* 名称不能为空" class="w100" title="填写角色名"> 明星名字：<input type="text" name="actor_star" id="actor_star" value="{$actor_star}" maxlength="100" error="* 名称不能为空" class="w100" title="填写角色对应明星名">
+	</td>
+  </tr>  
+  <tr>
+    <td class="tl">角色照：</td>
+    <td class="tr">
+    
+    <label style="float:left; margin-top:3px; margin-right:5px"><input type="text" name="actor_pic" id="actor_pic" maxlength="250" value="{$actor_pic}" class="w250" onMouseOver="if(this.value)showpic(event,this.value,'{$Think.config.upload_path}/');" onMouseOut="hiddenpic();"></label>
+<iframe id="upload" src="?s=Admin-Upload-Show-sid-actor-sf-1-fileback-actor_pic" scrolling="no" topmargin="0" width="330" height="26" marginwidth="0" marginheight="0" frameborder="0" align="left" style="margin-top:3px; float:left"></iframe>
+    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="tl">角色介绍：</td>
+    <td class="tr padding-5050"><textarea name="actor_content" id="actor_content" style="width:99%;height:300px;">{$actor_content}</textarea></td>
+  </tr>
+   <tr>
+    <td class="tl">角色人气：</td>
+    <td class="tr"><input type="text" name="actor_hits" id="actor_hits" maxlength="15" value="{$actor_hits}" class="w50"></td>
+  </tr> 
+  <tr>
+    <td class="tl">时间：</td>
+    <td class="tr"><input type="text" name="actor_addtime" id="actor_addtime" maxlength="15" value="{$actor_addtime|date='Y-m-d H:i:s',###}" class="w150"> <input name="checktime" type="checkbox" style="border:none;width:auto" value="1" {$checktime} title="勾选则使用系统当前时间"></td>
+  </tr>
+</table>
+
+<ul class="footer">
+	<input type="submit" name="submit" value="提交"> <input type="reset" name="reset" value="重置">
+</ul>
+</div>
+</form>
+<script type="text/javascript">
+var editor;
+	KindEditor.ready(function(K) {
+	editor = K.create('textarea[name="actor_content"]', {
+	resizeType : 1,
+	allowPreviewEmoticons : true,
+	allowImageUpload : true,
+	extraFileUploadParams: {
+    PHPSESSID : '<?php echo session_id() ?>',
+	sid : 'actor'
+    },
+	items : ['source','fontname', 'fontsize', '|','cut','copy','paste','plainpaste','|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline','removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright','justifyfull', 'insertorderedlist','insertunorderedlist','indent','outdent', 'clearhtml','selectall','|','fullscreen','|', 'emoticons', 'image','multiimage','baidumap', 'link', 'unlink','quickformat']
+				});
+			});
+//KE.show({ id : 'content'});
+var $content = $('#actor_content').val();
+	document.getElementById("myform").onreset = function(){
+	editor.html($content);
+}
+</script>
+<include file="./Public/admin/footer.html" />
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>后台用户管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/jquery.js"></script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+</head>
+<body class="body">
+<include file="./Public/admin/header.html" />
+<div class="title">
+	<div class="left">{$templatetitle}类型</div>
+    <div class="right"><a href="?s=Admin-Cat-Show">返回类型管理</a></div>
+</div>
+<div class="add"><gt name="m_cid" value="0">
+<form action="?s=Admin-Cat-Update" method="post" name="myform" id="myform">
+<input type="hidden" name="m_cid" id="m_cid" value="{$m_cid}">
+<else/>
+<form action="?s=Admin-Cat-Insert" method="post" name="myform" id="myform">
+</gt> 
+<ul><li class="left">所属分类：</li>
+    <li class="right"><select name="m_list_id" id="m_list_id" class="w120"><option value="0">现有分类</option><volist name="list_tree" id="ppting"><option value="{$ppting.list_id}" <eq name="ppting.list_id" value="$m_list_id">selected</eq>>{$ppting.list_name}</option></volist></select> * 不选择将成为一级分类</li>
+</ul>
+<ul><li class="left">栏目排序：</li>
+    <li class="right"><input type="text" name="m_order" id="m_order" value="{$m_order}" maxlength="3" class="w120"><label>越小越前面</label></li>
+</ul>
+<ul><li class="left">栏目中文名称：</li>
+    <li class="right"><input type="text" name="m_name" id="m_name" value="{$m_name}" maxlength="20" error="* 栏目名称不能为空!" class="w120"><span id="list_name_error">*</span></li>
+</ul>
+<ul class="footer">
+<input type="submit" name="submit" value="提交"> <input type="reset" name="reset" value="重置">
+</ul>
+</div>
+</form>
+<include file="./Public/admin/footer.html" />
+</body>
+</html>

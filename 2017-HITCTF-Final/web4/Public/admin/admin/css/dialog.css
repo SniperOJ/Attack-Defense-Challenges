@@ -1,0 +1,48 @@
+.ui_title_wrap, .ui_bottom button {font-size:12px 'Microsoft Yahei', Arial; }
+.ui_content_wrap { min-width:9em; vertical-align:top;}/*设置对话框最小尺寸*/
+.ui_overlay div { background:#000; filter:alpha(opacity=40); opacity:0.4; }/*设置遮罩颜色与透明度*/
+.ui_loading_tip { width:16px; height:16px; margin:-8px 0 0 -8px; text-indent:-9999em; background:url(../images/admin/loading.gif) no-repeat center center; }/*iframe加载的loading动画*/
+.ui_dialog_main { background:#FFF; }
+.ui_title_wrap { _width:100px; }/*IE6下设置一个最小长度，防止关闭按钮错位*/
+.ui_title{ padding:5px 5px 0px;}
+.ui_title_text {text-align:left;font:12px/12px "MicroSoft YaHei","SimHei";color:#333;border-bottom:1px solid #eee; height:24px; padding-bottom:3px; padding-left:8px}
+.ui_td_00,.ui_td_02,.ui_td_20,.ui_td_22 { width:8px; height:8px;}/*左上*/
+.ui_td_10,.ui_td_12 { width:8px;}
+.ui_close{_right:3px;_font-size:0; _line-height:0; text-indent:-9999em;display:block;width:26px;height:20px;position: absolute;top:14px;right:14px;outline:none;background: url(../images/admin/closex.gif) no-repeat left 3px;star:expression(this.onFocus=this.blur());}
+
+.ui_resize { width:10px; height:10px; }
+html:hover .ui_btns button:focus { outline:none 0; }
+span.ui_dialog_icon{display:none}
+.ui_move_temp div { background-color:#214FA3; filter:alpha(opacity=40); opacity:0.4; }/*拖动用的替身对话框*/
+.ui_border { background-color:#2f7cd2; filter:alpha(opacity=30); opacity:0.3 }/*设置外边框透明度*/
+.ui_btns { background-color:#F6F6F6; border-top:solid 1px #DADEE5; text-align:center}
+.ui_btns span, .ui_btns button { background-color:transparent;  background-repeat:no-repeat; }
+.ui_btns span { padding:0 0 0 5px; overflow:hidden; background-position:left -42px; }
+.ui_btns button { height:21px; line-height:21px; padding:0 10px 0 5px; max-width:200px; border:none 0; background-position:right 0; }
+.ui_btns span:hover { background-position:left -63px; }
+.ui_btns span:hover button { background-position:right -21px;}
+.ui_content_m .ui_content{ padding:10px 1px; margin:0; width:100%} 
+/*
+主题拓展参数[可添加组合在'style'参数中]
+可用来支持消息类型图标等
+*/
+.ui_dialog_icon {display:inline-block; *zoom:1; *display:inline; background-repeat:no-repeat; }
+/*警告消息*/
+.alert .ui_dialog_icon { margin-right:10px; width:48px; height:48px; background-position:0 -96px; }
+/*询问消息*/
+.confirm .ui_dialog_icon { margin-right:10px; width:48px; height:48px; background-position:0 -144px; }
+/*错误消息*/
+.error .ui_dialog_icon { margin-right:10px; width:48px; height:48px; background-position:0 -48px; }
+/*成功消息*/
+.succeed .ui_dialog_icon { margin-right:10px; width:48px; height:48px; background-position:0 0; }
+
+.none_icon .ui_dialog_icon{display:none}
+/*去除所有背景*/
+.noSkin .ui_border, .noSkin .ui_title_wrap, .noSkin .ui_dialog_icon { display:none; }
+.noSkin .ui_bottom_wrap { display:none; *display:block; *height:0; overflow:hidden; }
+* html .noSkin .ui_btns { height:0; overflow:hidden; position:absolute; left:-99999em; }
+.noSkin .ui_content { margin:0; }
+.noSkin .ui_dialog_main { background:transparent;}
+
+
+.dialog{font-size:0px;height:0px;width:0px;line-height:0px;}

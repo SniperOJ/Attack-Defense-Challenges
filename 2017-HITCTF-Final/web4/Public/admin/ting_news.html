@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>资讯列表管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/jquery/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+<script language="javascript">
+function ting_news($nid,$type,$lastdid){
+	$.ajax({
+		type: 'get',
+		cache: false,
+		url: "?s=Admin-ting-Ajax-type-"+$type+"-sid-1-vid-{$vid}-nid-"+$nid+"-lastdid-"+$lastdid,
+		timeout: 3000, 
+		success:function($html){
+			$('#tinghtml').html($html);
+		}
+	});
+}
+</script>
+<style>
+ul{ float:left; text-align:left; width:100%; overflow: hidden; position:relative}
+ul li{ float:left;  margin-left:5px; line-height:21px; height:21px; clear:both; color:#999}
+ul li span{ position:absolute; right:5px;}
+ul li label{ float:left; margin-right:5px}
+.count{color:#FF0000; padding:0px 2px}
+a.up{color:green; }
+a.down{ color:red; }
+a.adds{ color:blue}
+</style>
+<script language="javascript">
+$(document).ready(function(){
+	ting_news(0,'show',0);
+})
+</script>
+</head>
+<body class="body" style="color:#333333; font-size:13px">
+<div style="width:850px; height:480px">
+<div style="float:left; width:390px">
+<table border="0" cellpadding="0" cellspacing="0" class="table" style="margin-bottom:5px">
+    <thead><tr class="ct"><th class="tr">已收录资讯列表(<label id="count" class="count"></label>)篇</th></tr></thead>
+    <tr><td class="r" ><ul id="tinghtml" style="width:100%;height:338px;overflow-y:auto">loading...</ul></td></tr>
+</table>
+</div>
+<div style="float:left; width:410px">
+<table border="0" cellpadding="0" cellspacing="0" class="table">
+  <thead><tr class="ct"><th class="tr">待收录资讯列表</th></tr></thead>
+  <tr><td class="r"><ul style="width:100%;height:338px;overflow-y:auto"><volist name="list" id="ppting"><li style="width:100%">[{$ppting.news_cid|getlistname}]<span><a href="javascript:void(0);" onclick="ting_news({$ppting.news_id},'add',0);$(this).css({color:'#999'});" class="adds">添加</a></span><label>{$ppting.news_id}</label><a href="{:gxl_data_url('news',$ppting['news_id'],$ppting['news_cid'],$ppting['news_name'],1,'')}" target="_blank" title="{$ppting.news_name}">{$ppting.news_name|msubstr=0,26}</a></li></volist></ul></td></tr> 
+</table>
+</div>
+<div style="clear:both; line-height:35px;" class="pages">{$pages}</div>
+<div style="margin-top:5px;"><form action="?s=Admin-News-Show" method="post" name="myform" id="myform"><input name="vid" type="hidden" value="{$vid}" /><input type="text" name="wd" id="wd" maxlength="20" value="{$wd|default='输入关键字搜索资讯'|urldecode}" onClick="this.select();" style="color:#666666"> <input type="button" value="搜索" class="submit" onClick="post('?s=Admin-News-Show');"></form></div>
+</div>
+</body>
+</html>

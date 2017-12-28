@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link type="text/css" href="img/alerts.css" rel="stylesheet" media="screen">
+<link  href="img/style.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>资源管理</title>
+<script src="js/common.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
+</head>
+<body>
+<!--当前导航-->
+<script type="text/JavaScript">if(parent.$('admincpnav')) parent.$('admincpnav').innerHTML='后台首页&nbsp;&raquo;&nbsp;会员&nbsp;&raquo;&nbsp;全部会员列表 ';</script>
+<?php
+	$csqlStr="select count(*) as dd from sea_member";
+    $row = $dsql->GetOne($csqlStr);
+    if(is_array($row)){
+        $TotalResult = $row['dd'];
+    }else{
+        $TotalResult = 0;
+    }
+?>
+<div class="r_main">
+       
+   
+			<div class="r_content">
+				<div class="r_content_1">
+                <form action="admin_members.php?ac=delall2" method="post"  name="delform" id="delform" >
+      <table class="tb_style" id="tb_search_members" width="100%" border="0" cellpadding="0" cellspacing="0" >
+      <tr class="thead">
+        <td colspan="9" class="td_title">全部 <?php echo $TotalResult; ?> 名用户列表</td>
+      </tr>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0"  class="tb_style">
+<tr height="30" ><td class="td_border">&nbsp;&nbsp;&nbsp;&nbsp;</td><td class="td_border">UID</td><td class="td_border">用户名</td><td class="td_border">邮箱</td><td class="td_border">注册时间</td><td class="td_border">注册IP</td><td class="td_border">用户组</td><td class="td_border">用户点数</td><td class="td_border">会员状态</td><td class="td_border">操作</td></tr>
+
+<?php
+$numPerPage=20;
+$page = isset($page) ? intval($page) : 1;
+if($page==0) $page=1;
+
+    $TotalPage = ceil($TotalResult/$numPerPage);
+    if ($page>$TotalPage) $page=$TotalPage;
+    $limitstart = ($page-1) * $numPerPage;
+    if($limitstart<0) $limitstart=0;
+	
+$sql="select * from sea_member ORDER BY  id DESC limit $limitstart,$numPerPage";
+	$dsql->SetQuery($sql);
+	$dsql->Execute('al');
+	while($row=$dsql->GetObject('al'))
+	{
+	$rs = $dsql->GetOne("select gname from sea_member_group where gid = ".$row->gid);
+
+?>  
+     <TR  bgcolor="#FBFEFF" style="background-color:#FBFEFF" onmouseover="style.backgroundColor='#E6F2FB'" onmouseout="style.backgroundColor='#FBFEFF'" <?php if($id==$row->id){?> class="editlast"<?php }?> name="topictr" id="topictr<?php echo $row->id;?>" >
+      
+	   <td class="td_border" height="30" ><input class="checkbox" type="checkbox" value="<?php echo $row->id;?>" name="uidarray[]"></td>
+            <td class="td_border" height="30" ><?php echo $row->id;?></td>
+            <td class="td_border" height="30" ><?php echo $row->username;?></td>
+            <td class="td_border" height="30" ><?php echo $row->email;?></td>
+            <td class="td_border" height="30" ><?php echo date('Y-m-d H:i:s',$row->regtime);?></td>
+            <td class="td_border" height="30" ><?php echo $row->regip;?></td>
+            <td class="td_border" height="30" ><?php echo $rs['gname'];?></td>
+            <td class="td_border" height="30" ><?php echo $row->points;?></td>
+            <td class="td_border" height="30" ><?php echo ($row->state?'正常':'禁止');?></td>
+            <td class="td_border" height="30" ><a href="admin_members.php?ac=edit&id=<?php echo $row->id;?>">编辑</a>&nbsp;<a href="admin_members.php?ac=del2&id=<?php echo $row->id;?>" onclick="if(confirm(\'确定删除？操作不可恢复\')){return true;}else{return false;}">删除</a></td>
+	  
+	  
+    </TR>
+<?php }?>
+							
+                  
+      <tr>
+      <td class="td_border" colspan="10">
+      <input class="checkbox" type="checkbox" onclick="checkAll(this.checked,'input','uidarray[]')" name="chkall">
+删? &nbsp;
+<input id="submit_submit" class="rb1" type="submit" value="提交" title="按 Enter 键可随时提交你的修改" name="submit">
+      <td></tr>
+                  
+     </form>
+<tr>
+          <td height="30" colspan="11" class="td_border">
+            <div class="cuspages">
+              <div class="pages"> &nbsp;页次：<?php echo $page;?>/<?php echo $TotalPage;?> 每页<?php echo $numPerPage;?> 总收录数据<?php echo $TotalResult;?>条 <a href="?page=1<?php echo $jumpurl ?>">首页</a> <a href="?page=<?php echo ($page-1);?><?php echo $jumpurl ?>">上一页</a> <?php echo makePageNumber($page, 10, $TotalPage, "videolist");?> <a href="?page=<?php echo ($page+1);?><?php echo $jumpurl ?>">下一页</a> <a href="?page=<?php echo $TotalPage;?><?php echo $jumpurl ?>">尾页</a>&nbsp;&nbsp;跳转
+                <input type="text" id="skip" value="" onkeyup="this.value=this.value.replace(/[^\d]+/,'')" style="width:40px"/>
+                &nbsp;&nbsp;
+                <input type="button" value="确定" class="btn" onclick="location.href='?page='+ document.getElementById('skip').value +'&v_recycled=<?php echo $v_recycled ?>&v_isunion=<?php echo $v_isunion ?>&order=<?php echo $order;?>&type=<?php echo $type;?>&keyword=<?php echo $keyword;?>&v_state=<?php echo $v_state;?>&v_commend=<?php echo $v_commend;?>&repeat=<?php echo $repeat;?>&topic=<?php echo $topic;?>&playfrom=<?php echo $playfrom;?>&downfrom=<?php echo $downfrom;?>&empty=<?php echo $empty;?>&rlen=<?php echo $rlen;?>&jqtype=<?php echo $jqtype;  ?>&area=<?php echo $area;  ?>&year=<?php echo $year;  ?>&yuyan=<?php echo $yuyan;  ?>&letter=<?php echo $letter;  ?>&commend=<?php echo $commend;  ?>&ver=<?php echo $ver;  ?>';"/>
+              </div>
+            </div>
+ </td>
+        </tr>	 
+</table> 
+
+		</div>
+	</div>
+</div>
+
+
+<?php
+viewFoot();
+?>
+
+
+</body>
+</html>

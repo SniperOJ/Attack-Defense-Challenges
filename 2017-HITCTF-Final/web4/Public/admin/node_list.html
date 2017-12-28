@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>采集节点项目管理-{&web_name}</title>
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/admin/miaopuo.com/admin/css/admin_style.css'>
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/admin/miaopuo.com/admin/css/collect.css'>
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/admin/miaopuo.com/admin/css/dialog.css'>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/admin/miaopuo.com/admin/js/jquery.js"></script>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/admin/miaopuo.com/admin/js/admin_all.js"></script>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/admin/miaopuo.com/admin/js/collect.js"></script>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/admin/miaopuo.com/admin/js/dialog.js"></script>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/admin/miaopuo.com/admin/js/formvalidator.js"></script>
+<script type="text/javascript">
+<!--
+function ColOne(nid)
+{ 
+	location = "?s=Admin-Customcollect-ColRun-action-real-type-all-stime-"+encodeURI(document.getElementById('stime'+nid).value)+"-nid-"+nid;
+}
+
+-->
+</script>
+<style type="text/css">
+<!--
+.tr strong a{color:#f30;}
+-->
+</style>
+</head>
+<body>
+<table width="98%" border="0" cellpadding="5" cellspacing="1" class="table">
+<tr>
+  <td colspan="6" class="table_title">
+  <ul>
+  <li><a  href="?s=Admin-Customcollect-ListShow">采集节点管理</a> </li>
+  <li><a href="?s=Admin-Customcollect-Add">添加采集节点</a></li>
+    <li><a href="?s=Admin-Customcollect-Manage-action-import">导入采集规则</a></li>
+  </ul>
+  </td>
+</tr>
+<notempty name="cache"><tr class="tr"><td colspan="6"><strong><a href="{$cache}">上次有采集任务没有完成，是否接着采集?</a></strong></td></tr></notempty>
+<form action="" method="post" id="gxform" name="gxform">
+<tr align="center" class="list_head">
+<td width="2%"></td>
+<td width='5%'>ID</td>
+<td width='15%'>节点项目名称</td>
+<td width='30%'>采集目标地址</td>
+<td width='15%'>最后采集时间</td>
+<td width=''>操作</td>
+</tr>
+<volist name='ArrList' id='vo'>
+<tr class="tr" align="center">
+<td  width="2%"><input name='ids[]' type='checkbox' value='{$vo.id}' class="noborder"></td>
+<td  width='5%'>{$vo.id}</td>
+<td align="left">{$vo.name}</td>
+<td class="td">{$vo.urlpage}</td>
+<td class="td"><if condition="$vo['lastdate'] eq 0">从未采集过<else/>{$vo.lastdate|date='Y-m-d H:i:s',###}</if></td>
+<td class="td" id='action'><span style="color:#333;">间隔 <input type="text" id="stime{$vo.id}" name="stime" value="3"  style="width:10px;height:16px;line-height:16px;"/> s</span><a href="javascript:ColOne({$vo.id});">采集</a>|<a href="?s=Admin-Customcollect-ColRun-action-demo-type-all-nid-{$vo.id}">预览</a>|<a href="?s=Admin-Customcollect-Add-nid-{$vo.id}">编辑</a><!--|<a  href="javascript:void(0)"  onclick="copy_spider({$vo.id})">复制</a>-->|<a  href="?s=Admin-Customcollect-Manage-action-copy-nid-{$vo.id}">复制</a>|<a href="?s=Admin-Customcollect-Manage-action-export-nid-{$vo.id}">导出</a>|<a href="?s=Admin-Customcollect-Manage-action-del-nid-{$vo.id}"  onClick="return confirm('确定删除该作品吗?')" title="点击删除作品">删除</a></td>
+</tr>
+</volist>
+
+<tr class="tr"><td colspan="8" class="pages">{$pagelist['listpages']}</td></tr>
+<tr class="tr"><td colspan="8"><span><input type="button" id="checkall" value="全/反选" class="bginput"></span><span><input type="button" value="导入采集规则" class="bginput" onClick="gxform.action='?s=Admin-Video-Statusall-sid-0';" /></span><span><input type="button" value="采集选中节点" class="bginput" onClick="gxform.action='?s=Admin-Video-Statusall-sid-0';" /></span><span><input type="submit" value="批量删除" onClick="if(confirm('删除后将无法还原,确定要删除吗?')){gxform.action='?s=Admin-Customcollect-Manage-action-delall';}else{return false}" class="bginput"/></span></td>
+</tr>
+</form>
+</table>
+<!--连载框 -->
+<div id="msg_tbc" class="tbc-block"></div>
+<!--浮动层 -->
+<include file="dialog" />
+<style>#dia_title{height:25px;line-height:25px}.jqmWindow{height:300px;width:500px;}</style>
+<script language="JavaScript" type="text/javascript">
+function copy_spider(id) {
+	art.dialog({id:'test'}).close();
+	art.dialog({lock: true,title:'复制采集节点',id:'test',content:'<input type="text" name="data[name]" >',iframe:'?s=Admin-Customcollect-Manage-action-copy-nid-'+id,width:'350',height:'125'}, function(){var d = art.dialog({id:'test'}).data.iframe;var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){art.dialog({id:'test'}).close()});
+}
+
+</script>
+</body>
+</html>

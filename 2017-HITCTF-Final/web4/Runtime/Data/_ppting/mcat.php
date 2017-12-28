@@ -1,0 +1,1 @@
+a:1:{i:0;a:5:{s:7:"list_id";s:1:"2";s:9:"list_name";s:12:"有声小说";s:8:"list_oid";s:1:"1";s:3:"son";b:0;s:5:"total";i:0;}}

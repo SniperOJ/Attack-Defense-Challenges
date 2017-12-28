@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>专题列表管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/jquery/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+<script language="javascript">
+$(document).ready(function(){
+	$gxlcms.show.table();
+});
+</script>
+<style>
+ul{ float:left; text-align:left}
+ul li{ float:left; width:260px; margin-left:10px; line-height:21px; height:21px}
+ul li span{ float:right;}
+</style>
+</head>
+<body class="body" style="color:#333333; font-size:13px">
+<ul><volist name="list_ting" id="ppting"><li><span>(移除)</span>{$ppting.ting_name|msubstr=0,10}</li></volist></ul>
+</body>
+</html>

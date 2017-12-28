@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="3.7" method="upgrade">
+	<name>Chinese Simplified (zh-CN) Language Pack</name>
+	<packagename>zh-CN</packagename>
+	<version>3.8.0.1</version>
+	<creationDate>2017年9月</creationDate>
+	<author>Joomla! 中文社区(www.ijoomla.cn) - 周永建</author>
+	<authorEmail>zhou_yongjian@hotmail.com</authorEmail>
+	<authorUrl>www.ijoomla.cn</authorUrl>
+	<copyright>Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<url>https://github.com/joomla/joomla-cms</url>
+	<packager>Joomla! Project</packager>
+	<packagerurl>www.joomla.org</packagerurl>
+	<description><![CDATA[Joomla！简体中文(zh-CN) 语言]]></description>
+	<blockChildUninstall>true</blockChildUninstall>
+	<files>
+		<folder type="language" client="site" id="zh-CN">site_zh-CN</folder>
+		<folder type="language" client="administrator" id="zh-CN">admin_zh-CN</folder>
+	</files>
+	<updateservers>
+		<server type="collection" priority="1" name="Accredited Joomla! Translations">
+			https://update.joomla.org/language/translationlist_3.xml
+		</server>
+	</updateservers>
+</extension>

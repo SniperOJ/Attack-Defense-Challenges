@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>定时采集生成器</title>
+<style type="text/css">
+table{ border:1px solid #F0F0F0; font-size:12px; width:650px; height:350px; padding:5px}
+input{ text-align:center}
+.w50{ width:50px}
+.w500{ width:500px}
+</style></head>
+<body>
+<form action="?s=plus-dswin-wait" method="post">
+<table border='0' cellpadding='0' cellspacing='0' align='center'>
+<tr><th colspan="2" style="height:60px;background:#DEEDFE;color:#0000FF;font-size:16px">由Gxlcms提供定时采集插件Windows服务器版</th></tr>
+<tr>
+<td width="50%" rowspan="5"><script language="javascript" src="http://api.gxlcms.com/api/gxlcms_ds.js?{$rand}"></script></td>
+<td>采集抓取频率(分钟/次)： <input name="ds[caiji]" type="text"  value="4" class="w50"/></td>
+</tr>
+<tr>
+  <td>内容生成频率(分钟/次)： <input name="ds[data]" type="text"  value="6" class="w50"/></td>
+</tr>
+<tr>
+  <td>首页生成频率(分钟/次)： <input name="ds[index]" type="text"  value="15" class="w50"/></td>
+</tr>
+<tr>
+  <td>栏目生成频率(分钟/次)： <input name="ds[list]" type="text"  value="120" class="w50"/></td>
+</tr>
+<tr>
+  <td>注：不需要定时操作的模块,请填写0</td>
+</tr>
+<tr><td colspan="2" ></td></tr>
+<tr><td colspan="2" style="text-align:center"><input name="" type="submit"  value="执行定时任务"/></td></tr>
+</table>
+</form>
+</body>
+</html>

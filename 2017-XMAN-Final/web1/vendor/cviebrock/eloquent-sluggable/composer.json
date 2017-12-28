@@ -1,0 +1,30 @@
+{
+	"name": "cviebrock/eloquent-sluggable",
+	"description": "Easy creation of slugs for your Eloquent models in Laravel 4.",
+	"keywords": ["laravel","eloquent","slug"],
+	"homepage": "https://github.com/cviebrock/eloquent-sluggable",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Colin Viebrock",
+			"email": "colin@viebrock.ca"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0",
+		"illuminate/config": "4.*",
+		"illuminate/database": "4.*",
+		"illuminate/support": "4.*"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "4.0.*",
+		"orchestra/testbench": "2.*",
+		"laravelbook/ardent": "dev-master"
+	},
+	"autoload": {
+		"psr-0": {
+			"Cviebrock\\EloquentSluggable": "src/"
+		}
+	},
+	"minimum-stability": "stable"
+}

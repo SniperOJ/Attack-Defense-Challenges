@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>后台用户管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/jquery/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/editor/kindeditor-min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/editor/zh_CN.js"></script>
+<script language="javascript">
+var resizediv = function() { 
+	$leftwidth = $(window).width()/2-120;
+	$('.jqmWindow').css({ left: $leftwidth});
+}
+$(document).ready(function(){
+	$("#myform").submit(function(){
+		if($gxlcms.form.empty('myform','special_name') == false){
+			return false;
+		}
+	});
+	$("#tabs>a").click(function(){
+		var no = $(this).attr('id');
+		var n = $("#tabs>a").length;
+		showtab('tabs',no,n);
+		$("#tabs>a").removeClass("on");
+		$(this).addClass("on");
+		return false;
+	});	
+	$(window).resize(resizediv);//窗口大小变化时
+	resizediv();
+});
+</script>
+</head>
+<body class="body">
+<!--图片预览框-->
+<div id="showpic" class="showpic" style="display:none;"><img name="showpic_img" id="showpic_img" width="120" height="160"></div>
+<gt name="special_id" value="0">
+  <form name="update" action="?s=Admin-Special-Update" method="post" name="myform" id="myform">
+  <input type="hidden" name="special_id" value="{$special_id}">
+  <else/>
+  <form name="add" action="?s=Admin-Special-Insert" method="post" name="myform" id="myform">
+</gt>
+<div class="title">
+	<div class="tabs" id="tabs"><a href="javascript:void(0)" class="on" id="1">{$templatetitle}专题</a><a href="javascript:void(0)" id="2">其它设置</a></div>
+    <div class="right"><a href="?s=Admin-Special-Show">返回专题管理</a></div>
+</div>
+<div class="form">
+<table border="0" cellpadding="0" cellspacing="0" class="table" id="tabs1">
+<input name="special_vids" type="hidden" value="{$special_vids}" />
+<input name="special_nids" type="hidden" value="{$special_nids}" />
+  <tr>
+    <td class="tl">专题名称：</td>
+    <td class="tr"><ul><input type="text" name="special_name" id="special_name" value="{$special_name}" maxlength="255" error="* 名称不能为空" class="w300"><span id="special_name_error">*</span></ul><notempty name="special_id"><ul><a href="#" onclick="divwindow('?s=Admin-Ting-Show-tid-{$special_id}','添加作品到专题');" title="点击查看内容">收录作品({$countting})</a></ul><ul><a href="#" onclick="divwindow('?s=Admin-News-Show-tid-{$special_id}','添加资讯到专题');" title="点击查看内容">收录资讯({$countnews})</a></ul></notempty></td>
+  </tr>
+    <tr>
+    <td class="tl">明星名字：</td>
+    <td class="tr"><ul><input type="text" name="special_mx" id="special_mx" value="{$special_mx}" maxlength="50" error="* 名称不能为空" class="w80">*使用明星模版自动获取明星作品,设置权重5星,并在：其他设置-独立模板填写独立模版：gxl_special_mx (注意目前只有喵哣模版有此模版)</ul></td>
+  </tr>
+  <tr>
+    <td class="tl">专题LOGO：</td>
+    <td class="tr"><ul><input type="text" name="special_logo" id="special_logo" value="{$special_logo}" maxlength="255" class="w300" onMouseOver="if(this.value)showpic(event, this.value,'{$Think.config.upload_path}/');" onMouseOut="hiddenpic();"></ul><ul><iframe src="?s=Admin-Upload-Show-sid-special-fileback-special_logo" scrolling="no" topmargin="0" width="270" height="26" marginwidth="0" marginheight="0" frameborder="0" align="left"></iframe></ul></td>
+  </tr>
+  <tr>
+    <td class="tl">专题Banner：</td>
+    <td class="tr"><ul><input type="text" name="special_banner" id="special_banner" value="{$special_banner}" maxlength="255" class="w300" onMouseOver="if(this.value)showpic(event, this.value,'{$Think.config.upload_path}/');" onMouseOut="hiddenpic();"></ul><ul><iframe src="?s=Admin-Upload-Show-sid-special-fileback-special_banner" scrolling="no" topmargin="0" width="270" height="26" marginwidth="0" marginheight="0" frameborder="0" align="left"></iframe></ul></td>
+  </tr>
+  <tr>
+    <td class="tl">SEO关键词：</td>
+    <td class="tr"><ul><input type="text" name="special_keywords" id="special_keywords" value="{$special_keywords}" maxlength="255" class="w400">&nbsp;</ul></td>
+  </tr>
+  <tr>
+    <td class="tl">SEO描述信息：</td>
+    <td class="tr"><ul><input type="text" name="special_description" id="special_description" value="{$special_description}" maxlength="255" class="w400">&nbsp;</ul></td>
+  </tr>   
+  <tr>
+    <td class="tl">专题简介：</td>
+    <td class="tr padding-5050"><textarea name="special_content" id="content" style="width:99%;height:300px;">{$special_content}</textarea></td>
+  </tr> 
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="table" id="tabs2" style="display:none">
+  <tr>
+    <td class="tl">专题拼音：</td>
+    <td class="tr"><input type="text" name="special_letters" id="special_letters" value="{$special_letters}" maxlength="25" class="w150"></td>
+  </tr>   
+  <tr>
+    <td class="tl">推荐星级：</td>
+    <td class="tr" id="abc"><input name="special_stars" id="special_stars" type="hidden" value="{$special_stars}"><volist name="special_starsarr" id="ajaxstar"><img src="__PUBLIC__/images/admin/star{$ajaxstar}.gif" onClick="addstars('news',{$i});" id="star_{$i}" class="navpoint"></volist></td>
+  </tr>
+  <tr>
+    <td class="tl">新闻状态：</td>
+    <td class="tr"><select name="special_status" class="w70"><option value="1">显示</option><option value="0" <eq name="special_status" value="0">selected</eq>>隐藏</option></select></td>
+  </tr>  
+  <tr>
+    <td class="tl">标题颜色：</td>
+    <td class="tr" id="abc"><select name="special_color" id="special_color" class="w70"><option>颜色</option>                               
+    <option value='#000000' style='background-color:#000000' <eq name="special_color" value="#000000">selected</eq>></option>
+    <option value='#FFFFFF' style='background-color:#FFFFFF' <eq name="special_color" value="#FFFFFF">selected</eq>></option>
+    <option value='#008000' style='background-color:#008000' <eq name="special_color" value="#008000">selected</eq>></option>
+    <option value='#FFFF00' style='background-color:#FFFF00' <eq name="special_color" value="#FFFF00">selected</eq>></option>
+    <option value='#FF0000' style='background-color:#FF0000' <eq name="special_color" value="#FF0000">selected</eq>></option>
+    <option value='#0000FF' style='background-color:#0000FF' <eq name="special_color" value="#0000FF">selected</eq>></option>
+    <option value=''>无色</option></select></td>
+  </tr>      
+  <tr>
+    <td class="tl">总人气：</td>
+    <td class="tr"><input type="text" name="special_hits" id="special_hits" maxlength="15" value="{$special_hits}" class="w50"></td>
+  </tr> 
+  <tr>
+    <td class="tl">月人气：</td>
+    <td class="tr"><input type="text" name="special_hits_month" id="special_hits_month" maxlength="15" value="{$special_hits_month}" class="w50"></td>
+  </tr> 
+  <tr>
+    <td class="tl">周人气：</td>
+    <td class="tr"><input type="text" name="special_hits_week" id="special_hits_week" maxlength="15" value="{$special_hits_week}" class="w50"></td>
+  </tr>
+  <tr>
+    <td class="tl">日人气：</td>
+    <td class="tr"><input type="text" name="special_hits_day" id="special_hits_day" maxlength="15" value="{$special_hits_day}" class="w50"></td>
+  </tr> 
+  <tr>
+    <td class="tl">评分值：</td>
+    <td class="tr"><input type="text" name="special_gold" id="special_gold" value="{$special_gold}" maxlength="4" class="w50"></td>
+  </tr> 
+  <tr>
+    <td class="tl">评分人数：</td>
+    <td class="tr"><input type="text" name="special_golder" id="special_golder" value="{$special_golder}" maxlength="8" class="w50"></td>
+  </tr> 
+  <tr>
+    <td class="tl">顶：</td>
+    <td class="tr"><input type="text" name="special_up" id="special_up" value="{$special_up}" maxlength="8" class="w50"></td>
+  </tr>
+  <tr>
+    <td class="tl">踩：</td>
+    <td class="tr"><input type="text" name="special_down" id="special_down" value="{$special_down}" maxlength="8" class="w50"></td>
+  </tr> 
+  <tr>
+    <td class="tl">时间：</td>
+    <td class="tr"><input type="text" name="special_addtime" id="special_addtime" maxlength="15" value="{$special_addtime|date='Y-m-d H:i:s',###}" class="w150"> <input name="checktime" type="checkbox" style="border:none;width:auto" value="1" {$checktime} title="勾选则使用系统当前时间"></td>
+  </tr>
+  <tr>
+    <td class="tl">独立模板：</td>
+    <td class="tr"><input type="text" name="special_skin" id="special_skin" value="{$special_skin}" maxlength="25" class="w150"></td>
+  </tr>   
+</table>
+<ul class="footer">
+	<input type="submit" name="submit" value="提交"> <input type="reset" name="reset" value="重置">
+</ul>
+</div>
+</form>
+<include file="./Public/admin/plus_kedit.html" />
+<include file="./Public/admin/plus_jqmodal.html" />
+<style>
+#dia_title{height:25px;line-height:25px}
+.jqmWindow{height:500px;width:800px;top:10px;left:310px;overflow:hidden}
+</style>
+<include file="./Public/admin/footer.html" />
+</body>
+</html>

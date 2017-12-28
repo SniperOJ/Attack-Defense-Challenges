@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+<title>{$vod_name}</title> 
+<link>{:get_base_url($siteurl,$vod_readurl)}</link> 
+<description><![CDATA["{$vod_content|msubstr=0,200}"]]></description> 
+<language>zh-cn</language> 
+<generator>{$siteurl}</generator> 
+<webmaster>{$eamil}</webmaster> 
+<volist name="vod_playlist" id="ppvod">
+<volist name="ppvod['son']" id="ppvodson">
+<item>
+<title>{$vod_name|htmlspecialchars}{$vod_title|htmlspecialchars}{$ppvodson.playname}</title> 
+<link>{:get_base_url($siteurl,$ppvodson['playurl'])}</link>
+<description><![CDATA["{$vod_name|htmlspecialchars}{$ppvodson.playname}在线观看地址，{:get_base_url($siteurl,$ppvodson['playurl'])}"]]></description>
+<pubDate>{$vod_addtime|date='Y-m-d H:i:s',###}</pubDate>
+<category>{$vod_name}</category> 
+<author>{$vod_actor|htmlspecialchars}</author>
+<comments>{$sitename}</comments>
+</item>
+</volist>
+</volist>
+</channel>
+</rss>

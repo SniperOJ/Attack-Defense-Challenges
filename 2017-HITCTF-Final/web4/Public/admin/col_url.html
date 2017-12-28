@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>作品采集管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/admin/miaopuo.com/admin/css/admin_style.css'>
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/admin/miaopuo.com/admin/css/collect.css'>
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/admin/miaopuo.com/admin/css/dialog.css'>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/admin/miaopuo.com/admin/js/jquery.js"></script>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/admin/miaopuo.com/admin/js/dialog.js"></script>
+<style type="text/css">
+<!--
+.node{ width:90%;margin:auto;}
+
+.info{width:100%; text-align:left;margin-top:20px;}
+.info ul li{float:left;width:150px;}
+.list li{margin-top:4px;padding-left:6px;}
+.list li td{color:#333;font-size:12px;text-align:left;padding-top:0px;}
+.list li a{color:#333;}
+.url td{border:none;}
+.main{padding-bottom:20px;}
+-->
+</style>
+</head>
+<body>
+<div class="main">
+<table width="100%" border="0" cellpadding="5" cellspacing="1" class="table">
+<tr>
+  <td colspan="6" class="table_title">
+  <ul>
+  <li><a  href="?s=Admin-Customcollect-ListShow">采集节点管理</a> </li>
+  <li><a href="?s=Admin-Customcollect-Add">添加采集节点</a></li>
+  <li><a href="?s=Admin-Customcollect-Manage-action-import">导入采集规则</a></li>
+  </ul>
+  </td>
+</tr>
+</table>
+<div class="node">
+<notempty name="ArrUrl.url">
+<div class="info">
+<dt><strong>采集的列表地址：</strong>{$ArrUrl.url_list}</dt>
+<dd>
+<ul>
+<li><small>当前列表共计：{$ArrUrl.total}条记录</small></li>
+<li><small>重复记录：{$ArrUrl.reNum}条</small></li>
+<li><small>新采集记录：{$ArrUrl.newAdd}条</small></li>
+</ul>
+</dd>
+</div>
+<div class="clear"></div>
+<div class="list">
+<ul>
+
+<volist name='ArrUrl.url' id='vo' key="k">
+<li>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="3%">{$k}</td>
+    <td><a href="{$vo.url}" target="_blank">{$vo.url}</a></td>
+  </tr>
+</table>
+</li>
+</volist>
+<!--<php>if($ArrUrl['total_page'] > $ArrUrl['page']){</php><script type="text/javascript">s'?s=Admin-Customcollect-ColDo-type-url-nid-{$ArrUrl.nid}-page-{$ArrUrl.page}'</script><php>}else{</php><script type="text/javascript">alert('采集完成');</script><php>}</php>-->
+</ul>
+</div>
+</notempty>
+<notempty name="con">
+<div class="info">
+<dt><strong>作品来源地址：</strong>{$url}</dt>
+<!--<dd>
+<ul>
+<li><small>待采集作品：{$ArrUrl.total}</small></li>
+<li><small>新采集记录：{$ArrUrl.newAdd}条</small></li>
+</ul>
+</dd>-->
+</div>
+<div class="clear"></div>
+<div class="list">
+<ul>
+
+<volist name='con.base' id='co' key="k">
+<li>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td width="10%">{$key}：</td>
+    <td width="800px" ><div style="width:800px;" class="break">{$co}</div></td>
+  </tr>
+</table>
+</li>
+</volist>
+<li>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td width="10%">播放地址：</td>
+    <td width="800px" class="break">
+    <div style="width:800px;" >
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="url">
+    <volist name='con.playurl' id='url' >
+   <tr><td> {$url}</td></tr>
+    </volist></div></table></td>
+  </tr>
+</table>
+</li>
+
+</ul>
+</div>
+</notempty>
+
+</div>
+</div>
+<eq name='ArrUrl.action' value='real'> 
+<if condition="$ArrUrl['total_page'] gt $ArrUrl['page']"><script type="text/javascript">location.href='?s=Admin-Customcollect-ColRun-action-real-type-all-nid-{$ArrUrl.nid}-page-{$ArrUrl.page}-stime-{$ArrUrl.stime}'</script><else/><script type="text/javascript">art.dialog({																																																														    lock: true,
+	time: 3,
+    content: '地址采集完成,继续采集作品内容!',
+    yesFn: function () {		
+        return true;
+    }
+});location.href='?s=Admin-Customcollect-ColRun-action-real-type-content-nid-{$ArrUrl.nid}-stime-{$ArrUrl.stime}';</script></if>
+</eq >
+
+
+</body>
+</html>

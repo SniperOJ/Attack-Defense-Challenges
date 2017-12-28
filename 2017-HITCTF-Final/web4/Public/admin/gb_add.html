@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>留言修改</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/editor/kindeditor-min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/editor/zh_CN.js"></script>
+</head>
+<body class="body">
+<include file="./Public/admin/header.html" />
+<form action="?s=Admin-Gb-Update" method="post" name="myform" id="myform">
+<div class="title">
+	<div class="left">用户留言信息</div>
+</div>
+<div class="add" style="margin-bottom:5px; border-bottom:none">
+<input type="hidden" name="gb_id" value="{$gb_id}"> 
+<ul style="padding:10px 0px">
+<textarea name="gb_content" style="width:98%;height:150px">{$gb_content|htmlspecialchars|remove_xss|trim}</textarea>
+</ul>
+</div>
+<div class="title">
+	<div class="left">管理员回复信息</div>
+</div>
+<div class="add">
+<ul style="padding:10px 0px;">
+<textarea name="gb_intro" id="content" style="width:98%;height:250px">{$gb_intro}</textarea>
+</ul>
+<ul class="footer fl"><input name='gb_status' type='checkbox' value='1' class="noborder" <eq name="gb_status" value="1">checked</eq>>是否审核 <input type="submit" name="submit" value="提交"> <input type="reset" name="reset" value="重置"></ul>
+</div>
+</form>
+<include file="./Public/admin/plus_kedit.html" />
+<include file="./Public/admin/footer.html" />
+</body>
+</html>

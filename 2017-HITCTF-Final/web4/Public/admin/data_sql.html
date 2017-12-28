@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SQL执行器</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/jquery/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+</head>
+<body class="body">
+<table border="0" cellpadding="0" cellspacing="0" class="table">
+<thead><tr><th class="r">SQL执行器</th></tr></thead>
+<form action="?s=Admin-Data-Upsql" method="post" id="myform" name="myform">
+  <tbody> 
+  <tr>
+  	<td class="r ct" style="padding:10px 0px;"><textarea name="sql" id="sql" type="text" style="height:250px;width:95%;"></textarea></td>
+  </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="2" class="r"><input class="submit" type="submit" name="submit" value="提 交" onClick="return confirm('该操作需要慎重操作,请确定是否执行!')"> <input class="submit" type="reset" name="Input" value="重 置" > <label>除非确定您的SQL语句安全，否则不要轻易在此处运行!</label></td>
+    </tr> 
+    <tr>
+      <td colspan="2" class="r"><span style="color:#FF0000">清空所有作品，并且让ID归0：Truncate table gxl_ting</span>
+  <br> 清空所有新闻，并且让ID归0：Truncate table gxl_news</span></td>
+    </tr> 
+  </tfoot> 
+</form>            
+</table>
+<include file="./Public/admin/footer.html" />
+</body>
+</html>

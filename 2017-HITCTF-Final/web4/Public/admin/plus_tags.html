@@ -1,0 +1,42 @@
+<script language="javascript">
+// 显示标签框
+function showtags($sid){
+	var offset = $(".xy_tag").offset();
+	var left = offset.left;
+	var top = offset.top+30;
+	var html = $.ajax({
+		url: "?s=Admin-Tag-Showajax-sid-"+$sid,
+		async: false
+	}).responseText;
+	$("#showtags").html(html);
+	$("#showtags").css({left:left,top:top,display:""});
+}
+// 添加标签
+function addtag($tag,$sid){
+	if($sid == 1){
+		var val = $('#ting_keywords').val();
+		if(val!=''){
+			val = val+','+$tag;
+		}else{
+			val = $tag;
+		}
+		$('#ting_keywords').val(val);		
+	}else if($sid == 1){
+		var val = $('#news_keywords').val();
+		if(val!=''){
+			val = val+','+$tag;
+		}else{
+			val = $tag;
+		}
+		$('#news_keywords').val(val);			
+	}else{
+		alert('tag error');
+	}
+}
+// 关闭标签框
+function tag_close(){
+	$("#showtags").css('display','none');
+}
+</script>
+<!--标签选择框-->
+<div id="showtags" style="position:absolute;display:none;" class="showtags"><a href="javascript:tag_close()">关闭</a></div>

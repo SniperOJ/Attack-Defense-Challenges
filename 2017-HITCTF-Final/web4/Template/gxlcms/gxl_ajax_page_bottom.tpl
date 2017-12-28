@@ -1,0 +1,1 @@
+{:preg_replace(array('/<em class="prev".*?em>/','/<strong>.*?strong>/','/下一页/','/上一页/'),array('','','&raquo;','&laquo;'),$page)}

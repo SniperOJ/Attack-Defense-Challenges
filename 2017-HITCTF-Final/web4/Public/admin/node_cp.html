@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>复制采集节点-{&web_name}</title>
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/admin/miaopuo.com/admin/css/admin_style.css'>
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/admin/miaopuo.com/admin/css/dialog.css'>
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/admin/miaopuo.com/admin/css/collect.css'>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/admin/miaopuo.com/admin/js/jquery.js"></script>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/admin/miaopuo.com/admin/js/dialog.js"></script>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/admin/miaopuo.com/admin/js/formvalidator.js"></script>
+<script type="text/javascript">
+$(document).ready(
+	function checkData() {			
+	$.formValidator.initConfig({formid:"myform",autotip:true,onerror:function(msg,obj){art.dialog({content:msg,lock:true,width:'200',height:'50'})}});
+	$("#name").formValidator({onshow:"输入名称",onfocus:"请输入名称"}).inputValidator({min:1,onerror:"请输入新的项目名称"});
+	}
+ );
+
+</script>
+</head>
+<body>
+<table width="98%" border="0" cellpadding="5" cellspacing="1" class="table">
+<tr>
+  <td class="table_title">
+  <ul>
+  <li><a  href="?s=Admin-Customcollect-ListShow">采集节点管理</a> </li>
+  <li><a href="?s=Admin-Customcollect-Add">添加采集节点</a></li>
+  <li><a href="?s=Admin-Customcollect-Manage-action-import">导入采集规则</a></li>
+  </ul>
+  </td>
+</tr>
+<tr class="tr"><td><div class="copy_form" id='test'>
+
+<form action="?s=Admin-Customcollect-Manage-action-copy-nid-{$nid}" method="post" name="myform" id="myform">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" >
+ <tr><td width="100px">原采集项目名称：</td><td>{$name}</td></tr>
+  <tr>
+    <td width="100px">新采集项目名称：</td>
+    <td><input type="text" name="name" id="name"  class="input-text" ></input><br/></td>
+  </tr>
+  <tr><td colspan='2' align="center"><input name="dosubmit" type="submit" id="dosubmit" value="提交" class="button"></td></tr>
+</table>
+</form>
+</div></td></tr>
+</table>
+
+</body>
+</html>

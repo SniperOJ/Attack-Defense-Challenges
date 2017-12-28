@@ -1,0 +1,98 @@
+@charset "utf-8";
+body {
+	margin:0px;
+	background-color:#1c2b36;
+	font-size:12px;
+}
+div {
+	margin:0px;
+	padding:0px;
+}
+.logo {
+	width:200px;
+	float:left;
+	text-align:left;
+	margin-top:5px;
+	margin-left:5px;
+}
+.tabs {
+	float:left;
+	width:auto;
+	line-height:normal;
+	padding-top:25px !important;
+	padding-top:27px;
+}
+.tabs li {
+	display:inline;
+	margin:0;
+	padding:0;
+}
+.tabs a {
+	float:left;
+	
+	margin:0;
+	padding:0 0 0 2px;
+	text-decoration:none;
+}
+.tabs a:hover {
+	background-position:0% -42px;
+}
+.tabs a span {
+	float:left;
+	display:block;
+	background-color: #152028;
+padding: 13px 20px 13px 20px;
+color: #E9F4FF;
+}
+.tabs a span {
+	float:none;
+}
+.tabs a:hover span {
+	color:#fff;
+}
+.tabs a:hover span {
+	background-position:100% -42px;
+	color: #333;
+}
+.welcome {
+	color:#FFFFFF;
+	font-size:12px;
+	float:right;
+	padding:20px 20px 0 0;
+}
+.welcome a {
+	color:#FFFFFF;
+	text-decoration:none
+}
+.welcome a:hover {
+	text-decoration:underline
+}
+.tophr{
+	clear:both;
+	width:100%;
+	height:32px;
+	line-height:32px;
+	background-color:#1c2b36;
+}
+.tophr .left{
+	float:left;
+	padding-left:30px;
+	    content: "\f007";
+	color:#fff;
+	font-family:"微软雅黑"
+}
+.tophr .right{
+	float:right;
+	padding-right:20px;
+}
+.tophr a {
+	color: #fff;
+	text-decoration: none;
+}
+.tophr a:hover {
+	color: #ff6600;
+	text-decoration: underline;
+}
+.copyright{
+	background:url(../images/admin/botbg.gif);
+}

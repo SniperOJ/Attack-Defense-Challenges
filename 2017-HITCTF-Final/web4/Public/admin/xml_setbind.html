@@ -1,0 +1,7 @@
+<select name="cid" id="cid">
+<volist name="ting_list" id="ppting">
+<option value="{$ppting.list_id}" <eq name="ppting.list_id" value="$ting_cid">selected</eq>>{$ppting.list_name}</option>
+</volist>
+<option value="">取消绑定</option>
+</select>
+<input class="submit" type="button" value="提 交" onClick="submitbind($('#cid').val(),'{$_GET['bind']}');" style="cursor:pointer"> <input name="button" type="button" value="取 消" class="submit" onClick="hidebind();" style="cursor:pointer">

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>评论修改</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/editor/kindeditor-min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/editor/zh_CN.js"></script>
+</head>
+<body class="body">
+<include file="./Public/admin/header.html" />
+<form action="?s=Admin-Cm-Update" method="post" name="myform" id="myform">
+<div class="title">
+	<div class="left">用户评论信息</div>
+</div>
+<div class="add">
+<input type="hidden" name="cm_id" value="{$cm_id}"> 
+<input type="hidden" name="cm_cid" value="{$cm_cid}">
+<input type="hidden" name="cm_sid" value="{$cm_sid}">
+<input type="hidden" name="cm_uid" value="{$cm_sid}">
+<ul style="padding-bottom:5px">
+<textarea name="cm_content" id="content" style="width:98%;height:300px">{$cm_content|htmlspecialchars|remove_xss|trim}</textarea>
+</ul>
+<ul class="footer fl"><input name='cm_status' type='checkbox' value='1' class="noborder" <eq name="cm_status" value="1">checked</eq>>是否审核 <input type="submit" name="submit" value="提交"> <input type="reset" name="reset" value="重置"></ul>
+</div>
+</form>
+<include file="./Public/admin/plus_kedit.html" />
+<include file="./Public/admin/footer.html" />
+</body>
+</html>

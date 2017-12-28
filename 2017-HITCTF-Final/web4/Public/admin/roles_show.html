@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>角色管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/jquery/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+<script language="javascript">
+function changeurl(sid,star,name,content,pic){
+	self.location.href='?s=Admin-Roles-Show-sid-'+sid+'-star-'+star+'-name-'+name+'-content-'+content+'-pic-'+pic+'-type-{$type}-order-{$order}';
+}
+$(document).ready(function(){
+	$gxlcms.show.table();
+	$('#sid').click(function(){
+		changeurl(1,'','','','');
+	});	
+	$('#star').click(function(){
+		changeurl('',1,'','','');
+	});	
+	$('#name').click(function(){
+		changeurl('','',1,'','');
+	});
+	$('#content').click(function(){
+		changeurl('','','',1,'');
+	});	
+	$('#pic').click(function(){
+		changeurl('','','','',1);
+	});	
+});
+function createhtml(id){
+	var offset = $("#html_"+id).offset();
+	var left = (offset.left/2)+50;
+	var top = offset.top+15;
+	var html = $.ajax({
+		url: '?s=Admin-Create-actorid-id-'+id,
+		async: false
+	}).responseText;
+	$("#htmltags").html(html);
+	$("#htmltags").css({left:left,top:top,display:""});	
+	window.setTimeout(function(){
+		$("#htmltags").hide();
+	},1000);
+}
+</script>
+</head>
+<body class="body">
+<!--生成静态预览框-->
+<div id="htmltags" style="position:absolute;display:none;" class="htmltags"></div>
+<!--图片预览框-->
+<div id="showpic" class="showpic" style="display:none;z-index:9;"><img name="showpic_img" id="showpic_img" width="75" height="75"></div>
+<!--背景灰色变暗-->
+<div id="showbg" style="position:absolute;left:0px;top:0px;filter:Alpha(Opacity=0);opacity:0.0;background-color:#fff;z-index:8;"></div>
+<table border="0" cellpadding="0" cellspacing="0" class="table">
+<form action="?s=Admin-Roles-Show" method="post" name="myform" id="myform">
+<thead><tr><th class="r"><span style="float:left">作品管理(<a href="index.php?s=Admin-Pic-Downactorpic" onClick="if(confirm('请勿在高峰期执行该操作!')){divwindow('?s=Admin-Pic-Downactorpic','下载网络图片');}else{return false}" style="color:#990000;">下载角色图片</a>)</span><span class="right"><a href="?s=Admin-Roles-Add" style="float:right">添加角色</a></span></th></tr></thead>
+<td class="tr ct" style="height:40px"><input type="button" value="所有" class="submit" onClick="changeurl('','','','','');"> <input type="button" name="sid" id="sid" value="无作品ID" class="submit"> <input type="button" name="star" id="star" value="无明星" class="submit"> <input type="button" name="name" id="name" value="空角色" class="submit">  <input type="button" name="content" id="content" value="无描述" class="submit"><input type="button" name="pic" id="pic" value="无图片" class="submit">  
+<select name="q_selectType" id="q_selectType">
+<option value="" >搜索全部</option>
+<option value="actor_vid" >搜索作品ID</option>
+<option value='ting_name' >搜索作品名</option>
+<option value='actor_name' >搜索角色名</option>
+<option value='actor_star' >搜索演员名</option>
+</select> 
+<input type="text" name="wd" id="wd" maxlength="20" value="输入关键字搜索角色明星作品ID作品名" onclick="this.select();" style="color:#666666"><input type="button" value="搜索" class="submit" onclick="post('?s=Admin-Roles-Show');">
+</td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="table">
+
+  <thead>
+    <tr class="ct">
+	 <th class="l" width="90"><span style="float:left">角色ID <eq name="orders" value="actor_id desc"><a href="?s=Admin-Roles-Show-sid-{$sid}-star-{$star}-name-{$name}-content-{$content}-pic-{$pic}-type-id-order-asc"><img src="__PUBLIC__/images/admin/up.gif" border="0" alt="点击按角色ID升序排列"></a><else /><a href="?s=Admin-Roles-Show-sid-{$sid}-star-{$star}-name-{$name}-content-{$content}-pic-{$pic}-type-id-order-desc"><img src="__PUBLIC__/images/admin/down.gif" border="0" alt="点击按角色ID降序排列"></a></eq></span></th>
+      <th class="l" width="90"><span style="float:left">作品ID <eq name="orders" value="actor_vid desc"><a href="?s=Admin-Roles-Show-sid-{$sid}-star-{$star}-name-{$name}-content-{$content}-pic-{$pic}-type-vid-order-asc"><img src="__PUBLIC__/images/admin/up.gif" border="0" alt="点击按作品ID升序排列"></a><else /><a href="?s=Admin-Roles-Show-sid-{$sid}-star-{$star}-name-{$name}-content-{$content}-pic-{$pic}-type-vid-order-desc"><img src="__PUBLIC__/images/admin/down.gif" border="0" alt="点击按作品ID降序排列"></a></eq></span></th>
+      <th class="l" width="150">作品名</th>
+      <th class="l" width="120"><span style="float:left">明星名 <eq name="orders" value="actor_star desc"><a href="?s=Admin-Roles-Show-sid-{$sid}-star-{$star}-name-{$name}-content-{$content}-pic-{$pic}-type-star-order-asc"><img src="__PUBLIC__/images/admin/up.gif" border="0" alt="点击按明星名升序排列"></a><else /><a href="?s=Admin-Roles-Show-sid-{$sid}-star-{$star}-name-{$name}-content-{$content}-pic-{$pic}-type-star-order-desc"><img src="__PUBLIC__/images/admin/down.gif" border="0" alt="点击按明星名降序排列"></a></eq></span></th>
+	  <th class="l" width="150"><span style="float:left">角色名 <eq name="orders" value="actor_name desc"><a href="?s=Admin-Roles-Show-sid-{$sid}-star-{$star}-name-{$name}-content-{$content}-pic-{$pic}-type-name-order-asc"><img src="__PUBLIC__/images/admin/up.gif" border="0" alt="点击按角色名升序排列"></a><else /><a href="?s=Admin-Roles-Show-sid-{$sid}-star-{$star}-name-{$name}-content-{$content}-pic-{$pic}-type-name-order-desc"><img src="__PUBLIC__/images/admin/down.gif" border="0" alt="点击按角色名降序排列"></a></eq></span></th>
+      <th class="l" width="300">角色描述</th>
+      <th class="l" width="50"><span style="float:left">人气 <eq name="orders" value="actor_addtime desc"><a href="?s=Admin-Roles-Show-sid-{$sid}-star-{$star}-name-{$name}-content-{$content}-pic-{$pic}-type-hits-order-asc"><img src="__PUBLIC__/images/admin/up.gif" border="0" alt="点击按人气升序排列"></a><else /><a href="?s=Admin-Roles-Show-sid-{$sid}-star-{$star}-name-{$name}-content-{$content}-pic-{$pic}-type-hits-order-desc"><img src="__PUBLIC__/images/admin/down.gif" border="0" alt="点击按人气降序排列"></a></eq></span></th>
+	  <th class="r" width="120"><span style="float:left">更新时间 <eq name="orders" value="actor_addtime desc"><a href="?s=Admin-Roles-Show-sid-{$sid}-star-{$star}-name-{$name}-content-{$content}-pic-{$pic}-type-addtime-order-asc"><img src="__PUBLIC__/images/admin/up.gif" border="0" alt="点击按更新时间升序排列"></a><else /><a href="?s=Admin-Roles-Show-sid-{$sid}-star-{$star}-name-{$name}-content-{$content}-pic-{$pic}-type-addtime-order-desc"><img src="__PUBLIC__/images/admin/down.gif" border="0" alt="点击按更新时间降序排列"></a></eq></span></th>
+	  <th class="r" width="120">操作</th>
+    </tr>
+  </thead>
+  <volist name="list_roles" id="ppting">
+  <tbody>
+  <tr>
+  <td class="l ct">
+      <label class="ting_input_show fl"><input name='ids[]' type='checkbox' value='{$ppting.actor_id}' class="noborder" checked></label>
+  <label class="fl">{$ppting.actor_id}&nbsp;</label>
+  <label class="fl ting_ids"><if condition="C('url_html') gt 0"><a href="javascript:createhtml('{$ppting.actor_id}');" id="html_{$ppting.actor_id}"><font color="green">生成</font></a></if></label>
+  </td>
+  <td class="l ct"><a href="{$ppting.tingid_url}">{$ppting.actor_vid}</a></td>
+  
+  <td class="l ct"><a href="{$ppting.ting_readurl}" target="_blank" onMouseOver="showpic(event,'{$ppting.ting_pic}','{$Think.config.upload_path}/');" onMouseOut="hiddenpic();">{$ppting.ting_name}</a></td>
+  
+ <td class="l ct"><a href="{$ppting.actor_star|get_star_url=###,'a'}" target="_blank" onMouseOver="showpic(event,'{$ppting.star_pic}','{$Think.config.upload_path}/');" onMouseOut="hiddenpic();">{$ppting.actor_star}</a></td>
+      
+  <td class="l ct"><a href="{$ppting.role_readurl}" target="_blank" onMouseOver="showpic(event,'{$ppting.actor_picurl}','{$Think.config.upload_path}/');" onMouseOut="hiddenpic();">{$ppting.actor_name}</a></td>
+    
+    <td class="l ct"><empty name="ppting.actor_content">暂无对此角色的描述。<else />{$ppting.actor_content|msubstr=0,20,true}</empty></td>
+    <td class="l ct">{$ppting.actor_hits}</td>
+	<td class="l ct">{$ppting.actor_addtime|date='Y-m-d H:i:s',###}</td>
+    <td class="r ct"><a href="?s=Admin-Roles-Add-id-{$ppting.actor_id}" title="查看所标识的具体数据">编辑</a>&nbsp;<a href="?s=Admin-Roles-Del-id-{$ppting.actor_id}" onClick="return confirm('确定删除?')"  title="删除明星资料">删除</a>&nbsp;<eq name="ppting.actor_status" value="1"><a href="?s=Admin-Roles-Status-id-{$ppting.actor_id}-value-0" title="点击隐藏作品">隐藏</a><else /><a href="?s=Admin-Roles-Status-id-{$ppting.actor_id}-value-1" title="点击显示作品"><font color="red">显示</font></a></eq></td>
+  </tr>
+  </tbody>
+  </volist>   
+<tr>
+      <td colspan="10" class="r pages">{$pages}</td>
+    </tr>  
+  <tfoot>
+    <tr>
+      <td colspan="10" class="r"><input type="button" value="全选" class="submit" onClick="checkall('all');"> <input name="" type="button" value="反选" class="submit" onClick="checkall();"> <eq name="Think.config.url_html" value="1"><input type="button" value="生成静态" name="createhtml" id="createhtml" class="submit" onClick="post('?s=Admin-Roles-Create');"/></eq> <input type="button" value="批量删除" class="submit" onClick="if(confirm('删除后将无法还原,确定要删除吗?')){post('?s=Admin-Roles-Delall');}else{return false;}"><input type="button" value="批量显示" class="submit" onClick="{post('?s=Admin-Roles-Statusall-value-1');}"><input type="button" value="批量隐藏" class="submit" onClick="{post('?s=Admin-Roles-Statusall-value-0');}"></td>
+    </tr>  
+  </tfoot>
+  </form>
+</table>
+<include file="./Public/admin/footer.html" />
+</body>
+</html>

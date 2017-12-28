@@ -1,0 +1,12 @@
+<volist name="list_ting" id="ppting"><li><span>
+<gt name='ppting.newsrel_oid' value='$min_oid'>
+<a href="javascript:void(0);" onclick="news_ting({$ppting.ting_id},'down',{$list_ting[$key+1]['ting_id']})" class="up" title="排序往下一位">下</a>&nbsp;
+</gt>
+<lt name='ppting.newsrel_oid' value='$max_oid'>
+<a href="javascript:void(0);" onclick="news_ting({$ppting.ting_id},'up',{$list_ting[$key-1]['ting_id']})" class="down" title="排序往上一位">上</a>&nbsp;
+</lt>
+<a href="javascript:void(0);" onclick="news_ting({$ppting.ting_id},'del',{$ppting.ting_id});" title="从新闻里移除">删</a>
+</span>
+<label>{$ppting.ting_id}</label><a href="{:gxl_data_url('ting',$ppting['ting_id'],$ppting['ting_cid'],$ppting['ting_name'],1,'')}" target="_blank" title="{$ppting.ting_name} 主演:{$ppting.ting_actor}">{$ppting.ting_name|msubstr=0,26}</a></li>
+</volist>
+<script language="javascript">$('#count').html('{$count}');</script>

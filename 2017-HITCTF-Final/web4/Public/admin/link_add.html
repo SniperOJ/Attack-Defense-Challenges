@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>添加友情链接</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/jquery/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+<script language="javascript">
+$(document).ready(function(){
+	$("#myform").submit(function(){
+		if($gxlcms.form.empty('myform','link_name') == false){
+			return false;
+		}
+		if($gxlcms.form.empty('myform','link_url') == false){
+			return false;
+		}		
+	});
+});
+</script>
+</head>
+<body class="body">
+<!--图片预览框-->
+<div id="showpic" class="showpic" style="display:none;"><img name="showpic_img" id="showpic_img" width="120" height="160"></div>
+<include file="./Public/admin/header.html" />
+<div class="title">
+	<div class="left">{$templatetitle}友情链接</div>
+    <div class="right"><a href="?s=Admin-Link-Show">友情链接管理</a></div>
+</div>
+<div class="add">
+	<gt name="link_id" value="0">
+    <form action="?s=Admin-Link-Update" method="post" name="myform" id="myform">
+    <input type="hidden" name="link_id" value="{$link_id}">
+    <else/>
+    <form action="?s=Admin-Link-Insert" method="post" name="myform" id="myform">
+    </gt>
+    <ul><li class="left">网站名称：</li>
+    	<li class="right"><input type="text" name="link_name" id="link_name" value="{$link_name}" class="w250" error="* 请填写网站名称!"><span id="link_name_error">*</span></li>
+    </ul>
+    <ul><li class="left">链接地址：</li>
+    	<li class="right"><input type="text" name="link_url" id="link_url" value="{$link_name|default='http://'}" class="w250" error="* 请填写链接地址!"><span id="link_url_error">*</span></li>
+    </ul>
+    <ul><li class="left">Logo链接：</li>
+    	<li class="right"><input type="text" name="link_logo" id="link_logo" value="{$link_logo}" class="w250" onMouseOver="if(this.value)showpic(event, this.value, '{$Think.config.upload_path}/');" onMouseOut="hiddenpic();">&nbsp;</li>
+        <li class="left" style="width:80px;">上传图片：</li>
+        <li class="right"><iframe src="?s=Admin-Upload-Show-sid-link-fileback-link_logo" scrolling="no" width="350" height="28" marginwidth="0" marginheight="0" frameborder="0" align="left" style="margin-top:5px"></iframe></li>
+    </ul> 
+    <ul><li class="left">连接排序：</li>
+    	<li class="right"><input type="text" name="link_order" id="link_order" value="{$link_order}" class="w70">&nbsp;</li>
+    </ul>
+    <ul><li class="left">连接类型：</li>
+    	<li class="right"><select name="link_type"><option value="1">文字链接</option><option value="2" <eq name="list_type" value="2">selected</eq>>图片链接</option></select>&nbsp;</li>
+    </ul>
+    <ul class="footer" style="border-top:1px solid #cad9ea"><input type="submit" name="submit" value="提交"> <input type="reset" name="reset" value="重置"></ul>
+    </form>
+</div>
+<include file="./Public/admin/footer.html" />
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>后台用户管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/jquery/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+</head>
+<body class="body">
+<form action="?s=Admin-Html-Maps" method="post" name="myform" id="myform">
+<table border="0" cellpadding="0" cellspacing="0" class="table">
+<thead><tr><th colspan="2" style="text-align:left">静态网页生成选项 <notempty name="jumpurl" value=""><a href="{$jumpurl}" style="font-weight:bold;color:#FF0000">上一次有生成静态网任务未完成，是否接着生成?</a></notempty></th></thead>
+<tr>
+  <td colspan="2" class="tr">
+  <eq name="url_html" value="1">
+  <input type="button" value="生成全站" class="submit" onClick="post('?s=Admin-Create-Tingclass-ids-{$list_ting_all}-jump-1');" />
+  <input type="button" value="生成首页" class="submit" onClick="post('?s=Admin-Create-Index');"/>
+  <input type="button" value="生成网站地图" class="submit" onClick="post('?s=Admin-Create-Maps');"/>
+  <input type="button" value="生成自定义模板" class="submit" onClick="post('?s=Admin-Create-Mytemplate');"/>
+  <input type="button" value="生成专题列表" class="submit" onClick="post('?s=Admin-Create-Speciallist');" />
+  <input type="button" value="生成专题内容"  class="submit" onClick="post('?s=Admin-Create-Specialclass');"/>  
+  <else />
+  <input type="button" value="生成全站" class="submit" onClick="post('?s=Admin-Create-Tingclass-ids-{$list_ting_all}-jump-1');" disabled/>
+  <input type="button" value="生成首页" class="submit" onClick="post('?s=Admin-Create-Index');" disabled/>
+  <input type="button" value="生成网站地图" class="submit" onClick="post('?s=Admin-Create-Maps');" disabled/>
+  <input type="button" value="生成自定义模板" class="submit" onClick="post('?s=Admin-Create-Mytemplate');" disabled/>
+  <input type="button" value="生成专题列表" class="submit" onClick="post('?s=Admin-Create-Tingclass-ids-{$list_ting_all}-jump-1');" disabled/>
+  <input type="button" value="生成专题内容"  class="submit" onClick="post('?s=Admin-Create-Newsclass');" disabled/>  
+  </eq>
+  </td>
+</tr>
+<tr>
+  <td colspan="2" class="tr">生成作品列表：
+    <select name="ids_list_1"><option value="{$list_ting_all}">全部分类</option><volist name="list_ting" id="ppting"><option value="{$ppting.list_id}">{$ppting.list_name}</option><volist name="ppting['son']" id="ppting"><option value="{$ppting.list_id}">├ {$ppting.list_name}</option></volist></volist></select>
+<eq name="url_html" value="1">
+<input type="button" value="生成" class="submit"  onClick="post('?s=Admin-Create-Tinglist');" <neq name="url_html_list" value="1">disabled</neq>/>
+<else />
+<input type="button" value="生成"  class="submit" onClick="post('?s=Admin-Create-Tinglist');" disabled/>
+</eq></td>
+</tr>
+<tr>
+  <td width="40%" class="tr">生成作品内容：
+    <select name="ids_1"><option value="{$list_ting_all}">全部作品</option><volist name="list_ting" id="ppting"><option value="{$ppting.list_id}">{$ppting.list_name}</option><volist name="ppting['son']" id="ppting"><option value="{$ppting.list_id}">├ {$ppting.list_name}</option></volist></volist></select>
+    <eq name="url_html" value="1">
+  	<input type="button" value="生成" class="submit"  onClick="post('?s=Admin-Create-Tingclass');" />
+  	<else />
+  	<input type="button" value="生成"  class="submit" onClick="post('?s=Admin-Create-Tingclass');" disabled/>
+  	</eq></td>
+  <td width="60%" class="tr">生成作品内容页按时间：
+    <select name="mday_1">
+      <option value="1">当天</option>
+      <option value="2">1天前</option>
+      <option value="3">2天前</option>
+      <option value="4">3天前</option>
+      <option value="5">4天前</option>
+      <option value="6">5天前</option>
+      <option value="7">7天前</option>
+      <option value="30">30天前</option>
+      <option value="100">100天前</option>
+    </select>
+    <eq name="url_html" value="1">
+  	<input type="button" value="生成" class="submit"  onClick="post('?s=Admin-Create-Tingday');" />
+  	<else />
+  	<input type="button" value="生成"  class="submit" onClick="post('?s=Admin-Create-Tingday');" disabled/>
+  	</eq></td>
+</tr>
+<tr>
+  <td colspan="2" class="tr">生成新闻列表：
+	<select name="ids_list_2"><option value="{$list_news_all}">全部新闻</option><volist name="list_news" id="ppting"><option value="{$ppting.list_id}">{$ppting.list_name}</option><volist name="ppting['son']" id="ppting"><option value="{$ppting.list_id}">├ {$ppting.list_name}</option></volist></volist></select>
+    <eq name="url_html" value="1">
+  	<input type="button" value="生成" class="submit"  onClick="post('?s=Admin-Create-Newslist');" />
+  	<else />
+  	<input type="button" value="生成"  class="submit" onClick="post('?s=Admin-Create-Newslist');" disabled/>
+  	</eq></td>
+</tr>
+<tr>
+  <td class="tr">生成新闻内容：
+<select name="ids_2"><option value="{$list_news_all}">全部新闻</option><volist name="list_news" id="ppting"><option value="{$ppting.list_id}">{$ppting.list_name}</option><volist name="ppting['son']" id="ppting"><option value="{$ppting.list_id}">├ {$ppting.list_name}</option></volist></volist></select>
+    <eq name="url_html" value="1">
+  	<input type="button" value="生成" class="submit"  onClick="post('?s=Admin-Create-Newsclass');" />
+  	<else />
+  	<input type="button" value="生成"  class="submit" onClick="post('?s=Admin-Create-Newsclass');" disabled/>
+  	</eq></td>
+    
+    
+  <td class="tr">生成新闻内容页按时间：
+	<select name="mday_2">
+      <option value="1">当天</option>
+      <option value="2">1天前</option>
+      <option value="3">2天前</option>
+      <option value="4">3天前</option>
+      <option value="5">4天前</option>
+      <option value="6">5天前</option>
+      <option value="7">7天前</option>
+      <option value="30">30天前</option>
+      <option value="100">100天前</option>
+    </select>
+    <eq name="url_html" value="1">
+  	<input type="button" value="生成" class="submit"  onClick="post('?s=Admin-Create-Newsday');" />
+  	<else />
+  	<input type="button" value="生成"  class="submit" onClick="post('?s=Admin-Create-Newsday');" disabled/>
+  	</eq></td>
+</tr>
+<tr >
+  <td colspan="2" class="tr">
+  	百度SiteMap： 总输出 <input id="baidu" name="baiduall" type="text" size="5" maxlength="5" value="50000" class="ct"> 条 
+    每页输出 <input id="baidu" name="baidu" type="text" size="5" maxlength="5" value="10000" class="ct"> 条 
+  	<eq name="url_html" value="1">
+  	<input type="button" value="生成" class="submit"  onClick="post('?s=Admin-Create-Baidu');" />
+  	<else />
+  	<input type="button" value="生成"  class="submit" onClick="post('?s=Admin-Create-Baidu');" disabled/>
+  	</eq></td>
+</tr>
+<tr >
+  <td colspan="2" class="tr">
+  	360好搜SiteMap： 总输出 <input id="so" name="soall" type="text" size="5" maxlength="5" value="50000" class="ct"> 条 
+    每页输出 <input id="so" name="so" type="text" size="5" maxlength="5" value="10000" class="ct"> 条 
+  	<eq name="url_html" value="1">
+  	<input type="button" value="生成" class="submit"  onClick="post('?s=Admin-Create-so');" />
+  	<else />
+  	<input type="button" value="生成"  class="submit" onClick="post('?s=Admin-Create-so');" disabled/>
+  	</eq></td>
+</tr>
+<tr >
+  <td colspan="2" class="tr">
+  谷歌SiteMap： 总输出 <input id="google" name="googleall" type="text" size="5" value="5000" maxlength="5" class="ct"> 条 
+  每页输出 <input id="google" name="google" type="text" size="5" maxlength="5" value="1000" class="ct"> 条 
+  <eq name="url_html" value="1">
+  <input type="button" value="生成" class="submit"  onClick="post('?s=Admin-Create-Google');" />
+  <else />
+  <input type="button" value="生成"  class="submit" onClick="post('?s=Admin-Create-Google');" disabled/>
+  </eq></td>
+</tr>
+<tr >
+  <td colspan="2" class="tr">
+  RSS订阅文件： 总输出 <input type="text" name="rss" id="rss" size="5" maxlength="5" value="50" class="ct"> 条 
+  <eq name="url_html" value="1">
+  <input type="button" value="生成" class="submit"  onClick="post('?s=Admin-Create-Rss');" />
+  <else />
+  <input type="button" value="生成"  class="submit" onClick="post('?s=Admin-Create-Rss');" disabled/>
+  </eq>  
+  </td>
+</tr>
+<tr>
+<td colspan="2" class="tr" style="color:#FF0000">仅生成动态内容页：
+    <select name="mday_1">
+      <option value="1">当天</option>
+      <option value="2">1天内</option>
+      <option value="3">2天内</option>
+      <option value="4">3天内</option>
+      <option value="5">4天内</option>
+      <option value="6">5天内</option>
+      <option value="7">7天内</option>
+      <option value="30">30天内</option>
+      <option value="100">100天内</option>
+	  <option value="3650">10年内(生成所有)</option>
+    </select>
+    <eq name="url_html" value="1">
+  	<input type="button" value="生成" class="submit"  onClick="post('?s=Admin-Create-Dongtai');" />
+  	<else />
+  	<input type="button" value="生成"  class="submit" onClick="post('?s=Admin-Create-Dongtai');" disabled/>
+  	</eq><font color="#999999">（已经存在的静态页不重新生成）</font>
+	</td>
+</tr>
+
+  
+</table>
+</form>
+<include file="./Public/admin/footer.html" />
+</body>
+</html>

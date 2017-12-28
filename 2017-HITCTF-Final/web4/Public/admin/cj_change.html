@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>自定义采集栏目分类转换</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+</head>
+<body class="body">
+<include file="./Public/admin/header.html" />
+<div class="title">
+	<div class="left">自定义栏目分类转换规则</div>
+</div>
+<div class="add">
+<form action="?s=Admin-Cj-Changeup" method="post" name="myform" id="myform"> 
+<ul style="padding:10px 0px">
+ <textarea name="content" style="width:98%;height:320px">{$change_content}</textarea>
+</ul>
+<ul class="footer" style="text-align:left"><label style="color:#FF0000; font-size:12px; margin-right:20px;">一行一个，使用"|"来分隔 (采集截取到的分类名称|我的栏目分类ID)</label><input type="submit" name="submit" value="提交"> <input type="reset" name="reset" value="重置"></ul>
+</form>
+</div>
+<include file="./Public/admin/footer.html" />
+</body>
+</html>

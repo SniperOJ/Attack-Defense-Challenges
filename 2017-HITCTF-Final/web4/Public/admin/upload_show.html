@@ -1,0 +1,8 @@
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<body class="body" style="margin:0px;padding:0px;text-align:left">
+<form action="?s=Admin-Upload-Upload" method="post" enctype="multipart/form-data" name="myform" id="myform">
+<input name="sid" type="hidden" value="{$Think.get.sid|htmlspecialchars}"/>
+<input name="fileback" type="hidden" value="{$Think.get.fileback|htmlspecialchars}"/>
+<input type="file" name="upthumb" id="upthumb" style="height:23px;width:200px"> <input height="26" type="submit" value="上 传" class="submit"/>
+</form>
+</body>

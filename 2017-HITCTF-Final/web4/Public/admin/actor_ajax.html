@@ -1,0 +1,175 @@
+<!--图片预览框-->
+<style>
+#hidactor{float:left;}
+.showactors {
+	width:800px;
+	overflow:hidden;
+	border:5px solid #CCCCCC;
+	background:#FFFFFF;
+	padding:10px 5px;
+	line-height:25px;
+	text-align:left;
+}
+.showactors .addactor{
+margin-left:50px;
+color:red;
+font-size:14px;
+font-weight:700;
+}
+.showactors .h3{
+	font-size:14px;
+	font-weight:bold;
+	height:21px;
+}
+.showactors .status{
+	margin-left:150px;
+	font-size:14px;
+	font-weight:bold;
+	height:21px;
+}
+.showactors .box{
+	clear:both;
+}
+.showactors .box table{
+width: 99%;
+border: 1px solid #cad9ea;
+margin-bottom: 2px;
+text-align: left;
+border-spacing:0;
+border-top: none;
+border-bottom: none;
+table-layout: fixed
+}
+.showactors .box table .l{
+border-bottom: 1px solid #cad9ea;
+border-right: 1px solid #cad9ea;
+overflow: hidden;
+white-space:nowrap;
+text-overflow: ellipsis;
+text-align: center;
+}
+.showactors table thead{
+height: 28px;
+line-height: 28px;
+background: url(__PUBLIC__/images/admin/bg2.gif) repeat-x;
+font-size: 12px;
+}
+.showactors table thead th {
+font-weight: normal;
+padding-left: 10px;
+border-top: 1px solid #cad9ea;
+font-size: 12px;
+}
+.showactors table td{
+height: 32px;
+line-height: 32px;
+}
+.showactors .box a{
+	margin-left:5px;
+	color:#000;
+	font-size:13px;
+}
+.showactors .box sup{
+	color:#FF0000;
+	font-weight:bold;
+}
+.actor-cnt{
+width: 750px;
+overflow: hidden;
+padding: 10px;
+margin-top: -1px;
+border: 1px solid #e3e3e3;
+background-color: #fbfbfb;
+border-radius: 2px;
+}
+.actor-cnt div,
+.actor-cnt label{
+float:left;
+}
+.actor-cnt textarea{
+width: 700px;
+height: 100px;
+}
+.ui_botton{
+color: #fff;
+text-decoration: none;
+background-color: #e12160;
+width: 100px;
+float: right;
+margin: 5px 20px 5px 0;
+height: 28px;
+line-height: 28px;
+font-size: 12px;
+overflow: hidden;
+border: 0 none;
+cursor: pointer;
+font-weight: 700;
+text-align: center;
+border-radius: 1px;
+}
+</style>
+<div id="showpic" class="showpic" style="display:none;position:absolute;z-index:999;"><img name="showpic_img" id="showpic_img" width="75" height="75"></div>
+<div id="showbg" style="position:absolute;left:0px;top:0px;filter:Alpha(Opacity=0);opacity:0.0;background-color:#fff;z-index:999;"></div>
+<div class="h3"><span style="float:left">ID:{$tingid}-{$tingarr['ting_name']}演员表管理：(共{$actorcount})</span>
+<span><a class="addactor" href="javascript:addactor();">添加</a></span>
+<span><a style="margin-left:10px;color:red" target="_blank" href="?s=Admin-Pic-downactorpic">下载图片</a></span>
+<span><a style="margin-left:10px;color:red" target="_blank" href="?s=Admin-Pic-downactorpicvid-vid-{$tingid}">下载该组图片</a></span>
+<span class="status"></span>
+<span style="float:right"><img src="__PUBLIC__/images/admin/close.gif" align="right" alt="关闭浮层" onclick="actor_close();" class="navpoint"></span>
+</div>
+<div  id="hidactor" style="display:none">
+
+<div class="actor-cnt">
+<form action="#" method="post" id="mactorform">
+<div class="info">
+<label>
+<span>角色：</span></label><input type="text"  value="" name="actor_name" id="actor_name">
+<span>明星：</span><input type="text"  value="" name="actor_star" id="actor_star">
+</label>
+</div>
+<div class='pic'>
+<label>
+<span>海报：</span><input type="text" name="actor_pic" id="actor_pic" maxlength="255" value="{$actor_pic}" class="w350" onMouseOver="if(this.value)showpic(event,this.value,'{$Think.config.upload_path}/');" onMouseOut="hiddenpic();">
+</label>
+<iframe src="?s=Admin-Upload-Show-sid-actor-sf-1-fileback-actor_pic" scrolling="no" topmargin="0" width="330" height="26" marginwidth="0" marginheight="0" frameborder="0" align="left" style="margin-top:3px; float:left"></iframe>
+</div>
+<div class="content">
+<label><span>简述：</span></label>
+<textarea class="ui-textarea" id="actor_content" name="actor_content"></textarea>
+</div>
+<input type="hidden" name="actor_vid" id="actor_vid" value="{$tingid}">
+<span class="ui_botton sub">提交</span>
+<span class="ui_botton qx">取消</span>
+</form>
+</div>
+</div>
+<div class="box">
+<empty name="errorinfo"> <else />{$errorinfo}</empty>
+  <!--地址列表 -->
+  <table>
+  <thead>
+    <tr>
+	<th class="l" width="20">ID</th>
+	<th class="l" width="60">角色名</th>
+	<th class="l" width="60">演员</th>
+	<th class="l" width="500">简述</th>
+	<th class="l">操作</th>
+  </tr> 
+  </thead>
+  <empty name="actorlist"><tbody><tr><td class="l"></td><td class="l"></td><td class="l"></td><td class="l">暂无角色等待你添加</td><td class="l"></td></tr></tbody><else />
+  <volist name="actorlist" id="actor" key="uu">
+  <tbody id="info_{$actor.actor_id}">
+    <tr>
+	<td class="l" id='actorid_{$actor.actor_id}' data="{$actor.actor_pic}">{$actor.actor_id}</td>
+	<td class="l" id='actorname_{$actor.actor_id}' onmouseover="showpic(event,'{$actor.actor_pic}','{$Think.config.upload_path}/');" onmouseout="hiddenpic();">{$actor.actor_name}</td>
+	<td class="l" id='actorstar_{$actor.actor_id}'>{$actor.actor_star}</td>
+	<td class="l" id='actorcontent_{$actor.actor_id}'>{$actor.actor_content}</td>
+	<td class="l"><a target="_blank" href='{$actor.role_readurl}'>查看</a><a href="javascript:editactor({$actor.actor_id});">编辑</a><a href="javascript:delactor({$actor.actor_id});">删除</a></td>
+  </tr> 
+  </tbody>
+ 
+  </volist>
+  </empty>
+  </table>
+  <!-- --> 
+</div>

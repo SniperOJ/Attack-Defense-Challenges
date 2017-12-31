@@ -11,7 +11,7 @@
 
 #### TODO
 
-|Game|Challenge|Data|
+|Game|Challenge|Lake|
 |:-:|:-:|:-:|
 |2017-HITCTF|web1|solution|
 |2017-HITCTF|web1|database|

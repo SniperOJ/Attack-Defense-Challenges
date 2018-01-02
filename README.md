@@ -27,8 +27,6 @@
 |2017-XDCTF|pwn2|solution|
 |2017-XMAN|pwn1|solution|
 |2017-XMAN|pwn2|solution|
-|2017-XMAN|web1|solution|
 |2017-XMAN|web1|database|
-|2017-XMAN|web2|solution|
 |2017-XMAN|web2|database|
 

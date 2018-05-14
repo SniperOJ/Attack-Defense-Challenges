@@ -1,4 +1,4 @@
-# Attack And Defense Challenges
+# Attack With Defense Challenges
 
 
 #### Games
@@ -11,7 +11,7 @@
 
 #### TODO
 
-|Game|Challenge|Lake|
+|Game|Challenge|Lack|
 |:-:|:-:|:-:|
 |2017-HITCTF|web1|solution|
 |2017-HITCTF|web1|database|

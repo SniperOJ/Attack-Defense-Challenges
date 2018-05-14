@@ -1,0 +1,38 @@
+.ke-toolbar .ke-outline[data-name='savetemplate'] {display: block;}
+.ke-outline  .ke-icon-savetemplate {background-image: url(theme/default/images/kindeditor/save.gif); background-position: center; width: 56px; height: 20px;}
+
+/* template box */
+
+.bootbox-prompt .modal-dialog {width: 500px; margin-top: 10%;}
+
+#buildBoxActions {padding-left: 15px;}
+
+#tplBoxWrapper {position: relative; z-index: 10;}
+#tplBoxWrapper > .btn-toolbar {position: absolute; right: 0px; top: 0px;}
+#tplBoxWrapper .btn {padding: 4px 8px}
+#tplBox li {position: relative;}
+#tplBox li .btn-delete {position: absolute; right: 0; top: 0; display: block; width: 40px; text-align:center;}
+#tplBox li .tpl-name {padding-right: 40px;}
+
+#module_chosen.chosen-container .chosen-drop {min-width: 400px; border-top: 1px solid #ddd!important}
+#openedBuild_chosen.chosen-container .chosen-drop {min-width: 450px; border-top: 1px solid #ddd!important}
+#module + .chosen-container-single .chosen-single,
+#task + .chosen-container-single .chosen-single,
+#openedBuild + .chosen-container-multi .chosen-choices {border-top-left-radius: 0; border-bottom-left-radius: 0;}
+#openedBuild + .chosen-container-multi .chosen-choices,
+#mailto + .chosen-container-multi .chosen-choices {border-top-right-radius: 0; border-bottom-right-radius: 0;}
+
+.dropdown-pris > .btn {background-color: #fff; text-shadow: none}
+
+#contactListGroup .input-group-btn > .btn {margin-left: -1px!important;}
+#contactListGroup .chosen-container-single a {border-left-width: 0px;}
+
+.chosen-container {max-width: 580px;}
+
+.minw-80px {min-width: 80px;}
+
+.colorpicker.input-group-btn > .btn {border-right: none}
+
+#branch {border-left-width: 0;}
+
+.input-group-addon.w-90px{min-width:90px;}

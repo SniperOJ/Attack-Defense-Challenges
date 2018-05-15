@@ -14,5 +14,5 @@
 * [缺少的文件列表](TODO.md)
 
 #### Acknowledgement
-[:)](https://github.com/)
+* [thinkycx](https://github.com/thinkycx)
 

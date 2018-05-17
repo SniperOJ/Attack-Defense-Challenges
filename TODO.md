@@ -8,7 +8,7 @@ Thank you very much for your help. It will also help other people interested in 
 ## Missing file
 
 #### 2017-HITCTF
-|Challenge|Lack|
+|Challenge|Missing|
 |:-:|:-:|
 |web1|solution|
 |web1|database|
@@ -18,7 +18,7 @@ Thank you very much for your help. It will also help other people interested in 
 |web4|database|
 
 #### 2017-XDCTF
-|Challenge|Lack|
+|Challenge|Missing|
 |:-:|:-:|
 |web1|database|
 |web2|database|
@@ -28,7 +28,7 @@ Thank you very much for your help. It will also help other people interested in 
 |pwn2|solution|
 
 #### 2017-XMAN
-|Challenge|Lack|
+|Challenge|Missing|
 |:-:|:-:|
 |pwn1|solution|
 |pwn2|solution|
@@ -36,7 +36,7 @@ Thank you very much for your help. It will also help other people interested in 
 |web2|database|
 
 #### 2018-Defcon-China
-|Challenge|Lack|
+|Challenge|Missing|
 |:-:|:-:|
 |web1|database|
 |web2|database|

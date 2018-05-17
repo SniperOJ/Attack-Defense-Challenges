@@ -1,7 +1,7 @@
 # Attack With Defense Challenges
 
 
-#### Games
+#### Competitions
 
 |Time|Name|Vendor|
 |:-:|:-:|:-:|

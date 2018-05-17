@@ -5,10 +5,10 @@
 
 |Time|Name|Vendor|
 |:-:|:-:|:-:|
-|2017/08/21|XMAN|[南京赛宁](http://www.cyberpeace.cn/)|
-|2017/10/30|XDCTF|[西安电子科技大学](http://www.xidian.edu.cn/)|
-|2017/11/28|HITCTF|[哈尔滨工业大学](http://www.hit.edu.cn/)|
-|2018/05/11|Defcon China|[Defcon](https://www.defcon.org/) & [百度](https://baidu.com/)|
+|2017/08/21|XMAN|[Cyber Peace Technology](http://www.cyberpeace.cn/)|
+|2017/10/30|XDCTF|[Xidian University](http://www.xidian.edu.cn/)|
+|2017/11/28|HITCTF|[Harbin Institute of Technology](http://www.hit.edu.cn/)|
+|2018/05/11|Defcon China|[Defcon](https://www.defcon.org/) & [Baidu](https://baidu.com/)|
 
 #### Need Your Help
 * [Missing Files](HELP.md)

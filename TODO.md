@@ -1,4 +1,11 @@
-## TODO
+## Need your help
+
+If you used to be a competitor in a certain competition and you keep the files in the list below。  
+please contact me <wangyihanger@gmail.com>.  
+Or if you are familiar with GitHub's workflow, you can create a pull request to this repo.   
+Thank you very much for your help. It will also help other people interested in CTF attack with defense mode.  
+
+## Missing file
 
 #### 2017-HITCTF
 |Challenge|Lack|

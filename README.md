@@ -3,12 +3,12 @@
 
 #### Competitions
 
-|Time|Name|Vendor|
-|:-:|:-:|:-:|
-|2017/08/21|XMAN|[Cyber Peace Technology](http://www.cyberpeace.cn/)|
-|2017/10/30|XDCTF|[Xidian University](http://www.xidian.edu.cn/)|
-|2017/11/28|HITCTF|[Harbin Institute of Technology](http://www.hit.edu.cn/)|
-|2018/05/11|Defcon China|[Defcon](https://www.defcon.org/) & [Baidu](https://baidu.com/)|
+|Date|Name|Vendor|Location|
+|:-:|:-:|:-:|:-:|
+|2017/08/21|XMAN|[Cyber Peace Technology](http://www.cyberpeace.cn/)|Nanjing. China|
+|2017/10/30|XDCTF|[Xidian University](http://www.xidian.edu.cn/)|Xi'an. China|
+|2017/11/28|HITCTF|[Harbin Institute of Technology](http://www.hit.edu.cn/)|Harbin. China|
+|2018/05/11|Defcon China|[Defcon](https://www.defcon.org/) & [Baidu](https://baidu.com/)|Beijing. China|
 
 #### Need Your Help
 * [Missing Files](HELP.md)

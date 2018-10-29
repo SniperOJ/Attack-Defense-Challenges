@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.19, for Linux (i686)
 --
--- Host: localhost    Database: test
+-- Host: localhost    Database: ctf
 -- ------------------------------------------------------
 -- Server version	5.7.19-0ubuntu0.16.04.1
 
@@ -16,12 +16,19 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- User privilege
+--
+GRANT INSERT,DELETE,UPDATE,SELECT ON ctf.* TO 'ctf'@'localhost' IDENTIFIED BY 'ctf' WITH GRANT OPTION; 
+GRANT FILE ON *.* TO 'ctf'@'localhost' IDENTIFIED BY 'ctf' WITH GRANT OPTION; 
+FLUSH PRIVILEGES;
+
+--
 -- Table structure for table `admin`
 --
 
-drop database if exists `test`;
-create database `test`;
-use test;
+drop database if exists `ctf`;
+create database `ctf`;
+use ctf;
 
 DROP TABLE IF EXISTS `admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -40,7 +47,7 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (1,'admin','mysql');
+INSERT INTO `admin` VALUES (1,'admin','admin');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 

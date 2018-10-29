@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Change permission
+chmod 500 $0
+
 # Change root password
 echo "root:__ROOT_PASSWORD__" | chpasswd
 
@@ -13,12 +16,15 @@ echo '__SSH_PUBLIC_KEY__' > /home/ctf/.ssh/authorized_keys
 chmod 644 /home/ctf/.ssh/authorized_keys
 
 # Change own of web folder
-chown ctf:ctf /var/www/html
+chown -R ctf:ctf /var/www/html
 
 # start server
 service apache2 start
 service ssh start
 service mysql start
+
+# Init MySQL
+mysql < /docker-entrypoint-initdb.d/database.sql
 
 # stoke session
 /bin/bash

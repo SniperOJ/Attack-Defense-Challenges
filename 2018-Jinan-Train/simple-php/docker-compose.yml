@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  web:
+    build: .
+    ports:
+      - '__SERVICE_EXTERNAL_PORT___:80'
+      - '__SSH_EXTERNAL_PORT___:22'
+      - 'MYSQL_ROOT_PASSWORD=root'
+      - 'MYSQL_USER=ctf'
+      - 'MYSQL_PASSWORD=ctf'
+      - 'MYSQL_DATABASE=ctf'
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./source:/var/www/html
+      - ./logs:/var/log/apache2
+      - ./flag:/flag
+      - ./run.sh:/run.sh
+      - ./config/sshd_config:/etc/ssh/sshd_config
+      - ./db-volume:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./config/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+    entrypoint: /run.sh
+    networks:
+      default:
+        ipv4_address: __IP__
+
+networks:
+  default:
+    external:
+      name: __NAME__

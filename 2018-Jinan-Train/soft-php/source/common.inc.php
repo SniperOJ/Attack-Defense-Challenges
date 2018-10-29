@@ -11,9 +11,9 @@ if(!defined('GUY')){
 header('content-type:text/html;charset=utf-8');
 require 'global.func.php';
 define('HOST','localhost');
-define('USER','root');
-define('PASSWORD','root');
-define('DB','sqlgunnews');
+define('USER','ctf');
+define('PASSWORD','ctf');
+define('DB','ctf');
 $_conn=@mysql_connect(HOST,USER,PASSWORD) or die('MYSQL连接错误');
 @mysql_select_db(DB) or die('数据库连接错误');
 @mysql_query('set names utf8') or die('query字符集错误');

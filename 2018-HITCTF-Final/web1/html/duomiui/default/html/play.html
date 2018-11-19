@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>正在播放 {playpage:name} {playpage:part}-{duomicms:webname}-Power by DuomiCms</title>
+<meta name="Keywords" content="{playpage:name}{playpage:part}免费在线观看,{playpage:name}剧情介绍,{playpage:name}数据海报" />
+<meta name="description" content="{playpage:name}{playpage:part}免费在线观看,{playpage:name}剧情介绍,{playpage:name}数据海报" />
+{duomicms:style}
+<script src="/{duomicms:webpath}player/play.js"></script>
+<script>var playn='{playpage:name}', playp='{playpage:part}';</script>
+</head>
+<body>
+{duomicms:head}
+	<h1 class="title" style="display:none">{playpage:textlink}</h1>
+	<div class="player mb"><div class="main">{playpage:playurlinfo}{playpage:player}</div></div>
+    <div class="main">
+	<div class="ding mb clearfix">{playpage:digg}</div>
+	<div class="tab-title mb clearfix">
+    <ul>
+    	<li class="err">{playpage:reporterr}</li><li class="on">播放列表</li>
+    </ul>
+  </div>
+    <div class="playfrom tab9 clearfix">
+    <ul>
+        {playpage:playlist}
+    <li id="tab9[playlist:i]" onClick="setTab('tab9','stab9',[playlist:i],{playpage:playlistlen})" class="{if:{playpage:from}==[playlist:from]}on{end if}"><i class="playerico ico-[playlist:ename]"></i> [playlist:from]</li>
+        {/playpage:playlist}
+    </ul>
+  </div>
+  {playpage:playlist}
+  <div id="stab9[playlist:i]" class="playlist mb clearfix"{if:{playpage:from}<>[playlist:from]} style="display:none"{end if}>
+  	<div class="h1 clearfix">
+  		<p class="intro">[playlist:intro]</p>
+  		<p class="jj"><span id="vlink_[playlist:i]_s1"><em onClick="Order(1,'vlink_[playlist:i]',[playlist:i])">倒序↑</em></span><span id="vlink_[playlist:i]_s2"><em onClick="Order(0,'vlink_[playlist:i]',[playlist:i])" class="over">顺序↓</em></span></p>
+  	</div>
+	<div id="vlink_[playlist:i]" class="videourl clearfix"><ul>[playlist:link target=_self]</ul></div>
+  </div>
+  {/playpage:playlist}
+  <div class="index-area clearfix">
+    <h1 class="title index-color">猜你喜欢</h1>
+    <ul>
+    {duomicms:videolist num=12  order=dayhit}
+    <li class="p1 m1{if:[videolist:i]% 3==0} mmr0{end if}{if:[videolist:i]% 6==0} pmr0{end if}"><a class="link-hover" href="[videolist:link]" title="[videolist:name]"><img class="lazy" data-original="[videolist:pic]" src="../images/load.gif" alt="[videolist:name]"><span class="video-bg"></span><span class="lzbz"><p class="name">[videolist:name]</p><p class="actor">[videolist:nolinkactor]</p><p class="actor">[videolist:typename]{if:"[videolist:nolinkjqtype]"<>""},{end if}[videolist:nolinkjqtype]</p><p class="actor">[videolist:publishtime]/[videolist:publisharea]</p></span><p class="other">{if:"[videolist:note]"<>""}<i>[videolist:note]</i>{else}{subif:[videolist:state]<>0}<i>[videolist:state]{end subif}{subif:[videolist:state]>999}期{end subif}{subif:[videolist:state]<1000 and [videolist:state]<>0}集{end subif}</i>{end if}</p></a>
+    </li>
+    {/duomicms:videolist}
+    </ul>
+    </div>
+<!--评论-->
+<div class="index-area clearfix">
+  <h1 class="title index-color">网友评论</h1>
+  {playpage:comment}
+</div>
+</div>
+{duomicms:foot}
+</body>
+</html>

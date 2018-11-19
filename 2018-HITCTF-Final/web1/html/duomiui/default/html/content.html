@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{playpage:name}在线播放-{playpage:typename}-{duomicms:webname}-Power by DuomiCms</title>
+<meta name="keywords" content="{playpage:name}免费在线观看,{playpage:name}剧情介绍,{playpage:name}电影海报" />
+<meta name="description" content="{playpage:name}剧情:{playpage:des len=50}" />
+{duomicms:style}
+<link href="/{duomicms:webpath}duomiui/default/css/down.css" rel="stylesheet">
+<script src="/{duomicms:webpath}duomiui/default/js/down.js"></script>
+<!---link href="/{duomicms:webpath}duomiui/default/css/xunlei.css" rel="stylesheet"-->
+<!---script src="/{duomicms:webpath}duomiui/default/js/xunlei.js"></script-->
+</head>
+<body>
+{duomicms:head}
+<div class="main">
+	<h1 class="title">{playpage:textlink}</h1>
+	<div class="ct mb clearfix">
+		<div class="ct-l">
+			<img class="lazy" src="{playpage:pic}" src="images/load.gif" alt="{playpage:name}">
+	    </div>
+	    <div class="ct-c">
+	    	<dl>
+          <dt class="name">{playpage:name}<span class="bz">{if:"{playpage:note}"<>""}{playpage:note}{else}{subif:{playpage:state}<>0}{playpage:state}{end subif}{subif:{playpage:state}>999}期{end subif}{subif:{playpage:state}<1000 and {playpage:state}<>0}集{end subif}{end if}</span><span style="display:none">{playpage:hit}</span></dt>
+	    		{if:"{playpage:nickname}"<>""}<dt><span>别名：</span>{playpage:nickname}</dt>{end if}
+	    		<dt><span>主演：</span>{playpage:actor}</dt>
+	    		<dt><span>类型：</span><a href="{playpage:typelink}">{playpage:typename}</a> {playpage:jqtype}</dt>
+	    		<dd><span>导演：</span>{playpage:director}</dd>
+	    		<dd><span>地区：</span><a href="/{duomicms:webpath}search.php?searchword={playpage:publisharea}">{playpage:publisharea}</a></dd>
+	    		<dd><span>年份：</span><a href="/{duomicms:webpath}search.php?searchword={playpage:publishtime}">{playpage:publishtime}</a></dd>
+	    		<dd><span>语言：</span>{playpage:lang}</dd>
+	    	</dl>
+        <div name="ee" class="ee"><span class="js">介绍：</span>{playpage:des}</div>
+	    </div>
+	    <div class="ct-r">
+        <script type="text/javascript" language="javascript" src="/{duomicms:webpath}interface/{duomicms:adfolder}/article-right-ad.js"></script>
+</div>
+	</div>
+  <div class="tab-title tab mb clearfix">
+    <ul>
+    	<li id="tab1" class="on" onClick="setTab('tab','stab',1,3)">播放列表</li>
+    	<li id="tab2" onClick="setTab('tab','stab',2,3)">内容介绍</li>
+    	<li id="tab3" onClick="setTab('tab','stab',3,3)">相关影片</li>
+    </ul>
+  </div>
+  <div id="stab1" class="tab-down mb clearfix">
+  	<div class="playfrom tab8 clearfix">
+    <ul>
+        {playpage:playlist}
+    <li id="tab8[playlist:i]" onClick="setTab('tab8','stab8',[playlist:i],{playpage:playlistlen})" class="{if:[playlist:i]==1}on{end if}"><i class="playerico ico-[playlist:ename]"></i> [playlist:from]</li>
+        {/playpage:playlist}
+    </ul>
+  </div>
+  {playpage:playlist}
+  <div id="stab8[playlist:i]" class="playlist clearfix"{if:[playlist:i]<>1} style="display:none"{end if}>
+  	<div class="h1 clearfix">
+  		<p class="intro">[playlist:intro]</p>
+  		<p class="jj"><span id="vlink_[playlist:i]_s1"><em onClick="Order(1,'vlink_[playlist:i]',[playlist:i])">倒序↓</em></span><span id="vlink_[playlist:i]_s2"><em onClick="Order(0,'vlink_[playlist:i]',[playlist:i])" class="over">顺序↑</em></span></p>
+  	</div>
+    {if:[playlist:ename]==kankan}
+    <div id="vlink_[playlist:i]" class="videourl-down clearfix">
+        <ul>[playlist:nolinkurl]</ul>
+    </div>{else}
+	  <div id="vlink_[playlist:i]" class="videourl clearfix"><ul>[playlist:link target=_self]</ul></div>
+    {end if}
+  </div>
+  {/playpage:playlist}
+  </div>
+  <div id="stab2" class="tab-down mb clearfix" style="display:none;">
+  <div class="tab-jq">{playpage:des}</div>
+  </div>
+  <div id="stab3" class="tab-down mb clearfix" style="display:none;">
+    <div class="index-area clearfix">
+    <ul>
+    {duomicms:videolist num=6 order=time type=current rel=y}
+    <li class="p1 m1{if:[videolist:i]% 3==0} mmr0{end if}{if:[videolist:i]% 6==0} pmr0{end if}"><a class="link-hover" href="[videolist:link]" title="[videolist:name]"><img src="[videolist:pic]" alt="[videolist:name]"><span class="video-bg"></span><span class="lzbz"><p class="name">[videolist:name]</p><p class="actor">[videolist:nolinkactor]</p><p class="actor">[videolist:typename]{if:"[videolist:nolinkjqtype]"<>""},{end if}[videolist:nolinkjqtype]</p><p class="actor">[videolist:publishtime]/[videolist:publisharea]</p></span><p class="other">{if:[videolist:note]<>""}<i>[videolist:note]</i>{elseif:[videolist:state]<>""}<i>[videolist:state]{subif:[videolist:state]>999}期{end subif}{subif:[videolist:state]<1000}集{end subif}</i>{else}{end if}</p></a>
+    </li>
+    {/duomicms:videolist}
+    </ul>
+    </div>
+  </div>
+
+{playpage:downlist}
+   <div class="downlist mb clearfix">
+			<div class="dtit">
+				<p class="dw1">下载工具：
+					<a href="http://mobile.xunlei.com/iphone.html" target="_blank">[迅雷iphone]</a>
+					<a href="http://mobile.xunlei.com/index.html" target="_blank">[迅雷android]</a>
+					<a href="http://mobile.xunlei.com/ipad.html" target="_blank">[迅雷ipad]</a>
+				</p>
+			</div>
+			<ul class="downurl" id="ul[downlist:i]"><script>var GvodUrls1 = "[downlist:linkstr]";echoDown(GvodUrls1,[downlist:i]);</script></ul>
+			<div class="ckall">
+				<span>
+				  <input id="allcheck[downlist:i]" onclick="CheckAll([downlist:i])" type="checkbox" name="checkall">
+				  <em>全选</em>
+				 </span>
+				<p><a href="javascript:void(0);" onclick="zhongxz([downlist:i])" target="_self">迅雷下载选中的文件</a></p>
+			</div>
+		</div>
+{/playpage:downlist} 
+
+  <div class="index-area clearfix">
+    <h1 class="title index-color">猜你喜欢</h1>
+    <ul>
+    {duomicms:videolist num=12 order=dayhit}
+    <li class="p1 m1{if:[videolist:i]% 3==0} mmr0{end if}{if:[videolist:i]% 6==0} pmr0{end if}"><a class="link-hover" href="[videolist:link]" title="[videolist:name]"><img class="lazy" src="[videolist:pic]" src="images/load.gif" alt="[videolist:name]"><span class="video-bg"></span><span class="lzbz"><p class="name">[videolist:name]</p><p class="actor">[videolist:nolinkactor]</p><p class="actor">[videolist:typename]{if:"[videolist:nolinkjqtype]"<>""},{end if}[videolist:nolinkjqtype]</p><p class="actor">[videolist:publishtime]/[videolist:publisharea]</p></span><p class="other">{if:"[videolist:note]"<>""}<i>[videolist:note]</i>{else}{subif:[videolist:state]<>0}<i>[videolist:state]{end subif}{subif:[videolist:state]>999}期{end subif}{subif:[videolist:state]<1000 and [videolist:state]<>0}集{end subif}</i>{end if}</p></a>
+    </li>
+    {/duomicms:videolist}
+    </ul>
+    </div>
+<div class="index-area clearfix">
+  <h1 class="title index-color">网友评论</h1>
+  {playpage:comment}
+</div>
+</div>
+{duomicms:foot}
+</body>
+</html>

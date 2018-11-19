@@ -1,0 +1,47 @@
+﻿<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>chplayer播放</title>
+		<meta name="keywords" content="flv,mp4,rtmp,html5,m3u8,播放器,视频流,网页视频播放器,dkvplayer,chplayer官网" />
+		<meta name="description" content="chplayer支持的视频格式：http协议的flv,mp4,m3u8及rtmp协议 " />
+		<meta name="author" content="chplayer" />
+		<meta name="copyright" content="http://www.chplayer.com" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script type="text/javascript" src="ckplayer.js"></script>
+	</head>
+
+	<body>
+		<div id="video" class="video"></div>
+		<script type="text/javascript">
+			//获取地址栏里传递过来的视频地址
+			function getUrlParam(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+				var r = window.location.search.substr(1).match(reg); //匹配目标参数
+				if(r != null) return unescape(r[2]);
+				return null; //返回参数值
+			}
+			var videoUrl =getUrlParam('videourl');
+			var hls=getUrlParam('hls');
+			var videoObject = {
+				container: '#video',//容器的ID,如果获到容器定义的是ID则需要增加#，如果是class，则不需要添加或添加.
+				variable:'player',//调用函数名称，该属性主要用于flashplayer发送监听内容时使用，如call('player.time',10)
+				volume: 1,//默认音量，范围是0-1
+				autoplay: true, //是否自动播放，默认true=自动播放，false=默认暂停状态
+				loop: false, //是否循环播放，默认false=不需要,true=需要
+				live: false, //是否是直播，默认false=点播放，true=直播
+				video:videoUrl
+				//video: [//视频地址列表形式
+				//         [videoUrl, 'video/mp4', '标清', 0],
+				 //         [videoUrl, 'video/mp4', '高清', 0],
+				 //         [videoUrl, 'video/mp4', '超清', 10],
+				//] 
+			};
+			if(hls!=null){
+				videoObject['html5m3u8']=true;
+			}
+			var player=new ckplayer(videoObject);
+		</script>
+	</body>
+
+</html>

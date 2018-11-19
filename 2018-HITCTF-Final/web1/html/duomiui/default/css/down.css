@@ -1,0 +1,47 @@
+﻿/*通用css*/
+@charset "utf-8";
+*{ padding: 0px; margin: 0px;}
+html{font-size:62.5%;}
+body{background:#f6f6f9;margin:0px;padding:0px;color: #555;font-size:14px;line-height:140%;word-break: break-all; word-wrap:break-word;
+font-family:"Lucida Grande",Verdana,Tahoma,Lucida,Arial,Helvetica,"微软雅黑","宋体",sans-serif;}
+img, p, h3, ul, li, dl, dd, dt, h2, h4{margin:0px;border:0px;padding:0}
+img{display:block;}
+a:active{outline:0 none}
+a:focus { outline:0;}
+a:link{color: #555;text-decoration:none}
+a:hover{color: #f06000;text-decoration:none}
+a:visited{color: #666;text-decoration:none}
+li{list-style:none}
+.clearfix:after{display:block;clear:both;visibility:hidden;height:0;content:''}
+.clearfix{zoom:1;}
+input,select,textarea,button{font-size:12px;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
+button,input[type=button],input[type=submit]{cursor:pointer}
+button::-moz-focus-inner,button::-moz-focus-outer,input::-moz-focus-inner,input::-moz-focus-outer{border:0 none;padding:0;margin:0}
+input[type=search]{-webkit-appearance:textfield}
+input:focus::-webkit-input-placeholder{color:transparent}
+textarea{resize:vertical;overflow-y:auto}
+/*downlist*/
+	.downlist {background:#FFF;border:1px solid #ddd;margin-top:30px;}
+	.downlist .dtit {padding:5px 0 5px 15px;border-bottom:1px dotted #d1d1d1;}
+	.downlist .dtit p {color:#ff6c00;line-height:45px;}
+	.downlist .dtit p a:hover {color:#f06000;}
+	.downlist li {height:34px;padding:5px 0;border-bottom:1px dotted #d1d1d1;}
+	.downlist li div {float:left;display:inline;overflow:hidden;}
+	.downlist .feifan123 {width:850px;line-height:24px;}
+	.downlist .feifan123 input {float:left;width:14px;height:14px;margin-top:10px;}
+	.downlist li .feifan123 div span {float:left;color:#bc2931;overflow:hidden;line-height:34px;margin:0 10px;}
+	.downlist li .feifan123 div input {padding:0 5px;margin-top:5px;line-height:24px;height:24px;overflow:hidden;border:0;background:#ddd;border-radius:10px;}
+	.downlist li .dwon_xl,.downlist li .dwon_xf,.downlist li .dwon_y,.downlist li .dwon_tx {margin-left:8px;width:70px;text-align:center;height:24px;line-height:24px;margin-top:5px;border-radius:10px;}
+	.downlist li .dwon_xl a {background:#249ff1;color:#fff;display:block;}
+	.downlist li .dwon_xf a {background:#ff6c00;color:#fff;display:block;}
+	.downlist li .dwon_tx a {background:#ff4883;color:#fff;display:block;}
+	.downlist li .dwon_y a {background:#080;color:#fff;display:block;}
+	.downlist li .dwon_xl a:hover,.downlist li .dwon_xf a:hover,.downlist li .dwon_y a:hover,.downlist li .dwon_tx a:hover {opacity:0.7;}
+	.downlist .ckall {height:34px;padding-left:15px;}
+	.downlist .ckall input {width:14px;height:14px;margin-top:6px;}
+	.downlist .ckall em {margin:0 10px;font-style:normal;line-height:24px;}
+	.downlist .ckall span {float:left;width:80px;}
+	.downlist .ckall p {margin-left:80px;line-height:24px;width:150px;margin-top:5px;text-align:center;}
+	.downlist .ckall p a {border:1px solid #d1d1d1;border-radius:3px;background:#eee;display:block;}
+	.downurl {max-height:200px;padding-left:15px;_height:expression(this.scrollHeight > 350 ? "350px":"auto");overflow:auto;}
+	

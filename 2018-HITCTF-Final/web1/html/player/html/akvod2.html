@@ -1,0 +1,146 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="./video.css" rel="stylesheet">
+</head>
+<body style="margin:0px;padding:0px;">
+<script type="text/javascript">
+var akvod_url = parent.now;//播放视频地址
+var akvod_w = parent.playerw;//播放器宽度
+var akvod_h = parent.playerh;//播放器高度
+var akvod_adh = akvod_h-40;//广告高度
+var akvod_ad = parent.adsPage;//缓冲和暂停调用广告地址
+var akvod_c = 'duomicms'; //爱看影音推广渠道，一般为域名简写，如baidu
+var akvod_install = 'http://www.2kvod.com/akplayer_install.html?v=1&c='+akvod_c; //爱看影音安装提示页，最好本地化
+var akvod_weburl = unescape(window.location.href);
+var akvod_nextpage = parent.nextPage;
+
+function akvodstatus(offest){
+    if(document.getElementById('plugin0').PlayState==5 || document.getElementById('plugin0').PlayState==4){
+         document.getElementById('akad').style.display='none';
+    }else if(document.getElementById('plugin0').PlayState==2||document.getElementById('plugin0').PlayState==3){
+         document.getElementById('akad').style.display='block';
+    }else if(document.getElementById('plugin0').PlayState==6){
+		if(akvod_nextpage!=''){
+			window.parent.location.href=akvod_nextpage;
+		}
+	}
+}
+
+
+//加载akvod
+function addakVod(){
+if(!!window.ActiveXObject || "ActiveXObject" in window){
+		document.write("<div style='position:relative'>");
+		document.write('<div id="akad" style="position:absolute; z-index:1001"><iframe marginWidth="0" id="wdqad" name="wdqad" marginHeight="0" src="'+akvod_ad+'" frameBorder="0" width="'+akvod_w+'" scrolling="no" height="'+akvod_adh+'"></iframe></div>');
+		document.write("<object classid='' type='application/x-akvod' progid='WEBPLAYER.WebPlayerCtrl.2' width='"+akvod_w+"' height='"+akvod_h+"' id='plugin0' name='plugin0' onerror=\"document.getElementById('plugin0').style.display='none';document.getElementById('akad').style.display='block';document.getElementById('wdqad').src='"+akvod_install+"';\"><param name='src' value='"+akvod_url+"'></object>");
+		document.write("</div>");
+		var ver = chkAKActivexVer();
+		setInterval('akvodstatus()','500');
+
+}else{
+	if (navigator.plugins) {
+		var install = false;
+		for (var i=0;i<navigator.plugins.length;i++) {
+			if(navigator.plugins[i].name == 'akvod'){
+				install = true;break;
+			}
+		}
+		
+		if(install){//已安装
+			document.write('<div style="width:'+akvod_w+'px; height:'+akvod_h+'px;overflow:hidden;position:relative">');
+			document.write('<div id="akad" style="position:absolute;z-index:2;top:0px;left:0px"><iframe border="0" src="'+akvod_ad+'" marginWidth="0" frameSpacing="0" marginHeight="0" frameBorder="0" noResize scrolling="no" width="'+akvod_w+'" height="'+akvod_adh+'" vspale="0"></iframe></div>');
+			document.write('<object id="plugin0" name="plugin0" type="application/x-akvod" width="'+akvod_w+'" height="'+akvod_h+'" progid="WEBPLAYER.WebPlayerCtrl.2"><param name="src" value="'+akvod_url+'" /></object>');
+			document.write("</div>");
+			setInterval('akvodstatus()','500');
+		}else{
+			document.write('<div id="akad"><iframe border="0" src="'+akvod_install+'" marginWidth="0" frameSpacing="0" marginHeight="0" frameBorder="0" noResize scrolling="no" width="'+akvod_w+'" height="410" vspale="0"></iframe></div>');
+		}
+	}
+}
+}
+
+function killErrors(){return true;}window.onerror = killErrors;
+
+addakVod();
+
+function chkAKActivexVer(){
+	var playerS = document.getElementById('plugin0');
+	if(playerS.GetVer&&typeof(playerS.GetVer)=="number"){
+		return ;
+	}else{//下载升级官方最新版
+		var play = checkPlugins('WEBPLAYER.WebPlayerCtrl.1');
+		if(play){
+			if(confirm("请下载升级最新爱看影音播放器，以便更流畅播放影片！")){
+				window.location.href="http://dl.2kvod.com/AKPlayerInstall.exe";
+			}else{
+				return false;
+			}
+		}
+	}
+}
+function checkPlugins(activexObjectName) {
+	var np = navigator.plugins;	
+	if (np && np.length)// 针对于FF等非IE.
+	{
+		for(var i = 0; i < np.length; i ++) {
+			if(np[i].name.indexOf(activexObjectName)!= -1)
+			{
+				return true;
+			}
+		}
+	}
+	else if (window.ActiveXObject)// 针对于IE
+	{
+		try {
+			new ActiveXObject(activexObjectName);
+			return true;
+		}
+		catch (e) {
+			return false;
+		}
+	}
+	return false;
+}
+
+var EventUtil =
+	{
+	    addHandler: function (element, type, handler) {
+	        if (element.addEventListener) {
+	            element.addEventListener(type, handler, false);
+	        }
+	        else {
+	            element.attachEvent("on" + type, handler);
+	        }
+	    },
+
+	    removeHandler: function (element, type, handler) {
+	        if (element.removeEventListener) {
+	            element.removeEventListener(type, handler, false);
+	        }
+	        else {
+	            element.detachEvent("on" + type, handler);
+	        }
+	    }
+	};    
+var unloadhandler = function () {
+	var playerS = document.getElementById('plugin0');
+        if (playerS != null) {
+            playerS.Close();
+            playerS = null;
+        }
+}
+
+var beforeunloadhandler = function () { 
+   var playerS = document.getElementById('plugin0');
+   if (playerS != null) {
+       playerS.Close();
+       playerS = null;
+   }
+}  
+EventUtil.addHandler(window, "beforeunload", beforeunloadhandler);
+</script>
+
+</body>
+</html>

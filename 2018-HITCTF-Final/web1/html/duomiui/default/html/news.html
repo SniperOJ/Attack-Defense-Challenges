@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{news:title} {news:subtitle}- {duomicms:webname}-Power by DuomiCms</title>
+<meta name="keywords" content="{news:title}{news:subtitle},{duomicms:webname}" />
+<meta name="description" content="{news:title}{news:subtitle},{duomicms:webname}" />
+{duomicms:style}
+</head>
+<body>
+{duomicms:head}
+<div class="main">
+	<h1 class="title">{news:textlink}</h1>
+				<div class="n-content mb">
+						<h1>{news:colortitle}<span style="display:none">{news:hit}</span></h1>
+						<p class="info clearfix"><span class="time">{news:addtime}</span><span class="qt">{news:author}</span></p>
+						<p class="des">{news:subcontent}</p>
+						<p class="fy">{news:subpagenumber len=5}</p>
+						<div class="more"><h1>相关文章：</h1><p>{news:prenext}</p></div>
+				</div>
+</div>
+{duomicms:foot}
+</body>
+</html>

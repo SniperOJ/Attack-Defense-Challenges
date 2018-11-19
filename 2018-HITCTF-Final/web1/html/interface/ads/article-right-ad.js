@@ -1,0 +1,1 @@
+document.writeln("<img src=\"\/duomiui\/default\/images\/ad-300.jpg\">")

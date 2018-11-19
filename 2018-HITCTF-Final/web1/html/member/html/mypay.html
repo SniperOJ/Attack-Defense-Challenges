@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>金币充值-会员中心</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="robots" content="noindex,nofollow" />
+<link href="css/style.css" rel="stylesheet">
+{duomicms:include style.html}
+</head>
+<body>
+	{duomicms:include head.html}
+    <div class="count">
+    {duomicms:include u-menu.html}
+ <div class="u-r">
+ <div class="u-xx">
+ <h3>充值卡充值：</h3>
+ <form action="?dm=mypay" method="post">
+ <table>
+        <tr>
+          <td>充值卡号：</td>
+          <td> <input type=text name=cardkey id=cardkey class="textInput"> </td>
+        </tr>
+        <tr>
+          <td>卡号密码：</td>
+          <td><input type=text name=cardpwd id=cardpwd class="textInput"> </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+           <input type=submit name=cardb id=cardb value='充值' >
+        </tr>
+      </table>
+	</form>
+    </div>
+</div>
+</div>   
+<div class="clear"></div>
+{duomicms:include foot.html}
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>用户登录-{duomicms:webname}-Power by DuomiCms</title>
+<meta name="keywords" content="用户登录-{duomicms:key}" />
+<meta name="description" content="用户登录-{duomicms:des}" />	
+<link href="css/login.css" rel="stylesheet">
+{duomicms:include style.html}
+</head>
+<body>
+{duomicms:include head.html}
+<div class="webLogin-box">
+  <div class="webLogin">
+    <h2><strong>用户登录</strong></h2>
+    <form id="f_login" action="login.php" method="post">
+    <input type="hidden" value="login" name="dopost" />
+      <table>
+        <tr>
+          <th>登录账号：</th>
+          <td><input type="input" class="textInput" size="20" maxlength="30" name="userid" /></td>
+        </tr>
+        <tr>
+          <th>账号密钥 ：</th>
+          <td><input type="password" class="textInput" size="20" maxlength="30" name="pwd" /></td>
+        </tr>
+        <tr>
+          <th>验证码 ：</th>
+          <td><input type="text" class="textInput" size="20" maxlength="30" name="validate" style="width:215px;text-transform:uppercase;"/><img id="vdimgck" src="../duomiphp/vdimgck.php" alt="看不清？点击更换" align="absmiddle" style="cursor:pointer;height:32px" onClick="this.src=this.src+'?'"/></td>
+        </tr>
+        <tr>
+          <th>登录状态：</th>
+          <td><select name="usecookie" class="select">
+              <option value="0">浏览器进程</option>
+              <option value="86400">保存一天</option>
+              <option value="2592000" selected>保存一月</option>
+              <option value="315360000">保存一年</option>
+            </select></td>
+        </tr>
+        <tr>
+          <th>&nbsp;</th>
+          <td><input type="hidden" name="action" value="login">
+            <button type="submit" name="Submit">马上登录</button>
+            <a href="#" class="clew">忘记密码？</a></td>
+        </tr>
+      </table>
+    </form>
+    <ul>
+      <h4>友情提示</h4>
+      <p>如果您还不是会员，请注册。<br />
+        注册之后你就可以</p>
+      <ol>
+        <li>1. 保存您的个人资料</li>
+        <li>2. 收藏您关注的影片</li>
+        <li>3. 订阅本站影片信息</li>
+        <p> <a href="reg.php" class="login_btn" title="立即注册">立即注册</a> </p>
+      </ol>
+    </ul>
+  </div>
+</div>
+{duomicms:include foot.html}
+</body>
+</html>

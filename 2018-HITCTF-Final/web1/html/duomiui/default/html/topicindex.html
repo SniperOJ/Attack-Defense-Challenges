@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>专辑列表_第{topicindexlist:page}页_{duomicms:webname}-Power by DuomiCms</title>
+<meta name="keywords" content="{duomicms:webname}" />
+<meta name="description" content="{duomicms:webname}" />
+{duomicms:style}
+</head>
+<body>
+{duomicms:head}
+<div class="main">
+	<h1 class="title"><a href="{duomicms:indexlink}">首页</a> > 精彩专题总汇</h1>
+	<div class="topicindex clearfix">
+		<ul>
+		{duomicms:topicindexlist size=20}	
+		<li class="p3 m3{if:[topicindexlist:i]% 2==0} mmr0{end if}{if:[topicindexlist:i]% 4==0} pmr0{end if}">
+		 <a class="link-hover" href="[topicindexlist:link]" title="[topicindexlist:name]"><img src="[topicindexlist:pic]" alt="[topicindexlist:name]"><i class="topicbg"></i><span class="des"><p class="tp1 clearfix"><span class="num">[topicindexlist:count]</span>[topicindexlist:name]</p><p class="tp2 clearfix">[topicindexlist:des len=130]</p></span></a>
+	    </li>
+	    {/duomicms:topicindexlist}
+	    </ul>
+	</div>
+<div class="page mb clearfix">
+{if:{topicindexlist:page}<>1}<a href="{topicindexlist:firstlink}">1..</a><a href="{topicindexlist:backlink}"><</a>{end if}
+{topicindexlist:pagenumber len=10}
+   {if:{topicindexlist:page}<>[pagenumber:page]}
+    <a href="[pagenumber:link]">[pagenumber:page]</a>
+   {else}
+    <em>[pagenumber:page]</em>
+   {end if}
+{/topicindexlist:pagenumber}
+{if:{topicindexlist:page}<>{topicindexlist:pagecount}}
+<a href="{topicindexlist:nextlink}">></a>
+<a href="{topicindexlist:lastlink}">..{topicindexlist:pagecount}</a>
+{end if}</div>
+</div>
+{duomicms:foot}
+</body>
+</html>

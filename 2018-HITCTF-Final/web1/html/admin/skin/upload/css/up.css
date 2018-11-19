@@ -1,0 +1,23 @@
+﻿body { font-family: "微软雅黑"; font-size: 16px; }
+a:link, a:visited { color: #666666; text-decoration: none; outline: none; }
+a:hover { color: #0E4470; }
+.clear { clear: both; }
+.hyright { width: 830px; min-height: 520px; padding: 18px; background: #fff; border: 1px solid #dee2e5; margin: 0 auto; }
+.shipin_tit h2 { font-size: 30px; font-weight: normal; }
+.shipin_tit h2 ul li.selected { color: #FF804F; border-bottom: 1px solid #FF801D; }
+.shipin_tit h2 ul li { float: left; color: #C2C1C1; padding: 5px 10px; cursor: pointer; }
+ul li, ul { list-style-type: none; padding: 0; margin: 0; }
+.webuploader-container { width: 286px; height: 186px; background: url(sc.png) no-repeat; margin: 10px auto; cursor: pointer; position: relative; }
+.webuploader-element-invisible { position: absolute !important; clip: rect(1px 1px 1px 1px); /* IE6, IE7 */ clip: rect(1px,1px,1px,1px); }
+.webuploader-pick { position: relative; display: inline-block; cursor: pointer; width: 286px; height: 186px; color: #fff; text-align: center; border-radius: 3px; overflow: hidden; }
+#divFileProgressContainer { position: relative; }
+.webuploader-pick-disable { opacity: 0.6; pointer-events: none; }
+.progressName { font-size: 14px; margin: 10px 0px; }
+.progressName a { float: right; border: 1px solid #ff7a19; padding: 4px 10px; border-radius: 4px; font-size: 12px; }
+.cancle { position: absolute; right: 0; width: 70px; height: 26px; border: 1px solid #ff7a19; color: #ff7a19; border-radius: 5px; line-height: 26px; text-align: center; }
+.progressBarInProgress { height: 100%; display: block; background: #ff7a19; border-radius: 3px; }
+.jindu { height: 23px; padding: 3px; border: 1px solid #D3D3D3; border-radius: 4px; margin-top: 20px; margin-bottom: 8px; }
+.progressBarStatus ul li { float: left; width: 25%; text-align: center; }
+.progressBarStatus ul li.first { text-align: left; }
+.progressBarStatus ul li.last { text-align: right; }
+//*系统调用*//

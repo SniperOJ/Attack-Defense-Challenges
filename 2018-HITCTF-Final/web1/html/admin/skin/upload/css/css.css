@@ -1,0 +1,84 @@
+/* -- Form Styles ------------------------------- */
+input[disabled]{ border: 1px solid #ccc } /* FF 2 Fix */
+
+/* -- 总体宽度和边距 ------------------------------- */
+.progressWrapper {
+width: 440px;
+height: 110px;
+overflow: hidden;
+margin-left: 0px;
+}
+
+/* Error */
+.red {
+	border: solid 1px #B50000;
+	background-color: #FFEBEB;
+}
+
+/* 上传时的方框 */
+.green {
+	border: solid 1px #DDF0DD;
+	background-color: #EBFFEB;
+        padding:5px 10px;
+}
+
+/* 成功后的方框 */
+.blue {
+	border: solid 1px #CEE2F2;
+	background-color: #F0F5FF;
+}
+/* 成功后的文字 */
+.progressName {
+	font-size: 10pt;
+	font-weight: 700;
+	color: #555;
+	width: 400px;
+	height: 15px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+        padding:5px 0px;
+}
+
+.progressBarInProgress,
+.progressBarComplete,
+.progressBarError {
+	font-size: 0;
+	width: 0%;
+	height: 2px;
+	background-color: blue;
+	margin-top: 2px;
+}
+
+.progressBarComplete {
+	width: 100%;
+	background-color: green;
+	visibility: hidden;
+}
+
+.progressBarError {
+	width: 100%;
+	background-color: red;
+	visibility: hidden;
+}
+
+.progressBarStatus {
+	margin-top: 0px;
+	width: 337px;
+	font-size: 10pt;
+	font-family: Arial;
+	text-align: left;
+	white-space: nowrap;
+        padding:5px 0px;
+}
+
+/* -- SWFUpload Object Styles ------------------------------- */
+.swfupload {
+	vertical-align: top;
+}
+.center .progressWrapper{margin-left:142px;}
+.swfupload:hover{ background:url(user-upload-uph.gif) no-repeat;}
+.swfupload:active{ background:url(user-upload-upc.gif) no-repeat;}
+.progressBarInProgress{ background:url(user-uploading.gif) repeat-x; height:30px;}
+
+#picker{width:94px;}

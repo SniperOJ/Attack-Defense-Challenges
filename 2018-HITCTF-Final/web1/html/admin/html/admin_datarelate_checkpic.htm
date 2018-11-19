@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="noindex,nofollow" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<TITLE>数据库相关操作-工具-duomicms后台管理</TITLE>
+<link href="skin/css/admin.css" rel="stylesheet" type="text/css" />
+<script src="skin/js/common.js" type="text/javascript"></script>
+<script src="skin/js/main.js" type="text/javascript"></script>
+<style type="text/css"> 
+.btn{border:1px solid;border-color:#fff #999 #999 #fff;}
+</style>
+</head>
+<body>
+<div class="container" id="cpcontainer"> 
+<table class="tb">
+<tr class="thead">
+  <td colspan="15"  align="left" >图片管理</td></tr>
+<tr><td><input type="button" class="btn" value="查询无图片的数据" onClick="location.href='admin_video.php?action=nullpic';">&nbsp;&nbsp;<input type="button" class="btn" value="图片下载错误的数据" onClick="location.href='admin_video.php?action=errpic';">&nbsp;&nbsp;<input type="button" class="btn" value="清空数据图片不存在地址" onClick="if(confirm('使用此功能前请确认所有图片存放在本地')){location.href='?action=existpic';}else{return false;}">&nbsp;&nbsp;<input type="button" class="btn" value="删除多余数据图片" onClick="if(confirm('注意：使用此功能前,务必确认数据图片文件夹是/uploads/allimg/')){location.href='?action=sumitcheck';}else{return false}">&nbsp;&nbsp;</td>
+</tr>
+<tr><td><input type="button" class="btn" value="下载所有图片到本地" onClick="location.href='admin_datarelate.php?action=downpic&downtype=all';"  >&nbsp;
+  <input type="button" class="btn" value="本地图片加水印" onClick="location.href='admin_datarelate.php?action=watermark';"  >&nbsp;
+  <input name="button" type="button" class="btn" onclick="location.href='?action=ftppic';" value="设置上传图片到FTP" />&nbsp;
+  </td></tr>
+<tr>
+  <td>说明：对比数据库中图片名称，删除多余图片文件，节省服务器空间<br />
+注意：使用此功能前,务必确认数据图片的文件夹是/uploads/allimg/</td></tr>
+</table>
+</div>
+<?php 
+	viewFoot();
+?>
+</body>
+</html>

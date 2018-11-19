@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>新闻中心首页_{duomicms:webname}-Power by DuomiCms</title>
+<meta name="keywords" content="新闻,时事,时政,国际,国内,社会,法治,聚焦,评论,文化,教育,新视点,深度,网评,专题,环球,传播,论坛,图片,军事,焦点,排行,环保,校园,法治,奇闻,真情" />
+<meta name="description" content="新闻中心是{duomicms:webname}最重要的频道之一,24小时滚动报道国内、国际及社会新闻。每日编发新闻数以万计。包括即日的国内外不同类型的新闻与评论,人物专题,图库。" />
+{duomicms:style}
+</head>
+<body>
+{duomicms:head}
+<div class="main">
+	<h1 class="title"><a href="{duomicms:indexlink}">首页</a> > <a href="{duomicms:newslink}">影视资讯</a></h1>
+<div class="n-index mb clearfix">
+	  <ul>
+	  {duomicms:newslist num=10 order=time}
+		<li>
+		  <a href="[newslist:link]"><em>[newslist:i].</em>[newslist:title]</a>
+		</li>
+		{/duomicms:newslist} 
+	  </ul>
+ </div>
+</div>
+{duomicms:foot}
+</body>
+</html>

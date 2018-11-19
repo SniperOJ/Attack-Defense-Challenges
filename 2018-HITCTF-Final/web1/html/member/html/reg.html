@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>用户注册-{duomicms:webname}-Power by DuomiCms</title>
+<meta name="keywords" content="用户注册-{duomicms:webname}" />
+<meta name="description" content="用户注册-{duomicms:webname}" />	
+<link href="css/login.css" rel="stylesheet">
+{duomicms:include style.html}
+</head>
+<body>
+{duomicms:include head.html}
+<div class="webLogin-box">
+	<div class="webLogin">
+<h2><strong>新用户注册</strong></h2>
+<form id="f_Activation" action="reg.php?action=reg" method="post">
+<table>
+<tr>
+  <th width="80">登录账号：</th>
+  <td><input type="input" class="textInput" name="m_user" id="m_user" size="25" maxlength="10" /><i class="hottext">(必填)</i><span id="usermsg"></span></td>
+</tr>
+<tr>
+  <th>账号密钥：</th>
+  <td><input type="password" class="textInput" name="m_pwd" maxlength="20" /><i class="hottext">(必填)</i><span id="passmsg"></span></td>
+</tr>
+<tr>
+  <th>重复密钥：</th>
+  <td><input type="password" class="textInput" name="m_pwd2" size="25" maxlength="20" /><i class="hottext">(必填)</i><span id="repassmsg"></span></td>
+</tr>
+<tr>
+  <th>电子邮箱：</th>
+  <td><input type="text" class="textInput" name="email"  size="25" maxlength="60" /><i class="hottext">(必填)</i><span id="mailmsg"></span></td>
+</tr>
+<tr>
+  <th>验证码：</th>
+  <td><input type="text" class="textInput" size="20" maxlength="30" name="validate" id="vdcode" style="width:215px;text-transform:uppercase"/><img id="vdimgck" src="../duomiphp/vdimgck.php" alt="看不清？点击更换" align="absmiddle" style="cursor:pointer;height:32px" onClick="this.src=this.src+'?'"/><i class="hottext">(必填)</i></td>
+</tr>
+<tr>
+<tr>
+  <td></td>
+  <td><button type="submit" name="submit"  id="submit">立即注册</button></td>
+</tr>
+</table>
+</form>
+<ul>
+	<h4>友情提示</h4>
+	<p>如果您还不是会员，请注册。<br />注册之后你就可以</p>
+	<ol>
+	<li>1. 保存您的个人资料</li>
+	<li>2. 收藏您关注的影片</li>
+	<li>3. 订阅本站影片信息</li>
+<p>
+	<a href="login.php" class="login_btn" title="马上登录">马上登录</a>
+	</p>
+	</ol>	
+</ul>
+</div>
+</div>
+{duomicms:include foot.html}
+</body>
+</html>

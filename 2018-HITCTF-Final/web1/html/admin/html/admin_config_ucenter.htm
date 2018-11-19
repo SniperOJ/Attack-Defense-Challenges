@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="skin/css/style.css" rel="stylesheet" type="text/css" />
+<title>系统设置</title>
+<script language="javascript" src="skin/js/jquery.js"></script>
+</head>
+<body>
+<div class="r_main">
+  <div class="r_content">
+    <div class="r_content_1">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tb_style" >
+        <form action="?dopost=save" method="post"  name="form1" id="form1" >
+          <tr>
+            <td height="35" class="td_title">&nbsp;Ucenter设置</td>
+            <td height="35" class="td_title">&nbsp;会员系统:
+              <?php if($cfg_user==1) echo '<font color="green">开启</font>'; else echo '<font color="red">关闭</font>';?>
+              <a href="admin_config.php#chajian">设置</a></td>
+          </tr>
+          <tr>
+            <td height="35"  colspan="2" align="left" class="td_border">&nbsp;UCenter 应用 ID：</td>
+          </tr>
+          <tr>
+            <td class="td_border" height="35" >&nbsp;
+              <input type="text" style="width:250px" name="edit___UC_APPID"  value="<?php echo UC_APPID;?>" /></td>
+            <td class="td_border" > 该值为当前站点在 UCenter 的应用 ID，一般情况请不要改动</td>
+          </tr>
+          <tr>
+            <td  colspan="2"  height="35" align="left" class="td_border">&nbsp;UCenter 通信密钥：</td>
+          </tr>
+          <tr>
+            <td class="td_border" height="35" >&nbsp;
+              <input type="text" style="width:250px" name="edit___UC_KEY"  value="<?php echo UC_KEY;?>" /></td>
+            <td class="td_border"> 通信密钥用于在 UCenter 和 Discuz! 之间传输信息的加密，可包含任何字母及数字，请在 UCenter 与 Discuz!   设置完全相同的通讯密钥，以确保两套系统能够正常通信</td>
+          </tr>
+          <tr>
+            <td  colspan="2"  height="35" align="left" class="td_border">&nbsp;UCenter 访问地址：</td>
+          </tr>
+          <tr>
+            <td class="td_border" height="35" >&nbsp;
+              <input type="text" style="width:250px" name="edit___UC_API"  value="<?php echo UC_API;?>" /></td>
+            <td class="td_border"> 如果你的 UCenter 访问地址发生了改变，请修改此项。不正确的设置可能导致站点功能异常，请小心修改。<br />
+              格式:   http://www.duomicms.net/uc_server (最后不要加'/')</td>
+          </tr>
+          <tr>
+            <td  colspan="2"  height="35" align="left" class="td_border">&nbsp;UCenter IP 地址：</td>
+          </tr>
+          <tr>
+            <td class="td_border" height="35" >&nbsp;
+              <input type="text" style="width:250px" name="edit___UC_IP"  value="<?php echo UC_IP;?>" /></td>
+            <td class="td_border">如果你的服务器无法通过域名访问 UCenter，可以输入 UCenter 服务器的 IP 地址</td>
+          </tr>
+          <tr>
+            <td  colspan="2"  height="35" align="left" class="td_border">&nbsp;UCenter 数据库服务器：</td>
+          </tr>
+          <tr>
+            <td class="td_border" height="35" >&nbsp;
+              <input type="text" style="width:250px" name="edit___UC_DBHOST"  value="<?php echo UC_DBHOST;?>" /></td>
+            <td class="td_border">可以是本地也可以是远程数据库服务器，如果 MySQL 端口不是默认的 3306，请填写如下形式：127.0.0.1:6033</td>
+          </tr>
+          <tr>
+            <td  colspan="2"  height="35" align="left" class="td_border">&nbsp;UCenter 数据库用户名：</td>
+          </tr>
+          <tr>
+            <td class="td_border"  colspan="2" height="35"  >&nbsp;
+              <input type="text" style="width:250px" name="edit___UC_DBUSER"  value="<?php echo UC_DBUSER;?>" />
+              &nbsp;&nbsp;</td>
+          </tr>
+          <tr>
+            <td  colspan="2"  height="35" align="left" class="td_border">&nbsp;UCenter 数据库密码：</td>
+          </tr>
+          <tr>
+            <td class="td_border"  colspan="2" >&nbsp;
+              <input type="password" style="width:250px" name="edit___UC_DBPW"  value="********" />
+              &nbsp;</td>
+          </tr>
+          <tr>
+            <td  colspan="2"  height="35" align="left" class="td_border">&nbsp;UCenter 数据库名：</td>
+          </tr>
+          <tr>
+            <td class="td_border"  colspan="2"  height="35" >&nbsp;
+              <input type="text" style="width:250px" name="edit___UC_DBNAME"  value="<?php echo UC_DBNAME;?>" />
+              &nbsp;</td>
+          </tr>
+          <tr>
+            <td  colspan="2"  height="35" align="left" class="td_border">&nbsp;UCenter 表前缀：</td>
+          </tr>
+          <tr>
+            <td class="td_border"  colspan="2"  height="35" >&nbsp;
+              <input type="text" style="width:250px" name="edit___UC_DBTABLEPRE"  value="<?php echo str_replace("`".UC_DBNAME."`.",'',UC_DBTABLEPRE); ?>" /></td>
+          </tr>
+          <tr>
+            <td height="35" align="right" class="td_border" >&nbsp;</td>
+            <td class="td_border"><input type="submit" name="Submit"  value="确定提交" class="rb1" />
+              &nbsp;&nbsp;
+              <input type="reset" name="Submit2" value="清除重置"  class="rb1"/></td>
+          </tr>
+        </form>
+      </table>
+    </div>
+  </div>
+</div>
+<?php
+viewFoot();
+?>
+</body>
+</html>

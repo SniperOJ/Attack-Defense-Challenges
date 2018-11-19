@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>全部数据-{duomicms:webname}-Power by DuomiCms</title>
+<meta name="keywords" content="全部数据-{duomicms:key}" />
+<meta name="description" content="全部数据-{duomicms:des}" />
+{duomicms:style}
+</head>
+<body>
+{duomicms:head}
+<div class="main">
+		<div class="letter clearfix">
+			<ul>
+		  {duomicms:lettercaslist}
+          <li{if:"[lettercaslist:value]"=="0-9"} class="zi9"{end if}><a href="#[lettercaslist:value]">[lettercaslist:value]</a></li>
+          {/duomicms:lettercaslist}
+            </ul>
+		</div>
+		{duomicms:arealist letter=all}
+		<div id="[arealist:typename]" class="vmap clearfix">
+			<span class="zm">[arealist:typename]</span>
+				<ul>
+				{duomicms:videolist num=100 order=time letter=[arealist:typename]}
+				<li class="bv{if:[videolist:i]% 2==0} mmr0{end if}{if:[videolist:i]% 6==0} pmr0{end if}"><a href="[videolist:link]" title="[videolist:name]"><span class="bz">{if:"[videolist:note]"<>""}[videolist:note]{else}{subif:[videolist:state]<>0}[videolist:state]{end subif}{subif:[videolist:state]>999}期{end subif}{subif:[videolist:state]<1000 and [videolist:state]<>0}集{end subif}{end if}</span>[videolist:name]</a></li>
+				 {/duomicms:videolist}			
+				</ul>
+		</div>
+        {/duomicms:arealist}		
+</div>
+{duomicms:foot}
+</body>
+</html>

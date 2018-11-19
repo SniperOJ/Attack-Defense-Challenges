@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<link  href="skin/css/style.css" rel="stylesheet" type="text/css" />
+<title>影片管理</title>
+<script src="skin/js/common.js" type="text/javascript"></script>
+<script src="skin/js/main.js" type="text/javascript"></script>
+<link rel="stylesheet" href="kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="kindeditor/plugins/code/prettify.css" />
+<script charset="utf-8" src="kindeditor/kindeditor-all-min.js"></script>
+<script charset="utf-8" src="kindeditor/lang/zh_CN.js"></script>
+<script src="skin/upload/js/jquery-1.11.2.min.js"></script>
+<script language="javascript" src="skin/upload/js/setup.js"></script>
+<script language="javascript">var jq = jQuery.noConflict();</script>
+<link rel="stylesheet" type="text/css" href="skin/upload/css/upload.css" />
+<script type="text/javascript" src="skin/upload/js/webuploader.js"></script>
+<script type="text/javascript" src="skin/upload/js/md5.js"></script>
+<script type="text/javascript" src="skin/upload/js/haiyang.js"></script>
+</head>
+<body>
+<div class="r_main">
+  <div class="r_content">
+    <div class="r_content_1">
+      <form action="?action=save&acttype=add" method="post" name="addform" id="addform" >
+        <table width="100%" border="0" cellpadding="0" cellspacing="0"  class="tb_style">
+          <input type="hidden" value="0" name="v_commend" id="v_commend" />
+          <tr>
+            <td colspan="3" class="td_title"> 添加视频数据(<font color='red'>＊</font>为必填,其它选填)</td>
+          </tr>
+          <tr height="35">
+            <td width="70" class="td_border"> 名 称：  </td>
+            <td class="td_border"><input type="text" name="v_name" id="v_name" autocomplete="off" onChange="checkRepeat();" value="" size="23" />
+              <span id="v_name_ok"></span>拼 音：
+              <input type="text" name="v_enname" id="v_enname"  value="" size="23" onchange="this.value=this.value.replace(/[^\w]+/ig,'')" />
+               <font color="#FF0000">＊</font> 颜色：
+              <select name="v_color" >
+                <option value="" selected>标题颜色</option>
+                <option style="background-color:#FF0000;color: #FF0000" value="#FF0000">红色</option>
+                <option style="background-color:#FF33CC;color: #FF33CC" value="#FF33CC">粉红</option>
+                <option style="background-color:#00FF00;color: #00FF00" value="#00FF00">绿色</option>
+                <option style="background-color:#0000CC;color: #0000CC" value="#0000CC">深蓝</option>
+                <option style="background-color:#FFFF00;color: #FFFF00" value="#FFFF00">黄色</option>
+                <option style="background-color:#660099;color: #660099" value="#660099">紫色</option>
+                <option style="" value="">无色</option>
+              </select>
+                视频分类：
+              <select name="v_type" id="v_type" >
+                <option value="">请选择视频分类</option>
+                <?php makeTypeOption(0," |  ",0);?>
+              </select>
+              <font color="#FF0000">＊</font>
+              <label>连载？
+              <input type="checkbox" onclick="isViewState()" id="v_statebox" class="checkbox" />
+              </label>
+              <span id="v_statespan" style="display:none">到第
+              <input name="v_state" id="v_state" type="text" size="5" />
+              集</span> 
+              影片相关：
+              <select name="v_commend" id="v_commend">
+                <option value=0>选择等级</option>
+                <option value=1>VIP</option>
+                <option value=2>HD</option>
+                <option value=3>NEW</option>
+                <option value=4>1080</option>
+              </select>
+              </td>
+          </tr>
+          <tr height="35">
+            <td class="td_border"> 扩展分类：</td>
+            <td class="td_border"><?php makeTypeOption2(0," |  ",0);?></td>
+          </tr>
+          <tr height="35">
+            <td class="td_border"> 剧情分类：</td>
+            <td class="td_border"><?php makeTypeOption3(0," |  ",0);?></td>
+          </tr>
+          <tr height="35">
+            <td class="td_border"> 图片地址：</td>
+            <td class="td_border"><input name="v_pic" type="text" id="v_pic" value="" size="30" />
+               ←
+              <input name="doClear" type="button" class="rb1" id="doClear" value="清  除" onclick="javascript:document.addform.v_pic.value='';"/>
+               
+              <iframe src="upload.htm" scrolling="No" topmargin="0" width="320" height="30" marginwidth="0" marginheight="0" frameborder="0" align="center"></iframe></td>
+          </tr>
+          <tr height="35">
+            <td class="td_border"> 主 演：</td>
+            <td class="td_border"><input size="30" name="v_actor" value=""  />
+              导   演：
+              <input name="v_director"  size="30" value="" />
+               星级：
+              <select name="v_commend" id="v_commend">
+                <option value=0>选择星级</option>
+                <option value=1>一星</option>
+                <option value=2>二星</option>
+                <option value=3>三星</option>
+                <option value=4>四星</option>
+                <option value=5>五星</option>
+              </select>
+               主演、导演用逗号或空格隔开</td>
+          </tr>
+          <tr height="35">
+            <td class="td_border"> 备 注：</td>
+            <td class="td_border"><input name="v_note"  size="30" />
+              关键词：
+              <input type="text" id="v_tags" name="v_tags" size="30" />
+               备注如：高清,无水印 (配合标题一起显示)</td>
+          </tr>
+          <tr height="35">
+            <td class="td_border"> 发行年份：</td>
+            <td class="td_border"><?php echo getYearSelect("v_publishyear","选择或填写",$row["v_publishyear"]);?>     语言：<?php echo getYuyanSelect("v_lang","选择或填写",$row["v_lang"]);?>     地区：<?php echo getAreaSelect("v_publisharea","选择或填写",$row["v_publisharea"]);?>      版本：<?php echo getVerSelect("v_ver","选择或填写",$row["v_ver"]);?> </td>
+          </tr>
+          <tr height="35">
+            <td class="td_border"> 总点击：</td>
+            <td class="td_border"><input type="text" name="v_hit" id="v_hit" maxlength="9" value="0" size="6" />
+               月点击：
+              <input type="text" name="v_monthhit" id="v_monthhit" maxlength="9" value="0" size="6" />
+               周点击：
+              <input type="text" name="v_weekhit" id="v_weekhit" maxlength="9" value="0" size="6" />
+               日点击：
+              <input type="text" name="v_dayhit" id="v_dayhit" maxlength="9" value="0" size="6" /></td>
+          </tr>
+          <tr height="35">
+            <td class="td_border"> 更新周期：</td>
+            <td class="td_border"><input name=v_reweek[] type=checkbox value=周一>
+              周一  
+              <input name=v_reweek[] type=checkbox value=周二>
+              周二  
+              <input name=v_reweek[] type=checkbox value=周三>
+              周三  
+              <input name=v_reweek[] type=checkbox value=周四>
+              周四  
+              <input name=v_reweek[] type=checkbox value=周五>
+              周五  
+              <input name=v_reweek[] type=checkbox value=周六>
+              周六  
+              <input name=v_reweek[] type=checkbox value=周日>
+              周日    
+              时长：
+              <input size="5" name="v_len" value=""  />
+              分钟  
+              集数：
+              <input size="5" name="v_total" value=""  />
+              集   </td>
+          </tr>
+          <tr height="35">
+            <td class="td_border"> 影片别名：</td>
+            <td class="td_border"><input size="20" name="v_nickname" value=""  />
+                
+              发行公司：
+              <input size="20" name="v_company" value=""  />
+                
+              电视台：
+              <input size="20" name="v_tvs" value=""  />
+                
+          <tr height="35">
+            <td class="td_border"> 影片评分：
+            <td class="td_border"> 豆瓣
+              <input size="3" name="v_douban" value=""  />
+               
+              时光网
+              <input size="3" name="v_mtime" value=""  />
+               
+              IMDB
+              <input size="3" name="v_imdb" value=""  />
+               
+              站内
+              <input size="3" name="v_score" value=""  />
+               
+              评分次数
+              <input size="3" name="v_scorenum" value=""  />
+              （评分 = 站内分数/评分次数） </td>
+          </tr>
+          <tr>
+            <td height="30" class="td_border"> 口令播放：</td>
+            <td height="30" class="td_border">
+              <input style="IME-MODE:disabled" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="v_pwd" type="text" maxlength="9" value="" size="20"/>
+               仅支持数字，为空无需口令播放。</td>
+          </tr>
+          <?php if($cfg_user==1){?>
+          <tr>
+            <td height="30" class="td_border"> 消费点数：</td>
+            <td height="30" class="td_border">
+              <input name="v_money" type="text" maxlength="9" value="0" size="10"/>
+                <font color="#FF0000"> ＊播放页生成静态该功能无效。</font></td>
+          </tr>
+          <?php }?>
+           <tr>
+            <td  height="30" class="td_border"> 上传视频：</td>
+			      <td height="30" class="td_border">
+			      <div class="uploadmain" style="80%">
+              <div class="shangchuan_biaodan" id="chose0">
+              <div id="chosevideo">选择文件</div>
+              <div id="divFileProgressContainer"></div>
+              </div>
+            </div>
+			     </td>
+           </tr>
+          <tr height="35">
+            <td colspan="2" style="padding:0px"><div id="v_playarea"></div></td>
+          </tr>
+          <tr height="35">
+            <td colspan='2' class="td_border"> [<a onclick="expendPlayArea(2,escape('<?php echo $makePlayerSelectStr;?>'),0)" ><font color="red">增加一组播放来源</font></a>]</td>
+          </tr>
+          <tr height="35">
+            <td colspan="2" style="padding:0px"><div id="m_downarea"></div></td>
+          </tr>
+          <tr height="35">
+            <td colspan='2' class="td_border"> [<a onclick="expendDownArea(2,escape('<?php echo $makeDownSelectStr;?>'),0)" ><font color="red">增加一组下载来源</font></a>]</td>
+          </tr>
+          <tr height="35">
+            <td class="td_border">  影片介绍：</td>
+            <td class="td_border"><textarea id="v_content" name="v_content" style="width:700px;height:300px;"></textarea>
+              <script>
+    KindEditor.ready(function(K) {
+        var editor1 = K.create('textarea[name="v_content"]', {
+            cssPath : 'kindeditor/plugins/code/prettify.css',
+            uploadJson : 'kindeditor/php/upload_json.php',
+            fileManagerJson : 'kindeditor/php/file_manager_json.php',
+            allowFileManager : true,
+			afterBlur:function(){this.sync();},//浏览器数据兼容提交20160618     By 海东青 QQ2273188995
+            afterCreate : function() {
+                var self = this;
+                K.ctrl(document, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+                K.ctrl(self.edit.doc, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+            }
+        });
+        prettyPrint();
+    });
+</script>
+            </td>
+          </tr>
+          <tr>
+            <td height="40" colspan="2" align="center" class="td_border"> 
+              <input type="checkbox" value="1" name="ping" class="checkbox">百度推送新增内容  <input type="submit" name="Submit" value="确定提交" class="rb1" onClick="if($('v_name').value.length==0){alert('请填写名称');return false;};if($('v_type').value.length==0){alert('请选择分类');return false;}"/>
+                
+              <input type="reset" name="reset" value="清除重置" class="rb1"/></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+<?php
+viewFoot();
+?>
+<script>expendPlayArea(1,"<?php echo $makePlayerSelectStr;?>",1);</script>
+<script>expendDownArea(1,"<?php echo $makeDownSelectStr;?>",1);</script>
+<script type="text/javascript" src="skin/js/drag.js"></script>
+</body>
+</html>

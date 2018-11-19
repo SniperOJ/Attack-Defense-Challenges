@@ -1,0 +1,162 @@
+/* download-focus */
+.download-focus {
+	width: 1200px;
+	overflow: hidden;
+	position: relative;
+	margin-bottom:20px;
+}
+.download-focus .ui-title {
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	padding: 0 19px;
+	color: #666;
+	font-size: 14px;
+	border-bottom: 1px solid #eee;
+	background-color: #fcfcfc;
+}
+.download-focus .ui-title strong {
+	color: #f60;
+}
+.download-focus .ui-title span {
+	color: #080;
+	float: right;
+	font-size: 12px;
+}
+/* download-group */
+.download-group {
+	width: 1200px;
+	margin-bottom:15px;
+	overflow: hidden;
+	clear: both;
+	max-height: 700px;
+ _height:expression(this.scrollHeight > 700 ? "700px" : "auto");
+	overflow: auto;
+	overflow-x: hidden;
+}
+.download-group li {
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	overflow: hidden;
+	float: left;
+	clear: both;
+	padding: 3px 0;
+}
+.download-group .info-group {
+	width: 1000px;
+	float: left;
+	overflow: hidden;
+}
+.download-group .btn-group {
+	width: 160px;
+	float: right;
+	overflow: hidden;
+}
+.download-group table {
+	width: 100%;
+}
+.download-group table td {
+	vertical-align: middle;
+	text-align: left;
+	height: 35px;
+	line-height: 35px;
+	white-space:nowrap;
+	padding: 0 5px;
+}
+.download-group .ckb {
+	width: 10px;
+}
+.download-group .tit {
+	width: 10px;
+	color: #06c;
+_width: !important;
+}
+.download-group .tit label {
+	height: 25px;
+	line-height: 25px;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.download-group .btn {
+	width: 70px;
+	text-align: center;
+}
+.download-group .btn .ui-button {
+	padding:5px 10px;
+	background:#06c;
+	color:#fff;
+}
+.download-group .btn .ui-button-green {
+	background-color: #080;
+}
+.download-group .btn .ui-button-green:hover {
+	background-color: #222;
+}
+.download-group .cpy {
+	width: 1000px;
+}
+.download-group .cpy .code {
+	overflow: hidden;
+	_display: inline-block;
+}
+.download-group .cpy .ui-input {
+	width: 90%;
+	height: 25px;
+	line-height: 25px;
+	font-size: 12px;
+	color: #666;
+	padding-left:5px;
+}
+/* download-footer */
+.download-footer {
+	border-top: 1px solid #eee;
+}
+.download-footer-group {
+	overflow: hidden;
+}
+.download-footer table {
+	width: 100%;
+}
+.download-footer table td {
+	vertical-align: middle;
+	text-align: left;
+	height: 35px;
+	line-height: 35px;
+	white-space:nowrap;
+	padding: 0 5px;
+}
+.download-footer .ckb {
+	width: 10px;
+}
+.download-footer .tit {
+	width: 40px;
+}
+.download-footer .tit label {
+	height: 25px;
+	line-height: 25px;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.download-footer .sms {
+	text-align: right;
+}
+.download-footer .sms a {
+	color: #06c;
+}
+.download-footer .xlx .ui-button {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: normal;
+	height: 25px;
+	line-height: 25px;
+	padding: 0 10px;
+	vertical-align: middle;
+	color:#fff;
+}
+.download-footer .xlx .ui-button {
+	background-color: #06c;
+}
+.download-footer .xlx .ui-button:hover {
+	background-color: #222;
+}

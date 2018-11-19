@@ -1,0 +1,40 @@
+*{margin:0;padding:0;}
+a{ text-decoration:none; outline:none;}
+a:active {star:expression(this.onFocus=this.blur());}
+#play_header{width:100%;height:33px;line-height:33px;background:#1c1c1c;border-bottom:1px solid #222;color:#fff;font-size:14px;font-family:Microsoft YaHei,'宋体',arial;overflow:hidden;}
+#play_header a{display:block;font-size:inherit;font-family:inherit;color:#fff;text-decoration:none;}
+#play_header a:hover{text-decoration:underline;}
+#header1{float:left;display:inline;width:25%;text-align:left; }
+#header2{float:left;display:inline;width:50%;text-align:center;}
+#header3{float:right;display:inline;width:25%;text-align:right;/*border-left:1px solid #222;*/}
+#header1 a{/*border-right:1px solid #222;width:49%;float:left;*/margin-right:50px;float:left;}
+
+#play_box{overflow:hidden;}
+#video_menu{float:left;width:0;height:407px;background: #303030;overflow-x:hidden; overflow-y:auto;SCROLLBAR-BASE-COLOR:#1F1F1F;SCROLLBAR-TRACK-COLOR:#000;SCROLLBAR-3DLIGHT-COLOR:#000;SCROLLBAR-SHADOW-COLOR:#000;SCROLLBAR-FACE-COLOR:#1F1F1F;SCROLLBAR-HIGHLIGHT-COLOR:#000;font-family:Microsoft YaHei,'宋体',arial;}
+#video_menu ul,#video_menu li,#video_menu dl,#video_menu dd,#video_menu li p{margin:0;padding:0;}
+#video_menu li{overflow:hidden;}
+#video_menu li p{clear:both;color: #fff;height:35px;line-height:35px;padding-left:8px;font-size:16px;cursor:pointer;}
+#video_menu li p.current1{color:#E12060;}
+#video_menu dl{width:110%;display:none;}
+#video_menu dd{float:left;width:54px;height:54px;line-height:54px;text-align: center;background:#101010;margin-bottom:2px;margin-left:2px;font-size: 12px;color: #eee;overflow:hidden;}
+#video_menu dd a{display:block;color:#5e5e5e; text-decoration:none;}
+#video_menu dd a:hover{color:#fff;background:#E12060}
+#video_menu dd a.current2{background:#E12060;color:#fff;}
+#video_menu dd a.current2:hover{color:#fff !important;}
+#player{width:100%;float:left;}
+
+#video_menu::-webkit-scrollbar {width:11px;}
+#video_menu::-webkit-scrollbar-track {
+background-color:#000;
+-webkit-border-radius: 2em;
+-moz-border-radius: 2em;
+border-radius:2em;
+border:1px solid #111;
+}
+#video_menu::-webkit-scrollbar-thumb {
+cursor:pointer;
+background-color:#444;
+-webkit-border-radius: 2em;
+-moz-border-radius: 2em;
+border-radius:2em;
+}

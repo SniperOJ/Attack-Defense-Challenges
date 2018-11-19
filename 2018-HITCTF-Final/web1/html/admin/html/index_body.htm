@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><?php echo $cfg_soft_enname; ?> Home</title>
+<script src="skin/js/common.js" type="text/javascript"></script>
+<script src="skin/js/main.js" type="text/javascript"></script>
+<script src="skin/js/drag.js" type="text/javascript"></script>
+<link  href="skin/css/style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+*{margin:0px;padding:0px;}
+body {background-color:#FFFFFF;color:#000000;margin:0px;font-family:"\5fae\8f6f\96c5\9ed1",tahoma,arial,sans-serif;}
+table {border-collapse:collapse;margin-bottom:10px;clear:both;}
+.inp tr th, td {padding:2px 5px 2px 5px;vertical-align:center;text-align:center;height:30px; border:1px #FFFFFF solid;}
+.el { text-align: center; background-color: #d3e1e5; }
+.er { text-align: right; background-color: #fafafa; }
+.ec { text-align: left; background-color: #f5f5f5;border-bottom: 1px solid #ddd; font-weight: bold; color: #3374B4;}
+.fl { text-align: left; background-color: #fafafa; color: #505050; }
+.pl10{padding-left:10px;}
+</style>
+</head>
+<body>
+<div style="margin:0 auto;width:99%;overflow:hidden;">
+<table width="100%" class="inp">
+<tr>
+<td colspan="4" class="ec pl10">环境相关信息</td>
+<tr>
+<td class="er" width="12%">当前版本</td>
+<td class="fl" width="38%">免费版<?php echo $cfg_version; ?></td>
+<td class="er" width="20%">PHP版本</td>
+<td class="fl" width="30%"><?php echo @phpversion(); ?></td>
+</tr>
+<tr>
+<td class="er">官方版本</td>
+<td class="fl"><script language="javascript" type="text/javascript" src="http://duomicms.net/api/duomicmsver.js"></script></td>
+<td class="er">是否安全模式</td>
+<td class="fl"><?php echo ($isSafeMode ? 'On' : 'Off')?></td>   
+</tr>
+<tr>
+<td class="er">支持上传的最大文件</td>
+<td class="fl"><?php echo ini_get("post_max_size")?></td>
+<td class="er">Register_Globals</td>
+<td class="fl"><?php echo ini_get("register_globals") ? 'On' : 'Off'?></td>    
+</tr>
+<tr>
+<td class="er">Magic_Quotes_Gpc</td>
+<td class="fl"><?php echo ini_get("magic_quotes_gpc") ? 'On' : 'Off'?></td>
+<td class="er">是否允许打开远程连接</td>
+<td class="fl"><?php echo ini_get("allow_url_fopen") ? '支持' : '不支持'?></td>   
+</tr>
+<tr>
+<td class="er">其它必须函数检测</td>
+<td class="fl">
+<?php
+          $needfunc = array('dir','phpinfo','fsockopen','iconv');
+          $n = 0;
+          foreach($needfunc as $k) {
+          	if(!function_exists($k)) {
+          		echo "<font color='red'>[{$k}×]</font> ";
+          		$n++;
+          	}
+          }
+          if($n==0) {
+          	echo "符合要求";
+          }
+          else {
+          	echo "被禁用的函数可能导致部份功能无法使用！";
+          }
+       ?>
+</td>
+<td class="er">服务端口</td>
+<td class="fl"><?php echo  @GetHostByName();echo ""; echo $_SERVER['SERVER_PORT'] ?></td>   
+</tr>
+<tr>
+<td class="er">引擎</td>
+<td class="fl"><?php echo  @$_SERVER['SERVER_SOFTWARE']; ?></td>
+<td class="er">MySql版本</td>
+<td class="fl"><?php echo @mysql_get_server_info(); ?></td>    
+</tr>
+<tr>
+<td class="er">系统</td>
+<td class="fl"><?php echo @php_uname('s'); echo " - ";echo @php_uname('v'); ?></td>
+<td class="er" >GD版本</td>
+<td class="fl"><?php echo @gdversion(); ?></td>
+</tr>
+<table width="100%" class="inp">
+<tr>
+<td class="ec pl10">程序信息</td>
+</tr>
+<tr>
+<td class="fl pl10">By 海东青 官方QQ群：<a href="http://shang.qq.com/wpa/qunwpa?idkey=4ef2bcd2fc069c2954f0cde8d892c0be46e9efc864a0f413c2dd0e79176b784d" target="_blank">495417896</a></td>
+</tr>
+</table>
+</div>
+</table>
+<table width="100%" class="inp">
+<tr>
+<td class="ec pl10">捐助DuomiCms</td>
+</tr>
+<tr>
+<td class="fl pl10">
+支付宝（yeigdu@163.com） | 微信（534172712）
+</td>
+</tr>
+</table>
+<table width="100%" class="inp">
+<tr>
+<td class="ec pl10">系统相关信息</td>
+</tr>
+<tr>
+<td class="fl pl10">海东青 | Juuse Puer | 风清扬 | 特别鸣谢【闹闹-群管理】长期对DuomiCms论坛维护</td>
+</tr>
+</table>
+</div>
+<?php
+viewFoot();
+?>
+</body>
+</html>

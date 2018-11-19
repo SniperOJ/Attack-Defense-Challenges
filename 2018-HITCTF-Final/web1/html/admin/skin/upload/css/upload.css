@@ -1,0 +1,18 @@
+.webuploader-container {position: relative;}
+.webuploader-element-invisible { position: absolute !important; clip: rect(1px 1px 1px 1px); /* IE6, IE7 */ clip: rect(1px,1px,1px,1px); }
+.webuploader-pick { padding:5px 20px; background:#B34444; color:#fff; display:inline-block; border-radius:5px;text-shadow:none;}
+.webuploader-pick-hover{ background:#4A4A4A;}
+#divFileProgressContainer { position: relative; }
+.webuploader-pick-disable { opacity: 0.6; pointer-events: none; }
+.progressName { font-size: 14px; margin: 10px 0px; }
+.progressName a { float: right; border: 1px solid #ff7a19; padding: 4px 10px; border-radius: 4px; font-size: 12px; }
+.cancle { position: absolute; right: 0; width: 70px; height: 26px; border: 1px solid #ff7a19; color: #ff7a19; border-radius: 5px; line-height: 26px; text-align: center; }
+.progressBarInProgress { height: 100%; display: block; background: #ff7a19; border-radius: 3px; }
+.jindu { width:auto; height: 23px; padding: 3px; border: 1px solid #D3D3D3; border-radius: 4px; margin-top: 20px; margin-bottom: 8px; }
+.progressBarStatus ul li { float: left !important; width: 25% !important; text-align: center;display: inline !important;clear:none !important;}
+.progressBarStatus ul li.first { text-align: left !important;}
+.progressBarStatus ul li.last { text-align: right !important;}
+.uploadmain{margin:0 auto;}
+.uplist{margin-top:10px;}
+.uplist li span{ display:inline-block; width:100px; text-align:right; padding-right:10px;}
+/*ÍøÕ¾µ÷ÓÃ*/

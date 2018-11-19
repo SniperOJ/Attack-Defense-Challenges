@@ -1,0 +1,265 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+</head>
+<body style="margin:0px;padding:0px;">
+
+<div id="NBPlayerBox"></div>
+<script>
+    var Niba = {
+            'CacheUrl': parent.now,
+            'NextPageUrl': parent.nextPage,
+            'NextCacheUrl': parent.next,
+            'Width': parent.playerw,
+            'Height': parent.playerh,
+            'Buffer': parent.adsPage,
+            'Pause': parent.adsPage,
+            'BufferTime': parent.adsTime*1000,
+            'Nid': '',
+            'InstallPage': 'http://player.nbplay.cn/install.html'
+    };
+
+	
+var nbpax = "ActiveX hosting plugin for nbpax";
+var BrowserIe;
+var NBPlayerBox;
+var IsAdShow;
+var NibaObj;
+var AdObj;
+var InstallObj;
+var Classid = "746DE5EA-8B86-402E-8F96-91E434927A04";
+var ActiveXName = "NiBaPlayer";
+var StatisticsUrl = 'http://player.nbplay.cn/play.html?nid=';
+function Init() {
+    NBPlayerBox = document.getElementById("NBPlayerBox");
+    NBPlayerBox.style.width = Niba.Width;
+    NBPlayerBox.style.height = Niba.Height;
+    document.body.appendChild(NBPlayerBox);
+    IsIeInstalled = true;
+    AdObj = document.createElement("iframe");
+    AdObj.id = "AdPlay";
+    AdObj.setAttribute("border", "0");
+    AdObj.setAttribute("src", Niba.Buffer);
+    AdObj.setAttribute("marginWidth", "0");
+    AdObj.setAttribute("frameSpacing", "0");
+    AdObj.setAttribute("marginHeight", "0");
+    AdObj.setAttribute("frameBorder", "0");
+    AdObj.setAttribute("vspale", "0");
+    AdObj.setAttribute("width", "100%");
+    AdObj.setAttribute("height", "100%");
+    AdObj.setAttribute("scrolling", "no");
+    AdObj.setAttribute("position", "absolute");
+    InstallObj = document.createElement("iframe");
+    InstallObj.id = "InstallPlay";
+    InstallObj.setAttribute("border", "0");
+    InstallObj.setAttribute("src", Niba.InstallPage + "?nid=" + Niba.Nid);
+    InstallObj.setAttribute("marginWidth", "0");
+    InstallObj.setAttribute("frameSpacing", "0");
+    InstallObj.setAttribute("marginHeight", "0");
+    InstallObj.setAttribute("frameBorder", "0");
+    InstallObj.setAttribute("vspale", "0");
+    InstallObj.setAttribute("width", "100%");
+    InstallObj.setAttribute("height", "100%");
+    InstallObj.setAttribute("scrolling", "no");
+    StatisticsObj = document.createElement("iframe");
+    StatisticsObj.style.display = "none";
+    StatisticsObj.setAttribute("src", StatisticsUrl + Niba.Nid);
+    //For IE
+    if (!!window.ActiveXObject || "ActiveXObject" in window) {
+        BrowserIe = true;
+        NibaObj = document.createElement("object");
+        NibaObj.setAttribute("width", Niba.Width);
+        NibaObj.setAttribute("height", Niba.Height);
+        NibaObj.id = ActiveXName;
+        NibaObj.onerror = "ShowInstallInfo()";
+        NibaObj.classid = "clsid:" + Classid;
+        window.onerror = ShowInstallInfo;
+        //IF 64
+        if (window.navigator.platform == 'Win64') {
+            NBPlayerBox.innerHTML = "<font color='red'>请使用32位浏览器或非IE浏览器打开本页。</font>";
+            return;
+        }
+        if (IsIeInstalled) {
+            showPlayer();
+        } else {
+            ShowInstallInfo();
+        }
+    } else {
+        //For Webkit
+        BrowserIe = false;
+        NibaObj = document.createElement("object");
+        NibaObj.id = ActiveXName;
+        NibaObj.type = "application/x-nbpax-manager";
+        NibaObj.align = "baseline";
+        NibaObj.border = "0";
+        NibaObj.width = Niba.Width;
+        NibaObj.height = Niba.Height;
+        NibaObj.setAttribute("clsid", "{" + Classid + "}");
+        NibaObj.setAttribute("Event_OnStateChanged", "StateChanged");
+        NibaObj.setAttribute("Event_OnUrlIsTranslated", "UrlIsTranslated");
+        var IsInstalled = false;
+        IsInstalled = checkPlugins();
+        if (IsInstalled) {
+            showPlayer();
+        } else {
+            ShowInstallInfo();
+        }
+    }
+}
+function showPlayer() {
+    IsAppendNiba();
+    if (BrowserIe) {
+        NibaObj.attachEvent("OnStateChanged", function (a, b) { StateChanged(a, b); });
+        NibaObj.attachEvent("OnUrlIsTranslated", function () { UrlIsTranslated(); });
+    }
+    if (IsIeInstalled || !BrowserIe) {
+        insertBeginAd();
+        LoopBegin();
+    }
+}
+function insertBeginAd() {
+    NBPlayerBox.appendChild(AdObj);
+    AdObj.style.position = "absolute"
+    if (BrowserIe) {
+        AdObj.style.top = NBPlayerBox.offsetTop;
+        AdObj.style.left = NBPlayerBox.offsetLeft;
+    } else {
+        AdObj.style.top = NibaObj.offsetTop - 1;
+        AdObj.style.left = NibaObj.offsetLeft - 1;
+    }
+    AdObj.style.width = parseInt(NBPlayerBox.style.width.replace("px", "")) + 2;
+    AdObj.style.height = parseInt(NBPlayerBox.style.height.replace("px", "")) - 60;
+}
+var IsUrlPost = 0;
+var IsState = 0;
+var RetryTimes = 0;
+var IsReady = false;
+function LoopBegin() {
+    try {
+        if (!IsReady) {
+            IsUrlPost = NibaObj.OpenUrl("GetUrl=" + Niba.CacheUrl);
+        }
+        if (IsReady) {
+            NibaObj.Start();
+            beginAd();
+        } else {
+            RetryTimes++;
+            if (RetryTimes >= 6) {
+                IsUrlPost = 0;
+                RetryTimes = 0;
+            }
+            setTimeout("LoopBegin()", 500);
+        }
+    } catch (e) {
+        setTimeout("LoopBegin()", 2000);
+    }
+}
+function UrlIsTranslated() {
+    IsReady = true;
+}
+function IsAppendNiba() {
+    NBPlayerBox.appendChild(NibaObj);
+    if (BrowserIe == true) {
+        try {
+            NibaObj.getState();
+        } catch (e) {
+            NibaObj.style.display = "none";
+            ShowInstallInfo();
+        }
+    }
+}
+function beginAd() {
+    if (IsSuccessed) {
+        NibaObj.pause();
+        NBPlayerBox.appendChild(StatisticsObj);
+        NibaObj.OpenUrl("GetFile=" + Niba.NextCacheUrl);
+        AdObj.style.display = "";
+        setTimeout(function () {
+            AdObj.style.display = "none";
+            NibaObj.play();
+        }, Niba.BufferTime);
+    } else {
+        setTimeout("beginAd()", 100);
+    }
+}
+function ShowInstallInfo() {
+    IsIeInstalled = false;
+    AdObj.style.display = "none";
+    NBPlayerBox.appendChild(InstallObj);
+}
+function checkPlugins() {
+    if (navigator.plugins[nbpax]) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+var HaveAndroid = navigator.userAgent.toLowerCase().match(/android/i) == "android";
+if (HaveAndroid) {
+    var AndroidPreFix = "niba://app/openwith?u=";
+    var installPage = "http://nba.nbplay.cn/install.html";
+    var href = AndroidPreFix+Niba.CacheUrl;
+    var timeout, t = 1000, hasApp = true;
+    setTimeout(function () {
+        if (hasApp) {
+        } else {
+            window.parent.location.href=installPage + "?nid=" + Niba.Nid;
+        }
+        document.body.removeChild(ifr);
+    }, 2000)
+    var t1 = Date.now();
+    var ifr = document.createElement("iframe");
+    ifr.setAttribute('src', href);
+    ifr.setAttribute('style', 'display:none');
+    document.body.appendChild(ifr);
+    timeout = setTimeout(function () {
+        var t2 = Date.now();
+        if (!t1 || t2 - t1 < t + 200) {
+            hasApp = false;
+        }
+    }, t);
+} else {
+    Init();
+}
+var IsSuccessed = false;
+function StateChanged(a, b) {
+    if (!IsSuccessed && b == 5) {
+        IsSuccessed = true;
+    }
+    if (b == 6) {
+        PlayNext();
+    }
+    setTimeout(function () { ShowRunningAd(); }, 300);
+}
+
+function PlayNext() {
+    if (Niba.NextPageUrl != '') {
+        top.location.href = Niba.NextPageUrl;
+    }
+}
+function ShowRunningAd() {
+    var status = NibaObj.getState();
+    if (status > 1) {
+        if (status == 3) {
+            if (AdObj.style.display == "none") {
+                AdObj.style.position = "absolute"
+                if (AdObj.src != Niba.Pause) {
+                    AdObj.src = Niba.Pause;
+                }
+                AdObj.style.top = NBPlayerBox.offsetTop;
+                AdObj.style.left = NBPlayerBox.offsetLeft;
+                AdObj.style.width = parseInt(NibaObj.width.replace("px", "")) + 2;
+                AdObj.style.height = parseInt(NibaObj.height.replace("px", "")) - 60;
+                AdObj.style.display = "";
+            }
+        }
+        if (status == 5) {
+            AdObj.style.display = "none";
+        }
+    }
+}	
+</script>
+</body>
+</html>

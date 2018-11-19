@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>多米影视管理系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="robots" content="noindex,nofollow" />
+<link rel="stylesheet" href="skin/css/admin.css" type="text/css" media="all" />
+<script src="skin/js/common.js" type="text/javascript"></script>
+<script src="skin/js/admin.js" type="text/javascript"></script>
+<script src="skin/js/main.js" type="text/javascript"></script>
+<script src="skin/js/drag.js" type="text/javascript"></script>
+<style type="text/css">
+#gMenuMap {
+	text-align:left;
+}
+.fm3, .fm4 {
+	width:7px;
+	display:block;
+	cursor:pointer
+}
+.fm4 {
+	background-position:-6px 0
+}
+.menutd2 {
+	background:#f5f5f5
+}
+</style>
+</head>
+<body style="margin: 0px" scroll="no">
+<table cellpadding="0" cellspacing="0" width="100%" height="100%">
+  <tr>
+    <td colspan="3" height="40"><div class="header">
+        <div class="logo" onClick="window.open('../');" style="cursor:pointer;">后台管理中心-duomicms</div>
+        <div class="pannel">
+          <p>( 欢迎
+            <?php
+
+        if($cuserLogin->getUserRank()==1) {
+
+        	echo "管理员";
+
+        }
+
+        else {
+
+        	echo "编辑员";
+
+        }
+
+        ?>
+            <em><?php echo $cuserLogin->getUserName(); ?></em><a href="exit.php" target="_top">退出</a> ) | <a href="javascript:void(0);" onClick="view('gMenuMap');selfLabelWindefault('gMenuMap');">地图</a> | <a href="../" target="_blank">前台</a> | <em><span onClick="clearCache()" style="cursor:pointer">更新缓存</span></em><span id="upcacheresult"></span></p>
+        </div>
+        <div class="navbg">后台管理</div>
+        <div class="nav">
+          <!--上部菜单 changeMenu(左侧菜单id号后部分，右侧默认打开的url)-->
+          <ul id="topmenu">
+            <?php
+
+          if($cuserLogin->getUserRank()==1)
+
+          {
+
+          foreach($menu AS $key => $value)
+
+          {
+
+          ?>
+            <li><em><a href="#" id="header_<?php echo $key ;?>" onClick="changeMenu('<?php echo $key ;?>', '<?php echo $value['link']; ?>');"><?php echo $value[0]; ?></a></em></li>
+            <?php 
+
+          }
+
+          }
+
+          else{
+
+          ?>
+            <li><em><a href="#" id="header_content" onClick="changeMenu('content', 'admin_video.php?action=else');">数据管理</a></em></li>
+            <?php 
+
+          }
+
+          ?>
+          </ul>
+        </div>
+      </div></td>
+  </tr>
+  <tr>
+    <td class="menutd" id="menutd" valign="top" width="17"><div id="leftmenu" class="menu" style="width:170px">
+        <!--左菜单 ul id号为menu_XXXX形式，XXXX与上部导航菜单传递参数、JS中topMenus数组一至，li a中的链接与上部导航菜单传递参数一至-->
+        <?php
+
+if($cuserLogin->getUserRank()==1)
+
+{
+
+foreach($menu AS $key => $value)
+
+{
+
+	
+
+?>
+        <ul id="menu_<?php echo $key; ?>" style="display: none" >
+          <?php
+
+    foreach($value AS $key1 => $value1)
+
+    {
+
+    if($key1>0){
+
+    if($value1==''){
+
+?>
+          <li class="menuspace"><?php echo $value1;?></li>
+          <?php
+
+}else{
+
+?>
+          <li><?php echo $value1; ?></li>
+          <?php
+
+}
+
+}
+
+}
+
+?>
+        </ul>
+        <?php
+
+}
+
+}else{
+
+?>
+        <ul id="menu_content"style="display: none" >
+          <?php
+
+    //print_r($menuedit['content']);
+
+    foreach($menuedit['editor'] AS $key1 => $value1)
+
+    {
+
+?>
+          <?php
+
+	if($value1==''){
+
+?>
+          <li class="menuspace"><?php echo $value1;?></li>
+          <?php
+
+}else{
+
+?>
+          <li><?php echo $value1; ?></li>
+          <?php
+
+}
+
+}
+
+?>
+        </ul>
+        <?php
+
+}
+
+?>
+      </div>
+      <div class="footer">
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://www.duomicms.net/" target="_blank">DuomiCms</a></p>
+      </div></td>
+    <td class="menutd2" valign="middle" width="9"><span id="fm" class="fm3" onClick="tooglemenutd(this)" title="点此伸缩左侧菜单栏"> </span></td>
+    <td valign="top" class="maincontent"><iframe src="index_body.php" name="I2" width="100%" height="100%" frameborder="0" scrolling="yes" style="overflow: visible;"></iframe></td>
+  </tr>
+</table>
+<div id="gMenuMap" class="popdiv" style="width:900px;top:100px;z-index:1000; display:none;"> </div>
+<script type="text/JavaScript">
+
+	var dc=$('menutd');
+
+	var topMenus = new Array('common','video','news','template','tool','gathersoft','webhelper','webyun','system');//大菜单参数数组
+
+	var menu_key = initMenu('leftmenu');//初始化
+
+	changeMenu(menu_key ? menu_key : 'index');
+
+	//初始化左侧菜单高度
+
+	var tt=0
+
+	$("leftmenu").style.height=document.body.clientHeight-90-7-33+"px";
+
+	var  resizeTimer = null;
+
+	function doResize(){
+
+	  $("leftmenu").style.height=document.body.clientHeight-90-7-33+"px";;resizeTimer=null
+
+	}
+
+	window.onresize = function(){
+
+	   if(resizeTimer==null){
+
+			resizeTimer = setTimeout("doResize()",300);
+
+		}
+
+	}
+
+	function MarkMenuMap(){
+
+		var hrefs, s;
+
+		s = '<div class="poptitie"><span><a href="#" onClick="hide(\'gMenuMap\');" />关闭</a></span>后台功能地图</div><table width="100%" border="0" cellspacing="0" cellpadding="0" class="tb2"  ><tr>';
+
+		s += '<td width="10" valign="top"><h4>&nbsp;</h4></td>';
+
+		for(var i=0;i<topMenus.length;i++){
+
+			s += '<td valign="top" width="150"><ul class="cmblock"><li><h4>' + $('header_' + topMenus[i]).innerHTML + '</h4></li>';
+
+			hrefs = $('menu_' + topMenus[i]).getElementsByTagName('a');
+
+			for(var j = 0; j < hrefs.length; j++) {
+
+				s += hrefs[j].innerHTML!='' ? '<li><a href="'+hrefs[j].href+'" onclick="hide(\'gMenuMap\');changeMenu(\'' + topMenus[i] + '\',\''+hrefs[j].href+'\')" target="' + hrefs[j].target + '">' + hrefs[j].innerHTML + '</a></li>' : '';
+
+			}
+
+			s += '<li>&nbsp;</li></ul></td>';
+
+		}
+
+		s += '</tr></table>';
+
+		return s;
+
+	}
+
+	function getClientWidth(){
+
+		return document.body.clientWidth;
+
+	}
+
+	function selfLabelWindefault(divid){
+
+		$(divid).style.left=(getClientWidth()-$(divid).offsetWidth)/2+"px";
+
+		$(divid).style.top=(getScroll()+100)+"px";
+
+	}
+
+	$('gMenuMap').innerHTML=MarkMenuMap();
+
+	function tooglemenutd(){
+
+		dc.style.display = dc.style.display != 'none' ? 'none' : '';
+
+		$('fm').className = dc.style.display != 'none' ? 'fm3' : 'fm4';
+
+		setCookie('MENUON',dc.style.display != 'none' ? '' : '1',365*24);
+
+	}
+
+	/*if(getCookie('MENUON')=='1'){
+
+		dc.style.display = 'none';
+
+		$('fm').className = 'fm4';
+
+	}*/
+
+</script>
+</body>
+</html>

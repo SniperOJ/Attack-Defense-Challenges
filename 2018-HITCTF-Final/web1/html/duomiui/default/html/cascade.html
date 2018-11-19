@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{duomicms:webname}-高级搜索-Power by DuomiCms</title>
+<meta name="keywords" content="{duomicms:key},{duomicms:webname}" />
+<meta name="description" content="{duomicms:des},{duomicms:webname}" />
+{duomicms:style}
+</head>
+<body>
+{duomicms:head}
+<div class="main">
+  <h1 class="title"><a href="{duomicms:indexlink}">首页</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;高级筛选</h1>
+  <div class="sy-all mb clearfix">
+  <div class="sy-title clearfix">
+    <p class="type">
+      {if:{searchpage:typename}<>全部}<span class="type">{searchpage:typename}</span>{end if}
+      {if:{searchpage:jq}<>全部}<span class="type">{searchpage:jq}</span>{end if}
+      {if:{searchpage:year}<>全部}<span class="type">{searchpage:year}</span>{end if}
+      {if:{searchpage:area}<>全部}<span class="type">{searchpage:area}</span>{end if}
+     </p>
+     <p class="chg sbtn" _s_nav="sj-gjsy">筛选<i class="sjbgs"></i><i class="sjbgx"></i></p>
+   </div>
+   <div class="sy-nav-down clearfix">
+  <div id="sj-gjsy" class="sy clearfix" _s_nav="sj-gjsy" style="display:none;">
+          <dl class="clearfix"><dt><span>按分类</span></dt>
+              {duomicms:typeitemlist}
+          <dd><a href="[typeitemlist:link]"{if:{searchpage:typename}==[typeitemlist:value]} class="on"{end if}>[typeitemlist:value]</a></dd>{/duomicms:typeitemlist}
+          </dl>
+          <dl class="clearfix"><dt><span>按剧情</span></dt>
+              {duomicms:jqitemlist}
+          <dd><a href="[jqitemlist:link]"{if:[jqitemlist:value]=={searchpage:jq}} class="on"{end if}>[jqitemlist:value]</a></dd>
+             {/duomicms:jqitemlist}
+          </dl>
+          <dl class="clearfix"><dt><span>按年代</span></dt>
+              {duomicms:yearitemlist}
+          <dd><a href="[yearitemlist:link]"{if:[yearitemlist:value]=={searchpage:year}} class="on"{end if}>{if:[yearitemlist:value]==more}更早{else}[yearitemlist:value]{end if}</a></dd>{/duomicms:yearitemlist}
+          </dl>
+          <dl class="clearfix"><dt><span>按地区</span></dt>
+              {duomicms:areaitemlist}
+          <dd><a href="[areaitemlist:link]"{if:[areaitemlist:value]=={searchpage:area}} class="on"{end if}>[areaitemlist:value]</a></dd>{/duomicms:areaitemlist}
+          </dl>
+      </div>
+    </div>
+    </div>
+    <div class="sy-jg mb">
+    <p class="jg">
+     共<span class="count">{cascadelist:recordcount}</span>个筛选结果
+     </p>
+     <p class="px">
+      <a class="time{if:{searchpage:ordername}==time} on{end if}" href="{searchpage:order-time-link}"><em></em>最新</a>
+      <a class="rq{if:{searchpage:ordername}==hit} on{end if}" href="{searchpage:order-hit-link}"><em></em>人气</a>
+      <a class="tj{if:{searchpage:ordername}==commend} on{end if}" href="{searchpage:order-commend-link}"><em></em>推荐</a>
+     </p>
+  </div>
+  <div class="index-area clearfix">
+  <ul>
+    {duomicms:cascadelist size=30 order=time type=current}
+    <li class="p1 m1{if:[cascadelist:i]% 3==0} mmr0{end if}{if:[cascadelist:i]% 6==0} pmr0{end if}"><a class="link-hover" href="[cascadelist:link]" title="[cascadelist:name]"><img class="lazy" data-original="[cascadelist:pic]" src="../images/load.gif" alt="[cascadelist:name]"><span class="video-bg"></span><span class="lzbz"><p class="name">[cascadelist:name]</p><p class="actor">[cascadelist:nolinkactor]</p><p class="actor">[cascadelist:typename]{if:"[cascadelist:nolinkjqtype]"<>""},{end if}[cascadelist:nolinkjqtype]</p><p class="actor">[cascadelist:publishtime]/[cascadelist:publisharea]</p></span><p class="other">{if:"[cascadelist:note]"<>""}<i>[cascadelist:note]</i>{else}{subif:[cascadelist:state]<>0}<i>[cascadelist:state]{end subif}{subif:[cascadelist:state]>999}期{end subif}{subif:[cascadelist:state]<1000 and [cascadelist:state]<>0}集{end subif}</i>{end if}</p></a>
+    </li>
+    {/duomicms:cascadelist}
+    </ul>
+  </div>
+<div class="page mb clearfix">
+{if:{cascadelist:page}<>1}<a href="{cascadelist:firstlink}">1..</a>
+<a href="{cascadelist:backlink}"><</a>{end if}
+{cascadelist:pagenumber len=8}
+{if:{cascadelist:page}<>[pagenumber:page]}
+<a href="[pagenumber:link]">[pagenumber:page]</a>
+{else}
+<em>[pagenumber:page]</em>
+{end if}
+{/cascadelist:pagenumber}
+{if:{cascadelist:page}<>{cascadelist:pagecount}}
+<a href="{cascadelist:nextlink}">></a>
+<a href="{cascadelist:lastlink}">..{cascadelist:pagecount}</a>
+{end if}
+</div>
+</div>  
+{duomicms:foot}
+</body>
+</html>

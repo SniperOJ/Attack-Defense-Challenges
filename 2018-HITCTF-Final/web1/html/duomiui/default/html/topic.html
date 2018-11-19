@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{duomicms:topicname}_第{topicpagelist:page}页_{duomicms:webname}-Power by DuomiCms</title>
+<meta name="keywords" content="{duomicms:topicname}第{topicpagelist:page}页" />
+<meta name="description" content="{duomicms:topicname}第{topicpagelist:page}页" />
+{duomicms:style}
+</head>
+{duomicms:head}
+<div class="main">
+	<h1 class="title"><a href={duomicms:indexlink}>首页</a> > <a href={duomicms:topiclink}>专题首页</a> > {duomicms:topicname}</h1>
+	<div class="topicimg mb clearfix">
+		<img class="img" src="/{duomicms:webpath}{duomicms:topicpic}">
+		<div class="des">
+			<p>{duomicms:topicname}<span class="count">{topicpagelist:recordcount}部</span></p>
+			{duomicms:topicdes}</div>
+	</div>
+   <div class="index-area clearfix">
+	<ul>
+   {duomicms:topicpagelist size=30 order=time}
+    <li class="p1 m1{if:[topicpagelist:i]% 3==0} mmr0{end if}{if:[topicpagelist:i]% 6==0} pmr0{end if}"><a class="link-hover" href="[topicpagelist:link]" title="[topicpagelist:name]"><img class="lazy" data-original="[topicpagelist:pic]" src="../images/load.gif" alt="[topicpagelist:name]"><span class="video-bg"></span><span class="lzbz"><p class="name">[topicpagelist:name]</p><p class="actor">[topicpagelist:nolinkactor]</p><p class="actor">[topicpagelist:typename]{if:"[topicpagelist:nolinkjqtype]"<>""},{end if}[topicpagelist:nolinkjqtype]</p><p class="actor">[topicpagelist:publishtime]/[topicpagelist:publisharea]</p></span><p class="other">{if:"[topicpagelist:note]"<>""}<i>[topicpagelist:note]</i>{else}{subif:[topicpagelist:state]<>0}<i>[topicpagelist:state]{end subif}{subif:[topicpagelist:state]>999}期{end subif}{subif:[topicpagelist:state]<1000 and [topicpagelist:state]<>0}集{end subif}</i>{end if}</p></a>
+    </li>
+    {/duomicms:topicpagelist}
+    </ul>
+	</div>
+	<div class="page mb clearfix">
+{if:{topicpagelist:page}<>1}<a href="{topicpagelist:firstlink}">1..</a>
+<a href="{topicpagelist:backlink}"><</a>{end if}
+{topicpagelist:pagenumber len=8}
+{if:{topicpagelist:page}<>[pagenumber:page]}
+<a href="[pagenumber:link]">[pagenumber:page]</a>
+{else}
+<em>[pagenumber:page]</em>
+{end if}
+{/topicpagelist:pagenumber}
+{if:{topicpagelist:page}<>{topicpagelist:pagecount}}
+<a href="{topicpagelist:nextlink}">></a>
+<a href="{topicpagelist:lastlink}">..{topicpagelist:pagecount}</a>
+{end if}
+</div>   
+</div>
+{duomicms:foot}
+</body>
+</html>

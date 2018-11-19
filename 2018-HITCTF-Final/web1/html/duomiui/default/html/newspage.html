@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{newspagelist:typename}_{duomicms:webname}-Power by DuomiCms</title>
+<meta name="keywords" content="{newspagelist:typename}第{newspagelist:page}页{newspagelist:keywords}" />
+<meta name="description" content="{newspagelist:typename}第{newspagelist:page}页{newspagelist:description}" />
+{duomicms:style}
+</head>
+<body>
+{duomicms:head}
+<div class="main">
+  <h1 class="title">{newspagelist:typetext}</h1>
+    <div class="n-list mb clearfix">
+			<ul>
+			  {duomicms:newspagelist size=10}
+			   <li class="mb clearfix">
+			   	<div class="img">
+			   	<a href="[newspagelist:link]"><img src="[newspagelist:pic]" alt="[newspagelist:name]"></a>
+			   	</div>
+			    <div class="text">
+			    <p class="tit"><a href="[newspagelist:link]">[newspagelist:name]</a></p>
+			    <p class="des">[newspagelist:des len=200]</p>
+			    <p><span class="time"><i class="time-ico"></i>[newspagelist:time]</span></p>
+			    </div>
+			  </li>
+			  {/duomicms:newspagelist}
+			</ul>
+	</div>
+	<div class="page mb clearfix">
+{if:{newspagelist:page}<>1}<a href="{newspagelist:firstlink}">1..</a><a href="{newspagelist:backlink}"><</a>{end if}
+{newspagelist:pagenumber len=10}
+   {if:{newspagelist:page}<>[pagenumber:page]}
+    <a href="[pagenumber:link]">[pagenumber:page]</a>
+   {else}
+    <em>[pagenumber:page]</em>
+   {end if}
+{/newspagelist:pagenumber}
+{if:{newspagelist:page}<>{newspagelist:pagecount}}
+<a href="{newspagelist:nextlink}">></a>
+<a href="{newspagelist:lastlink}">..{newspagelist:pagecount}</a>
+{end if}</div>
+</div>
+{duomicms:foot}
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{channelpage:typename} 第{channelpage:page}页-{duomicms:webname}-Power by DuomiCms</title>
+<meta name="keywords" content="{channelpage:typename}第{channelpage:page}页{channelpage:keywords}" />
+<meta name="description" content="{channelpage:typename}第{channelpage:page}页{channelpage:description}" />
+{duomicms:style}
+</head>
+{duomicms:head}
+<div class="main">
+	<h1 class="title">{channelpage:typetext}</h1>
+  <div class="sy-all mb clearfix">
+    <div class="sy-title clearfix">
+     <p class="type">
+      <span class="type">{channelpage:typename}</span>
+     </p>
+     <p class="chg sbtn" _s_nav="sj-gjsy">筛选<i class="sjbgs"></i><i class="sjbgx"></i></p>
+    </div>
+  <div class="sy-nav-down clearfix">
+  <div id="sj-gjsy" class="sy clearfix" _s_nav="sj-gjsy" style="display:none;">
+          <dl class="clearfix"><dt><span>按分类</span></dt>
+              {duomicms:typecaslist}
+          <dd><a href="[typecaslist:link]"{if:{channelpage:typename}==[typecaslist:value]} class="on"{end if}>[typecaslist:value]</a></dd>{/duomicms:typecaslist}
+          </dl>
+          <dl class="clearfix"><dt><span>按年代</span></dt>
+              {duomicms:yearcaslist}
+          <dd><a href="[yearcaslist:link]">{if:[yearcaslist:value]==more}更早{else}[yearcaslist:value]{end if}</a></dd>{/duomicms:yearcaslist}
+          </dl>
+          <dl class="clearfix"><dt><span>按地区</span></dt>
+              {duomicms:areacaslist}
+          <dd><a href="[areacaslist:link]">[areacaslist:value]</a></dd>{/duomicms:areacaslist}
+          </dl>
+  </div>
+  </div>
+  </div>
+  <div class="sy-jg mb">
+     <p class="jg">
+      共<span class="count">{channellist:recordcount}</span>个筛选结果
+     </p>
+     <p class="px">
+      <a class="time on" href="{channelpage:order-time-link}"><em></em>最新</a>
+      <a class="rq" href="{channelpage:order-hit-link}"><em></em>人气</a>
+      <a class="tj" href="{channelpage:order-commend-link}"><em></em>推荐</a>
+     </p>
+  </div>
+	<div class="index-area clearfix">
+	<ul>
+    {duomicms:channellist size=30 order=time type=current}
+    <li class="p1 m1{if:[channellist:i]% 3==0} mmr0{end if}{if:[channellist:i]% 6==0} pmr0{end if}"><a class="link-hover" href="[channellist:link]" title="[channellist:name]"><img class="lazy" data-original="[channellist:pic]" src="../images/load.gif" alt="[channellist:name]"><span class="video-bg"></span><span class="lzbz"><p class="name">[channellist:name]</p><p class="actor">[channellist:nolinkactor]</p><p class="actor">[channellist:typename]{if:"[channellist:nolinkjqtype]"<>""},{end if}[channellist:nolinkjqtype]</p><p class="actor">[channellist:publishtime]/[channellist:publisharea]</p></span><p class="other">{if:"[channellist:note]"<>""}<i>[channellist:note]</i>{else}{subif:[channellist:state]<>0}<i>[channellist:state]{end subif}{subif:[channellist:state]>999}期{end subif}{subif:[channellist:state]<1000 and [channellist:state]<>0}集{end subif}</i>{end if}</p></a>
+    <p>[channellist:time style=mm-dd]<a href="[channellist:favLink]" style="float:right" target="_self">收藏影片</a></p>
+    </li>
+    {/duomicms:channellist}
+    </ul>
+	</div>
+<div class="page mb clearfix">
+{if:{channellist:page}<>1}<a href="{channellist:firstlink}">1..</a>
+<a href="{channellist:backlink}"><</a>{end if}
+{channellist:pagenumber len=8}
+{if:{channellist:page}<>[pagenumber:page]}
+<a href="[pagenumber:link]">[pagenumber:page]</a>
+{else}
+<em>[pagenumber:page]</em>
+{end if}
+{/channellist:pagenumber}
+{if:{channellist:page}<>{channellist:pagecount}}
+<a href="{channellist:nextlink}">></a>
+<a href="{channellist:lastlink}">..{channellist:pagecount}</a>
+{end if}
+</div>   
+</div>
+{duomicms:foot}
+</body></html>

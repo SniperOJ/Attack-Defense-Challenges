@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <head>
+    	<title>影片报错 - Power</title>
+        <script>
+			function checkReportErr(){if (document.getElementById('author').value.length<1){alert('请填写报错者');return false;}; if (document.getElementById('errtxt').value.length<1){alert('请填写报错内容');return false;}}
+        </script>
+		<style>
+		body{font-size:12px;background-color:#fff;height:22px;line-height:22px;}
+		input{border: 1px solid #bbb;}
+		h2,p{padding:0; margin:0;}
+		h2{font-size:14px;height:35px;color:#fff;line-height:35px;background:#3374b4;text-align:center;margin-bottom:10px;border-bottom:1px solid #3374b4;}
+		.submit{background:#3374b4;color:#fff;border:0;height:30px;width:90px;line-height:30px;margin:5px 0 10px 72px;cursor:pointer;}
+		.errtxt{width:290px;height:88px;border:1px solid #3374b4;}
+		.err{width:380px;border:1px solid #3374b4;margin: 0 auto;background:#f5f5f5;}
+		.err p{margin-left:10px;} 
+		</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+    <body>
+        <form id="reporterr" action="../duomiphp/erraddsave.php?action=reporterr" method="post" onSubmit="return checkReportErr()">
+            <div class="err">
+			<h2>影片报错，我们会在第一时间内修正</h2>
+               <p style="padding-bottom:5px;">我的昵称：<input type="text" id="author" name="author"  value="匿名"  size="15"> <font color="#FF0000">*</font></p>
+			
+                <p>报错内容：<textarea id="errtxt"  name="errtxt" class="errtxt" rows=5 cols=30></textarea>
+                <font color="#FF0000">*</font></p>
+                <input type="submit" class="submit" value="提交错误">
+            </div>
+        </form>
+    </body>
+</html>

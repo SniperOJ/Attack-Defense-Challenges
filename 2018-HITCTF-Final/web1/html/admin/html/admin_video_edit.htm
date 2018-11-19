@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<link  href="skin/css/style.css" rel="stylesheet" type="text/css" />
+<title>影片管理</title>
+<script src="skin/js/common.js" type="text/javascript"></script>
+<script src="skin/js/main.js" type="text/javascript"></script>
+<link rel="stylesheet" href="kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="kindeditor/plugins/code/prettify.css" />
+<script charset="utf-8" src="kindeditor/kindeditor-all-min.js"></script>
+<script charset="utf-8" src="kindeditor/lang/zh_CN.js"></script>
+<script src="skin/upload/js/jquery-1.11.2.min.js"></script>
+<script language="javascript" src="skin/upload/js/setup.js"></script>
+<script language="javascript">var jq = jQuery.noConflict();</script>
+<link rel="stylesheet" type="text/css" href="skin/upload/css/upload.css" />
+<script type="text/javascript" src="skin/upload/js/webuploader.js"></script>
+<script type="text/javascript" src="skin/upload/js/md5.js"></script>
+<script type="text/javascript" src="skin/upload/js/haiyang.js"></script>
+</head>
+<body>
+<div class="r_main">
+  <div class="r_content">
+    <div class="r_content_1">
+      <form action="?action=save&acttype=edit" method="post" name="addform" id="addform" >
+        <table width="100%" border="0" cellpadding="0" cellspacing="0"  class="tb_style">
+          <tr>
+            <td colspan="3" class="td_title"> 修改视频数据</td>
+          </tr>
+          <tr height="35">
+            <td width="70" align="right" class="td_border"> <font color="#FF0000">＊</font>名 称: </td>
+            <td class="td_border"><input type="text" name="v_name" id="v_name" autocomplete="off" onChange="checkRepeat();" value="<?php echo $vrow['v_name']?>" size="23" />
+              <span id="v_name_ok"></span> 拼 音:
+              <input type="text" size="23" id="v_enname" name="v_enname" value="<?php echo $vrow['v_enname'] ?>"  onchange="this.value=this.value.replace(/[^\w]+/ig,'')">
+              <input type="hidden" name="isuppingyin" value="1" class="checkbox" style="display:none" />
+              颜色：
+              <select name="v_color" >
+                <?php if($v_color){?>
+                <option style="background-color:<?php echo $v_color;?>;color: <?php echo $v_color;?>" value="<?php echo $v_color;?>"><?php echo $v_color;?></option>
+                <?php }else{?>
+                <option style="" value="">无色</option>
+                <?php }?>
+                <option style="background-color:#FF0000;color: #FF0000" value="#FF0000">红色</option>
+                <option style="background-color:#FF33CC;color: #FF33CC" value="#FF33CC">粉红</option>
+                <option style="background-color:#00FF00;color: #00FF00" value="#00FF00">绿色</option>
+                <option style="background-color:#0000CC;color: #0000CC" value="#0000CC">深蓝</option>
+                <option style="background-color:#FFFF00;color: #FFFF00" value="#FFFF00">黄色</option>
+                <option style="background-color:#660099;color: #660099" value="#660099">紫色</option>
+                <option style="" value="">无色</option>
+              </select>
+                <font color="#FF0000">＊</font>视频分类：
+              <select name="v_type" id="v_type">
+                <option value="">请选择视频分类</option>
+                <?php makeTypeOptionSelected(0," |  ","",$vtype,0);?>
+              </select>
+              <label>连载？
+              <input type="checkbox" onclick="isViewState()" id="v_statebox" class="checkbox"<?php if($vrow['v_state']!=0) echo " checked";?> />
+              </label>
+              <span id="v_statespan"<?php if($vrow['v_state']==0) echo " style=\"display:none\"";?>>到第
+              <input name="v_state" id="v_state" value="<?php echo $vrow['v_state'];?>" type="text" size="5" />
+              集</span> </td>
+          </tr>
+          <tr height="35">
+            <td class="td_border"> 扩展分类：</td>
+            <td class="td_border"><?php makeTypeOptionSelected_Multiple(0," |  ","",$vextratype,0);?></td>
+          </tr>
+          <tr height="35">
+            <td class="td_border"> 剧情分类：</td>
+            <td class="td_border"><?php makeTypeOptionSelected_Jq(0," |  ","",$vextrajqtype,0);?></td>
+          </tr>
+          <tr height="35">
+            <td width="70"  align="right" class="td_border"> 图片地址：</td>
+            <td class="td_border"><input name="v_pic" type="text" id="v_pic" value="<?php echo $vrow['v_pic']?>" size="30" />
+               ←
+              <input name="doClear" type="button" class="rb1" id="doClear" value="清  除" onclick="javascript:document.addform.v_pic.value='';"/>
+               
+              <iframe src="upload.htm" scrolling="No" topmargin="0" width="320" height="30" marginwidth="0" marginheight="0" frameborder="0" align="center"></iframe>
+              <input type="checkbox" class="checkbox" name="isupdatetime" checked />
+              更新时间</td>
+          </tr>
+          <tr height="35">
+            <td width="70" align="right" class="td_border"> 主 演：</td>
+            <td class="td_border"><input size="30" name="v_actor" value="<?php echo $vrow['v_actor']?>"  />
+              导　演:
+              <input name="v_director"  size="30" value="<?php echo $vrow['v_director'] ?>" />
+               星级：<span style="width:85px;display:inline-block" id="star<?php echo $vrow[v_id];?>">
+              <script>starView(<?php echo $vrow[v_commend];?>,<?php echo $vrow[v_id];?>,0)</script>
+              </span>  主演、导演用逗号或空格隔开</td>
+          </tr>
+          <tr height="35">
+            <td width="70" align="right" class="td_border"> 备 注：</td>
+            <td class="td_border"><input name="v_note"  size="30" value="<?php echo $vrow['v_note']?>">
+              关键词:
+              <input type="text" id="v_tags" name="v_tags" size="30"  value="<?php echo $vrow['v_tags']?>"/>
+               备注如：高清,无水印 (配合标题一起显示)</td>
+            </td>
+          </tr>
+          <tr height="35">
+            <td width="70" align="right" class="td_border"> 发行年份：</td>
+            <td class="td_border"><?php echo getYearSelect("v_publishyear","选择或填写",$vrow["v_publishyear"]);?>      语言： <?php echo getYuyanSelect("v_lang","选择或填写",$vrow["v_lang"]);?>      地区：<?php echo getAreaSelect("v_publisharea","选择或填写",$vrow["v_publisharea"]);?>      版本：<?php echo getVerSelect("v_ver","选择或填写",$vrow["v_ver"]);?> </td>
+          </tr>
+          <tr height="35">
+            <td width="70" align="right" class="td_border"> 总点击：</td>
+            <td class="td_border"><input type="text" name="v_hit" id="v_hit" maxlength="9" value="<?php echo $vrow['v_hit']?>" size="6" />
+               月点击：
+              <input type="text" name="v_monthhit" id="v_monthhit" maxlength="9" value="<?php echo $vrow['v_monthhit']?>" size="6" />
+               周点击：
+              <input type="text" name="v_weekhit" id="v_weekhit" maxlength="9" value="<?php echo $vrow['v_weekhit']?>" size="6" />
+               日点击：
+              <input type="text" name="v_dayhit" id="v_dayhit" maxlength="9" value="<?php echo $vrow['v_dayhit']?>" size="6" /></td>
+          </tr>
+          <tr height="35">
+            <td class="td_border"> 更新周期：</td>
+            <td class="td_border"><input name=v_reweek[] type=checkbox value=周一 <?php if(strpos($vrow['v_reweek'],"周一")!== false){echo 'checked=checked';} ?>>
+              周一  
+              <input name=v_reweek[] type=checkbox value=周二 <?php if(strpos($vrow['v_reweek'],"周二")!== false){echo 'checked=checked';} ?>>
+              周二  
+              <input name=v_reweek[] type=checkbox value=周三 <?php if(strpos($vrow['v_reweek'],"周三")!== false){echo 'checked=checked';} ?>>
+              周三  
+              <input name=v_reweek[] type=checkbox value=周四 <?php if(strpos($vrow['v_reweek'],"周四")!== false){echo 'checked=checked';} ?>>
+              周四  
+              <input name=v_reweek[] type=checkbox value=周五 <?php if(strpos($vrow['v_reweek'],"周五")!== false){echo 'checked=checked';} ?>>
+              周五  
+              <input name=v_reweek[] type=checkbox value=周六 <?php if(strpos($vrow['v_reweek'],"周六")!== false){echo 'checked=checked';} ?>>
+              周六  
+              <input name=v_reweek[] type=checkbox value=周日 <?php if(strpos($vrow['v_reweek'],"周日")!== false){echo 'checked=checked';} ?>>
+              周日    
+              时长：
+              <input size="5" name="v_len" value="<?php echo $vrow['v_len']?>"  />
+              分钟  
+              集数：
+              <input size="5" name="v_total" value="<?php echo $vrow['v_total']?>"  />
+              集   </td>
+          </tr>
+          <tr height="35">
+            <td class="td_border"> 影片别名：</td>
+            <td class="td_border"><input size="20" name="v_nickname" value="<?php echo $vrow['v_nickname']?>"  />
+                
+              发行公司：
+              <input size="20" name="v_company" value="<?php echo $vrow['v_company']?>"  />
+                
+              电视台：
+              <input size="20" name="v_tvs" value="<?php echo $vrow['v_tvs']?>"  />
+                 </td>
+          </tr>
+          <tr height="35">
+            <td class="td_border"> 影片评分：</td>
+            <td class="td_border"> 豆瓣
+              <input size="3" name="v_douban" value="<?php echo $vrow['v_douban']?>"  />
+               
+              时光网
+              <input size="3" name="v_mtime" value="<?php echo $vrow['v_mtime']?>"  />
+               
+              IMDB
+              <input size="3" name="v_imdb" value="<?php echo $vrow['v_imdb']?>"  />
+               
+              站内
+              <input size="3" name="v_score" value="<?php echo $vrow['v_score']?>"  />
+               
+              评分次数
+              <input size="3" name="v_scorenum" value="<?php echo $vrow['v_scorenum']?>"  />
+               当前评分：<?php echo number_format($vrow['v_score']/$vrow['v_scorenum'],1); ?>（评分 = 站内分数/评分次数） </td>
+          </tr>
+          <?php if($cfg_user==1){?>
+          <tr>
+            <td height="30" align="td_border" class="td_border"> 消费点数：</td>
+            <td height="30" class="td_border">
+              <input name="v_money" type="text" maxlength="9" value="<?php echo $vrow['v_money']?>" size="10"/>
+                <font color="#FF0000"> ＊播放页生成静态该功能无效。</font></td>
+          </tr>
+          <tr>
+            <td height="30" class="td_border"> 口令播放：</td>
+            <td height="30" class="td_border">
+              <input style="IME-MODE:disabled" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="v_pwd" type="text" maxlength="9" value="<?php echo $vrow['v_pwd']?>" size="20"/>
+               仅支持数字，为空无需口令播放。</td>
+          </tr>
+          <?php }?>
+            <tr>
+            <td  height="30" class="td_border"> 上传视频：</td>
+			<td height="30" class="td_border">
+			<div class="uploadmain" style="80%">
+              <div class="shangchuan_biaodan" id="chose0">
+              <div id="chosevideo">选择文件</div>
+              <div id="divFileProgressContainer"></div>
+            </div>  </div>
+			</td>
+           </tr>
+          <tr height="35">
+            <td colspan="2" class="td_border"><div id="v_playarea">
+                <?php
+                $playArray=explode("$$$",$v_playdata);
+                $k=count($playArray);
+                $j=1;
+                if($v_playdata!=""){
+                    for($j=1;$j<=$k;$j++){
+                        $playArray2=explode("$$",$playArray[$j-1]);
+                        $pstr=$playArray2[0];
+                        $purlstr=str_replace(chr(10),"",$playArray2[1]);
+                        if(strpos($playArray[$j-1],'$$')===false)
+                        {	$pstr='';
+                            $purlstr=$playArray[$j-1];}
+                        $purlstr=str_replace("#",chr(13),$purlstr);
+                ?>
+                <table width='100%' id='playfb<?php echo $j;?>' border='0' cellpadding='0' cellspacing='0'>
+                  <tr height="35">
+                    <td width="70" class="td_border" style="padding:0px">播放来源<?php echo $j;?>：</td>
+                    <td class="td_border" style="padding:0px"><select id='v_playfrom<?php echo $j;?>' name='v_playfrom[<?php echo $j;?>]'>
+                        <option value=''>暂没有数据<?php echo $j;?></option>
+                        <?php echo makePlayerSelect($pstr);?>
+                      </select>
+                        <img onclick="var tb=$('playfb<?php echo $j;?>');tb.parentNode.removeChild(tb);" src='skin/images/btn_dec.gif' class='pointer' alt="删除播放来源<?php echo $j;?>" align="absmiddle"/>  <font color='red'>＊</font></td>
+                  </tr>
+                  <tr>
+                    <td width='70'>数据地址<?php echo $j;?>：<br/>
+                      <input type='button' value='校正' title='校正右侧文本框中的数据格式' class='rb1' onclick='repairUrl(<?php echo $j;?>)' /></td>
+                    <td align='left' id='border1' style="padding:0px"><textarea id='v_playurl<?php echo $j;?>' name='v_playurl[<?php echo $j;?>]' rows='8' style="width:695px"><?php echo $purlstr;?></textarea>
+                        <font color='red'>＊</font></td>
+                  </tr>
+                </table>
+                <?php
+                	}
+                }
+                ?>
+              </div></td>
+          </tr>
+          <tr height="35">
+            <td colspan='2'> [<a onclick="expendPlayArea(<?php echo $j;?>,escape('<?php echo $makePlayerSelectStr;?>'),0)" ><font color="red">增加一组播放来源</font></a>]</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="td_border"><div id="m_downarea">
+                <?php
+                $playArray=explode("$$$",$v_downdata);
+                $k=count($playArray);
+                $j=1;
+                if($v_downdata!=""){
+                    for($j=1;$j<=$k;$j++){
+                        $playArray2=explode("$$",$playArray[$j-1]);
+                        $pstr=$playArray2[0];
+                        $purlstr=str_replace(chr(10),"",$playArray2[1]);
+                        $purlstr=str_replace("#",chr(13),$purlstr);
+                ?>
+                <table width='100%' id='downfb<?php echo $j;?>' border='0' cellpadding='0' cellspacing='0'>
+                  <tr height="35">
+                    <td width="70" class='td_border'>下载来源<?php echo $j;?>：</td>
+                    <td class='td_border' style="padding:0px"><select id='m_downfrom<?php echo $j;?>' name='m_downfrom[<?php echo $j;?>]'>
+                        <option value=''>暂没有数据<?php echo $j;?></option>
+                        <?php echo makedownSelect($pstr);?>
+                      </select>
+                      <!--input type='button' class='rb1' value='WEB采集' onclick='viewGatherWin(<?php echo $j;?>);selectTogg();'/-->
+                        <img onclick="var tb=$('downfb<?php echo $j;?>');tb.parentNode.removeChild(tb);" src='skin/images/btn_dec.gif' class='pointer' alt="删除播放来源<?php echo $j;?>" align="absmiddle"/>  <font color='red'>＊</font></td>
+                  </tr>
+                  <tr>
+                    <td width='70' class='td_border'>数据地址<?php echo $j;?>：<br/>
+                      <input type='button' value='校正' title='校正右侧文本框中的数据格式' class='rb1' onclick='repairUrl2(<?php echo $j;?>)' /></td>
+                    <td align='left' class='td_border' style="padding:0px"><textarea id='m_downurl<?php echo $j;?>' name='m_downurl[<?php echo $j;?>]' rows='8' style="width:695px"><?php echo $purlstr;?></textarea>
+                        <font color='red'>＊</font></td>
+                  </tr>
+                </table>
+                <?php
+                	}
+                }
+                ?>
+              </div></td>
+          </tr>
+          <tr height="35">
+            <td colspan='2' class="td_border"> [<a onclick="expendDownArea(<?php echo $j;?>,escape('<?php echo $makeDownSelectStr;?>'),0)" ><font color="red">增加一组下载来源</font></a>]</td>
+          </tr>
+          <tr>
+            <td class="td_border">  影片介绍：</td>
+            <td class="td_border"><textarea id="v_content" name="v_content" style="width:700px;height:300px;"><?php echo $v_content;?></textarea>
+              <script>
+    KindEditor.ready(function(K) {
+        var editor1 = K.create('textarea[name="v_content"]', {
+            cssPath : 'kindeditor/plugins/code/prettify.css',
+            uploadJson : 'kindeditor/php/upload_json.php',
+            fileManagerJson : 'kindeditor/php/file_manager_json.php',
+            allowFileManager : true,
+			afterBlur:function(){this.sync();},//浏览器数据兼容提交20160618     By 海东青 QQ2273188995
+            afterCreate : function() {
+                var self = this;
+                K.ctrl(document, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+                K.ctrl(self.edit.doc, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+            }
+        });
+        prettyPrint();
+    });
+</script>
+          </tr>
+          <tr>
+            <input type="hidden" name="v_id" value="<?php echo $id;?>">
+            <input type="hidden" name="v_back" value="<?php echo $Pirurl;?>" />
+            <td height="40" colspan="2" align="center" class="td_border"> 
+              <input type="checkbox" value="1" name="ping" class="checkbox">百度推送更新内容  <input type="submit" name="Submit" value="确认保存" class="rb1" onClick="if($('v_name').value.length==0){alert('请填写名称');return false;};if($('v_type').value.length==0){alert('请选择分类');return false;}"/>
+                
+              <input type="reset" name="reset" value="清除重置" class="rb1"/></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+<?php
+	viewFoot();
+?>
+<script type="text/javascript" src="skin/js/drag.js"></script>
+</body>
+</html>

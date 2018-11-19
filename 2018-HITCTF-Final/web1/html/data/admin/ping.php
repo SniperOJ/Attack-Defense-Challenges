@@ -1,0 +1,1 @@
+<?php $weburl = "www.duomicms.net"; $token = "123456789";  ?>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>资料修改-会员中心</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="robots" content="noindex,nofollow" />
+<link href="css/style.css" rel="stylesheet">
+{duomicms:include style.html}
+</head>
+<body>
+	{duomicms:include head.html}
+    <div class="count">
+{duomicms:include u-menu.html}
+ <div class="u-r">
+ <div class="u-xx">
+	<form action="?dm=ok" method="post">
+    <h3>密码修改：</h3>
+      <table>
+        <tr>
+          <td>新设密码：</td>
+          <td><input type="password" class="textInput" size="20" maxlength="30" name="newpwd" /></td>
+        </tr>
+        <tr>
+          <td>确定密码：</td>
+          <td><input type="password" class="textInput" size="20" maxlength="30" name="newpwd2" /></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+            <button type="submit" class="pw-btn">保存新密码</button>
+        </tr>
+      </table>
+    </form>
+    </div>
+</div>
+</div>   
+<div class="clear"></div>
+{duomicms:include foot.html}
+</body>
+</html>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<playerkinds>
+<player open="1" sort="101" postfix="down1" flag="下载地址一" des="down1"><intro>下载地址一</intro></player>
+<player open="1" sort="102" postfix="down2" flag="下载地址二" des="down2"><intro>下载地址二</intro></player>	
+<player open="1" sort="103" postfix="down3" flag="下载地址三" des="down3"><intro>下载地址三</intro></player>	
+<player open="1" sort="104" postfix="down4" flag="下载地址四" des="down4"><intro>下载地址四</intro></player>	
+<player open="1" sort="105" postfix="down5" flag="下载地址五" des="down5"><intro>下载地址五</intro></player>		
+</playerkinds>

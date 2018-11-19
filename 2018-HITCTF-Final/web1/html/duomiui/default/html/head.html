@@ -1,0 +1,94 @@
+<div class="header-all">
+  <div class="top clearfix">
+    <ul class="logo"><a href="{duomicms:indexlink}"><img src="/{duomicms:webpath}{duomicms:weblogo}" title="{duomicms:webname}"></a></ul>
+    <ul class="top-nav">
+      <li><a class="now" href="{duomicms:indexlink}">首页</a></li>
+      {duomicms:menulist type=top}
+      {if:[menulist:typeid]>5}
+      <li><a href="[menulist:link]"{subif:"{duomicms:currenttypeid}"=="[menulist:typeid]"} class="on"{end subif}>[menulist:typename]</a></li>
+      {else}
+      <li class="" _t_nav="topnav-[menulist:i]"><a href="[menulist:link]"{subif:"{duomicms:currenttypeid}"=="[menulist:typeid]"} class="on"{end subif}>[menulist:typename]<i class="sjbgs"></i><i class="sjbgx"></i></a></li>
+      {end if}
+      {/duomicms:menulist}
+      <li><a href="{duomicms:topiclink}">专题</a></li>
+      <!--li class="" _t_nav="topnav-news"><a href="{duomicms:newslink}">新闻<i class="sjbgs"></i><i class="sjbgx"></i></a></li-->
+      <li><a href="/{duomicms:webpath}interface/gbook.php">留言</a></li>
+    </ul>
+    <ul class="search so">
+      <form name="formsearch" id="formsearch" action='/search.php' method="post"  target="_self" autocomplete="off">
+          <input class="input" name="searchword" type="text" id="keyword" placeholder="请输入影片或演员名" />
+          <div class="so-key">{duomicms:keywords}</div>
+          <input class="imgbt" type="submit" value=""/>
+      </form>
+    </ul>
+    <ul class="nav-qt aa">
+      <li class="bb"><a href="javascript:void(0)" onMouseOver="$MH.showHistory(1);"><i class="jl"></i>观看历史</a>
+      <div class="cc">
+	  <script type="text/javascript" src="{duomicms:webpath}/duomiui/default/js/history.js"></script>
+          <script type="text/javascript">$MH.limit=10;$MH.WriteHistoryBox(180,170,'font');$MH.recordHistory({name:'{playpage:name}',link:'{playpage:url}',pic:'{playpage:pic}'})</script></div>
+      </li>
+      <li class="bb"><strong class="ma"><i class="mabg"></i>手机观看</strong>
+      <div class="cc maw"><img src="/{duomicms:webpath}{duomicms:webewm}" width="152" height="152"><p>扫描二维码用手机观看</p></div>  
+      </li>
+      <li class="bb member"><strong class="ma"><i class="mbbg"></i> 会员中心</strong>
+        <div class="cc mbp">{duomicms:member}</div> 
+      </li>
+    </ul>
+    <ul class="sj-search">
+      <li class="sbtn2"><i class="sjbg-search"></i></li>
+    </ul>
+    <ul class="sj-nav">
+      <li class="sbtn1"><i class="sjbg-nav"></i></li>
+    </ul>
+    <ul class="sj-navhome">
+      <li><a href="{duomicms:indexlink}"><i class="sjbg-home"></i></a></li>
+    </ul>  
+  </div>
+  <div class="nav-down clearfix">
+  {duomicms:menulist type=top}
+  {if:[menulist:typeid]<5}
+  <div id="topnav-[menulist:i]" class="nav-down-1" style="display:none;" _t_nav="topnav-[menulist:i]">
+    <div class="nav-down-2 clearfix">
+    <ul>
+      {duomicms:smallmenulist type=[menulist:typeid]}     
+      <li><a href="[smallmenulist:link]"{subif:"{duomicms:currenttypeid}"=="[smallmenulist:typeid]"} class="on"{end subif}>[smallmenulist:typename]</a></li>
+      {/duomicms:smallmenulist}
+    </ul>
+    </div>
+  </div>
+  {end if}
+  {/duomicms:menulist}
+  <div id="topnav-news" class="nav-down-1" style="display:none;" _t_nav="topnav-news">
+    <div class="nav-down-2 clearfix">
+    <ul>
+      {duomicms:menulist by=news type=top}     
+      <li><a href="[menulist:link]">[menulist:typename]</a></li>
+      {/duomicms:menulist}
+    </ul>
+    </div>
+  </div>
+  <div id="sj-nav-1" class="nav-down-1 sy1 sj-noover" style="display:none;" _s_nav="sj-nav-1">
+    <div class="nav-down-2 sj-nav-down-2 clearfix">
+    <ul> 
+      <li><a href="{duomicms:indexlink}">首页</a></li>
+    {duomicms:menulist type=all}    
+      <li><a href="[menulist:link]"{if:"{duomicms:currenttypeid}"=="[menulist:typeid]"} class="on"{end if}>[menulist:typename]</a></li>
+    {/duomicms:menulist}
+      <li><a href="{duomicms:topiclink}">专题</a></li>
+      <li><a href="{duomicms:newslink}">新闻</a></li>
+      <li><a href="/{duomicms:webpath}interface/gbook.php">留言</a></li>
+    </ul>
+    </div>
+  </div>
+  <div id="sj-nav-search" class="nav-down-1 sy2 sj-noover" style="display:none;" _t_nav1="sj-nav-search">
+    <div class="nav-down-2 sj-nav-down-search clearfix">
+    <form name="formsearch" id="formsearch" action='/{duomicms:webpath}search.php' method="post"  target="_self" autocomplete="off">
+          <input class="input" name="searchword" type="text" id="keyword" placeholder="输入关键词"/>
+          <input class="imgbt" type="submit" value="搜索"/>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+<!--div class="topone clearfix"></div-->
+<div style="margin-top:30px"></div>

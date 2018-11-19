@@ -1,0 +1,102 @@
+中文版授权协议 适用于中文用户
+
+版权所有 (c) 2001-2017，北京康盛新创科技有限责任公司
+保留所有权利。
+
+感谢您选择康盛产品。希望我们的努力能为您提供一个高效快速、强大的站点解决方案，和强大的社区论坛解决方案。康盛公司网址为 http://www.comsenz.com，产品官方讨论区网址为 http://www.discuz.net。
+
+用户须知：本协议是您与康盛公司之间关于您使用康盛公司提供的各种软件产品及服务的法律协议。无论您是个人或组织、盈利与否、用途如何（包括以学习和研究为目的），均需仔细阅读本协议，包括免除或者限制康盛责任的免责条款及对您的权利限制。请您审阅并接受或不接受本服务条款。如您不同意本服务条款及/或康盛随时对其的修改，您应不使用或主动取消康盛公司提供的康盛产品。否则，您的任何对康盛产品中的相关服务的注册、登陆、下载、查看等使用行为将被视为您对本服务条款全部的完全接受，包括接受康盛对服务条款随时所做的任何修改。
+本服务条款一旦发生变更, 康盛将在网页上公布修改内容。修改后的服务条款一旦在网站管理后台上公布即有效代替原来的服务条款。您可随时登陆康盛官方论坛查阅最新版服务条款。如果您选择接受本条款，即表示您同意接受协议各项条件的约束。如果您不同意本服务条款，则不能获得使用本服务的权利。您若有违反本条款规定，康盛公司有权随时中止或终止您对康盛产品的使用资格并保留追究相关法律责任的权利。
+在理解、同意、并遵守本协议的全部条款后，方可开始使用康盛产品。您可能与康盛公司直接签订另一书面协议，以补充或者取代本协议的全部或者任何部分。
+
+康盛拥有本软件的全部知识产权。本软件只供许可协议，并非出售。康盛只允许您在遵守本协议各项条款的情况下复制、下载、安装、使用或者以其他方式受益于本软件的功能或者知识产权。
+
+I. 协议许可的权利
+
+   1. 您可以在完全遵守本许可协议的基础上，将本软件应用于非商业用途，而不必支付软件版权许可费用。
+   2. 您可以在协议规定的约束和限制范围内修改康盛产品源代码(如果被提供的话)或界面风格以适应您的网站要求。
+   3. 您拥有使用本软件构建的网站中全部会员资料、文章及相关信息的所有权，并独立承担与使用本软件构建的网站内容的审核、注意义务，确保其不侵犯任何人的合法权益，独立承担因使用康盛软件和服务带来的全部责任，若造成康盛公司或用户损失的，您应予以全部赔偿。
+   4. 若您需将康盛软件或服务用户商业用途，必须另行获得康盛的书面许可，您在获得商业授权之后，您可以将本软件应用于商业用途，同时依据所购买的授权类型中确定的技术支持期限、技术支持方式和技术支持内容，自购买时刻起，在技术支持期限内拥有通过指定的方式获得指定范围内的技术支持服务。商业授权用户享有反映和提出意见的权力，相关意见将被作为首要考虑，但没有一定被采纳的承诺或保证。
+   5. 您可以从康盛提供的应用中心服务中下载适合您网站的应用程序，但应向应用程序开发者/所有者支付相应的费用。
+
+II. 协议规定的约束和限制
+
+   1. 未获康盛公司书面商业授权之前，不得将本软件用于商业用途（包括但不限于企业网站、经营性网站、以营利为目或实现盈利的网站）。购买商业授权请登陆http://www.discuz.com参考相关说明，也可以致电8610-51282255了解详情。
+   2. 不得对本软件或与之关联的商业授权进行出租、出售、抵押或发放子许可证。
+   3. 无论如何，即无论用途如何、是否经过修改或美化、修改程度如何，只要使用康盛产品的整体或任何部分，未经书面许可，页面页脚处的康盛产品名称和康盛公司下属网站（http://www.comsenz.com、或 http://www.discuz.net） 的链接都必须保留，而不能清除或修改。
+   4. 禁止在康盛产品的整体或任何部分基础上以发展任何派生版本、修改版本或第三方版本用于重新分发。
+   5. 您从应用中心下载的应用程序，未经应用程序开发者/所有者的书面许可，不得对其进行反向工程、反向汇编、反向编译等，不得擅自复制、修改、链接、转载、汇编、发表、出版、发展与之有关的衍生产品、作品等。
+   6. 如果您未能遵守本协议的条款，您的授权将被终止，所许可的权利将被收回，同时您应承担相应法律责任。
+
+III. 有限担保和免责声明
+
+   1. 本软件及所附带的文件是作为不提供任何明确的或隐含的赔偿或担保的形式提供的。
+   2. 用户出于自愿而使用本软件，您必须了解使用本软件的风险，在尚未购买产品技术服务之前，我们不承诺提供任何形式的技术支持、使用担保，也不承担任何因使用本软件而产生问题的相关责任。
+   3. 康盛公司不对使用本软件构建的网站中或者论坛中的文章或信息承担责任，全部责任由您自行承担。
+   4. 康盛公司无法全面监控由第三方上传至应用中心的应用程序，因此不保证应用程序的合法性、安全性、完整性、真实性或品质等；您从应用中心下载应用程序时，同意自行判断并承担所有风险，而不依赖于康盛公司。但在任何情况下，康盛公司有权依法停止应用中心服务并采取相应行动，包括但不限于对于相关应用程序进行卸载，暂停服务的全部或部分，保存有关记录，并向有关机关报告。由此对您及第三人可能造成的损失，康盛公司不承担任何直接、间接或者连带的责任。
+   5. 康盛公司对康盛提供的软件和服务之及时性、安全性、准确性不作担保，由于不可抗力因素、康盛公司无法控制的因素（包括黑客攻击、停断电等）等造成软件使用和服务中止或终止，而给您造成损失的，您同意放弃追究康盛公司责任的全部权利。   6.康盛公司特别提请您注意，康盛公司为了保障公司业务发展和调整的自主权，康盛公司拥有随时经或未经事先通知而修改服务内容、中止或终止部分或全部软件使用和服务的权利，修改会公布于康盛公司网站相关页面上，一经公布视为通知。 康盛公司行使修改或中止、终止部分或全部软件使用和服务的权利而造成损失的，康盛公司不需对您或任何第三方负责。
+
+有关康盛产品最终用户授权协议、商业授权与技术服务的详细内容，均由康盛公司独家提供。康盛公司拥有在不事先通知的情况下，修改授权协议和服务价目表的权利，修改后的协议或价目表对自改变之日起的新授权用户生效。
+
+一旦您开始安装康盛产品，即被视为完全理解并接受本协议的各项条款，在享有上述条款授予的权利的同时，受到相关的约束和限制。协议许可范围以外的行为，将直接违反本授权协议并构成侵权，我们有权随时终止授权，责令停止损害，并保留追究相关责任的权力。
+
+本许可协议条款的解释，效力及纠纷的解决，适用于中华人民共和国大陆法律。
+
+若您和康盛之间发生任何纠纷或争议，首先应友好协商解决，协商不成的，您在此完全同意将纠纷或争议提交康盛所在地北京市海淀区人民法院管辖。康盛公司拥有对以上各项条款内容的解释权及修改权。（正文完）
+
+康盛公司
+
+-----------------------------------------------------------------------------
+
+English Version of EULA, for non-Chinese-Speaking Users Only
+
+Copyright (c) 2001-2017, Comsenz Inc.
+All Rights Reserved.
+
+This software license agreement (hereinafter the “Agreement”) is a legal agreement between the user (hereinafter “You” or the “User”) and Beijing Comsenz Technology Limited (“Comsenz”) for the software products (hereinafter the “Software”) and related services (hereinafter the “Service”) that accompanies this Agreement, as may be updated or replaced by feature enhancements, software updates or maintenance releases and any services that may be provided by Comsenz under this Agreement. You are not allowed to download, install or use the Software or to use Services unless you accept all the terms and conditions of this Agreement. Your download, installation and use of the Software shall be regarded as your acceptance of the Agreement and your agreement to be bound by all the terms and conditions of this Agreement.
+This Agreement, between the User and Comsenz, is an agreement regarding the User's downloading, installation, use and copying of the Software, and the use of Services provided by Comsenz. This Agreement stipulates the rights and duties of You and Comsenz regarding the licensed use and related services. "The User" or "You" refers to a person (who is 18 years of age or older, any parent or guardian of a person under the age of 18 may accept this Agreement on behalf of a user) or entity who obtains the Software authorization license and/or the Software products by means of the Software license and the account registration as provided by Comsenz.
+
+This Agreement may be updated by Comsenz at any time and without prior notice to the User. After the updated Agreement is issued, it shall replace the original Agreement effectively. Users can read the updated Agreement by logging in the Software or checking on the Website at any time. After Comsenz has updated the clauses of Agreement, the User should stop using software and services provided by Comsenz if he/she does not agree with the clauses amended, otherwise it will be deemed that the user has accepted the Agreement as amended.
+
+Except those explicitly stated in the Agreement, the Agreement does not stipulate the terms of service for other services offered by Comsenz which the User visits when using the “Software”. Those services are usually regulated by other separate terms of service and the User should be familiar with and confirm his/her acceptance of those terms of service when using the relevant services. If there are conflicts between separate terms of service and this Agreement, the separate terms of service will govern. By using those services, the User shall be regarded as having accepted the relevant terms of service.
+
+1. Grant of License
+Subject to the terms and conditions of this Agreement, Comsenz grants to you a limited, non-exclusive, worldwide license to install, download and use a single instance of the Software on a single website server through a single installation for non-commercial purposes for free.
+
+You can modify the source code (if being provided) or interface of the Software if your modification is strictly under the Agreement and to beautify your website.
+
+When using the Software, the User shall comply with the relevant national laws and policies, protect the national interests, safeguard the national security and comply with this Agreement. The User, but not Comsenz, shall be fully responsible for all liabilities resulting from the illegal use of the Software or breach of the Agreement. If the User's misbehavior causes loss to Comsenz, Comsenz is entitled to demand the User to provide compensation, cease provision of the service immediately and keep relevant records. Moreover, if the User violates laws or the Agreement and correlative clauses of services stipulated in other services of Comsenz by using the Software, Comsenz has the right to take these measures including, but not limited to, interruption of use license, stopping of services, restriction of use, legal investigation, etc. considering the nature of the User’s behaviors and without a prior notice to the User.
+
+You have the entire property of all the members’ data, information and articles in your website which is powered by the Software; that is to say, you must assume solely all the relevant liabilities concerns to the contents in your website.
+
+You may use the Software for commercial means after purchase of the commercial license. Moreover, according to the license you purchase you will get technical support from Comsenz in specified term and manner. Commercial users are prior to submitting ideas and opinions to Comsenz, but without any guarantee of acceptance.
+
+You can download application(s) for your website from Comsenz’s Application Center after you have paid appropriate fee to the developer/owner of the application(s).
+2. License Restrictions
+You cannot use the Software for commercial or profit purposes (include but are not limited to company websites, operating websites or other for-profit websites) unless you have been licensed to. To purchase the license, please visit http://www.comsenz.com or dial 8610-5165 7885 for more information.
+
+You may not rent, sublicense, assign, lease, loan, resell, distribute, publish or network the Software or related materials or create derivative works based upon the Software or any part thereof.
+
+You may not use the Software to engage in or allow others to engage in any illegal activity. You may not use the Software to engage in any activity that will violate the rights of third parties, including, without limitation, copyrights, trademarks, publicity rights, privacy rights, other proprietary rights, or rights against defamation of third parties.
+
+You cannot remove or modify the copyright information and relevant links under any circumstances, such as http://www.comsenz.com, and http://www.discuz.net, in the foot of web pages without the prior written consent of Comsenz.
+
+You cannot reverse engineer, decompile or disassemble, copy, modify, link, reproduce, publish or develop derivative products of the applications that you download from Comsenz’s Application Center without the prior written permission from the application developer/owner.
+
+3. Disclaimer of Warranties and Limitations of Liabilities
+The software and the accompanying files are provided “as-is”, and to the maximum extent permitted by applicable law, Comsenz disclaims all other warranties, express or implied, by statute or otherwise, regarding the software and any related materials, including their fitness for a particular purpose, their quality, their merchantability, or any related services or content is secure, or is free from bugs, viruses, errors, or other program limitations nor does it warrant access to the internet or to any other services through the software.
+
+To the maximum extent permitted by applicable law, Comsenz will not be liable for any indirect, special, incidental, or consequential damages(including damages for loss of business, loss of profits, or the like), whatever based on breach of contract, tort(including negligence), product liability or otherwise, even Comsenz has been advised of the possibility of such damages. Comsenz’ total liability to you for actual damages for any cause whatsoever will be limited to the purchase price amount paid by you for the software.
+
+Comsenz is not liable for the content of any message in the websites powered by the Software.
+
+Comsenz does not guarantee the legality, safety, integrity, authenticity and quality of the applications which uploaded into Comsenz’s Application Center by any third party. You agree to judge on yourself and take fully responsibilities to the action of download from Comsenz’s Application Center. But in any case, Comsenz may stop the Store’s service and take appropriate actions, including but not limited to uninstall the associated applications, suspend the Store’s service in whole or in part, keep the relevant records to the relevant authorities, and Comsenz will not undertake any direct, indirect or consequential liability to the actions thereof.
+4. Termination
+The License is effective until terminated. You may terminate the License at any time by uninstalling the Software and destroying all copies of the Software in any media. This Agreement may be terminated by Comsenz immediately and without notice if you fail to comply with any term or condition of the License or this Agreement. Upon such termination, you must immediately cease using the Software, and assume relevant liabilities.
+
+Comsenz reserves the right to change or add to the terms of this Agreement at any time (including but are not limited to Internet-based Solutions, pricing, technical support options, and other product-related policies), and to change, discontinue or impose conditions on any feature or aspect of the Software, or any Internet-based Solutions provided to you or made available to you in the official websites. Such changes will be effective upon notification by any means reasonable to give you actual or constructive notice including by posting such terms on the discuz.net website, or another website designated by Comsenz. Your continued use of the Software will indicate your agreement to any such change.
+
+5. Controlling Law
+The Agreement is governed by and construed in accordance with the laws of P.R China. You hereby consent to the exclusive jurisdiction and venue in the Haidian District court of the City of Beijing.
+
+Beijing Comsenz Technology Limited

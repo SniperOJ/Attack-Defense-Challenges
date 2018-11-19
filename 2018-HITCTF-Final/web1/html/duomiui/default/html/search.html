@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{duomicms:searchword}-{duomicms:webname}-Power by DuomiCms</title>
+<meta name="keywords" content="{duomicms:searchword},{duomicms:webname}" />
+<meta name="description" content="{duomicms:searchword},{duomicms:webname}" />
+{duomicms:style}
+</head>
+<body>
+{duomicms:head}
+<div class="main">
+	<h1 class="title"><a href="{duomicms:indexlink}">首页</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;搜索</h1>
+	<div class="sy-all mb clearfix">
+  <div class="sy-title clearfix">
+    <p class="type">
+      &nbsp;&nbsp;与<b class="key">{duomicms:searchword}</b>相关共<b class="key">{duomicms:searchnum}</b>条
+      {if:{searchpage:typename}<>全部}<span class="type">{searchpage:typename}</span>{end if}
+      {if:{searchpage:jq}<>全部}<span class="type">{searchpage:jq}</span>{end if}
+      {if:{searchpage:year}<>全部}<span class="type">{searchpage:year}</span>{end if}
+      {if:{searchpage:area}<>全部}<span class="type">{searchpage:area}</span>{end if}
+     </p>
+     <p class="chg sbtn" _s_nav="sj-gjsy">筛选<i class="sjbgs"></i><i class="sjbgx"></i></p>
+   </div>
+   <div class="sy-nav-down clearfix">
+  <div id="sj-gjsy" class="sy clearfix" _s_nav="sj-gjsy" style="display:none;">
+          <dl class="clearfix"><dt><span>按分类</span></dt>
+              {duomicms:typecaslist}
+          <dd><a href="[typecaslist:link]">[typecaslist:value]</a></dd>{/duomicms:typecaslist}
+          </dl>
+          <dl class="clearfix"><dt><span>按剧情</span></dt>
+              {duomicms:jqcaslist}
+          <dd><a href="[jqcaslist:link]">[jqcaslist:value]</a></dd>
+             {/duomicms:jqcaslist}
+          </dl>
+          <dl class="clearfix"><dt><span>按年代</span></dt>
+              {duomicms:yearcaslist}
+          <dd><a href="[yearcaslist:link]">{if:[yearcaslist:value]==more}更早{else}[yearcaslist:value]{end if}</a></dd>{/duomicms:yearcaslist}
+          </dl>
+          <dl class="clearfix"><dt><span>按地区</span></dt>
+              {duomicms:areacaslist}
+          <dd><a href="[areacaslist:link]">[areacaslist:value]</a></dd>{/duomicms:areacaslist}
+          </dl>
+      </div>
+    </div>
+    </div>
+  <div class="sy-jg mb">
+    <p class="jg">
+     共<span class="count">{searchlist:recordcount}</span>个筛选结果
+     </p>
+     <p class="px">
+      <a class="time{if:{searchpage:ordername}==time} on{end if}" href="{searchpage:order-time-link}"><em></em>最新</a>
+      <a class="rq{if:{searchpage:ordername}==hit} on{end if}" href="{searchpage:order-hit-link}"><em></em>人气</a>
+      <a class="tj{if:{searchpage:ordername}==commend} on{end if}" href="{searchpage:order-commend-link}"><em></em>推荐</a>
+     </p>
+  </div>
+	<div class="index-area clearfix">
+  <ul>
+    {duomicms:searchlist size=30 order=time type=current}
+    <li class="p1 m1{if:[searchlist:i]% 3==0} mmr0{end if}{if:[searchlist:i]% 6==0} pmr0{end if}"><a class="link-hover" href="[searchlist:link]" title="[searchlist:name]"><img class="lazy" data-original="[searchlist:pic]" src="../images/load.gif" alt="[searchlist:name]"><span class="video-bg"></span><span class="lzbz"><p class="name">[searchlist:name]</p><p class="actor">[searchlist:nolinkactor]</p><p class="actor">[searchlist:typename]{if:"[searchlist:nolinkjqtype]"<>""},{end if}[searchlist:nolinkjqtype]</p><p class="actor">[searchlist:publishtime]/[searchlist:publisharea]</p></span><p class="other">{if:"[searchlist:note]"<>""}<i>[searchlist:note]</i>{else}{subif:[searchlist:state]<>0}<i>[searchlist:state]{end subif}{subif:[searchlist:state]>999}期{end subif}{subif:[searchlist:state]<1000 and [searchlist:state]<>0}集{end subif}</i>{end if}</p></a>
+    </li>
+    {/duomicms:searchlist}
+    </ul>
+  </div>
+<div class="page mb clearfix">
+{if:{searchlist:page}<>1}<a href="{searchlist:firstlink}">1..</a>
+<a href="{searchlist:backlink}"><</a>{end if}
+{searchlist:pagenumber len=8}
+{if:{searchlist:page}<>[pagenumber:page]}
+<a href="[pagenumber:link]">[pagenumber:page]</a>
+{else}
+<em>[pagenumber:page]</em>
+{end if}
+{/searchlist:pagenumber}
+{if:{searchlist:page}<>{searchlist:pagecount}}
+<a href="{searchlist:nextlink}">></a>
+<a href="{searchlist:lastlink}">..{searchlist:pagecount}</a>
+{end if}
+</div>
+</div>   
+{duomicms:foot}
+</body>
+</html>

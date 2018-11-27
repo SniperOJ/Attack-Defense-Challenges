@@ -1,0 +1,1 @@
+hot|||empty|||empty|||10|||hit|||20|||0|||<ul>|||<LI><span>({#hit})</span>{#xuhao}<A href=show.php?id={#id}>{#title}</A></LI>|||</ul>

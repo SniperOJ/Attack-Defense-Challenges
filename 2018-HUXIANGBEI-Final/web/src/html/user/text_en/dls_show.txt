@@ -1,0 +1,19 @@
+﻿details
+There is no relevant information!
+Contacts：
+Identity:
+Corporate name：
+Telephone：
+Email：
+<script>alert('Illegal operation! Warning: your operation has been recorded!');history.back(-1);</script>
+information
+Intentional product:
+Intentional area:
+Introduce oneself to：
+Application time:
+Contact information
+Click to view contact. Note: you need to pay the gold:
+View messages
+<script>alert('The system prompts: your account has been less than {#jf_lookmessage} gold, can not see!')</script>
+Upgrade to VIP members, contact information at any time to view!
+Your user group does not have access to the message!<br><br><input name="Submit22" type="button"  value="Upgrade to VIP member" onClick="location.href='/one/vipuser.php'"/>

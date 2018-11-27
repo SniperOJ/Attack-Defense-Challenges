@@ -1,0 +1,21 @@
+﻿用户登录|||
+if(document.UserLogin.username.value=="")
+		{
+			alert("请输入用户名！");
+			document.UserLogin.username.focus();
+			return false;
+		}
+		if(document.UserLogin.password.value == "")
+		{
+			alert("请输入密码！");
+			document.UserLogin.password.focus();
+			return false;
+		}
+			if(document.UserLogin.yzm.value == "")
+		{
+			alert("请输入验证问题的正确答案！");
+			document.UserLogin.yzm.focus();
+			return false;
+		}|||
+
+用户名|||注册用户|||密码|||找回密码|||答案|||看不清，点击换一张|||记住我的登录状态|||登 录

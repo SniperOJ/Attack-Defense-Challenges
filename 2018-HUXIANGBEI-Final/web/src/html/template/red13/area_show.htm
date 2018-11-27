@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}" />
+<meta name="description" content="{#pagedescription}" />
+<link href="{#siteurl}/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody">
+<div class="left">
+		
+		<div class="titles2"><h3>{#province}企业</h3></div>
+		<div class="content1">
+		{@companyshow.img2}
+		</div>
+</div>
+<div class="right">
+<div class="titles">{#province}推荐企业</div>
+<div class="content1">{@companyshow.showgselite}</div>
+{@companyshow.showgsflash}
+</div>
+</div>
+
+<div class="pagebody">
+<div class="titles">{#province}招商产品</div>
+<div class="content1">
+{@zsshow.showzsimg}
+</div>
+</div>
+
+<div class="pagebody">
+<div class="titles">{#province}新登录企业</div>
+<div class="content1">
+{@companyshow.xdl}
+</div>
+</div>
+
+<div class="pagebody">
+<div class="left">
+<div class="titles">{#province}代理商</div>
+<div class="content1">
+{@dlshow.dlnew2}
+</div>
+
+</div>
+<div class="right">
+<div class="titles">招商区域为{#province}的信息</div>
+<div class="content1">
+{@zsshow.zsnew6}
+</div>
+</div>
+
+</div>
+{#sitebottom}
+</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+﻿<script lanage='javascript'>alert('此信息已存在，请不要发布重复的信息！');location.replace('zxadd.php')</script>
+|||
+发布成功|||发布失败|||
+标题：|||继续添加|||修改|||返回|||预览

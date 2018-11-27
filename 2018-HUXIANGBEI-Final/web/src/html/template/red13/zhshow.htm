@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>{#pagetitle}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="keywords" content="{#pagekeywords}" />
+<meta name="description" content="{#pagedescription}" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<script>
+//控制字体大小
+function fontZoom(size)
+{
+document.getElementById('fontzoom').style.fontSize=size+'px'
+}
+function printcontent()
+{       
+document.body.innerHTML=document.getElementById('BoxInfoTitle').innerHTML+'<br/>'+document.getElementById('address').innerHTML+'<br/>'+document.getElementById('fontzoom').innerHTML;
+window.print();
+}
+</script>
+
+</head>
+<body>
+{#sitetop}
+<div class="main">
+	  <div class="station"> 
+        <h3>
+		{#station}
+		</h3></div> 
+<div class="pagebody">
+    <div class="left">  
+      <div class="left_content"> 
+        <div id="BoxInfoTitle">{#title}</div>
+        <div style="text-align:center;margin-bottom:10px">发布日期：{#sendtime}　发布者：{#editor}　共阅{#hit}次　文章字体：<a href="javascript:fontZoom(16)">大</a> 
+          <a href="javascript:fontZoom(14)">中</a> <a href="javascript:fontZoom(12)">小</a></div>
+		<div class="box" id="address">
+		  <ul>
+            <li>展会地址：{#address}</li>
+            <li>会议时间：{#timestart}至{#timeend}</li>
+          </ul>
+		</div>
+        <div id="fontzoom" style="font-size:14px;line-height:25px;" class="box">{#content}</div>
+        <div class="box" style="padding:5px"><strong>提示：</strong>本信息真实性未经{#sitename}证实，仅供参考，风险自负。若您有参展需求，请直接与承办单位联系。</div>
+	    <div style="text-align:center;height:30px">【<a href="javascript:printcontent()" target="_self">打印此页</a>】&nbsp;【<a href='javascript:history.back()'>返回上页</a>】</div>
+	</div>
+	</div>
+    <div class="right"> 
+	<div class="titles">发布信息</div>
+    <div class="content1">
+	<a href="../user/index.php" target="_self">&gt;&gt;&gt; 发布展会信息</a>
+	</div>
+	<div class="titles">展会承办单位</a></div>
+<div class="content1">
+{@companyshow.zhgs}
+        
+</div>
+
+</div>
+</div>
+{#sitebottom}
+</div>
+</body>
+</html>

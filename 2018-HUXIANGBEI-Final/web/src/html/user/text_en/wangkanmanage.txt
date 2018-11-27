@@ -1,0 +1,10 @@
+﻿标题： 
+查找 
+网刊信息管理
+暂无信息
+<td width="20%" class="border">标题</td><td width="20%"  class="border">img</td><td width="20%" align="center" class="border">更新时间</td><td width="10%" align="center" class="border">信息状态</td><td width="10%" align="center" class="border">操作</td><td width="10%" align="center" class="border">删除</td>
+已审核
+<font color=red>待审</font>
+修改
+全选
+删除

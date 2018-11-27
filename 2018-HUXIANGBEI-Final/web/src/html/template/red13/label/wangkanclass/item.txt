@@ -1,0 +1,6 @@
+item|||0|||99|||1|||<table width="100%" border="0" cellspacing="10" cellpadding="0" class="bordercccccc"><tr>|||<td style='width:100%;' valign="top">
+<div class='titles'><span><a href='wangkan.php?b={#classid}'> 更多...</a></span>{#classname}</div>
+<div class='content2' >
+{@wangkanshow.img}
+</div>
+</td>|||</table>

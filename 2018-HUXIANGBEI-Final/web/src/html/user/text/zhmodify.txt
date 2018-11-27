@@ -1,0 +1,26 @@
+﻿if (document.myform.bigclassid.value==""){
+    alert("请选择展会类型！");
+	document.myform.bigclassid.focus();
+	return false;
+  }	  
+if (document.myform.title.value==""){
+    alert("展会名称不能为空！");
+	document.myform.title.focus();
+	return false;
+  }
+  if (document.myform.address.value==""){
+    alert("展会地址不能为空！");
+	document.myform.address.focus();
+	return false;
+  }
+  if (document.myform.TimeStart.value==""){
+    alert("展会开始时间不能为空！");
+	document.myform.TimeStart.focus();
+	return false;
+  }
+  if (document.myform.TimeEnd.value==""){
+    alert("展会截止时间不能为空！");
+	document.myform.TimeEnd.focus();
+	return false;
+  } |||
+修改展会信息|||所属类别<font color="#FF0000">（必填）</font>：|||请选择类别|||展会名称<font color="#FF0000">（必填）</font>：|||会议地址： |||会议时间：|||展会内容：|||修改

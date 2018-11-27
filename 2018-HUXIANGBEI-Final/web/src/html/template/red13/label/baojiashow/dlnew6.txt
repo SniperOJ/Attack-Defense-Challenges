@@ -1,0 +1,4 @@
+dlnew6|||empty|||10|||id|||8|||2|||<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>|||<td width="50%" height="25">
+【报价】<A href=show.php?id={#id}>{#cp}</A> 价格：{#price}{#danwei}
+</td>|||</table>

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}" />
+<meta name="description" content="{#pagedescription}" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody">
+
+<div class="station2">
+ <span>
+ {#numperpage}
+</span>
+{#station}
+</div>
+<div class="box boxbigclass">{#wangkanclass}</div>
+
+<div class="left_content">
+<div class="content4">
+<ul>
+{loop}
+<li>
+<table class="bgcolor2" cellspacing="1"><tr><td height="150" width="150" bgcolor="#FFFFFF"><a href='{#link}'><img src="{#img}" onload="resizeimg(120,120,this)"><br>{#title}<br>{#sendtime}</a></td></tr></table>
+</li>
+{/loop}
+</ul>
+</div>
+
+<div class='fenyei'>{#fenyei}</div>
+</div>
+</div>
+
+</div>
+{#sitebottom}
+</body>
+</html>

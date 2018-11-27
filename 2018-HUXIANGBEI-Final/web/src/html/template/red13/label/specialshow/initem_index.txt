@@ -1,0 +1,1 @@
+initem_index|||empty|||empty|||0|||0|||10|||id|||16|||30|||0|||<ul>|||<LI>{#xuhao} <A href=show.php?id={#id}>{#title}</A></LI>|||</ul>

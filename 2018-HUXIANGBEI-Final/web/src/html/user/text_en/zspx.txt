@@ -1,0 +1,4 @@
+﻿信息排序|||更新序号|||提示：在表单内填上每条信息的序号（0-9999）数字越大显示越向前，然后点击 |||
+<td width="10%" align="center" class="border">序号</td>
+            <td width="40%" class="border">产品名称</td>
+            <td width="40%" align="center" class="border">产品图片</td>

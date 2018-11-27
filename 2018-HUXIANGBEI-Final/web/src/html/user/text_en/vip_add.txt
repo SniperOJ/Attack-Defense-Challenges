@@ -1,0 +1,14 @@
+﻿<li>Cannot find the specified user！</li>|||
+<li>Can only be upgraded to the upper level user group</li>|||
+<li>Your balance is not enough, please<a href='/3/alipay'>recharge</a>！</li>|||
+Member upgrade cost|||
+service time：|||
+<script>alert('Upgrade success');location.href='vip_add.php'</script>|||
+Member upgrade|||
+username：|||
+You belong to the user group：|||
+(See my permissions) |||Please select member type：|||Integral / year|||Membership period：|||
+ <option value="1" selected>1 year</option>
+                  <option value="2">2 year</option>
+                  <option value="3">3 year</option>
+                  <option value="5">5 year</option>|||Preservation

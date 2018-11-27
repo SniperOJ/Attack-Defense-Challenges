@@ -1,0 +1,25 @@
+﻿展厅设置|||
+//定义正则表达式部分
+var strP=/^\d+$/;
+if(!strP.test(document.myform.mobile.value)) {
+alert("此处必须为数字！"); 
+document.myform.mobile.focus(); 
+return false; 
+}
+|||
+//定义正则表达式部分
+var strP=/^\d+$/;
+if(!strP.test(document.myform.bannerheight.value)) {
+alert("此处必须为数字！"); 
+document.myform.bannerheight.focus(); 
+return false; 
+}
+|||
+<script>alert('成功更新设置');location.href='ztconfig.php'</script>|||
+用户配置记录不存在，已自动修复，请刷新页面|||
+<script>alert('个人用户没有此权限');history.back()'</script>|||
+banner动画效果设置：|||
+banner背景图自定义：|||点击可更换图片|||上传图片|||使用默认图片|||banner背景图自定义|||您所在的用户组没有权限，不能使用本功能|||banner高度设置：|||
+公司名称样式：|||显式方式|||左边|||居中|||右边|||不在banner上显示公司名|||字体颜色 |||白色|||黑色|||导航栏目设置：|||
+网站首页|||品牌信息 |||公司简介|||公司新闻|||招聘信息|||资质证书|||联系方式|||在线留言|||统计代码：|||百度地图代码：|||制做百度地图，获取地图代码|||更新设置|||
+绑定手机|||<strong>绑定手机(免费)：<br></strong>设置邦定的手机号码|||你所在的用户组没有绑定手机的权限

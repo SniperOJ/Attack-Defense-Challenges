@@ -1,0 +1,12 @@
+﻿<script>alert('Individual users do not have this permission');history.back(-1);</script>
+Thematic information management
+Title：
+lookup
+No information
+<td width="222" height="25" class="border">title</td><td width="116" align="center" class="border">category</td><td width="135" align="center" class="border">update time</td><td width="87" align="center" class="border">Audit status</td><td width="94" align="center" class="border">hits</td><td width="55" align="center" class="border">operation</td><td width="55" align="center" class="border">delete</td>
+Already examine
+<font color=red>Not audited</font>
+modify
+Select
+delete
+

@@ -1,0 +1,1 @@
+hot|||empty|||0|||10|||hit|||10|||0|||<ul>|||<LI><span style='width:80px'>[浏览{#hit}次]</span>{#xuhao} <A href=show.php?id={#id}>{#title}</A></LI>|||</ul>

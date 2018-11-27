@@ -1,0 +1,7 @@
+﻿<li>Cannot find the specified user!</li>|||
+<li>You are not free membership renewals！</li>"|||
+<li>Your balance is insufficient, please <a href='/3/alipay'>recharge</a>！</li>|||
+Continued membership fee|||renew|||year
+<script>alert('success');location.href='vip_xufei.php'</script>|||
+Membership renewal|||
+User name:|||Current user group:|||Opening time:|||Due time:|||Renewal period:|||1 years|||2 years|||3 years|||5 years|||Gold|||Preservation

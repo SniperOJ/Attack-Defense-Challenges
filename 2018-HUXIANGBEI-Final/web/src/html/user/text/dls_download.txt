@@ -1,0 +1,8 @@
+﻿您所在的用户组没有下载此信息的权限！<br><input  type=button value=升级成VIP会员 onclick=\"location.href='/one/vipuser.php'\"/>|||
+<li>操作失败！至少要选中两条信息才能下载。</li>|||
+<td align=center  bgcolor=#dddddd><b>电话</b></td>
+<td align=center  bgcolor=#dddddd><b>意向产品</b></td>
+<td align=center  bgcolor=#dddddd><b>联系人</b></td>
+<td align=center  bgcolor=#dddddd><b>意向区域</b></td>
+<td align=center  bgcolor=#dddddd><b>自我介绍</b></td>
+<td align=center  bgcolor=#dddddd><b>发布时间</b></td>

@@ -1,0 +1,23 @@
+@charset "utf-8";
+body {font-size:12px;color:#000000;background:#FFFFFF;line-height:20px;color:#333333;font-family: "微软雅黑";font-size:12px;}
+input,select,textarea {font-size:12px;}
+img {border:none;}
+label {color:#ACA899;font-size:10px;}
+ul,form {margin:0px;padding:0px;}
+fieldset {line-height:180%;}
+a:link,a:visited,a:active {color:blue;text-decoration:none;}
+a:hover {color:red;}
+.main{width:700px;margin:0 auto;text-align:left;border:solid 1px #B5CFD9;background-color:#F7FBFE}
+.head {background:#f1f1f1;font-size:22px;line-height:72px;background-color:#DEEFF9;background:url(topbg.gif);text-align:center;height:72px;padding:0 10px}
+.head span{float:right;padding-top:10px;font-size:12px;}
+.body {padding:10px;}
+.licence{width:660px; height:480px; overflow: scroll;border:solid 1px #dddddd;background-color:#FFFFFF;padding:10px}
+#myform{text-align:center;padding:10px}
+.bgcolor1{background-color:#F1F1F1}
+.bgcolor2{background-color:#dddddd}
+.jindu{width:100%;height:60px;background-color:#FFFFFF;border-bottom:solid 1px #B5CFD9}
+.jindu li{float:left;font-weight:bold;display:block;height:20px;width:25%;text-align:center;line-height:60px;height:60px;}
+.current{background-color:#F7FBFE;color:#025BAD;font-size:16px;}
+.btn {BORDER: #7b9ebd 1px solid; PADDING: 2px;FONT-SIZE: 12px; 
+FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde); 
+CURSOR: hand; COLOR: black; }

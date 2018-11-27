@@ -1,0 +1,1 @@
+new|||empty|||0|||0|||0|||0|||10|||id|||12|||0|||<ul>|||<LI>【企业】<A href=show.php?id={#id}>{#title}</A></LI>|||</ul>

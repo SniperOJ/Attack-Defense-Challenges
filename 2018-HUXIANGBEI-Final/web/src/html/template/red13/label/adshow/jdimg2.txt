@@ -1,0 +1,21 @@
+﻿jdimg2|||首页|||轮显广告|||6|||20|||0|||<div id="demo01" class="flexslider">
+<ul class="slides">|||<li><div><a href="{#link}"><img src="{#img}" width="642" height="233" alt="" /></a></div><div>{#title}</div></li>|||</ul>
+</div>
+<script type="text/javascript">
+$(function(){
+
+	$('#demo01').flexslider({
+		animation: "slide",
+		//direction:"horizontal",
+		direction:"vertical",
+		easing:"swing"
+	});
+	
+	$('#demo02').flexslider({
+		animation: "slide",
+		direction:"vertical",
+		easing:"swing"
+	});
+	
+});
+</script>

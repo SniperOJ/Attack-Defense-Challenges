@@ -1,0 +1,16 @@
+﻿if (document.myform.bigclassid.value==""){
+    alert("请选择大类名称！");
+	document.myform.bigclassid.focus();
+	return false;
+  }
+if (document.myform.title.value==""){
+    alert("标题不能为空！");
+	document.myform.title.focus();
+	return false;
+  } 
+|||
+修改问答信息|||类别<font color="#FF0000">（必填）</font>：|||请选择大类别|||不指定小类|||标题<font color="#FF0000">（必填）</font>：|||外链新闻 |||链接地址|||信息来源：|||
+内容<font color="#FF0000">（必填）</font>：|||SEO优化设置|||关键词（keywords）：|||描述（description）：|||浏览权限设置
+|||全部用户|||请选择无权限用户是否可用积分查看|||无权限用户不可用积分查看|||
+付我10积分可查看|||付我20积分可查看|||付我30积分可查看|||付我50积分可查看|||付我100积分可查看|||付我200积分可查看|||付我500积分可查看|||付我1000积分可查看
+|||发 布

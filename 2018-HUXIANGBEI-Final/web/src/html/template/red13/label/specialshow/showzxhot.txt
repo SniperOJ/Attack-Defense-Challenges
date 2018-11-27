@@ -1,0 +1,1 @@
+showzxhot|||empty|||empty|||0|||0|||10|||hit|||10|||30|||0|||<ul>|||<LI><span style='width:100px'>[浏览{#hit}次]</span>{#xuhao} <A href=show.php?id={#id}>{#title}</A></LI>|||</ul>

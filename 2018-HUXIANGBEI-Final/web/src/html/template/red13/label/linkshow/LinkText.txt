@@ -1,0 +1,1 @@
+LinkText|||0|||0|||0|||100|||20|||6|||<table width='100%' border='0' cellpadding='2' cellspacing='1' class='bgcolor2'><tr>|||<td bgcolor='#FFFFFF'><a href="{#url}" target='_blank'>{#sitename}</a></td>|||</table>

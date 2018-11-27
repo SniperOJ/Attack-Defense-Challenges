@@ -1,0 +1,20 @@
+﻿Home text advertising settings.
+This function is closed.
+Individual users can not seize the ad
+<script>alert('You have not yet released {#channelzs} information, can not seize the ad! Please release the {#channelzs} information first.');location.replace('zsadd.php')</script>	
+<script>alert('You do not currently set the text message, please set the ad.');location.replace('adv.php')</script>
+<script>alert('You already have an ad location, and you can't take part in it.');history.back(-1);</script>
+<script>alert('Seize the failure, this location is the first step in getting {#nextuser}');location.replace('adv2.php')</script>
+Occupy the position of advertisement
+<script>alert('Seize success. Consumption of gold {#jf_set_adv}');history.back(-1);</script>
+<script>alert('Your gold is not enough {#jf_set_adv} to seize');history.back(-1);</script>
+<script>alert('To seize the success, after the audit, you can display the content of your advertising');location.replace('adv2.php')</script>
+<script>alert('You do not have access to the user group to seize the ad position!');history.back(-1)</script>";
+Home text advertising settings
+Note: seize the way: to the end; each user only to seize a bit of advertising. After the success of the occupation, the occupation period is <b>{#showadvdate}</b> days. After the expiration can be re involved in the race to seize.
+Hot investment zone A
+No information! Administrator. The administrator in the background, advertising management, high class name for "home", small class "a" category add advertising, add here can seize the
+<div><input name='Submit' type='button'  disabled value='Charging advertising, not to seize'></div>
+{#nextuser} took this position, advertising content is under review
+Seize this position
+After {#day} days to seize

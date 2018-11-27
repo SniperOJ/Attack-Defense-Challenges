@@ -1,0 +1,9 @@
+﻿邮件/短信内容设置
+添加邮件/短信内容
+暂无信息
+<td width="10%" height="25" align="center" class="border">ID</td><td width="50%" align="center" class="border">内容</td><td width="10%" align="center" class="border">默认短信模板</td><td width="20%" height="20" align="center" class="border">操作</td>
+默认模板
+设为默认
+修改
+删除
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta property="qc:admins" content="31307116006112006375" />
+<meta content="{#pagedescription}" name="description"/>
+<meta content="{#pagekeywords}" name="keywords"/>
+<meta name="baiduspider" content="index, follow" />
+<meta name="GOOGLEBOT" content="index,follow,noarchive/">
+<meta name="Scooter" content="index, follow" />
+<link rel="Bookmark" href="favicon.ico"/>
+<link rel="Shortcut Icon" href="favicon.ico" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<script src="js/scrolltop.js" type="text/javascript" language="JavaScript"></script>
+<script src="js/jquery.js" type="text/javascript" language="JavaScript"></script>
+<script src="js/slider.js" type="text/javascript" language="JavaScript"></script>
+<script src="/js/jquery.lazyload.js"></script>
+<link href="template/{#siteskin}/jdimg2.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+{#flyad}
+{#duilianad}
+<div class="main">
+{#showad:首页,顶部,4,0,0,0,no}
+<!--<div id='topad'><div id='boxtopadclose'><span onclick=topad.style.display='none'>×</span></div>
+{#showad:首页,顶部,4,0,0,0,no}
+</div>
+-->
+</div>
+{#sitetop}
+<div class="main">
+
+	<div class="left"> 
+	<ul>
+		<li style="float:left;width:240px;margin-right:8px">
+		<div class="titles3">全部商品分类</div>
+		<div id="flzs" style="display:block">{#zsclass:1,6,8,99,8,2,2,5,yes,no}
+		</li>		
+		<li style="float:left;width:642px">
+		<div style="margin-bottom:10px">{@adshow.jdimg2}</div>
+		<div class="box">{@zsshow.sp2}</div>
+
+		</li>
+	</ul>
+	</div>
+	<div class="right">	
+	<div class="boxreg"> 
+	<ul>
+	<li style="margin-right:8px;"><a href="/reg/userreg.htm">免费注册</a></li>
+	<li><a href="user/login.htm">登录</a></li>
+	</ul>
+	</div>	
+		
+<div class="titles">常见问题解答</div>
+<div class="content1">{@helpshow.new}</div>	
+
+ <div class="boxitem2 bigword" id="A">
+        <ul>    
+        <li><a id="A1" href="#" onmouseover="javascript:doClick(this,'A','current2')" class="current2">招商</a></li>
+        <li><a id="A2" href="#" onmouseover="javascript:doClick(this,'A','current2')">企业</a></li> 
+		<li><a id="A3" href="#" onmouseover="javascript:doClick(this,'A','current2')" >代理</a></li>
+		<li><a id="A4" href="#" onmouseover="javascript:doClick(this,'A','current2')">展会</a></li> 
+        <li><a id="A5" href="#" onmouseover="javascript:doClick(this,'A','current2')">招聘</a></li> 
+		<li><a id="A6" href="#" onmouseover="javascript:doClick(this,'A','current2')">品牌</a></li>                    
+        </ul>
+	</div>
+	<div class="content">
+    	<div  id="A_con1" style="display:block;">{@zsshow.zsnew6}</div>
+		<div id="A_con2" style="display:none;">{@companyshow.new6}</div>
+		<div id="A_con3" style="display:none;">{@dlshow.dlnew6}</div>
+		 <div id="A_con4" style="display:none;">{@zhshow.new6}</div>
+		  <div id="A_con5" style="display:none;">{@jobshow.new6}</div>
+		   <div id="A_con6" style="display:none;">{@ppshow.new6}</div>
+	</div>	
+</div>
+
+<div class="titles1"><span><a href="user/index.php?gotopage=adv2.php">抢占招商A区广告位</a></span>火爆招商Z区</div>
+<div class="adStyle1" style="margin-bottom:10px">{#showad:首页,1F,10,198,117,12,yes}</div>
+
+<div class="titles1"> <span><a href="user/index.php?gotopage=adv2.php">抢占招商A区广告位</a></span>火爆招商A区</div>
+<div class="adStyle1" style="margin-bottom:8px">{#showad:首页,A,35,0,0,12,yes}</div>
+<div class="adStyle1" style="margin-bottom:8px">{#showad:首页,A_img,0,0,12,no}</div>
+
+<div class="titles1"> <span><a href="user/index.php?gotopage=adv2.php">抢占招商B区广告位</a></span>火爆招商B区</div>
+<div class="adStyle1" style="margin-bottom:8px">{#showad:5,0,no,no,yes,0,0,0,首页,B,no}</div>
+<div class="adStyle1" style="margin-bottom:8px">{#showad:首页,B_img,0,0,12,no}</div>
+
+<div class="titles"> <span>我要刷新 </span>刷新区</div>
+<div class="content1">
+
+{@zsclass.zsitem2}
+{@zsclass.content2}
+</div>
+
+{#showad:首页,第一行,0,0,0,no}
+
+<div class="titles1"><span><a href="user/index.php">点击登录</a></span><h3>新登录企业</h3></div>
+
+<div style="margin-bottom:8px">{@companyshow.xdl}</div>
+
+
+{#showad:首页,第二行,0,0,0,no}
+<div class="titles">资讯中心</div>
+<div class="content1" style="padding:0px">
+{@zxclass.forindex}
+</div>
+
+
+<!--
+<div class="titles"><span><a href='link.htm'>更多...</a></span> 图片链接</div>
+<div class="content">{@linkshow.LinkInIndexImg}</div>
+-->
+
+<div class="titles"><span><a href='link.htm'>更多...</a></span> 文字链接</div>
+<div class="content1">{@linkshow.LinkInIndexText}</div>
+
+<div id="dl5"><span>{#sitename}温馨恭贺双方合作愉快！诚信经营，财富共享。</span></div>
+<div id="dlstepbox">
+<div id="dlstep">
+<li id="dlstepli1">
+<div id="dlsteptitlein"><span>1&nbsp;</span>登录网站</div>
+<div id="dlstepcontentin">输入{#siteurl}<br />网上搜索</div>
+</li>
+<li  id="dlstepli2">
+<div id="dlsteptitlein"><span>2&nbsp;</span>寻找意向产品</div>
+<div id="dlstepcontentin">点击广告位查找<br />热门产品查找<br />根据搜索查找</div>
+</li>
+<li id="dlstepli3">
+<div  id="dlsteptitlein"><span>3&nbsp;</span>留言，电话咨询</div>
+<div id="dlstepcontentin">电话咨询厂家<br />页面留言咨询<br />在线咨询</div>
+</li>
+<li id="dlstepli4">
+<div id="dlsteptitlein"><span>4&nbsp;</span>双方洽谈</div>
+<div id="dlstepcontentin">双方沟通相关事宜<br />代理要求<br />厂家政策支持</div>
+</li>
+<li id="dlstepli5">
+<div  id="dlsteptitlein"><span>5&nbsp;</span>合作成功</div>
+<div  id="dlstepcontentin">进行考察核实<br />签订合同<br />代理成功</div>
+</li>
+</div>
+</div>
+<div class="titles1"> {#sitename}客服中心</div>
+<div id="kefu">
+{@aboutshow.lxr}
+</div>
+
+{#sitebottom}
+</div>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&img=0&pos=right&uid=0" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<!-- Baidu Button END -->
+<div style="display: none" id="goTopBtn"></DIV>
+<SCRIPT type=text/javascript>goTopEx();
+$(function() {
+$("img").lazyload({
+//placeholder : "/image/loading.gif", //用图片提前占位//placeholder,值为某一图片路径.此图片用来占据将要加载的图片的位置,待图片加载时,占位图则会隐藏
+effect: "fadeIn", // 载入使用何种效果//effect(特效),值有show(直接显示),fadeIn(淡入),slideDown(下拉)等,常用fadeIn
+threshold: 200// 提前开始加载//threshold,值为数字,代表页面高度.如设置为200,表示滚动条在离目标位置还有200的高度时就开始加载图片,可以做到不让用户察觉   
+	  });
+  });
+</SCRIPT>
+</body>
+</html>

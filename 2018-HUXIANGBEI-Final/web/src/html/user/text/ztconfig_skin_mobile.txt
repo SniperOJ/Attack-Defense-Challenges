@@ -1,0 +1,3 @@
+﻿展厅模板设置|||
+<script>alert('个人用户没有此权限');history.back(-1);</script>|||
+<script>alert('成功更新设置');location.href='ztconfig_skin_mobile.php'</script>|||更新设置

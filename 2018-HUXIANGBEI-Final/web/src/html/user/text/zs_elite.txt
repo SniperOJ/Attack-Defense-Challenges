@@ -1,0 +1,27 @@
+﻿if (document.myform.eliteendtime.value==""){
+	document.myform.eliteendtime.focus();
+    alert('请选择到期时间');
+	return false;
+}
+if (document.myform.tag.value==""){
+	document.myform.tag.focus();
+    alert('关键词不能为空');
+	return false;
+  }
+|||
+时间已过期|||
+此关键词已有中标产品:|||
+中标期限至：|||
+信息投标|||
+产品ID：|||
+<script>alert('成功,计费时间{#oldeliteendtime}至{#eliteendtime},共计{#day}天，{#jf_set_elite}个金币/天，共付出{#jfpay}个金币');</script>|||
+<script>alert('失败，你的金币不足{#jfpay};history.back()</script>|||
+<script>alert('积分功能关闭，无法使用此功能！');history.back(-1)</script>|||
+<script>alert('你所在的用户组没有此权限');history.back()'</script>|||
+<script>alert('非法操作！警告：你的操作已被记录！小心封你的用户及IP！');history.back()'</script>|||
+投标|||
+产品名称：|||
+到期时间：|||
+积分/天|||
+关键词（tag）：|||
+(多个关键词以“,”隔开)|||提交

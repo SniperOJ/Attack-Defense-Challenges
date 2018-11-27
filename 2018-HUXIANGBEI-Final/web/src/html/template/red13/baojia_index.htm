@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}" />
+<meta name="description" content="{#pagedescription}" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="/js/jquery.js"></script>
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody">
+<div class="left">
+      <div> 
+        <ul>
+          <li id="leftleft">
+			
+		{@baojiashow.new3}	
+              
+          </li>
+          <li id="leftright">
+		  
+		  <div class="titles">最新行情</div>
+		  <div class="content2"> 
+           {@baojiashow.dlnew2}
+			</div>
+          </li>
+        </ul>
+ </div>
+</div>
+<div class="right">
+ 
+<div class="titles">热门搜索</div>
+<div class="content1">{#keyword:dl,32,4}</div>
+</div>
+</div>
+<div class="bordercccccc">
+{@baojiaclass.dlitem}
+</div>
+</div>
+{#sitebottom}
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿ if (document.myform.name.value==""){
+	document.myform.name.focus();
+    document.myform.name.value='此处不能为空';
+    document.myform.name.select();
+	document.myform.name.style.backgroundColor="FFFF00";
+	return false;
+  }
+ if (document.myform.sm.value==""){
+	document.myform.sm.focus();
+    document.myform.sm.value='此处不能为空';
+    document.myform.sm.select();
+	document.myform.sm.style.backgroundColor="FFFF00";
+	return false;
+  }
+	ischecked=false;
+ 	for(var i=0;i<document.myform.bigclassid.length;i++){ 
+		if(document.myform.bigclassid[i].checked==true)  {
+		 ischecked=true ;
+   		} 
+	}
+   if(document.myform.bigclassid.checked==true)  {
+		 ischecked=true ;
+   	} 
+ 	if (ischecked==false){
+	alert("请选择大类别！");	
+    return false;
+	}
+	
+   if(document.myform.smallclassid.checked==true)  {
+		 ischecked=true ;
+   		} 
+ 	if (ischecked==false){
+	alert("请选择小类别！");	
+    return false;
+	}
+|||
+发布品牌信息||| 名称<font color="#FF0000">（必填）</font>：|||此处不能为空|||类别<font color="#FF0000">（必填）</font>：|||请选择所属大类|||请选择所属小类|||
+介绍<font color="#FF0000">（必填）</font>：|||LOGO（小于{#maximgsize}K）：|||上传图片|||填好了，发布
+|||<script>alert('个人用户没有此权限');history.back()</script>

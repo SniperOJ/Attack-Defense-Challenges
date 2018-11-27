@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}" />
+<meta name="description" content="{#pagedescription}" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<link href="/template/{#siteskin}/jdimg.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jdimg.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	  	$.focus("#focus001");
+		$.focus("#focus002");
+	});
+</script>
+<style type="text/css">
+.focus {width:300px; height:300px;}
+.focus img{border:0;width:300px; height:300px;}
+.focus ul li {width:300px; height:300px;  }
+.focus .btnBg {display:block;}
+.focus .btnBg {width:300px;}
+.focus .btn {width:300px;}
+</style>
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody" style="margin-top:10px">
+<div class="left">
+      <div> 
+        <ul>
+          <li id="leftleft"> 
+
+          {@specialshow.jdimg2}
+
+          </li>
+          <li id="leftright">
+		 
+ <div class="boxtop2">  
+			{@specialshow.bigtitle3}
+			</div>
+          </li>
+        </ul>
+ </div>
+</div>
+<div class="right">
+ 
+<div class="titles4">热门专题</div>
+<div class="content1">
+{@specialshow.showzxhot}
+</div>
+
+</div>
+</div>
+
+<div class="bordercccccc">
+{@specialclass.zxitem}
+</div>
+
+<div class="box" style="margin-top:8px">
+声明：本站部分图文内容取自互联网。您若发现有侵犯您著作权行为，请及时告知，我们将在第一时间删除侵权作品、停止继续传播。
+</div>
+
+</div>
+{#sitebottom}
+</body>
+</html>

@@ -1,0 +1,17 @@
+﻿function CheckForm(){
+  if (document.myform2.content.value==""){
+    alert("Content can not be empty！");
+	//document.myform.content.focus();
+	return false;
+  } 
+if (document.myform2.content.value !=""){
+    var re=/^[\u4e00-\u9fa5]{2,10}$/; //只输入汉字的正则
+    	if(document.myform2.content.value.search(re)==-1){
+	alert("Content can only be Chinese characters！");
+	return false;
+	}
+}   
+}|||
+nformation that has been returned|||No information|||Content / reply|||delete|||Content：|||reply：|||No reply|||Select all|||delete|||I'm going to feed back the information|||
+Content <font color="#FF0000">（Required）</font>：|||Release|||
+<script lanage='javascript'>alert('This information already exists, please do not release duplicate information！');</script>

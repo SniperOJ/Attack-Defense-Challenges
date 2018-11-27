@@ -1,0 +1,7 @@
+new2|||empty|||0|||3|||id|||20|||1|||<div>|||<div class="bigbigword"> 
+<A href=show.php?id={#id}>{#title}</A>
+</div>
+<div style="margin-bottom:8px">
+展会时间：{#timestart}至{#timeend}<br/>展会地点：{#address}
+
+</div>|||</div>

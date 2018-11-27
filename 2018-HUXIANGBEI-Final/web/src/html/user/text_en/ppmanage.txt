@@ -1,0 +1,11 @@
+﻿<script>alert('Individual users do not have this permission');history.back(-1);</script>
+Brand name:
+lookup
+Brand information management
+No information
+<td width="10%" class="border">name</td><td width="5%" align="center" class="border">Category </td><td width="5%" height="25" align="center" class="border">picture</td><td width="5%" align="center" class="border">update time</td><td width="5%" align="center" class="border">Information state</td><td width="5%" align="center" class="border">modify</td><td width="5%" align="center" class="border">delete</td>
+Already examine
+<font color=red>Not audited</font>
+modify
+Select
+delete

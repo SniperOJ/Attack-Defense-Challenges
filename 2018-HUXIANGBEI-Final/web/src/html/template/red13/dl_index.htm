@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}" />
+<meta name="description" content="{#pagedescription}" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody">
+<div class="left">
+      <div> 
+        <ul>
+          <li id="leftleft">
+			<div class="titles">各省份代理商信息</div>
+			<div class="content1" style="padding-bottom:38px">
+                <img src="/image/map.gif" border="0" usemap="#Map"  /> 
+                <map name="Map" id="Map">
+                  <area shape="rect" coords="184,62,220,76" href="search.php?province=内蒙古" alt="内蒙古" />
+                  <area shape="rect" coords="226,31,262,45" href="search.php?province=黑龙江" alt="黑龙江" />
+                <area shape="rect" coords="227,151,252,165" href="search.php?province=浙江" alt="浙江" />
+                  <area shape="rect" coords="230,132,255,146" href="search.php?province=上海" alt="上海" />
+                  <area shape="rect" coords="164,224,189,238" href="search.php?province=海南" alt="海南" />
+                  <area shape="rect" coords="189,211,214,225" href="search.php?province=澳门" alt="澳门" />
+                  <area shape="rect" coords="213,203,238,217" href="search.php?province=香港" alt="香港" />
+                  <area shape="rect" coords="228,189,253,203" href="search.php?province=台湾" alt="台湾" />
+                  <area shape="rect" coords="212,175,237,189" href="search.php?province=福建" alt="福建" />
+                  <area shape="rect" coords="203,160,228,174" href="search.php?province=江西" alt="江西" />
+                  <area shape="rect" coords="202,144,227,158" href="search.php?province=安徽" alt="安徽" />
+                  <area shape="rect" coords="204,125,229,139" href="search.php?province=江苏" alt="江苏" />
+                  <area shape="rect" coords="223,69,248,83" href="search.php?province=辽宁" alt="辽宁" />
+                  <area shape="rect" coords="231,51,256,65" href="search.php?province=吉林" alt="吉林" />
+                  <area shape="rect" coords="202,107,227,121" href="search.php?province=山东" alt="山东" />
+                  <area shape="rect" coords="170,104,195,118" href="search.php?province=山西" alt="山西" />
+                  <area shape="rect" coords="145,103,170,117" href="search.php?province=甘肃" alt="甘肃" />
+                  <area shape="rect" coords="189,193,214,207" href="search.php?province=广东" alt="广东" />
+                  <area shape="rect" coords="161,193,186,207" href="search.php?province=广西" alt="广西" />
+                  <area shape="rect" coords="177,164,202,178" href="search.php?province=湖南" alt="湖南" />
+                  <area shape="rect" coords="176,146,201,160" href="search.php?province=湖北" alt="湖北" />
+                  <area shape="rect" coords="203,94,228,108" href="search.php?province=天津" alt="天津" />
+                  <area shape="rect" coords="195,78,220,92" href="search.php?province=北京" alt="北京" />
+                  <area shape="rect" coords="136,162,161,176" href="search.php?province=重庆" alt="重庆" />
+                  <area shape="rect" coords="145,177,170,191" href="search.php?province=贵州" alt="贵州" />
+                  <area shape="rect" coords="115,187,140,201" href="search.php?province=云南" alt="云南" />
+                  <area shape="rect" coords="39,134,71,158" href="search.php?province=西藏" alt="西藏" />
+                <area shape="rect" coords="29,70,75,98" href="search.php?province=新疆" alt="新疆" />
+                  <area shape="rect" coords="114,93,139,107" href="search.php?province=宁夏" alt="宁夏" />
+                  <area shape="rect" coords="90,108,120,135" href="search.php?province=青海" alt="青海" />
+                  <area shape="rect" coords="124,148,149,162" href="search.php?province=四川" alt="四川" />
+                  <area shape="rect" coords="148,128,173,142" href="search.php?province=陕西" alt="陕西" />
+                  <area shape="rect" coords="178,126,203,140" href="search.php?province=河南" alt="河南" />
+                  <area shape="rect" coords="176,90,201,104" href="search.php?province=河北" alt="河北" />
+              </map>
+			
+            </div>
+              
+          </li>
+          <li id="leftright">
+		  
+		  <div class="titles">最新代理</div>
+		  <div class="content2"> 
+           {@dlshow.dlnew2}
+			</div>
+          </li>
+        </ul>
+ </div>
+</div>
+<div class="right">
+ 
+<div class="titles1">热门搜索</div>
+
+{#keyword:dl,32,4}
+
+
+</div>
+</div>
+<div class="bordercccccc">
+{@dlclass.dlitem}
+</div>
+
+{#sitebottom}
+
+</div>
+</body>
+</html>

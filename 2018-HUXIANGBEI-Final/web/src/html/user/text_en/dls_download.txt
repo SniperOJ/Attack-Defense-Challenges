@@ -1,0 +1,8 @@
+﻿Your user group does not have permission to download this information!<br><input  type=button value=Upgrade to VIP member onclick=\"location.href='/one/vipuser.php'\"/>|||
+<li>Operation failed! At least two pieces of information must be selected to download.</li>|||
+<td align=center  bgcolor=#dddddd><b>Telephone</b></td>
+<td align=center  bgcolor=#dddddd><b>Intentional product</b></td>
+<td align=center  bgcolor=#dddddd><b>contacts</b></td>
+<td align=center  bgcolor=#dddddd><b>Intentional area</b></td>
+<td align=center  bgcolor=#dddddd><b>introduce oneself</b></td>
+<td align=center  bgcolor=#dddddd><b>Release time</b></td>

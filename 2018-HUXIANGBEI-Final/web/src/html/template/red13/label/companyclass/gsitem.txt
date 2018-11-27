@@ -1,0 +1,6 @@
+gsitem|||0|||10|||3|||<table width="100%" border="0" cellspacing="10" cellpadding="0"><tr>|||<td style='width:33%;' valign="top">
+<div class='titles'><span><a href='company.php?b={#classid}'> 更多...</a></span>{#classname}</div>
+<div class='content' >
+{@companyshow.showgsnew}
+</div>
+</td>|||</table>

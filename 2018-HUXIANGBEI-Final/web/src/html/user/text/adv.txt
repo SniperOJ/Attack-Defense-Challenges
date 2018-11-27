@@ -1,0 +1,10 @@
+﻿自助广告|||
+  if (document.myform.adv.value==""){
+    alert("请填写广告词！");
+	document.myform.adv.focus();
+	return false;
+  }|||
+个人用户不能抢占广告位|||
+<script>alert('广告修改成功！提示：通过审核后新广告内容才显示');location.href='adv2.php'</script>|||
+<script>alert('广告词设置成功！现在可以抢占广告位置了');location.href='adv2.php'</script>|||
+<strong>广告内容</strong>：<br>最多15个字符|||广告图片：|||点击可更换图片|||上传图片|||显示效果：|||信息状态：|||广告词已通过审核|||<font color=red>未审核</font>|||修 改|||发布

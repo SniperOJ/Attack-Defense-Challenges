@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>用户登录</title>
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script>
+$(function(){
+$("#getcode_math").click(function(){
+		$(this).attr("src",'/one/code_math.php?' + Math.random());
+	});
+});
+</script>
+<script language=javascript>
+	function CheckForm()
+	{
+		if(document.UserLogin.username.value=="")
+		{
+			alert("请输入用户名！");
+			document.UserLogin.username.focus();
+			return false;
+		}
+		if(document.UserLogin.password.value == "")
+		{
+			alert("请输入密码！");
+			document.UserLogin.password.focus();
+			return false;
+		}
+			if(document.UserLogin.yzm.value == "")
+		{
+			alert("请输入验证问题的正确答案！");
+			document.UserLogin.yzm.focus();
+			return false;
+		}
+	}
+	
+	function showItem(obj){
+	if(obj.checked == true)
+		document.getElementById("rempassItem").style.display="block";
+	else
+		document.getElementById("rempassItem").style.display="none";
+}
+</script>
+</head>
+<body>
+
+<div class="main">
+{#sitetop}
+  <div id="loginbg_box">
+  <div id="loginbg_kf"></div>
+  <div id="loginbg_inputbox">
+  <div id="loginbg_bigword"><span><a href="" onclick="window.opener=null;window.open('','_self');window.close()" title="关闭">×</a></span>用户登录</div> 
+  <div id="loginbg_inputboxin">
+  {case1}
+    <form action="logincheck.php" method="post" name="UserLogin" id="UserLogin" target="_top" onsubmit='return CheckForm();'>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="30%" height="35" align="right"><label for="username">用户名：</label></td>
+          <td height="35"><input name="username" type="text" class="biaodan2" id="username" style="width:150px" tabindex="1" value="{#uname}" size="14" maxlength="255" />
+            <a href="/reg/userreg.php"> 免费注册</a></td>
+        </tr>
+        <tr>
+          <td height="35" align="right"><label for="username">密码：</label></td>
+          <td height="35"><input name="password" type="password" class="biaodan2" id="password" style="width:150px" tabindex="2" size="14" maxlength="255" />
+            <a href="/one/getpassword.php"> 找回密码</a></td>
+        </tr>
+        <tr>
+          <td height="35" align="right"><label for="yzm">答案：</label></td>
+          <td height="35"><input name="yzm" tabindex="3" type="text" class="biaodan2" style="width:40px" id="yzm" size="4" maxlength="255" />
+            <img src="/one/code_math.php" align="absmiddle" id="getcode_math" title="看不清，点击换一张" /> </td>
+          </tr>
+        <tr>
+          <td height="30">&nbsp;</td>
+          <td height="30"><input name="CookieDate[]" type="checkbox" id="CookieDate" value="1" onclick="showItem(this)" />
+            记住我的登录状态</td>
+        </tr>
+        <tr id="rempassItem" style="display:none">
+          <td colspan="2"><font color="#FF0000">为了确保你的信息安全，请不要在网吧或者公用电脑上选择此项。</font> </td>
+        </tr>
+        <tr style="border">
+          <td height="35"><input name="fromurl" type="hidden" value="{#fromurl}" /></td>
+          <td><input type="submit" name="Submit" value="登 录" tabindex="4" /></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="border-bottom:solid 1px #dddddd">&nbsp;</td>
+        </tr>
+        <tr>
+          <td height="40" align="right">快捷登录：</td>
+          <td><a href='/3/qq_connect2.0/index.php'><img src='/image/Connect_logo_3.png' alt="qq_login" border='0' /></a></td>
+        </tr>
+      </table>
+    </form>
+	{/case1}
+	{case2}
+	<div style="height:160px;padding:10px 0 50px 100px">
+	<div class='bigbigword' style="color:#666666">[ <a href="/user/index.php">进入用户中心</a>&nbsp;|&nbsp;<a href="/user/logout.php">安全退出</a> ]</div>
+	<div class='bigbigword'><span style='font-family: Arial;font-size:22px'>{#username}</span>您好,已登录</div>
+	
+	</div>
+	{/case2}
+	 </div>
+	 <div id="loginbg_touying"></div>
+  </div>
+  <div id="loginbg_color1"></div>
+  <div id="loginbg_color2"></div>
+  <div id="loginbg_color3"><table width="100%" border="0" cellspacing="0" cellpadding="10">
+    <tr>
+      <td><div class="bigbigword">拥有自己的网上展厅</div>可以24小时宣传企业和产品；</td>
+      <td><div class="bigbigword">发布产品招商信息</div>让生意自动找上门；</td>
+      <td><div class="bigbigword">发布公司介绍</div>提升企业知名度；</td>
+      <td><div class="bigbigword">查看代理商信息</div>主动出击赢得客户；</td>
+    </tr>
+  </table></div>
+  </div>
+  {#sitebottom}
+  </div>
+</body>
+</html>

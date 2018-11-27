@@ -1,0 +1,10 @@
+﻿Title：
+lookup
+Exhibition information management
+No information
+<td width="282" height="25" class="border">title</td><td width="153" align="center" class="border">update time</td><td width="222" align="center" class="border">Information state</td><td width="64" align="center" class="border">operation</td><td width="65" align="center" class="border">delete</td>
+Already examine
+<font color=red>Not audited</font>
+modify
+Select
+delete

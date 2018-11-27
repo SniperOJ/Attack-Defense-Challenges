@@ -1,0 +1,2 @@
+initem|||empty||||||1|||0|||1|||id|||20|||50|||2|||<table><tr>|||<td><table bgcolor="#dddddd" border="0" cellspacing="1" cellpadding="5"><tr><td height="150" width="200" bgcolor="#FFFFFF" align="center"><A href="show.php?id={#id}" target="_blank"><img src="{#imgbig}" border="0" onload=resizeimg(200,150,this)></A></td></tr></table></td>
+<td>{#content}</td>|||</tr></table>

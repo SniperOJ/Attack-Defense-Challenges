@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>{#pagetitle}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="keywords" content="{#pagekeywords}"/>
+<meta name="description" content="{#pagedescription}" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<link href="/js/showbigimg.css" type="text/css" rel="stylesheet">
+<script language="JavaScript" type="text/JavaScript"  src="/zs/zsshow.js"></script>
+<script type="text/javascript" src="/js/showbigimg.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script>
+$(function(){
+$("#getcode_math").click(function(){
+		$(this).attr("src",'/one/code_math.php?' + Math.random());
+	});
+});
+
+$(document).ready(function(){  
+	$("#tel").blur(function() { //jquery 中change()函数  
+	$("#ts_tel").load(encodeURI("/ajax/dl_liuyan_check_ajax.php?action=checktel&id="+$("#tel").val()));
+	}); 
+ 
+});  
+</script>
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="station2">
+{#station}
+</div>
+<div class="pagebody" style="margin-bottom:8px">
+    <table width="100%" border="0" cellpadding="8" cellspacing="1" class="bgcolor3">
+      <tr>      
+        <td width="70%" valign="top" bgcolor="#FFFFFF">
+    	<div align="center" class="bigbigword" style="border-bottom:solid 1px #dddddd">{#proname}</div>
+          <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom:8px">
+            <tr bgcolor="#FFFFFF">    
+              <td width="351" align="center" bgcolor="#FFFFFF"> 
+			<div style="text-align:center;margin-bottom:10px;width:270px;height:270px;margin:auto">
+    			<div id="B_con1" style="display:block;">
+				<a href='{#img1}' class='MagicZoom MagicThumb'><img src='{#imgbig}' alt='{#proname}' onload='resizeimg(260,260,this)'/></a></div>
+				<div id="B_con2" style="display:none;">
+				<a href='{#img2}' class='MagicZoom MagicThumb'><img src='{#img2}' alt='{#proname}' onload='resizeimg(260,260,this)'/></a></div>
+				<div id="B_con3" style="display:none;">
+				<a href='{#img3}' class='MagicZoom MagicThumb'><img src='{#img3}' alt='{#proname}' onload='resizeimg(260,260,this)'/></a></div>
+			</div>
+                <div id="B" class="zsshow_3img">
+				<ul>
+				<li class="bgcolor2" id="B1" onmouseover="javascript:doClick(this,'B','bgcolor2')"><img src='{#img1}' onload='resizeimg(70,70,this)'></li>
+				<li id="B2" onmouseover="javascript:doClick(this,'B','bgcolor2')"><img src='{#img2}' onload='resizeimg(70,70,this)'></li>
+				<li id="B3" onmouseover="javascript:doClick(this,'B','bgcolor2')"><img src='{#img3}' onload='resizeimg(70,70,this)'></li>
+				</ul>
+				</div>
+              </td>
+              <td width="419" valign="top" bgcolor="#FFFFFF" style="padding:8px"> 
+                <table width="100%" border="0" cellpadding="7" cellspacing="1">
+                  <tr> 
+                    <td>包装规格： {#shuxing0}<strong></strong></td>
+                  </tr>
+                  <tr> 
+                    <td>招商区域： {#province} {#city}</td>
+                  </tr>
+                
+                  <tr> 
+                    <td>零售价格：  {#shuxing1}</td>
+                  </tr>
+                  <tr> 
+                    <td>代理留言：  {#liuyannum} </td>
+                  </tr>
+                  <tr> 
+                    <td>点击次数：  {#hit}</td>
+                  </tr>
+                  <tr> 
+                    <td>更新时间：  {#sendtime}</td>
+                  </tr>
+                  <tr> 
+                    <td><font color="#666666">给厂家留言，让厂家主动联系你</font></td>
+                  </tr>
+                  <tr> 
+                    <td> <input name="Submit" type="button" class="button_big" value="我想代理该产品" onclick="location.href='#dl_liuyan'"/></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+	{#flv}
+		<div class="boxitem" id="A"> 
+          <ul>
+            
+        <li><a id="A1" href="###" onmouseover="javascript:doClick(this,'A','current1')" class="current1">{#proname}说明</a></li>
+            <li><a id="A2" href="###" onmouseover="javascript:doClick(this,'A','current1')">政策支持</a></li>   
+			<li><a id="A3" href="###" onmouseover="javascript:doClick(this,'A','current1')">代理要求</a></li>                   
+          </ul>
+          </div> 		          
+         
+          <div style="display:block;" id="A_con1"  class="content">
+		  <span class="bgcolor1">
+		      <table width="100%" border="0" cellpadding="5" cellspacing="1">
+                <tr> 
+                  <td width="295"><strong>包装规格:</strong>{#shuxing0}</td>
+                  <td width="279"><strong>零售价格:</strong>{#shuxing1}</td>
+                  <td width="243"><strong>招商区域:</strong>{#province}{#city}</td>
+                </tr>
+              </table>
+			  </span>
+		
+		<div style="width:800px"><div id="imgin">产品特点：{#prouse}<br>产品说明：{#sm}</div></div>
+		 </div>
+		  
+		  <div style="display:none;" id="A_con2" class="content">{#zc}</div>
+		  <div style="display:none;" id="A_con3" class="content">{#yq}</div> 
+			  </td>
+            
+        <td width="30%" valign="top" class="bgcolor1"> 
+          <div class="box">
+			  {#contact}
+			  </div>
+			
+<fieldset class="fieldsetstyle">
+<legend>公司产品列表</legend>
+<div style="overflow: scroll;height:160px">
+{#showzs:100,20,no,no,no,sendtime,no,no,{#editor},no,no}
+</div>
+</fieldset>		
+<fieldset class="fieldsetstyle" style="margin-top:8px;">
+<legend>其它相关产品</legend>
+<div style="overflow: scroll;height:160px">
+{#showzs:100,20,no,no,no,sendtime,no,no,no,{#proname},{#cpid}}
+</div>
+</fieldset>
+	  
+	</td>
+          </tr>
+        </table>
+
+</div>
+<div class="pagebody">
+	<div class="titles" ><h3>留言</h3></div> 
+	<div class="content1">
+	{liuyan}	
+	  <table width="100%" border="0" cellpadding="5" cellspacing="1" class="bgcolor3">
+        <tr>
+          <td width="20%" class="bgcolor1">留言内容</td>
+          <td width="20%" class="bgcolor1">联系人</td>
+          <td width="20%" class="bgcolor1">电话</td>
+          <td width="20%" class="bgcolor1">代理区域</td>
+          <td width="20%" class="bgcolor1">发布时间</td>
+        </tr>
+	{loop}
+  <tr bgcolor="#FFFFFF" >
+    <td>{#content}</td>
+    <td>{#dlsname}</td>
+    <td>{#tel}</td>
+    <td>{#city}</td>
+    <td>{#sendtime}</td>
+  </tr>{/loop}
+	   
+      </table>{/liuyan}
+	
+	</div>
+		
+    <div class="titles"><h3>代理留言</h3><a name="dl_liuyan" id="dl_liuyan"></a></div>
+	<div class="content1">
+	<div class="box">
+	友情提示:您还在为找不到产品而苦恼么？您还在一次次的展会上疲于奔命么？在下方发布您的代理留言，让【众多厂家】主动和您联系！
+	</div> 
+	<form action="dl_liuyan_save.php" method="post" name="ly" onSubmit="return CheckForms();">
+       
+		  <table class="bgcolor3" border="0" cellspacing="1" cellpadding="5" width="100%">
+            <tbody>
+              <tr>
+                <td class="bgcolor1" width="18%" align="right">产品名称：</td>
+                <td class="bgcolor1" width="82%">
+				<input id="cp" value="{#proname}" maxlength="50" size="30" name="cp" readonly="true" class="biaodan" style="background:#eee">
+                    <input id="cpid" value="{#cpid}" type="hidden" name="cpid" />
+                  <input id="fbr" value="{#fbr}" type="hidden" name="fbr" />
+                <input id="bigclassid" value="{#bigclassid}" type="hidden" name="bigclassid" />
+				<input id="token" value="{#token}" type="hidden" name="token" />
+				</td>
+              </tr>
+              <tr>
+                <td class="bgcolor1" align="right">希望代理省份：<br />
+                （可多选）</td>
+                <td class="bgcolor1"><input id="chkAll" onclick="CheckAllProvince(this.form)" value="全国" type="checkbox" name="province[]" />
+                    <label for="chkAll">全国</label>
+                  <br />
+                  <label for="city2"></label>
+                    <input id="city3" value="北京" type="checkbox" name="province[]" /> <label for="city3">北京</label>
+                    <input id="city4" value="上海" type="checkbox" name="province[]" /><label for="city4">上海</label>
+                    <input id="city5" value="天津" type="checkbox" name="province[]" /> <label for="city5">天津</label>
+                    <input id="city6" value="重庆" type="checkbox" name="province[]" /><label for="city6">重庆</label>
+                    <input id="city7" value="河北" type="checkbox" name="province[]" /><label for="city7">河北</label>
+                    <input id="city8" value="山西" type="checkbox" name="province[]" /><label for="city8">山西</label>
+                    <input id="city9" value="辽宁" type="checkbox" name="province[]" /><label for="city9">辽宁</label>
+                    <input id="city10" value="吉林" type="checkbox" name="province[]" /><label for="city10">吉林</label>
+                    <input id="city11" value="黑龙江" type="checkbox" name="province[]" /><label for="city11">黑龙江</label>
+                    <input id="city12" value="江苏" type="checkbox" name="province[]" /><label for="city12">江苏</label>
+                    <br />
+                  <input id="city13" value="浙江" type="checkbox" name="province[]" /><label for="city13">浙江</label>
+                    <input id="city14" value="安徽" type="checkbox" name="province[]" /><label for="city14">安徽</label>
+                    <input id="city15" value="福建" type="checkbox" name="province[]" /><label for="city15">福建</label>
+                    <input id="city16" value="江西" type="checkbox" name="province[]" /><label for="city16">江西</label>
+                    <input id="city17" value="山东" type="checkbox" name="province[]" /><label for="city17">山东</label>
+                    <input id="city18" value="河南" type="checkbox" name="province[]" /><label for="city18">河南</label>
+                    <input id="city19" value="湖北" type="checkbox" name="province[]" /><label for="city19">湖北</label>
+                    <input id="city20" value="湖南" type="checkbox" name="province[]" /><label for="city20">湖南</label>
+                    <input id="city21" value="广东" type="checkbox" name="province[]" /><label for="city21">广东</label>
+					<input id="city22" value="广西" type="checkbox" name="province[]" /><label for="city22">广西</label>
+                    <input id="city23" value="内蒙古" type="checkbox" name="province[]" /><label for="city23">内蒙古</label>
+                    <input id="city24" value="海南" type="checkbox" name="province[]" /><label for="city24">海南</label>
+                    <br />
+                  <input id="city25" value="四川" type="checkbox" name="province[]" /><label for="city25">四川</label>
+                    <input id="city26" value="贵州" type="checkbox" name="province[]" /><label for="city26">贵州</label>
+                    <input id="city27" value="云南" type="checkbox" name="province[]" /><label for="city27">云南</label>
+                    <input id="city28" value="西藏" type="checkbox" name="province[]" /><label for="city28">西藏</label>
+                    <input id="city29" value="陕西" type="checkbox" name="province[]" /><label for="city29">陕西</label>
+                    <input id="city30" value="甘肃" type="checkbox" name="province[]" /><label for="city30">甘肃</label>
+                    <input id="city31" value="宁夏" type="checkbox" name="province[]" /><label for="city31">宁夏</label>
+                    <input id="city32" value="青海" type="checkbox" name="province[]" /><label for="city32">青海</label>
+                    <input id="city33" value="新疆" type="checkbox" name="province[]" /><label for="city33">新疆</label>
+                    <input id="city34" value="香港" type="checkbox" name="province[]" /><label for="city34">香港</label>
+                    <input id="city35" value="澳门" type="checkbox" name="province[]" /><label for="city35">澳门</label>
+                    <input id="city36" value="台湾" type="checkbox" name="province[]" /><label for="city36">台湾</label>
+                </td>
+              </tr>
+              <tr>
+                <td class="bgcolor1" align="right">希望代理区域：（市县级）</td>
+                <td class="bgcolor1"><input name="city" id="city" value="{#cuest_city}" size="30" maxlength="50" />
+                </td>
+              </tr>
+              <tr>
+                <td class="bgcolor1" align="right">留言内容 <font color="#ff0000">*</font></td>
+                <td class="bgcolor1">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                      <tr>
+                        <td width="27%">{textarea}<br />
+						<input name="contents2" id="contents2" style="display:none" />
+			<span id="ts_contents"></span>	
+						</td>
+                        <td width="73%" valign="top">			
+	<input id="chcontent1" onclick="showinfo('content',1);document.ly.contents.focus();" value="我对这个产品感兴趣，请与我联系。" type="checkbox" name="chcontent" />
+    <label id="content1" for="chcontent1">我对这个产品感兴趣，请与我联系。</label><br />
+   <input id="chcontent2" onclick="showinfo('content',2);document.ly.contents.focus();" value="代理价零售价是多少？" type="checkbox" name="chcontent" />
+    <label id="content2" for="chcontent2">代理价零售价是多少？</label><br />
+    <input id="chcontent3" onclick="showinfo('content',3);document.ly.contents.focus();" value="请寄给我详细资料。" type="checkbox" name="chcontent" />
+    <label id="content3" for="chcontent3">请寄给我详细资料。</label>
+    <br />
+    <input id="chcontent4" onclick="showinfo('content',4);document.ly.contents.focus();" value="请寄给我样品。" type="checkbox" name="chcontent" />
+    <label id="content4" for="chcontent4">请寄给我样品。</label>
+	</td>
+                      </tr>
+                    </tbody>
+                </table></td>
+              </tr>
+            </tbody>
+	      </table>
+		  
+		  <div style="PADDING: 5px;" class="bgcolor1">填写联系方式</div>
+
+		  <table border="0" cellspacing="1" cellpadding="5" width="100%" class="bgcolor3">
+            <tbody>
+              <tr>
+                <td width="18%" height="30" align="right" class="bgcolor1">代理身份：</td>
+                <td class="bgcolor1" width="82%"><input id="radio" onclick="showsubmenu(1)" 
+      value="公司" type="radio" name="dlsf" />
+                    <label for="radio">公司 </label>
+                  <input 
+      id="radio2" onclick="hidesubmenu(1)" value="个人" checked="checked" type="radio" name="dlsf" />
+                    <label for="radio2">个人</label></td>
+              </tr>
+              <tr style="display: none" id="submenu1">
+                <td height="30" align="right" class="bgcolor1">公司名称：</td>
+                <td class="bgcolor1"><input name="companyname" value="{#companyname}" size="30" maxlength="50" /></td>
+              </tr>
+              <tr>
+                <td height="30" align="right" class="bgcolor1">联 系 人 <font color="#ff0000">*</font></td>
+                <td class="bgcolor1"><input name="name" id="name"  onblur="check_somane()" value="{#somane}" size="30" maxlength="50" /> 
+				<input name="name2" id="name2" style="display:none" />
+			<span id="ts_name"></span>			</td>
+              </tr>
+              <tr>
+                <td height="30" align="right" class="bgcolor1">手机 <font color="#ff0000">*</font></td>
+                <td class="bgcolor1"><input name="tel" id="tel"  value="{#phone}" size="30" maxlength="50" />
+					<input name="tel2" id="tel2" style="display:none" />
+			<span id="ts_tel"></span></td>
+              </tr>
+              <tr>
+                <td height="30" align="right" class="bgcolor1">电子邮箱：</td>
+                <td class="bgcolor1"><input id="email" maxlength="50" size="30" name="email" onblur="check_email()" />
+				<input name="email2" id="email2" style="display:none" />
+			<span id="ts_email"></span>                </td>
+              </tr>
+              <tr>
+                <td height="30" align="right" class="bgcolor1">答案 <font color="#FF0000">*</font></td>
+                <td class="bgcolor1"><input name="yzm" type="text" id="yzm" onblur="check_yzm()" size="10" maxlength="50" style="width:60px"/>
+				<input name="yzm2" id="yzm2" style="display:none" />
+			<span id="ts_yzm"></span>
+                  <img src="/one/code_math.php"  align="absmiddle" id="getcode_math" title="看不清，点击换一张" /></td>
+              </tr>
+              <tr>
+                <td height="30" align="right" class="bgcolor1">&nbsp;</td>
+                <td class="bgcolor1"><input type="submit" class="button_big" name="tj" id="tj" value="填好了，提交"></td>
+              </tr>
+            </tbody>
+	      </table>
+      </form>
+		</div>
+</div>
+</div>
+{#sitebottom}
+</body>
+</html>

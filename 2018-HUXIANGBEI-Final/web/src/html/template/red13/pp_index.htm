@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}" />
+<meta name="description" content="{#pagedescription}" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody">
+<div class="left">
+	 
+<div class="titles">最近更新</div>
+ <div class="content">  
+			{@ppshow.new}
+</div>
+</div>
+<div class="right">
+ 
+<div class="titles">按分类浏览</div>
+<div class="content1">
+<div class="boxbigclass">
+{#ppclass}
+</div>
+</div>
+ 
+<div class="titles">热门品牌</div>
+<div class="content1">
+{@ppshow.hot}
+</div>
+
+</div>
+</div>
+
+<div class="bordercccccc">
+{@ppclass.ppitem}
+</div>
+
+{#sitebottom}
+</div>
+</body>
+</html>

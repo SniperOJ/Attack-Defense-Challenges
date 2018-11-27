@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<title>用户注册—{#sitename}</title>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script>
+$(function(){
+$("#getcode_wz").click(function(){
+		$("#getcode_tp").attr("src",'/one/code_math.php?' + Math.random());
+	});
+});
+</script>
+<script language="javascript">
+function check_password_format(){ 
+	if (document.userreg.password.value !=""){
+    	var re=/^[0-9a-zA-Z]{4,50}$/; //只输入数字和字母的正则
+    	if(document.userreg.password.value.search(re)==-1){
+		window.document.getElementById('ts_password').innerHTML='<span class=boxuserreg>密码只能为字母和数字，字符介于4到50个。</span>';
+		window.document.userreg.password2.value='no';
+		}else{
+		window.document.getElementById('ts_password').innerHTML='<img src=/image/dui2.png>';
+		window.document.userreg.password2.value='yes';
+		window.document.userreg.password.style.border = '1px solid #dddddd';
+		}
+	}	
+}
+function check_password2_format(){
+if (document.userreg.password.value !="" && document.userreg.PwdConfirm.value !=""){
+	if (document.userreg.password.value!=document.userreg.PwdConfirm.value){
+	window.document.getElementById('ts_password2').innerHTML='<span class=boxuserreg>两次密码输入不一致，请重新输入。</span>';
+	window.document.userreg.PwdConfirm2.value='no';
+	}else{
+	window.document.getElementById('ts_password2').innerHTML='<img src=/image/dui2.png>';
+	window.document.userreg.PwdConfirm2.value='yes';
+	window.document.userreg.PwdConfirm.style.border = '1px solid #dddddd';
+	}
+}
+}
+
+function check_somane(){
+if (document.userreg.somane.value !=""){
+    var re=/^[\u4e00-\u9fa5]{2,10}$/; //只输入汉字的正则
+    if(document.userreg.somane.value.search(re)==-1){
+	window.document.getElementById('ts_somane').innerHTML='<span class=boxuserreg>联系人只能为汉字，字符介于2到10个。</span>';
+    window.document.userreg.somane2.value='no';
+	}else{
+	window.document.getElementById('ts_somane').innerHTML='<img src=/image/dui2.png>';
+	 window.document.userreg.somane2.value='yes';
+	 window.document.userreg.somane.style.border = '1px solid #dddddd';
+	}
+}
+}
+
+function check_yzm(){
+if (document.userreg.yzm.value !=""){
+   var re=/^([0-9]+)$/; //只输入数字
+    	if(document.userreg.yzm.value.search(re)==-1){
+		window.document.getElementById('ts_yzm').innerHTML='<span class=boxuserreg>验证码答案只能为数字</span>';
+		window.document.userreg.yzm2.value='no';
+		}else{
+		window.document.getElementById('ts_yzm').innerHTML='';
+		window.document.userreg.yzm2.value='yes';
+		window.document.userreg.yzm.style.border = '1px solid #dddddd';
+		}
+}
+}
+function check_tk(){
+	if (document.userreg.allow.checked==false){
+	window.document.getElementById('ts_tk').innerHTML='<span class=boxuserreg>请选中，同意服务条款才能注册</span>';
+	window.document.userreg.tk2.value='no';
+    }else{
+	window.document.getElementById('ts_tk').innerHTML='';
+	window.document.userreg.tk2.value='yes';
+	}
+}
+
+function Checkall(){
+	if (document.userreg.username.value==""){	
+	document.userreg.username.style.border = '1px solid #FF0000';
+	window.document.getElementById('ts_username').innerHTML='<span class=boxuserreg>请输入用户名</span>';
+	document.userreg.username.focus();
+	return false;
+	}
+	if (document.userreg.username2.value=="no"){//AJAX页中把判断结果，传值yes,no给第二个表单，用来记录表单1的输入值是否正确。	
+	document.userreg.username.style.border = '1px solid #FF0000';
+	return false;
+	}
+	
+	if (document.userreg.password.value==""){
+	document.userreg.password.style.border = '1px solid #FF0000';
+	window.document.getElementById('ts_password').innerHTML='<span class=boxuserreg>请输入密码</span>';
+	document.userreg.password.focus();
+	return false;
+	}
+	if (document.userreg.password2.value=="no"){	
+	document.userreg.password.style.border = '1px solid #FF0000';
+	return false;
+	}
+	
+	if (document.userreg.PwdConfirm.value==""){
+	document.userreg.PwdConfirm.style.border = '1px solid #FF0000';
+	window.document.getElementById('ts_password2').innerHTML='<span class=boxuserreg>请输入密码</span>';
+	document.userreg.PwdConfirm.focus();	
+	return false;
+	}
+	if (document.userreg.PwdConfirm2.value=="no"){	
+	document.userreg.PwdConfirm.style.border = '1px solid #FF0000';
+	return false;
+	}
+	
+var usersf = document.getElementsByName("usersf"); 
+for(var i=0;i<usersf.length;i++){
+if(usersf[i].checked) {
+var usersfchecked=usersf[i].value;	
+}	
+}
+if (usersfchecked=='公司'){
+	if (document.userreg.comane.value==""){	
+	document.userreg.comane.style.border = '1px solid #FA8072';
+	window.document.getElementById('ts_comane').innerHTML='<span class=boxuserreg>请输入公司名</span>';
+	document.userreg.comane.focus();	
+	return false;
+	}
+	if (document.userreg.comane2.value=="no"){	
+	//document.userreg.comane.focus();	
+	//document.userreg.comane.style.backgroundColor='#FF0000';
+	document.userreg.comane.style.border = '1px solid #FF0000';
+	return false;
+	}
+}
+	if (document.userreg.somane.value==""){	
+	document.userreg.somane.style.border = '1px solid #FA8072';
+	window.document.getElementById('ts_somane').innerHTML='<span class=boxuserreg>请输入姓名</span>';
+	document.userreg.somane.focus();	
+	return false;
+	}
+	if (document.userreg.somane2.value=="no"){	
+	document.userreg.somane.style.border = '1px solid #FF0000';
+	return false;
+	}
+					
+	if (document.userreg.phone.value==""){	
+	document.userreg.phone.style.border = '1px solid #FF0000';
+	window.document.getElementById('ts_phone').innerHTML='<span class=boxuserreg>请输入联系电话</span>';
+	document.userreg.phone.focus();	
+	return false;
+	}
+	if (document.userreg.phone2.value=="no"){	
+	document.userreg.phone.style.border = '1px solid #FF0000';
+	return false;
+	}
+	
+	if (document.userreg.email.value==""){
+	document.userreg.email.style.border = '1px solid #FF0000';
+	window.document.getElementById('ts_email').innerHTML='<span class=boxuserreg>请输入Email</span>';
+	document.userreg.email.focus();	
+	return false;
+	}
+	if (document.userreg.email2.value=="no"){	
+	document.userreg.email.style.border = '1px solid #FF0000';
+	return false;
+	}
+	
+	if (document.userreg.yzm.value==""){
+	document.userreg.yzm.style.border = '1px solid #FF0000';
+	window.document.getElementById('ts_yzm').innerHTML='<span class=boxuserreg><span class=error></span>请输入验证码</span>';
+	document.userreg.yzm.focus();	
+	return false;
+	}
+	if (document.userreg.yzm2.value=="no"){	
+	document.userreg.yzm.style.border = '1px solid #FF0000';
+	return false;
+	}
+	
+	if (document.userreg.allow.checked==false){
+	window.document.getElementById('ts_tk').innerHTML='<span class=boxuserreg>请选中，同意服务条款才能注册</span>';
+	document.userreg.allow.focus();
+	return false;
+    }
+	if (document.userreg.tk2.value=="no"){
+	return false;
+	}
+	document.getElementById("Submit3").disabled=true; 
+	document.getElementById("Submit3").value ="正在提交中，请稍候...";
+}
+function showloading()
+{
+document.getElementById("loading").style.display="";
+document.getElementById("tjxx").style.display="none";
+}
+ 
+function hiddenTR() {
+document.getElementById("TRcomane").style.display="none";
+//document.getElementById("TRkind").style.display="none";
+} 
+function showTR(obj1,obj2) {
+document.getElementById("TRcomane").style.display="";
+//document.getElementById("TRkind").style.display="";
+}  	
+</script>
+
+<script language="javascript">  
+$(document).ready(function(){  
+	$("#username").blur(function() { //jquery 中blur,change函数  
+	$("#ts_username").load(encodeURI("/reg/userregcheck.php?action=checkusername&id="+$("#username").val()));
+	//jqueryajax中load()函数 加encodeURI，否则IE下无法识别中文参数 
+	}); 
+	$("#comane").blur(function() { //jquery 中change()函数  
+	$("#ts_comane").load(encodeURI("/reg/userregcheck.php?action=checkcomane&id="+$("#comane").val()));
+	});
+	$("#phone").blur(function() { //jquery 中change()函数  
+	$("#ts_phone").load(encodeURI("/reg/userregcheck.php?action=checkphone&id="+$("#phone").val()));
+	}); 
+	$("#email").blur(function() { //jquery 中change()函数  
+	$("#ts_email").load(encodeURI("/reg/userregcheck.php?action=checkemail&id="+$("#email").val()));
+	});   
+}); 
+
+function showItem(obj){
+	if(obj.checked == true)
+		document.getElementById("reg_button").style.display="block";
+	else
+		document.getElementById("reg_button").style.display="none";
+}  
+</script> 
+</head>
+<body>
+<div class="main">
+{#sitetop}
+<div class="bordercccccc"> 
+    <div class="titlebig"> 
+      <span><a href="/user/login.php">已有帐号，现在登录</a></span>
+	  用户注册
+	  </div>
+       <form name="userreg" action="/reg/userregpost.php" method="post" onSubmit="return Checkall()">
+          
+      <table width="100%" border="0" cellpadding="5" cellspacing="0" >
+        <tr> 
+          <td width="200" height="35" align="right" class="bigword">用户类型</td>
+          <td> <input name="usersf" type="radio" id="usersfgs" onclick="showTR()" value="公司" checked="checked"/>
+            <label for="usersfgs">公司</label> 
+            <input type="radio" name="usersf" value="个人" id="usersfgr" onclick="hiddenTR()"/>
+            <label for="usersfgr">个人</label></td>
+        </tr>
+        <tr> 
+          <td height="35" align="right" class="bigword">用户名</td>
+          <td> 
+		  <input name="username" id="username"class="biaodan2" tabindex="1"  size="30" maxlength="50" />
+		  <input name="username2" id="username2" style="display:none" />
+		  <span id="ts_username"></span> </td>
+        </tr>
+        <tr> 
+          <td height="35" align="right" class="bigword">密码</td>
+          <td> 
+            <INPUT name="password" type="password" class="biaodan2"  tabindex="2"  onblur="check_password_format();" size="30" maxLength="50" > 
+			<input name="password2" id="password2" style="display:none" />
+			<span id="ts_password" ></span>		  </td>
+        </tr>
+        <tr> 
+          <td height="35" align="right" class="bigword">确认密码</td>
+          <td> 
+            <INPUT name="PwdConfirm" type="password" class="biaodan2" tabindex="3"  onblur="check_password2_format()" size="30" maxLength="12" >
+			<input name="PwdConfirm2" id="PwdConfirm2" style="display:none" />
+			<span id="ts_password2"></span>		    </td>
+        </tr>
+       
+        <tr id="TRcomane" style="display:"> 
+          <td height="35" align="right" class="bigword">公司名称</td>
+          <td> 
+            <input name="comane" id="comane" class="biaodan2"  tabindex="4"   size="30" maxlength="100" /> 
+			<input name="comane2" id="comane2" style="display:none" /><!--用type="hidden" ajax页无法用JS赋值 -->
+			<span id="ts_comane" ></span>		    </td>
+        </tr>   
+        <tr> 
+          <td height="35" align="right" class="bigword">联系人</td>
+          <td> 
+            <input name="somane" class="biaodan2" onblur="check_somane()"  tabindex="6" size="30" maxlength="20"/>
+			<input name="somane2" id="somane2" style="display:none" />
+			<span id="ts_somane"></span>			</td>
+        </tr>
+        <tr> 
+          <td height="35" align="right" class="bigword">手机</td>
+          <td> 
+            <input name="phone" id="phone" class="biaodan2"  tabindex="7"  size="30" maxlength="20" />  
+			<input name="phone2" id="phone2" style="display:none" />
+			<span id="ts_phone"></span>			</td>
+        </tr>
+        <tr> 
+          <td height="35" align="right" class="bigword">E-mail</td>
+          <td> 
+            <input name="email" id="email" class="biaodan2" tabindex="8"  size="30"   maxlength="50" />  
+			<input name="email2" id="email2" style="display:none" />
+			<span id="ts_email"></span>			</td>
+        </tr>
+        <tr> 
+          <td height="35" align="right" class="bigword">验证问题</td>
+          <td>
+		    <input name="yzm" type="text" class="biaodan2" id="yzm" onblur="check_yzm()" tabindex="10" value="" size="10" maxlength="50" style="width:60px"/>
+			<input name="yzm2" id="yzm2" style="display:none" />
+			<span id="ts_yzm"></span>
+	      <img src="/one/code_math.php" align="absmiddle" id="getcode_tp"/><a href="#" id="getcode_wz">看不清？换一张？</a></td>
+        </tr>
+        <tr> 
+          <td height="40" align="right"></td>
+          <td> <input name="allow" id="allow" type="checkbox" value="checkbox" checked="checked" onclick="check_tk();showItem(this)"/>
+		  <input name="tk2" id="tk2" style="display:none" />
+          <label for="allow">我接受</label> <a href="/one/agreement.php" target="_blank">{#sitename}服务条款(点击阅读)</a>
+		  <span id="ts_tk"></span>
+		  </td>
+        </tr>
+        <tr>
+          <td height="35" align="right">&nbsp;</td>
+          <td><input name="Submit" type="submit" class="button_big" value="提交" tabindex="22" id="reg_button" style="display:block"/></td>
+        </tr>
+      </table> 	   
+    </form>
+  </div>
+  {#sitebottom}
+</div>
+</body>
+</html>

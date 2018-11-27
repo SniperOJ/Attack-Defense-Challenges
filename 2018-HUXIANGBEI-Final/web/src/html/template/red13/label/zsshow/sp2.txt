@@ -1,0 +1,11 @@
+sp2|||empty|||empty|||0|||1|||1|||0|||20|||id|||10|||1|||<div class="rollBox">
+     <div class=LeftBotton onmousedown=ISL_GoUp() onmouseup=ISL_StopUp() onmouseout=ISL_StopUp()></div>
+     <div class="Cont" id="ISL_Cont">
+      <div class="ScrCont">
+       <div id="List1">|||<div class="pic"><A href="show.php?id={#id}" target="_blank"><img src="{#img}" border="0" width="132" height="80">{#proname}</A></div>|||</div>
+       <div id=List2></div>
+      </div>
+     </div>
+     <div class=RightBotton onmousedown=ISL_GoDown() onmouseup=ISL_StopDown() onmouseout=ISL_StopDown()></div>
+    </div>
+<script language="javascript" type="text/javascript" src="/js/scrollleft.js"></script>

@@ -1,0 +1,1 @@
+showdlnew|||empty|||0|||10|||id|||10|||0|||<ul>|||<LI>【代理】<A href=show.php?id={#id}>{#cp}</A></LI>|||</ul>

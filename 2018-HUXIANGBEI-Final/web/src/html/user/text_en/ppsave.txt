@@ -1,0 +1,4 @@
+﻿<script>alert('Individual users do not have this permission');history.back()</script>|||
+<script>alert('Please select a small class');</script>|||
+<script>alert('You have released this information, please do not post duplicate information！');location.href='ppmanage.php'</script>|||
+Success|||fail|||Name：|||Continue to add|||modify|||Return|||preview

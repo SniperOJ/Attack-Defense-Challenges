@@ -1,0 +1,10 @@
+initem|||empty|||empty|||1|||8|||id|||10|||4|||<table width="100%" border="0" cellspacing="0" cellpadding="4"><tr>|||<td width="20%">
+<table width="100%" border="0" cellpadding="0" cellspacing="1" class="bgcolor2">
+<tr>
+<td bgcolor='#FFFFFF' height="130" align="center">
+<a href=show.php?id={#id} target=_blank><img src={#img} border=0  onload="resizeimg(120,120,this)"/></a>
+</td>
+</tr>
+<tr><td align=center><a href=show.php?id={#id} target=_blank>{#title}</a></td></tr>
+</table>
+</td>|||</table>

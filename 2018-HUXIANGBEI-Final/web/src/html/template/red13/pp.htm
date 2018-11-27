@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta content="{#pagedescription}" name="description" />
+<meta content="{#pagekeywords}" name="keywords" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/js/qt.js"></script> 
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody">
+<div class="right"> 
+<div class="titles"> 热门品牌</div>
+<div class="content1">
+
+	{@ppshow.hot}		
+</div>
+
+
+</div>
+<div class="left"> 
+<div class="station2">
+{#station}
+ 
+</div>
+<div class="left_content">
+<img src="/image/arrow.gif" /> <strong>按分类浏览</strong>
+<div class="boxbigclass">{#ppclass}</div>
+</div>
+<div class="content">
+{loop}
+<table width="100%" border="0" cellspacing="0" cellpadding="4">
+  <tr>
+    <td width="150" rowspan="2"><div class="bordercccccc" style="padding:4px;text-align:center"><a href="{#url}" target="_blank"> <img src="{#img}" alt="{#title}" width="120" height="40"  border="0" /></a></div></td>
+    <td width="465"><a href="{#url}" target="_blank" style="font-weight:bold"> {#title}</a></td>
+    <td width="658" rowspan="2" align="right">更新时间：{#sendtime}</td>
+  </tr>
+  <tr>
+    <td><a href="{#companyurl}" target="_blank" >{#comane}</a></td>
+  </tr>
+</table>
+<div class='boxxian'></div>
+{/loop}
+<div class="fenyei">{#fenyei}</div>
+</div>
+		
+</div>
+</div>
+{#sitebottom}
+</div>
+</body>
+</html>

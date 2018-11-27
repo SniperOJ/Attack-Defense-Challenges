@@ -1,0 +1,11 @@
+﻿self-serve advertising|||
+  if (document.myform.adv.value==""){
+    alert("Please fill in the advertising words!");
+	document.myform.adv.focus();
+	return false;
+  }|||
+Individual users can not seize the ad|||
+<script>alert('Advertising success! Tip: after the audit by the new advertising content to show');location.href='adv2.php'</script>|||
+<script>alert('Advertising words set successfully! Now you can take the ad position.');location.href='adv2.php'</script>|||
+<strong> advertising content </strong><br> up to 15 characters|||Advertising picture|||Click to replace the picture.|||Upload pictures|||
+Display effect|||Information state|||Ad words have passed the audit|||<font color=red>Not audited</font>|||modify|||Add

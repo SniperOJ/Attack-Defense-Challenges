@@ -1,0 +1,14 @@
+﻿Product name:
+lookup
+information management
+No information
+<td width="10%" height="25" class="border">Product name or title</td><td width="10%" align="center" class="border">The recipient name</td><td width="5%" align="center" class="border">Intentional area</td><td width="5%" align="center" class="border">Update time</td><td width="5%" align="center" class="border">Information state</td><td width="5%" align="center" class="border">operation</td><td width="5%" align="center" class="border">delete</td>
+Send to:
+Already view
+<font color=red>Not viewed</font>
+No recipient
+Already examine
+<font color=red>Pending</font>
+modify
+Select
+delete

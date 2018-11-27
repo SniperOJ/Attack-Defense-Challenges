@@ -1,0 +1,26 @@
+jdimg4|||empty|||empty|||0|||1|||0|||0|||4|||id|||20|||0|||<div class="focus_img">
+  <div class="big_area">
+    <div class="big_img" id="con_1"></div>
+    <div class="titlebg"></div>
+    <h3 id="h2title"></h3>
+    <div id="intro" style="dispaly:none;"></div>
+  </div>
+  <div class="thurmb" id="con_2"></div>
+</div>
+<!--focus_img end-->
+<script type="text/javascript"> 
+var focusImg= new FocusImg();
+focusImg.bigDiv="con_1";
+focusImg.smallDiv="con_2";
+focusImg.imgW=314;
+focusImg.imgH=282;
+focusImg.sTime=5000;
+focusImg.titleDiv="h2title";
+focusImg.introDiv="intro";|||var s = {};
+s.bigimg="{#imgbig}";
+s.title="{#proname}";
+s.intro="<span>{#proname}</span>";
+s.url="show.php?id={#id}";
+focusImg.imgList.push(s);|||focusImg.init();
+focusImg.autoPlay();
+</script>

@@ -1,0 +1,44 @@
+﻿<script>alert('Individual users do not have this permission');history.back()</script>
+|||
+	ischecked=false;
+ 	for(var i=0;i<document.myform.bigclassid.length;i++){ 
+		if(document.myform.bigclassid[i].checked==true)  {
+		 ischecked=true ;
+   		} 
+	}
+   if(document.myform.bigclassid.checked==true)  {
+		 ischecked=true ;
+   		} 
+ 	if (ischecked==false){
+	alert("Please select a large category!");	
+    return false;
+	}
+
+  if (document.myform.province.value=="Please select provinces"){
+	document.myform.province.focus();
+    alert("Please select provinces!");
+	return false;
+  }  
+  
+  if (document.myform.city.value=='Please select the city'){
+	document.myform.city.focus();
+    alert("Please select the city");
+	return false;
+  }   
+ischecked=false;
+ 	for(var i=0;i<document.myform.smallclassid.length;i++){ 
+		if(document.myform.smallclassid[i].checked==true)  
+   		{
+		 ischecked=true ;
+   		} 
+	}
+	
+   if(document.myform.smallclassid.checked==true)  {
+		 ischecked=true ;
+   		} 
+ 	if (ischecked==false){
+	alert("Please select a small category!");	
+    return false;
+	}
+|||
+Publish Recruitment Information|||Job category|||Please select a large class|||Please select a small class|||position|||content|||Work place|||Fill out, release

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta content="{#pagedescription}" name="description" />
+<meta content="{#pagekeywords}" name="keywords" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/js/qt.js"></script> 
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody">
+<div class="right"> 
+<div class="titles"> 热门职位</div>
+<div class="content1">
+{@jobshow.hot}		
+</div>
+
+
+</div>
+<div class="left"> 
+<div class="station2">
+{#station}
+ 
+</div>
+<div class="left_content">
+<form action="?" method="get" name="myform" id="myform">
+          <table border="0" cellpadding="7" cellspacing="0">
+            <tr> 
+              <td width="98" align="right">关 键 词：</td>
+              <td width="435"><input type="radio" name="yiju" value="Pname"  />
+                按职位 
+                  <input name="yiju" type="radio" value="Pcompany" />
+                按企业 
+                <input name="keyword" type="text"  id="keyword" value="{#formkeyword}" size="25" maxlength="255"/>
+                <input name="Submit3" type="submit"  value="搜索"  /></td>
+            </tr>
+            
+            <tr> 
+              <td align="right">工作地区：</td>
+              <td>{#formprovince}{#formcity}{#formxiancheng}</td>
+            </tr>
+			
+            <tr> 
+              <td align="right">职位类别：</td>
+              <td>{#formbigclass}{#formsmallclass} </td>
+            </tr>
+			
+            <tr> 
+              <td align="right">更新时间：</td>
+              <td> <a href="?sj=1">当天的</a> <a href="?sj=3">3天内的</a> <a href="?sj=7">7天内的</a> 
+                <a href="?sj=30">30天内的</a> <a href="?sj=90">90天内的</a></td>
+            </tr>
+            {#selected}
+          </table>
+        </form>
+</div>
+<div class="content">
+<table width="100%" border="0" cellspacing="1" cellpadding="8" class="bgcolor3">
+  <tr class="bgcolor1">
+    <td width="260">职位</td>
+    <td>招聘单位</td>
+    <td>工作地点</td>
+    <td>更新时间</td>
+  </tr>
+  {loop}
+  <tr bgcolor="#FFFFFF">
+    <td><a href="{#url}" target="_blank">{#title}</a></td>
+    <td><a href="{#companyurl}" target="_blank">{#comane}</a></td>
+    <td>{#province}{#city}</td>
+    <td>{#sendtime}</td>
+  </tr>
+  {/loop}
+</table>
+<div class="fenyei">{#fenyei}</div>	
+</div>		
+</div>
+</div>
+{#sitebottom}
+</div>
+</body>
+</html>

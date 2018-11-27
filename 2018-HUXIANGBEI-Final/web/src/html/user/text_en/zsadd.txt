@@ -1,0 +1,101 @@
+﻿<script>alert('Individual users do not have this permission')</script>
+|||
+ if (document.myform.name.value==""){
+	document.myform.name.focus();
+    document.myform.name.value='This cannot be empty.';
+    document.myform.name.select();
+	document.myform.name.style.backgroundColor="FFFF00";
+	return false;
+  }
+	ischecked=false;
+ 	for(var i=0;i<document.myform.bigclassid.length;i++){ 
+		if(document.myform.bigclassid[i].checked==true)  {
+		 ischecked=true ;
+   		} 
+	}
+   if(document.myform.bigclassid.checked==true)  {
+		 ischecked=true ;
+   		} 
+ 	if (ischecked==false)
+  	{
+	alert("Please select a large category！");	
+    return false;
+	}
+	
+  if (document.myform.gnzz.value==""){
+	document.myform.gnzz.focus();
+    document.myform.gnzz.value='This cannot be empty.';
+    document.myform.gnzz.select();
+	document.myform.gnzz.style.backgroundColor="FFFF00";
+	return false;
+  }
+  if (document.myform.province.value=="Please select provinces"){
+	document.myform.province.focus();
+    alert("Please select provinces！");
+	return false;
+  }
+|||
+var ProductIdList = document.getElementsByName("smallclassid[]");
+	var SelectCount=0;
+	for(var i =0;i<ProductIdList.length;i++){
+		if(ProductIdList[i].checked) SelectCount ++;
+		if(SelectCount>3){
+			checkboxselect.checked = false;
+			alert("Product category up to only 3 choices!");
+			return false;
+		}
+	} 
+|||
+
+if(! isNumber(document.myform.name.value)){ 
+alert("Product name is not correct！");
+document.myform.name.value="";
+document.myform.name.focus();
+return   false;
+}
+|||
+Release {#channelzs} information|||Product name|||This cannot be empty.|||
+(can only write the name of the product, do not write the other content of contact, otherwise the information will be deleted directly)|||
+Select category|||Please select a large class|||Please select a small class|||attribute|||main features|||Specification / packaging|||retail price|||
+Product description|||region|||Selected area|||Delete selected city|||Upload pictures (less than {#maximgsize}K)|||Click to modify|||Upload pictures|||
+Membership fee|||Trial now please?|||Upload video|||(less than flv, {#maxflvsize}M format)|||Add video|||Available support|||
+ <input name="chzc" id="checkboxzc1" type="checkbox" value="checkbox" onclick="showinfo('zc', 1);" />
+                <label for="checkboxzc1"><span id="zc1">提供巨大的利润空间；</span></label> 
+                <input name="chzc" id="checkboxzc2" type="checkbox" value="checkbox" onclick="showinfo('zc', 2);" />
+                <label for="checkboxzc2"><span id="zc2">提供严格的市场保护；</span> </label> 
+                <input name="chzc" id="checkboxzc3" type="checkbox" value="checkbox" onclick="showinfo('zc', 3);" />
+                <label for="checkboxzc3"><span id="zc3">提供合法的经营手续；</span></label> <br />
+                <input name="chzc" id="checkboxzc4" type="checkbox" value="checkbox" onclick="showinfo('zc', 4);" />
+                <label for="checkboxzc4"><span id="zc4">提供良好的售后服务；</span> </label> 
+                <input name="chzc" id="checkboxzc5" type="checkbox" value="checkbox" onclick="showinfo('zc', 5);" />
+                <label for="checkboxzc5"><span id="zc5">完成任务提供年终返点；</span> </label> 
+                <input name="chzc" id="checkboxzc6" type="checkbox" value="checkbox" onclick="showinfo('zc', 6);" />
+                <label for="checkboxzc6"><span id="zc6">提供区域独家代理； </span></label> <br />
+                <input name="chzc" id="checkboxzc7" type="checkbox" value="checkbox" onclick="showinfo('zc', 7);" />
+                <label for="checkboxzc7"><span id="zc7">提供合理的运作空间；</span></label>  
+                <input name="chzc" id="checkboxzc8" type="checkbox" value="checkbox" onclick="showinfo('zc', 8);" />
+                <label for="checkboxzc8"><span id="zc8">及时提供货源，确保全国范围内2～10天内到货；</span></label> 
+|||
+
+Requirements for {#channeldl}|||
+<input name="chyq" id="checkboxyq1" type="checkbox" value="checkbox" onclick="showinfo('yq', 1);" />
+                 <label for="checkboxyq1"><span id="yq1">有长期合作的决心；</span> </label> 
+                <input name="chyq" id="checkboxyq2" type="checkbox" value="checkbox" onclick="showinfo('yq', 2);" />
+                 <label for="checkboxyq2"><span id="yq2">有良好的商业网信誉；</span> </label> 
+                <input name="chyq"  id="checkboxyq3" type="checkbox" value="checkbox" onclick="showinfo('yq', 3);" />
+                 <label for="checkboxyq3"><span id="yq3">有较强的责任心和信心；</span></label> <br />
+                <input name="chyq"  id="checkboxyq4" type="checkbox" value="checkbox" onclick="showinfo('yq', 4);" />
+                 <label for="checkboxyq4"><span id="yq4">有一定的经济实力；</span> </label> 
+                <input name="chyq"  id="checkboxyq5" type="checkbox" value="checkbox" onclick="showinfo('yq', 5);" />
+                 <label for="checkboxyq5"><span id="yq5">有通畅的市场渠道；</span> </label> 
+                <input name="chyq"  id="checkboxyq6" type="checkbox" value="checkbox" onclick="showinfo('yq', 6);" />
+                 <label for="checkboxyq6"><span id="yq6">有成熟完善的销售网络； </span></label> <br />
+                <input name="chyq"  id="checkboxyq7" type="checkbox" value="checkbox" onclick="showinfo('yq', 7);" />
+                 <label for="checkboxyq7"><span id="yq7">有丰富的市场操作经验，较强的市场开发能力；</span> </label> 
+                <input name="chyq"  id="checkboxyq8" type="checkbox" value="checkbox" onclick="showinfo('yq', 8);" />
+                 <label for="checkboxyq8"><span id="yq8">有终端推广能力；</span></label>
+|||
+SEO optimization settings (such as product with the same name, the following can be empty)|||
+title|||keyword|||(a number of key words to "," separated)|||description||| (appropriate for the key words, it is best to complete the sentence)|||
+Your user group does not have this permission|||Product display page template selection|||Select application template|||Common template|||Ad page template|||
+Select application template (you are not in the user group)|||Fill out, release information

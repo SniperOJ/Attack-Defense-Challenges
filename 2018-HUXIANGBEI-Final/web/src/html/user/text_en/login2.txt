@@ -1,0 +1,21 @@
+﻿用户登录|||
+if(document.UserLogin.username.value=="")
+		{
+			alert("enter one user name！");
+			document.UserLogin.username.focus();
+			return false;
+		}
+		if(document.UserLogin.password.value == "")
+		{
+			alert("Please input a password！");
+			document.UserLogin.password.focus();
+			return false;
+		}
+			if(document.UserLogin.yzm.value == "")
+		{
+			alert("Please enter the correct answer to the validation problem.！");
+			document.UserLogin.yzm.focus();
+			return false;
+		}|||
+
+User name|||Registered users|||Password|||Retrieve password|||Answer|||Can not see, click for a change|||Remember my landing status.|||login

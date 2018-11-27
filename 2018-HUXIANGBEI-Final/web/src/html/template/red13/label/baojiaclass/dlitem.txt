@@ -1,0 +1,6 @@
+﻿dlitem|||0|||10|||4|||<table width="100%" border="0" cellspacing="10" cellpadding="0"><tr>|||<td style='width:25%;' valign="top">
+<div class='titles'><span><a href='baojia.php?b={#classid}'> 更多...</a></span><h3>{#classname}</h3></div>
+<div class='content2' >
+{@baojiashow.showdlnew}
+</div>
+</td>|||</table>

@@ -1,0 +1,19 @@
+﻿User center
+system information
+Sending time
+User information
+Registration time:
+Your gold:
+Explain： <a href="/one/help.php#1032" target="_blank">About gold coins</a>
+Landing frequency:
+Tip: if you feel the number of landing is incorrect, then please <a href="managepwd.php" target="_self">change the login password</a> in a timely manner 
+Last landing IP:
+Tip: if you do not use this IP login site, then please <a href="managepwd.php" target="_self">change the login password</a> in a timely manner  
+Last logon time:
+ip: if you have not landed in the above website, then please <a href="managepwd.php" target="_self">change the login password</a> in a timely manner 
+if(confirm("Do you have a new message to view?")) {window.location.href="dls_message_manage.php" }
+There are 
+new intention to leave a message.
+See
+if(confirm("There is a new message this message! To view it?")){window.location.href="ztliuyan.php" }
+new messages in this message.	

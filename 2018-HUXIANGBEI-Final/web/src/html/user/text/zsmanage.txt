@@ -1,0 +1,19 @@
+﻿<script>alert('个人用户没有此权限');history.back(-1);</script>
+信息管理
+产品名称：
+查找
+一键刷新
+一键刷新功能可使您的信息排名靠前，以提高被查看的机率。
+<script>alert('操作成功');self.location='?';</script>
+<script>alert('操作失败！一天内只允许刷新 {#refresh_number} 次！');history.back(-1);</script>
+暂无信息
+<td width="20%" class="border">产品名称</td><td width="10%" align="center" class="border">所属类别</td><td width="10%" height="25" align="center" class="border">产品图片</td><td width="10%" align="center" class="border">招商区域</td><td width="10%" align="center" class="border">更新时间</td><td width="7%" align="center" class="border">已刷新</td><td width="10%" align="center" class="border">信息状态</td><td width="13%" align="center" class="border">操作</td><td width="5%" align="center" class="border">删除</td>
+已审
+<font color=red>待审</font>
+<br><font color=green title='中标关键词:{#tag}&#10;中标时间:{#elitestarttime}至{#eliteendtime}'>中标</font>
+修改
+排序
+投标
+全选
+删除
+

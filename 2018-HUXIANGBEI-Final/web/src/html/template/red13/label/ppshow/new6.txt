@@ -1,0 +1,9 @@
+new6|||empty|||empty|||1|||6|||id|||10|||3|||<table width="100%" border="0" cellspacing="0" cellpadding="4"><tr>|||<td width="33%">
+<table width="100%" border="0" cellpadding="0" cellspacing="1" class="bgcolor2">
+<tr>
+<td bgcolor='#FFFFFF' height="65" align="center">
+<a href=show.php?id={#id} target=_blank><img src={#img} onload="resizeimg(60,60,this)"/></a>
+</td>
+</tr>
+</table>
+</td>|||</table>

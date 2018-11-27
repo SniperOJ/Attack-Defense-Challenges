@@ -1,0 +1,3 @@
+﻿<script>alert('Individual users do not have this permission')</script>|||
+<script>alert('You have released this information, please do not post duplicate information！');location.href='zsmanage.php'</script>|||
+Release success|||Release failure|||Name：|||Specifications：|||Region:|||Continue to add|||modify|||Return|||preview

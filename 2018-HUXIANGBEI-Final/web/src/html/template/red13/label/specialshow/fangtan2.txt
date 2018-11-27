@@ -1,0 +1,27 @@
+fangtan2|||1||||||0|||0|||20|||id|||10|||0|||20|||<div id="boxgd">
+<div id="inboxgd">
+<div id="boxgd1">
+<div class="boxshipin">|||<li><A href="show.php?id={#id}" target="_blank"><img src="{#img}" border="0" width="132" height="80"><br>{#title}</A></li>|||</div>
+</div>
+<div id="boxgd2"></div>
+</div>
+</div>
+<script> 
+<!--
+var speed=10;
+var tab=document.getElementById("boxgd");
+var tab1=document.getElementById("boxgd1");
+var tab2=document.getElementById("boxgd2");
+tab2.innerHTML=tab1.innerHTML;
+function Marquee(){
+if(tab2.offsetWidth-tab.scrollLeft<=0)
+tab.scrollLeft-=tab1.offsetWidth
+else{
+tab.scrollLeft++;
+}
+}
+var MyMar=setInterval(Marquee,speed);
+tab.onmouseover=function() {clearInterval(MyMar)};
+tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
+-->
+</script>

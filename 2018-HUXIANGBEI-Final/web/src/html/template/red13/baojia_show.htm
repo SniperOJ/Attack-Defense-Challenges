@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>{#pagetitle}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="description" content="pagedescription">
+<meta name="keywords" content="pagekeywords">
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<script src="/js/msgbox.js" type="text/javascript" language="JavaScript"></script>
+<script>
+function window.onload() {
+    if(top.location != self.location){
+        var a = window.parent.document.getElementsByTagName('iframe'); 
+        for (var i=0; i<a.length; i++){
+            if (a[i].name == self.name){ 
+                a[i].height = document.body.scrollHeight+10;
+                return;
+             }
+        }
+     }
+} 
+</script>
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="station"><h3>{#station}</h3></div>
+<div class="pagebody">
+<div class="left">
+<div class="left_content" style="margin-bottom:10px">    
+<div class="box">
+<div class="boxTitle">报价信息</div>
+<ul>
+<li>品种：{#cp}</li>
+<li>价格：<span class="bigbigword3">{#price}</span>{#danwei}</li>
+<li>区域：{#province} {#city} {#xiancheng}</li>
+<li>发布时间：{#sendtime}</li>        
+</ul>
+</div>
+<div class="box">
+<div class="boxTitle"> 联系方式</div>
+{#contact}   
+</div>
+ 
+<div><a href="javascript:history.back()">返回列表</a></div>
+</div>
+</div>
+<div class="right">
+<div class="titles"><span>&nbsp;</span><h3>发布报价</h3></div>
+<div class="content1"><a href="baojiaadd.php">发布报价</a></div>
+</div>
+</div>
+
+
+</div>
+{#sitebottom}
+</body>
+</html>

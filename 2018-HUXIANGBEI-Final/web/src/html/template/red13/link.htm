@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>友情链接</title>
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script>
+$(function(){
+$("#getcode_math").click(function(){
+		$(this).attr("src",'/one/code_math.php?' + Math.random());
+	});
+});
+</script>
+
+<script src="/js/qt.js" type="text/javascript" language="JavaScript"></script>
+<script language = "JavaScript">
+function CheckForm()
+{  
+if (document.form_add_link.sitename.value=="")
+  {
+    alert("网站名称不能为空！");
+	document.form_add_link.sitename.focus();
+	return false;
+  }
+    if (document.form_add_link.url.value=="")
+  {
+    alert("网址不能为空！");
+	document.form_add_link.url.focus();
+	return false;
+  }
+    if (document.form_add_link.yzm.value=="")
+  {
+    alert("请输入验证答案！");
+	document.form_add_link.yzm.focus();
+	return false;
+  }
+  
+} 
+</script>
+</head>
+<body>
+<div class="main">
+{#sitetop}
+<div class="pagebody">
+<div class="left">
+
+        <div class="titles"> 图片链接</div>
+		<div class="content1"> 
+		{@linkshow.LinkImg}
+		
+			</div>
+       
+		<div class="titles">文字链接</div>
+		 <div class="content1">
+        {@linkshow.LinkText}
+			</div>
+</div>
+<div class="right">
+<div class="titles">交换链接</div>
+<div class="content1">
+<form action="/one/link.php?action=add" method="post" name="form_add_link" id="form_add_link" onSubmit="return CheckForm();">
+              <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                <tr> 
+              <td>网站名称<br />
+                <input name="sitename" type="text" id="sitename" size="22">                </td>
+                </tr>
+                <tr> 
+              <td>网站地址<br />
+                <input name="url" type="text" id="url" size="22">               </td>
+                </tr>
+                <tr> 
+              <td>LOGO地址<br />
+                <input name="logo" type="text" id="logo" size="22">               </td>
+                </tr>
+                <tr> 
+              <td>网站描述<br />
+               <div contenteditable="true" id="divcontent" class="box" onblur="AddContentFromDiv('content','divcontent')" ></div>
+                  <input name="content" type="text" id="content" size="22" style="display:none">               </td>
+                </tr>
+				<tr>
+				<td>答案
+				  <table  border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="34%"><input name="yzm" type="text" id="yzm" value="" size="10" maxlength="50" style="width:60px"/></td>
+                      <td width="66%"><img src="/one/code_math.php" id="getcode_math" title="看不清，点击换一张" align="absmiddle"></td>
+                    </tr>
+                  </table></td>
+                </tr>
+                <tr> 
+                  <td><input type="submit" name="Submit" value="审请"></td>
+                </tr>
+              </table>
+        </form>
+            提交审请后，请做上本站链接<br>
+            <br>
+             <p><strong>本站名称：<br />
+              </strong>{#sitename} </p>
+            <br /> <p><strong>本站网址：<br />
+              </strong>{#siteurl} </p>
+            <br /> <p><strong>本站LOGO地址：</strong></p>
+            <p>{#logourl}</p>
+            
+      </div>
+</div>
+
+</div>
+{#sitebottom}
+</div>
+</body>
+</html>

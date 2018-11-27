@@ -1,0 +1,14 @@
+﻿<li>找不到指定的用户！</li>|||
+<li>只能升级到上一级用户组</li>|||
+<li>您的余额不足，请先<a href='/3/alipay'>充值</a>！</li>|||
+会员升级费用|||
+服务时间：|||
+<script>alert('升级成功');location.href='vip_add.php'</script>|||
+会员升级|||
+用户名：|||
+你当前所属用户组：|||
+(查看我的权限) |||请选择会员类型：|||积分/年|||会员期限：|||
+ <option value="1" selected>一年</option>
+                  <option value="2">二年</option>
+                  <option value="3">三年</option>
+                  <option value="5">五年</option>|||保存

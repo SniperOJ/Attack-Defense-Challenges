@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}"/>
+<meta name="description" content="{#pagedescription}"/>
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<script src="/js/msgbox.js" type="text/javascript" language="JavaScript"></script>
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody">
+<div class="left">
+<div class="station2">
+ {#station}
+
+</div>
+<div class="left_content" style="margin-bottom:8px">
+<form name="myform" method="get" action="?">
+          <table width="100%" border="0" cellspacing="0" cellpadding="8">
+            <tr> 
+              <td align="right">产品：</td>
+              <td><input name="keyword" type="text"  id="keyword" value="{#formkeyword}" size="50" maxlength="50"/> 
+                <input name="Submit" type="submit" id="Submit2" value="搜索" /></td>
+            </tr>
+            <tr> 
+              <td width="15%" align="right">区域：</td>
+              <td width="85%">{#formprovince}{#formcity}{#formxiancheng}</td>
+          
+            <tr> 
+              <td align="right">类别：</td>
+              <td>{#formbigclass}</td>
+            </tr>
+            {#selected}
+          </table>
+        </form>
+
+</div>
+<div class="left_content"> 
+{baojia}
+
+  <table width="100%" border="0" cellspacing="1" cellpadding="5" class='bgcolor3'> 
+  <tr class='bgcolor2'>
+    <td width="15%"><strong>
+      产品</strong></td>
+    <td width="15%"><strong>价格</strong></td>
+    <td width="15%"><strong> 联系人</strong></td>
+    <td width="15%"><strong>区域</strong></td>
+    <td width="15%"><strong>电话 </strong></td>
+    <td width="15%"><strong>发布日期</strong></td>
+  </tr>
+  {loop}
+  <tr {changebgcolor}>
+    <td>    {#cp}</td>
+    <td>{#price}{#danwei}</td>
+    <td>{#name}</td>
+    <td>{#province}{#city}{#xiancheng}</td>
+	<td>{#tel}</td>
+    <td>{#sendtime}</td>
+  </tr>
+  {/loop}
+</table>
+
+<div class="fenyei">{#fenyei}</div>
+{/baojia}
+ </div>			
+
+</div>
+<div class="right">
+<div class="titles">发布报价</div>
+<div class="content"><a href="/baojia/baojiaadd.php">发布报价</a></div>
+</div>
+</div>
+</div>
+{#sitebottom}
+</body>
+</html>

@@ -1,0 +1,3 @@
+﻿<script>alert('个人用户没有此权限')</script>|||
+<script>alert('您已发布过该信息，请不要发布重复的信息！');location.href='zsmanage.php'</script>|||
+发布成功|||发布失败|||名称：|||规格：|||区域：|||继续添加|||修改|||返回|||预览

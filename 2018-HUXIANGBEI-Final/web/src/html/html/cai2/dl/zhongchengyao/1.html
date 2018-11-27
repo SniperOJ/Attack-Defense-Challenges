@@ -1,0 +1,1422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>中成药代理-zzcms</title>
+<meta name="keywords" content="pagekeywords"/>
+<meta name="description" content="pagedescription"/>
+<link href="/template/cai2/style.css" rel="stylesheet" type="text/css">
+<script src="/js/msgbox.js" type="text/javascript" language="JavaScript"></script>
+
+</head>
+<body>
+<script language="JavaScript" src="/js/qt.js"></script>
+<div class="top1">
+<div class="main">
+<span>
+<a href="/help.php" target="_blank" >使用帮助</a>
+<a href="#" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://localhost:8080');">设为首页</a>
+<a href="javascript:window.external.addFavorite('http://localhost:8080','zzcms');">收藏本站</a>
+<font color=red> 客服电话:0371-86137281</font>
+    
+</span>
+<h3>
+
+
+<img src='/image/user.gif' style="margin-top:5px">您好！客人 [<a href=http://localhost:8080/user/login.php target='_blank'>请登录</a>]&nbsp;[<a href=http://localhost:8080/reg/userreg.php target='_blank'>免费注册</a>]&nbsp;
+<a href='/3/qq_connect2.0/index.php'><img src='/image/Connect_logo_2.png' border='0' style="margin-top:5px"></a>
+
+</h3>
+</div>
+</div>
+
+<div style="background-color:#FFFFFF">
+<div class="main">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="420" height="80"><a href="http://localhost:8080"><img src="http://localhost:8080/image/logo.png" border="0" alt="zzcms专业做招商网的程序源码" onload="resizeimg(200,200,this)"></a></td>
+	<td>         
+        <div class="boxsearch2"> 
+		  <div id="D_con1" {#zs_style2} style='display:none'>
+		<form name="myform" method="get" action="/zs/search.php"> 
+     <input name="keyword" id="keyword" type="text" class="biaodan3" x-webkit-speech  onfocus="javascript:if (this.value=='输入产品名称') {this.value=''}" value="输入产品名称" >
+	 <input name="search" type="submit" value="" class="buttons_search2" border="0" />
+      </form>
+	  </div>
+	   
+		  <div id="D_con2" >
+		  <form name="myform" method="get" action="/dl/search.php"> 
+        <input name="keyword" type="text"  class="biaodan3"  x-webkit-speech onfocus="javascript:if (this.value=='输入代理产品名称') {this.value=''}" value="输入代理产品名称" /><input name="search" type="submit" value="" class="buttons_search2" border="0" />
+       </form>
+	  </div>
+	  	    <div id="D_con3" {#pp_style2} style='display:none'>
+	<form name="myform" method="get" action="/pp/search.php"> 
+    <input name="keyword" type="text"  class="biaodan3" x-webkit-speech onfocus="javascript:if (this.value=='输入品牌名') {this.value=''}"  value="输入品牌名" /><input name="search" type="submit" value="" class="buttons_search2" border="0" />
+     </form>
+	 </div>
+		  <div id="D_con4" {#company_style2} style='display:none'>
+		  <form name="myform" method="get" action="/company/search.php"> 
+        <input name="keyword" type="text"  class="biaodan3" x-webkit-speech  onfocus="javascript:if (this.value=='输入公司名') {this.value=''}"  value="输入公司名" /><input name="search" type="submit" value="" class="buttons_search2" border="0" />
+       </form>
+	  </div>
+		  <div id="D_con5" {#zh_style2} style='display:none'>
+		  <form name="myform" method="get" action="/zh/search.php"> 
+        <input name="keyword" type="text"  class="biaodan3" x-webkit-speech  onfocus="javascript:if (this.value=='输入展会信息关键词') {this.value=''}"  value="输入展会信息关键词" /><input name="search4" type="submit" value="" class="buttons_search2" border="0" />
+       </form>
+	  </div>
+		  <div id="D_con6" {#zx_style2} style='display:none'>
+		  <form name="myform" method="post" action="/zx/search.php"> 
+        <input name="keyword" type="text"  class="biaodan3" x-webkit-speech onfocus="javascript:if (this.value=='输入资讯信息关键词') {this.value=''}"  value="输入资讯信息关键词" /><input name="search" type="submit" value="" class="buttons_search2" border="0" />
+       </form>
+	  </div>
+	   <div id="D_con7" {#special_style2} style='display:none'>
+            <form action="/special/search.php" method="post" name="myform" id="myform">
+              <input name="keyword2" type="text"  class="biaodan3" x-webkit-speech="x-webkit-speech" onfocus="javascript:if (this.value=='输入专题信息关键词') {this.value=''}"  value="输入专题信息关键词" />
+              <input name="search" type="submit" value="" class="buttons_search2" border="0" />
+            </form>
+          </div>
+	  	  	  <div id="D_con8" {#job_style2} style='display:none'>
+		  <form name="myform" method="post" action="/job/search.php"> 
+        <input name="keyword" type="text"  class="biaodan3" x-webkit-speech onfocus="javascript:if (this.value=='输入职位关键词') {this.value=''}"  value="输入职位关键词" /><input name="search" type="submit" value="" class="buttons_search2" border="0" />
+       </form>
+	  </div>
+	   <div id="D_con9" {#wangkan_style2} style='display:none'>
+		  <form name="myform" method="post" action="/wangkan/search.php"> 
+        <input name="keyword" type="text"  class="biaodan3" x-webkit-speech onfocus="javascript:if (this.value=='输入网刊关键词') {this.value=''}"  value="输入网刊关键词" /><input name="search" type="submit" value="" class="buttons_search2" border="0" />
+       </form>
+	  </div>
+        </div>
+	</td>
+   <td width="70" align="center"><div id="fbzs"><a href="http://localhost:8080/user/index.php?gotopage=zsadd.php" target="_blank"></a></div></td>
+    <td width="70" align="center"><div id="fbdl"><a href="http://localhost:8080/dl/dladd.php" target="_blank"></a></div></td>
+    <td width="70" align="center"><div id="hyzx"><a href="http://localhost:8080/user/"></a></div> </td>
+  </tr>
+</table>
+<div id='gonggao'><span onclick="gonggao.style.display='none'"><a href=javascript:delCookie('closegg')>×</a></span><li>公告【1】<a href=javascript:openwindow('/one/announce_show.php?id=40',700,300)>zzcms7.1推出，7.0to7.1升级包同时推出。 [2016-08-28] </a></li></div>
+</div>
+</div>
+
+<div class="nav"> 
+<div class="main">
+<ul>
+<li class="current3" onMouseOver="showfilter2(flzs)" onMouseOut="showfilter2(flzs)"><a href='###'>分类招商</a>
+<div id="flzs"><div class='zsclass' onMouseOver="showfilter2(zsLayer1)" onMouseOut="showfilter2(zsLayer1)">
+<label>
+<h2><img src=/template/cai2/image/zsclass_ico/1.jpg>&nbsp;<a href=/zs/zs.php?b=xiyao>西药</a><span>(共 <b>15</b> 条)</span></h2>
+<a href=/zs/zs.php?b=xiyao&s=neifenmi>内分泌科</a>&nbsp;&nbsp;
+<a href=/zs/zs.php?b=xiyao&s=tangniaobing>糖尿病</a>&nbsp;&nbsp;
+<a href=/zs/zs.php?b=xiyao&s=xunhuanxitong>循环系统</a>&nbsp;&nbsp;
+<div id=zsLayer1 class='zsclass_s'> 
+<div class='bigbigword ico_size'><img src=/template/cai2/image/zsclass_ico/1.jpg>&nbsp;西药</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=xiyao&s=neifenmi>内分泌科</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=632' target='_blank'>asdf</a>&nbsp;|&nbsp; <a href='/zs/show.php?id=537' target='_blank'>药品名称</a><br/></div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=xiyao&s=tangniaobing>糖尿病</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=535' target='_blank'>健胃消食片</a>&nbsp;|&nbsp; </div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=xiyao&s=xunhuanxitong>循环系统</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=86' target='_blank'>吲达帕胺缓.</a>&nbsp;|&nbsp; <a href='/zs/show.php?id=156' target='_blank'>心脑血管特.</a><br/></div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=xiyao&s=huxike>呼吸科</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=xiyao&s=kangjun>抗菌/抗病毒</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=xiyao&s=xiaohuake>消化科</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+</div>
+</label>
+</div>
+<div class='zsclass' onMouseOver="showfilter2(zsLayer2)" onMouseOut="showfilter2(zsLayer2)">
+<label>
+<h2><img src=/template/cai2/image/zsclass_ico/2.jpg>&nbsp;<a href=/zs/zs.php?b=zhongchengyao>中成药</a><span>(共 <b>195</b> 条)</span></h2>
+<a href=/zs/zs.php?b=zhongchengyao&s=tangniaobing>糖尿病</a>&nbsp;&nbsp;
+<a href=/zs/zs.php?b=zhongchengyao&s=erbiyanhou>耳鼻咽喉</a>&nbsp;&nbsp;
+<a href=/zs/zs.php?b=zhongchengyao&s=huatanzhike>化痰/止咳</a>&nbsp;&nbsp;
+<div id=zsLayer2 class='zsclass_s'> 
+<div class='bigbigword ico_size'><img src=/template/cai2/image/zsclass_ico/2.jpg>&nbsp;中成药</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=zhongchengyao&s=tangniaobing>糖尿病</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=506' target='_blank'>铝来钙</a>&nbsp;|&nbsp; </div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=zhongchengyao&s=erbiyanhou>耳鼻咽喉</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=268' target='_blank'>rrrrr.</a>&nbsp;|&nbsp; <a href='/zs/show.php?id=264' target='_blank'>fds</a><br/></div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=zhongchengyao&s=huatanzhike>化痰/止咳</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=402' target='_blank'>七味螃蟹甲.</a>&nbsp;|&nbsp; <a href='/zs/show.php?id=417' target='_blank'>顺气化痰片.</a><br/></div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=zhongchengyao&s=qushu>祛暑/解表</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=zhongchengyao&s=pifuke>皮肤科</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=413' target='_blank'>弹性创可贴.</a>&nbsp;|&nbsp; <a href='/zs/show.php?id=414' target='_blank'>弹性创可贴.</a><br/></div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=zhongchengyao&s=qianliexian>前列腺</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=456' target='_blank'>香港宝和堂.</a>&nbsp;|&nbsp; <a href='/zs/show.php?id=65' target='_blank'>解毒通淋丸</a><br/></div>
+</div>
+</div>
+</label>
+</div>
+<div class='zsclass' onMouseOver="showfilter2(zsLayer3)" onMouseOut="showfilter2(zsLayer3)">
+<label>
+<h2><img src=/template/cai2/image/zsclass_ico/3.jpg>&nbsp;<a href=/zs/zs.php?b=baojianpin>保健品</a><span>(共 <b>230</b> 条)</span></h2>
+<a href=/zs/zs.php?b=baojianpin&s=wiliangyuansu>微量元素</a>&nbsp;&nbsp;
+<a href=/zs/zs.php?b=baojianpin&s=tiaojixuezhi>调节血脂</a>&nbsp;&nbsp;
+<a href=/zs/zs.php?b=baojianpin&s=meirongyangyan>美容养颜</a>&nbsp;&nbsp;
+<div id=zsLayer3 class='zsclass_s'> 
+<div class='bigbigword ico_size'><img src=/template/cai2/image/zsclass_ico/3.jpg>&nbsp;保健品</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=baojianpin&s=wiliangyuansu>微量元素</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=471' target='_blank'>中老年高钙.</a>&nbsp;|&nbsp; <a href='/zs/show.php?id=472' target='_blank'>恒佳钙D咀.</a><br/></div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=baojianpin&s=tiaojixuezhi>调节血脂</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=513' target='_blank'>盐藻胶囊-.</a>&nbsp;|&nbsp; <a href='/zs/show.php?id=515' target='_blank'>甘氨酸亚铁.</a><br/></div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=baojianpin&s=meirongyangyan>美容养颜</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=511' target='_blank'>胶原蛋白胶.</a>&nbsp;|&nbsp; <a href='/zs/show.php?id=512' target='_blank'>液体钙-诚.</a><br/></div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=baojianpin&s=tiaojimianyi>调节免疫</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=541' target='_blank'>精活素-诚.</a>&nbsp;|&nbsp; <a href='/zs/show.php?id=542' target='_blank'>大麦若叶清.</a><br/></div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=baojianpin&s=jianfeishoushen>减肥瘦身</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=514' target='_blank'>维生素C-.</a>&nbsp;|&nbsp; <a href='/zs/show.php?id=603' target='_blank'>OEM贴牌.</a><br/></div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=baojianpin&s=gaishanshili>改善视力</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=529' target='_blank'>优一紫尚α.</a>&nbsp;|&nbsp; <a href='/zs/show.php?id=186' target='_blank'>保视力明目.</a><br/></div>
+</div>
+</div>
+</label>
+</div>
+<div class='zsclass' onMouseOver="showfilter2(zsLayer4)" onMouseOut="showfilter2(zsLayer4)">
+<label>
+<h2><img src=/template/cai2/image/zsclass_ico/4.jpg>&nbsp;<a href=/zs/zs.php?b=yiliaoqixie>医疗器械</a><span>(共 <b>58</b> 条)</span></h2>
+<a href=/zs/zs.php?b=yiliaoqixie&s=zhiliaoyi>治疗仪</a>&nbsp;&nbsp;
+<a href=/zs/zs.php?b=yiliaoqixie&s=tieji>贴剂/膏药</a>&nbsp;&nbsp;
+<a href=/zs/zs.php?b=yiliaoqixie&s=biyunqixie>避孕器械</a>&nbsp;&nbsp;
+<div id=zsLayer4 class='zsclass_s'> 
+<div class='bigbigword ico_size'><img src=/template/cai2/image/zsclass_ico/4.jpg>&nbsp;医疗器械</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=yiliaoqixie&s=zhiliaoyi>治疗仪</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=yiliaoqixie&s=tieji>贴剂/膏药</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=645' target='_blank'>颈椎理疗贴</a>&nbsp;|&nbsp; <a href='/zs/show.php?id=646' target='_blank'>肩周理疗贴</a><br/></div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=yiliaoqixie&s=biyunqixie>避孕器械</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=yiliaoqixie&s=ningliangzhiliao>能量治疗</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=yiliaoqixie&s=hulishebei>护理设备</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=yiliaoqixie&s=qingjiexiaodu>清洁消毒</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+</div>
+</label>
+</div>
+<div class='zsclass' onMouseOver="showfilter2(zsLayer5)" onMouseOut="showfilter2(zsLayer5)">
+<label>
+<h2><img src=/template/cai2/image/zsclass_ico/5.jpg>&nbsp;<a href=/zs/zs.php?b=yaozhuang>药妆</a><span>(共 <b>3</b> 条)</span></h2>
+<a href=/zs/zs.php?b=yaozhuang&s=yanhuanxibaolaohua>延缓细胞老化</a>&nbsp;&nbsp;
+<a href=/zs/zs.php?b=yaozhuang&s=cujinpifuweixunhuan>促进皮肤微循环</a>&nbsp;&nbsp;
+<a href=/zs/zs.php?b=yaozhuang&s=xiuhubaoyang>修护保养</a>&nbsp;&nbsp;
+<div id=zsLayer5 class='zsclass_s'> 
+<div class='bigbigword ico_size'><img src=/template/cai2/image/zsclass_ico/5.jpg>&nbsp;药妆</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=yaozhuang&s=yanhuanxibaolaohua>延缓细胞老化</a></div>
+<div class='zsclass_cp'><a href='/zs/show.php?id=474' target='_blank'>七彩泡泡婴.</a>&nbsp;|&nbsp; </div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=yaozhuang&s=cujinpifuweixunhuan>促进皮肤微循环</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=yaozhuang&s=xiuhubaoyang>修护保养</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+</div>
+</label>
+</div>
+<div class='zsclass' onMouseOver="showfilter2(zsLayer6)" onMouseOut="showfilter2(zsLayer6)">
+<label>
+<h2><img src=/template/cai2/image/zsclass_ico/6.jpg>&nbsp;<a href=/zs/zs.php?b=yiyaobaozhuang>医药包装</a><span>(共 <b>2</b> 条)</span></h2>
+<a href=/zs/zs.php?b=yiyaobaozhuang&s=zhileibaozhuang>纸类包装</a>&nbsp;&nbsp;
+<a href=/zs/zs.php?b=yiyaobaozhuang&s=suliaoleibaozhuang>塑料类包装</a>&nbsp;&nbsp;
+<a href=/zs/zs.php?b=yiyaobaozhuang&s=jinshuleibaozhuang>金属类包装</a>&nbsp;&nbsp;
+<div id=zsLayer6 class='zsclass_s'> 
+<div class='bigbigword ico_size'><img src=/template/cai2/image/zsclass_ico/6.jpg>&nbsp;医药包装</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=yiyaobaozhuang&s=zhileibaozhuang>纸类包装</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=yiyaobaozhuang&s=suliaoleibaozhuang>塑料类包装</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=yiyaobaozhuang&s=jinshuleibaozhuang>金属类包装</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=yiyaobaozhuang&s=bolihetaocileibaozhuang>玻璃和陶瓷类包装</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=yiyaobaozhuang&s=mucaihefuhecailiaoleibaozhuang>木材和复合材料类.</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+<div class='zsclass_s_li'>
+<div class='zsclass_s_name'><a href=/zs/zs.php?b=yiyaobaozhuang&s=qitabaozhuang>其他包装</a></div>
+<div class='zsclass_cp'>下无产品</div>
+</div>
+</div>
+</label>
+</div>
+</div>
+</li>
+<li {#navindex}><a href='http://localhost:8080'>首页</a></li>
+<li {#navzs}><a href='/zs'>招商</a></li>
+<li class='current'><a href='/dl/dl.htm'>代理</a></li>
+<li {#navzx}><a href="/zx">资讯</a></li>
+<li {#navspecial}><a href="/special">专题</a></li>
+<li {#navzh}><a href='/zh'>展会</a></li>
+<li {#navpp}><a href='/pp'>品牌</a></li>
+<li {#navjob}><a href='/job'>招聘</a></li>
+<li {#navwangkan}><a href='/wangkan'>网刊</a></li>	
+<li {#navzs}><a href='/zs/order.htm'>排行榜</a></li>
+<li {#navcompany}><a href='/company'>企业大全</a></li>	
+</ul>
+</div>
+</div>
+
+<iframe width="0" height="0" frameborder="0" scrolling="no" name="forgg"></iframe>
+<div class="main">
+<div class="pagebody">
+<div class="left">
+<div class="station2">
+<li class='start'><a href='http://localhost:8080'>首页</a></li><li><a href='dl.php'>代理</a></li><li><a href='/dl/dl.php?b=zhongchengyao'>中成药</a></li>
+</div>
+<div class="box"><div class="boxbigclass"><li><a href='/dl/dl.php?b=xiyao'>西药</a></li><li><a href='/dl/dl.php?b=zhongchengyao' class='current'>中成药</a></li><li><a href='/dl/dl.php?b=baojianpin'>保健品</a></li><li><a href='/dl/dl.php?b=yiliaoqixie'>医疗器械</a></li><li><a href='/dl/dl.php?b=yaozhuang'>药妆</a></li><li><a href='/dl/dl.php?b=yiyaobaozhuang'>医药包装</a></li></div></div>
+<div class="left_content"> 
+
+<form action="" method="post" name="form1" target="_blank">
+<select name='FileExt' id='FileExt'>
+<option selected='selected' value='xls'>选择下载文件类型</option>
+<option value='xls'>excel表格文件</option>
+<option value='doc'>word文件</option>
+</select>
+<input type="submit" value='下载选中的信息' onClick="form1.action='/dl/dl_download.php'">
+<input type="submit" value='打印选中的信息' onClick="form1.action='/dl/dl_print.php'"/>
+<input type="submit" onclick="form1.action='/dl/dl_sendmail.php'" value='发邮件'/>
+<input type="submit" onclick="form1.action='/dl/dl_sendsms.php'" value='发手机短信'/>
+<input name="sql" type="hidden" id="sql" value="select count(*) as total from `zzcms_dl_zhongchengyao` where passed<>0 " />
+<table width="100%" border="0" cellspacing="1" cellpadding="5" class='bgcolor3'> 
+  <tr class='bgcolor2'>
+    <td width="15%"><strong>
+     <label> <input name='chkAll' type='checkbox' id='chkAll2' onclick='CheckAll(this.form)' value='checkbox' checked='checked' />
+      （全选）</label>
+意向产品</strong></td>
+    <td width="10%"><strong> 联系人</strong></td>
+    <td width="15%"><strong>意向区域</strong></td>
+    <td width="12%"><strong>电话 </strong></td>
+    <td width="15%"><strong>详细内容</strong></td>
+    <td width="10%"><strong>发布日期</strong></td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='20009' checked='CHECKED' />
+    <a href='/dl/show.php?id=20009'>嘎日迪五味丸(阜.</a> </td>
+    <td>范德萨</td>
+    <td>全国&nbsp;浙江杭州&nbsp;</td>
+	<td><a style='color:red' href='/dl/show.php?id=10006'>VIP点击可查看</a></td>
+    <td>我对这个产品感兴趣，请与我联系。.</td>
+    <td>2015-11-30</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='20008' checked='CHECKED' />
+    <a href='/dl/show.php?id=20008'>rrrrrrrrrrrrrrrrrrrr</a> </td>
+    <td>张军</td>
+    <td>北京&nbsp;江苏南通&nbsp;</td>
+	<td><a style='color:red' href='/dl/show.php?id=10005'>VIP点击可查看</a></td>
+    <td>我对这个产品感兴趣，请与我联系。</td>
+    <td>2015-11-24</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='20007' checked='CHECKED' />
+    <a href='/dl/show.php?id=20007'>麝香壮骨膏</a> </td>
+    <td>张贵娥</td>
+    <td>&nbsp;太原市&nbsp;</td>
+	<td><a style='color:red' href='/dl/show.php?id=10004'>VIP点击可查看</a></td>
+    <td>我对这个产品感兴趣，请与我联系。</td>
+    <td>2015-11-22</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='20005' checked='CHECKED' />
+    <a href='/dl/show.php?id=20005'>谷の宝骨细胞修复.</a> </td>
+    <td>李志阳</td>
+    <td>&nbsp;河南濮阳&nbsp;</td>
+	<td><a style='color:red' href='/dl/show.php?id=10003'>VIP点击可查看</a></td>
+    <td></td>
+    <td>2015-11-21</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='20004' checked='CHECKED' />
+    <a href='/dl/show.php?id=20004'>谷の宝骨细胞修复.</a> </td>
+    <td>李志阳</td>
+    <td>&nbsp;河南濮阳&nbsp;</td>
+	<td><a style='color:red' href='/dl/show.php?id=10002'>VIP点击可查看</a></td>
+    <td></td>
+    <td>2015-11-21</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='10001' checked='CHECKED' />
+    <a href='/dl/show.php?id=10001'>中成药代理测试1.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=10001'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='10000' checked='CHECKED' />
+    <a href='/dl/show.php?id=10000'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=10000'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9999' checked='CHECKED' />
+    <a href='/dl/show.php?id=9999'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9999'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9998' checked='CHECKED' />
+    <a href='/dl/show.php?id=9998'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9998'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9997' checked='CHECKED' />
+    <a href='/dl/show.php?id=9997'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9997'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9996' checked='CHECKED' />
+    <a href='/dl/show.php?id=9996'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9996'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9995' checked='CHECKED' />
+    <a href='/dl/show.php?id=9995'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9995'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9994' checked='CHECKED' />
+    <a href='/dl/show.php?id=9994'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9994'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9993' checked='CHECKED' />
+    <a href='/dl/show.php?id=9993'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9993'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9992' checked='CHECKED' />
+    <a href='/dl/show.php?id=9992'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9992'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9991' checked='CHECKED' />
+    <a href='/dl/show.php?id=9991'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9991'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9990' checked='CHECKED' />
+    <a href='/dl/show.php?id=9990'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9990'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9989' checked='CHECKED' />
+    <a href='/dl/show.php?id=9989'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9989'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9988' checked='CHECKED' />
+    <a href='/dl/show.php?id=9988'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9988'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9987' checked='CHECKED' />
+    <a href='/dl/show.php?id=9987'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9987'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9986' checked='CHECKED' />
+    <a href='/dl/show.php?id=9986'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9986'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9985' checked='CHECKED' />
+    <a href='/dl/show.php?id=9985'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9985'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9984' checked='CHECKED' />
+    <a href='/dl/show.php?id=9984'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9984'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9983' checked='CHECKED' />
+    <a href='/dl/show.php?id=9983'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9983'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9982' checked='CHECKED' />
+    <a href='/dl/show.php?id=9982'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9982'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9981' checked='CHECKED' />
+    <a href='/dl/show.php?id=9981'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9981'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9980' checked='CHECKED' />
+    <a href='/dl/show.php?id=9980'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9980'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9979' checked='CHECKED' />
+    <a href='/dl/show.php?id=9979'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9979'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9978' checked='CHECKED' />
+    <a href='/dl/show.php?id=9978'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9978'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9977' checked='CHECKED' />
+    <a href='/dl/show.php?id=9977'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9977'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9976' checked='CHECKED' />
+    <a href='/dl/show.php?id=9976'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9976'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9975' checked='CHECKED' />
+    <a href='/dl/show.php?id=9975'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9975'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9974' checked='CHECKED' />
+    <a href='/dl/show.php?id=9974'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9974'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9973' checked='CHECKED' />
+    <a href='/dl/show.php?id=9973'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9973'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9972' checked='CHECKED' />
+    <a href='/dl/show.php?id=9972'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9972'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9971' checked='CHECKED' />
+    <a href='/dl/show.php?id=9971'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9971'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9970' checked='CHECKED' />
+    <a href='/dl/show.php?id=9970'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9970'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9969' checked='CHECKED' />
+    <a href='/dl/show.php?id=9969'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9969'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9968' checked='CHECKED' />
+    <a href='/dl/show.php?id=9968'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9968'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9967' checked='CHECKED' />
+    <a href='/dl/show.php?id=9967'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9967'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9966' checked='CHECKED' />
+    <a href='/dl/show.php?id=9966'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9966'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9965' checked='CHECKED' />
+    <a href='/dl/show.php?id=9965'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9965'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9964' checked='CHECKED' />
+    <a href='/dl/show.php?id=9964'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9964'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9963' checked='CHECKED' />
+    <a href='/dl/show.php?id=9963'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9963'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9962' checked='CHECKED' />
+    <a href='/dl/show.php?id=9962'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9962'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9961' checked='CHECKED' />
+    <a href='/dl/show.php?id=9961'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9961'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9960' checked='CHECKED' />
+    <a href='/dl/show.php?id=9960'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9960'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9959' checked='CHECKED' />
+    <a href='/dl/show.php?id=9959'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9959'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9958' checked='CHECKED' />
+    <a href='/dl/show.php?id=9958'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9958'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9957' checked='CHECKED' />
+    <a href='/dl/show.php?id=9957'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9957'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9956' checked='CHECKED' />
+    <a href='/dl/show.php?id=9956'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9956'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9955' checked='CHECKED' />
+    <a href='/dl/show.php?id=9955'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9955'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9954' checked='CHECKED' />
+    <a href='/dl/show.php?id=9954'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9954'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9953' checked='CHECKED' />
+    <a href='/dl/show.php?id=9953'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9953'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9952' checked='CHECKED' />
+    <a href='/dl/show.php?id=9952'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9952'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9951' checked='CHECKED' />
+    <a href='/dl/show.php?id=9951'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9951'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9950' checked='CHECKED' />
+    <a href='/dl/show.php?id=9950'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9950'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9949' checked='CHECKED' />
+    <a href='/dl/show.php?id=9949'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9949'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9948' checked='CHECKED' />
+    <a href='/dl/show.php?id=9948'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9948'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9947' checked='CHECKED' />
+    <a href='/dl/show.php?id=9947'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9947'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9946' checked='CHECKED' />
+    <a href='/dl/show.php?id=9946'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9946'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9945' checked='CHECKED' />
+    <a href='/dl/show.php?id=9945'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9945'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9944' checked='CHECKED' />
+    <a href='/dl/show.php?id=9944'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9944'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9943' checked='CHECKED' />
+    <a href='/dl/show.php?id=9943'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9943'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9942' checked='CHECKED' />
+    <a href='/dl/show.php?id=9942'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9942'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9941' checked='CHECKED' />
+    <a href='/dl/show.php?id=9941'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9941'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9940' checked='CHECKED' />
+    <a href='/dl/show.php?id=9940'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9940'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9939' checked='CHECKED' />
+    <a href='/dl/show.php?id=9939'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9939'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9938' checked='CHECKED' />
+    <a href='/dl/show.php?id=9938'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9938'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9937' checked='CHECKED' />
+    <a href='/dl/show.php?id=9937'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9937'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9936' checked='CHECKED' />
+    <a href='/dl/show.php?id=9936'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9936'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9935' checked='CHECKED' />
+    <a href='/dl/show.php?id=9935'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9935'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9934' checked='CHECKED' />
+    <a href='/dl/show.php?id=9934'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9934'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9933' checked='CHECKED' />
+    <a href='/dl/show.php?id=9933'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9933'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9932' checked='CHECKED' />
+    <a href='/dl/show.php?id=9932'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9932'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9931' checked='CHECKED' />
+    <a href='/dl/show.php?id=9931'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9931'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9930' checked='CHECKED' />
+    <a href='/dl/show.php?id=9930'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9930'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9929' checked='CHECKED' />
+    <a href='/dl/show.php?id=9929'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9929'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9928' checked='CHECKED' />
+    <a href='/dl/show.php?id=9928'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9928'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9927' checked='CHECKED' />
+    <a href='/dl/show.php?id=9927'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9927'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9926' checked='CHECKED' />
+    <a href='/dl/show.php?id=9926'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9926'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9925' checked='CHECKED' />
+    <a href='/dl/show.php?id=9925'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9925'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9924' checked='CHECKED' />
+    <a href='/dl/show.php?id=9924'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9924'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9923' checked='CHECKED' />
+    <a href='/dl/show.php?id=9923'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9923'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9922' checked='CHECKED' />
+    <a href='/dl/show.php?id=9922'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9922'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9921' checked='CHECKED' />
+    <a href='/dl/show.php?id=9921'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9921'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9920' checked='CHECKED' />
+    <a href='/dl/show.php?id=9920'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9920'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9919' checked='CHECKED' />
+    <a href='/dl/show.php?id=9919'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9919'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9918' checked='CHECKED' />
+    <a href='/dl/show.php?id=9918'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9918'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9917' checked='CHECKED' />
+    <a href='/dl/show.php?id=9917'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9917'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9916' checked='CHECKED' />
+    <a href='/dl/show.php?id=9916'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9916'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9915' checked='CHECKED' />
+    <a href='/dl/show.php?id=9915'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9915'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9914' checked='CHECKED' />
+    <a href='/dl/show.php?id=9914'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9914'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9913' checked='CHECKED' />
+    <a href='/dl/show.php?id=9913'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9913'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9912' checked='CHECKED' />
+    <a href='/dl/show.php?id=9912'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9912'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9911' checked='CHECKED' />
+    <a href='/dl/show.php?id=9911'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9911'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9910' checked='CHECKED' />
+    <a href='/dl/show.php?id=9910'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9910'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9909' checked='CHECKED' />
+    <a href='/dl/show.php?id=9909'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9909'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor1>
+    <td><input name='id[]' type='checkbox' value='9908' checked='CHECKED' />
+    <a href='/dl/show.php?id=9908'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9908'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+  <tr class=bgcolor2>
+    <td><input name='id[]' type='checkbox' value='9907' checked='CHECKED' />
+    <a href='/dl/show.php?id=9907'>中成药代理测试9.</a> </td>
+    <td>李志阳</td>
+    <td>广西&nbsp;南宁&nbsp;马山县</td>
+	<td><a style='color:red' href='/dl/show.php?id=9907'>VIP点击可查看</a></td>
+    <td>代理测试代理测试代理测试</td>
+    <td>2015-11-16</td>
+  </tr>
+  
+</table>
+</form>
+<div class="fenyei"><form name='formpage' action='/dl/dl.php' method='get' target='_self' onsubmit='return checkpage();'><a><nobr>共10006</nobr></a><span>1</span><a href='?page=2&b=zhongchengyao'><nobr>2</nobr></a><a href='?page=3&b=zhongchengyao'><nobr>3</nobr></a><a href='?page=4&b=zhongchengyao'><nobr>4</nobr></a><a href='?page=5&b=zhongchengyao'><nobr>5</nobr></a><a href='?page=6&b=zhongchengyao'><nobr>6</nobr></a><a href='?page=7&b=zhongchengyao'><nobr>7</nobr></a><a href='?page=8&b=zhongchengyao'><nobr>8</nobr></a><a href='?page=9&b=zhongchengyao'><nobr>9</nobr></a><a href='?page=10&b=zhongchengyao'><nobr>10</nobr></a><a href='?page=2&b=zhongchengyao' title='转到下一页'>></a><a href='?page=101&b=zhongchengyao' title='转到第101页'><nobr>>></nobr></a>
+<input name='page' type='text' maxlength='10' value='1' class='biaodan' style='width:40px;'/><input type='submit'name='submit' value='GO' class='button'/><input name='b' type='hidden' value='zhongchengyao'/><input name='s' type='hidden' value=''/></form></div>
+
+ </div>			
+
+</div>
+<div class="right">
+<div class="titles"><span>&nbsp;</span><h3>热门搜索</h3></div>
+<div class="content1">
+<li style='width:15%;display:inline-block'><a href='/dl/search.php?keyword=关键词'>关键词</a></li>
+<li style='width:15%;display:inline-block'><a href='/dl/search.php?keyword=关键词2'>关键词2</a></li>
+<li style='width:15%;display:inline-block'><a href='/dl/search.php?keyword=关键词4'>关键词4</a></li>
+<li style='width:15%;display:inline-block'><a href='/dl/search.php?keyword=关键词3'>关键词3</a></li>
+<li style='width:15%;display:inline-block'><a href='/dl/search.php?keyword=关键词5'>关键词5</a></li>
+<li style='width:15%;display:inline-block'><a href='/dl/search.php?keyword=关键词66'>关键词66</a></li>
+<li style='width:15%;display:inline-block'><a href='/dl/search.php?keyword=aa'>aa</a></li>
+
+</div>
+<div class="titles"><span>&nbsp;</span><h3>代理区域</h3></div>
+<div class="content1">
+<table width='100%' border='0' cellpadding='5' cellspacing='1' class='bgcolor3'><tr><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=北京&p_id=1'>北京</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=天津&p_id=2'>天津</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=河北&p_id=3'>河北</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=山西&p_id=4'>山西</a></td></tr><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=内蒙古&p_id=5'>内蒙古</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=辽宁&p_id=6'>辽宁</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=吉林&p_id=7'>吉林</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=黑龙江&p_id=8'>黑龙江</a></td></tr><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=上海&p_id=9'>上海</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=江苏&p_id=10'>江苏</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=浙江&p_id=11'>浙江</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=安徽&p_id=12'>安徽</a></td></tr><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=福建&p_id=13'>福建</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=江西&p_id=14'>江西</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=山东&p_id=15'>山东</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=河南&p_id=16'>河南</a></td></tr><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=湖北&p_id=17'>湖北</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=湖南&p_id=18'>湖南</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=广东&p_id=19'>广东</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=广西&p_id=20'>广西</a></td></tr><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=海南&p_id=21'>海南</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=重庆&p_id=22'>重庆</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=四川&p_id=23'>四川</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=贵州&p_id=24'>贵州</a></td></tr><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=云南&p_id=25'>云南</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=西藏&p_id=26'>西藏</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=陕西&p_id=27'>陕西</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=甘肃&p_id=28'>甘肃</a></td></tr><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=青海&p_id=29'>青海</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=宁夏&p_id=30'>宁夏</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=新疆&p_id=31'>新疆</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=香港&p_id=32'>香港</a></td></tr><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=澳门&p_id=33'>澳门</a></td><td align='center' class='bgcolor1' onMouseOver='PSetBg(this)' onMouseOut='PReBg(this)'><a href='/dl/search.php?province=台湾&p_id=34'>台湾</a></td></table>
+</div>
+
+</div>
+</div>
+</div>
+<div style="height:10px;clear:both;" ></div>
+<div id="dlstepbox">
+<div class="main">
+<div id="dl5"></div>
+<div id="dlstep">
+<li id="dlstepli1">
+<div id="dlsteptitlein"><span>1&nbsp;</span>登录网站</div>
+<div id="dlstepcontentin">输入http://localhost:8080<br />网上搜索</div>
+</li>
+<li  id="dlstepli2">
+<div id="dlsteptitlein"><span>2&nbsp;</span>寻找意向产品</div>
+<div id="dlstepcontentin">点击广告位查找<br />热门产品查找<br />根据搜索查找</div>
+</li>
+<li id="dlstepli3">
+<div  id="dlsteptitlein"><span>3&nbsp;</span>留言，电话咨询</div>
+<div id="dlstepcontentin">电话咨询厂家<br />页面留言咨询<br />在线咨询</div>
+</li>
+<li id="dlstepli4">
+<div id="dlsteptitlein"><span>4&nbsp;</span>双方洽谈</div>
+<div id="dlstepcontentin">双方沟通相关事宜<br />代理要求<br />厂家政策支持</div>
+</li>
+<li id="dlstepli5">
+<div  id="dlsteptitlein"><span>5&nbsp;</span>合作成功</div>
+<div  id="dlstepcontentin">进行考察核实<br />签订合同<br />代理成功</div>
+</li>
+</div>
+</div>
+</div>
+
+<div class="bottom">
+<div class="main">
+<div class="bottominner">
+<div class="bottomlink">
+<a href="/siteinfo-1.htm">公司简介</a>|<a href="/siteinfo-2.htm">联系方式</a>|<a href="/help.htm">帮助信息</a>|<a href="/link.htm">友情链接</a>|<a href="/sitemap.htm">网站地图</a></div>
+中华人民共和国电信与信息服务业务经营许可证： <a href="http://www.miibeian.gov.cn/" target="_blank">豫icp备07007271号</a><br/>
+ zzcms版权所有 &copy;  Powered By <a target=_blank style=font-weight:bold href=http://www.zzcms.net><font color=#FF6600 face=Arial>ZZ</font><font color=#025BAD face=Arial>CMS7.2</font></a>&nbsp;<script language=Javascript src=http://localhost:8080/gcount/graphcount.php></script><br/>
+  zzcms只提供交易平台，对具体交易过程不参与也不承担任何责任。望供求双方谨慎交易。
+</div>
+</div>
+</div>
+</body>
+</html>

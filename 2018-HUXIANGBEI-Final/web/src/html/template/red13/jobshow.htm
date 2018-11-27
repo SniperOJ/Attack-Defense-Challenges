@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}"/>
+<meta name="description" content="{#pagedescription}" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+{#sitetop}
+<div class="main">
+
+<div class="pagebody" style="margin-bottom:8px">
+<div class="left">
+<div class="station2" style='font-size:12px'>{#station}</div>
+<div class="content">
+<table width="100%" border="0" cellpadding="8" cellspacing="1" class="bgcolor3">
+                  <tr class="bgcolor1"> 
+                    <td width="11%" align="center">招聘职位</td>
+                    <td width="89%" bgcolor="#FFFFFF">{#title}<strong></strong></td>
+                  </tr>
+                  <tr class="bgcolor1"> 
+                    <td align="center">工作地区</td>
+                    <td bgcolor="#FFFFFF">{#province}&nbsp;{#city}</td>
+                  </tr>
+                  <tr class="bgcolor1"> 
+                    <td align="center">更新时间</td>
+                    <td bgcolor="#FFFFFF">&nbsp;{#sendtime}</td>
+                  </tr>
+                  <tr class="bgcolor1"> 
+                    <td align="center"><strong>简历投到</strong></td>
+                    <td bgcolor="#FFFFFF"><strong><a href="mailto:{#email}">{#email}</a></strong></td>
+                  </tr>
+                  <tr class="bgcolor1">
+                    <td align="center">友情提示</td>
+                    <td bgcolor="#FFFFFF">应聘该职位，请直接投简历到到此EMAIL：{#email}，或直接联系右测的公司电话。</td>
+                  </tr>
+              </table>
+</div>
+<div class="titles">职位描述</div>
+<div class="content">
+{#sm}
+</div>
+</div> 
+<div class="right">
+<div class="box">{#contact}</div>
+<fieldset>
+<legend>公司其它招聘职位</legend>
+<div style="overflow: scroll;height:160px">
+{#showjob:20,20,{#editor}}
+</div>
+</fieldset>	
+</div>     
+    
+
+</div>
+
+</div>
+{#sitebottom}
+</div>
+</body>
+</html>

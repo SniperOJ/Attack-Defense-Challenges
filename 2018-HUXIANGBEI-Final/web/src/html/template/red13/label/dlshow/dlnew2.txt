@@ -1,0 +1,1 @@
+dlnew2|||empty|||0|||10|||id|||14|||0|||<ul>|||<LI><span style="width:120px">代理人：{#name}</span>[代理] <A href=show.php?id={#id}>{#cp}</A></LI>|||</ul>

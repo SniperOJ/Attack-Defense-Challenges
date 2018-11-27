@@ -1,0 +1,6 @@
+bigtitle3|||empty||||||0|||0|||3|||id|||16|||70|||1|||<table border="0" cellspacing="0" cellpadding="0">|||<tr>
+<td>
+<div class="bigbigword2" style="text-align:center">[<a href=class.php?b={#bigclassid}>{#bigclassname}</a>] <A href="show.php?id={#id}" target="_blank">{#title}</a></div>
+<div style="color:#666666">{#content}</div>
+</td>
+</tr>|||</table>

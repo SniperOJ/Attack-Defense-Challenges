@@ -1,0 +1,17 @@
+﻿留言
+联系人姓名：
+查找
+暂无信息
+<td width="10%" class="border">联系人</td><td width="20%" class="border">意向区域</td><td width="20%" class="border">意向品种</td><td width="20%" class="border">申请时间</td><td width="10%" align="center" class="border">状态</td><td width="10%" align="center" class="border">操作</td><td width="10%" align="center" class="border"><label for="chkAll" style="text-decoration: underline;cursor: hand;">全选</label></td>
+<span class='textbg'>未读</span>
+查看联系方式
+下载类型
+excel表格
+word文件
+条/页
+打印
+下载
+删除
+全选
+已读
+

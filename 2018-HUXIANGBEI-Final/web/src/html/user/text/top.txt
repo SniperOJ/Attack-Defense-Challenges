@@ -1,0 +1,17 @@
+﻿我的产品
+我的留言
+广告设置
+公司资质	
+财务管理
+会员资料
+修改密码
+展厅设置
+<img src="/image/home.gif" border="0"> 网站首页
+<img src='/image/pic.gif' border='0' > 我的展厅
+<img src="/image/ico6.gif" width="11" height="13" border="0"> 操作说明
+<img src="/image/ding.gif" width="11" height="13" border="0"> 安全退出
+您好！
+服务时间：
+查看我的权限
+用户不存在
+您尚未登录

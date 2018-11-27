@@ -1,0 +1,1 @@
+zsclass_top|||xiyaozhaoshang|||上部|||10|||10|||0|||<div>|||<li style="float:left;margin:0 1px 10px 0"><a href="{#link}"><img src="{#img}" alt="{#title}" height="70" width="1200"></a></li>|||</div>

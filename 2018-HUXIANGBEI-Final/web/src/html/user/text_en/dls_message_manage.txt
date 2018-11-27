@@ -1,0 +1,16 @@
+﻿message
+Contact name:
+lookup
+No information
+<td width="153" class="border">contacts</td><td width="149" class="border">Intentional area</td><td width="141" class="border">Intentional product</td><td width="140" class="border">Application time</td><td width="113" align="center" class="border">operation</td><td width="69" align="center" class="border">delete</td>
+(<font color=red>new</font>)
+View contact
+Download file type
+excel
+word
+Bar/page
+Print
+download
+delete
+Select
+

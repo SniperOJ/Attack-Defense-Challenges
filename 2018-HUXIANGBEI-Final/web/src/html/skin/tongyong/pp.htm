@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>{#pagetitle}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="keywords" content="{#pagekeywords}">
+<meta name="description" content="{#pagedescription}">
+<script type="text/javascript" src="/js/gg.js"></script>
+<link href="{#siteurl}/skin/{#skin}/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+{#sitetop}
+<div class="main">
+
+<div id="pagebody">
+
+	  <div class="titleA">品牌信息</div>
+          <div class="ztcontent">
+		  {loop}
+		    <table class="bgcolor3" border="0" cellspacing="1" cellpadding="5" width="100%" style="margin-bottom:10px">
+              <tbody>
+                <tr>
+                  <td width="19%" rowspan="2" class="bgcolor1" ><a  href="{#link}"><img src="{#img}" alt="{#ppname}" width="120"/></a></td>
+                  <td width="81%" valign="top" bgcolor="#ffffff" style="FONT-WEIGHT: bold"><a href="{#link}">{#ppname}</a></td>
+                </tr>
+                <tr>
+                  <td valign="top" bgcolor="#ffffff"><a href="{#link}">{#sm}</a></td>
+                </tr>
+              </tbody>
+            </table>
+            {/loop}
+			<div class="fenyei">{#fenyei}</div>
+    </div>
+</div>
+
+</div>
+{#sitebottom}
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿<script>alert('Individual users do not have this permission');history.back()</script>
+|||
+if (document.myform.bigclassid.value==""){
+    alert("Please select the type of exhibition！");
+	document.myform.bigclassid.focus();
+	return false;
+  }	  
+if (document.myform.title.value==""){
+    alert("Exhibition name can not be empty！");
+	document.myform.title.focus();
+	return false;
+  }
+  if (document.myform.address.value==""){
+    alert("Exhibition address can not be empty！");
+	document.myform.address.focus();
+	return false;
+  }
+  if (document.myform.TimeStart.value==""){
+    alert("Exhibition start time can not be empty！");
+	document.myform.TimeStart.focus();
+	return false;
+  }
+  if (document.myform.TimeEnd.value==""){
+    alert("Exhibition deadline can not be empty！");
+	document.myform.TimeEnd.focus();
+	return false;
+  } |||
+
+Release exhibition information|||Category of|||Please select category|||Exhibition Name|||Conference address:|||Meeting time:|||Exhibition content:|||Release

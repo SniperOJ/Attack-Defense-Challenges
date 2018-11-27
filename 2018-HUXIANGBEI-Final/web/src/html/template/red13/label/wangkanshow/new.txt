@@ -1,0 +1,1 @@
+new|||empty|||0|||10|||id|||13|||0|||<ul>|||<LI><span title="发布时间">[{#sendtime}]</span> <A href=show.php?id={#id}>{#title}</A></LI>|||</ul>

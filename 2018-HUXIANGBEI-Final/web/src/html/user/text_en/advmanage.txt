@@ -1,0 +1,8 @@
+﻿title：
+lookup
+Exhibition advertising management
+No information
+<td width="110" height="25" class="border">category</td><td width="55" class="border">title</td><td width="55" class="border">picture</td><td width="55" align="center" class="border">operation</td><td width="55" align="center" class="border">delete</td>
+modify
+Select All
+delete

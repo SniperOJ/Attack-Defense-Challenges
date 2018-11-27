@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>{#pagetitle}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="keywords" content="{#pagekeywords}">
+<meta name="description" content="{#pagedescription}">
+<link href="{#siteurl}/skin/{#skin}/style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.STYLE1 {color: #FF0000}
+-->
+</style>
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div id="pagebody">
+
+      <div class="titleA">招聘信息</div>
+	<div class="ztcontent" style="margin-bottom:10px">
+	  <table width="100%" border="0" cellpadding="7" cellspacing="1">
+        <tr>
+          <td>招聘职位：&nbsp;{#jobname}</td>
+        </tr>
+        <tr>
+          <td>工作地区：&nbsp;{#province}&nbsp;{#city}</td>
+        </tr>
+        <tr>
+          <td>更新时间：&nbsp;&nbsp;{#sendtime}</td>
+        </tr>
+        <tr>
+          <td><strong>简历投到：<a href="mailto:{#email}">{#email}</a></strong></td>
+        </tr>
+        <tr>
+          <td><span class="STYLE1">友情提示：应聘该职位，请直接投简历到到此EMAIL：{#email}</span></td>
+        </tr>
+      </table>
+	</div>
+      <div class="titleA">职位描述</div>
+	<div class="ztcontent">			
+  
+	{#sm}		
+    </div>
+
+</div>
+{#sitebottom}
+</body>
+</html>

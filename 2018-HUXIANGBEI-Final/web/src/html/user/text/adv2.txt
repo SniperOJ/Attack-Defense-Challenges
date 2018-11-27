@@ -1,0 +1,20 @@
+﻿首页文字广告设置
+系统关闭了此功能
+个人用户不能抢占广告位
+<script>alert('您尚未发布{#channelzs}信息，不能抢占广告位！请先发布{#channelzs}信息。');location.replace('zsadd.php')</script>	
+<script>alert('您目前没有设置文字广告信息，请先设置广告语。');location.replace('adv.php')</script>
+<script>alert('您已有了一个广告位置，不能再参与抢占。');history.back(-1);</script>
+<script>alert('抢占失败，此位置被{#nextuser}先一步抢得');location.replace('adv2.php')</script>
+抢占广告位
+<script>alert('抢占成功。消费金币{#jf_set_adv}个。');history.back(-1);</script>
+<script>alert('您的金币不足{#jf_set_adv}无法抢占');history.back(-1);</script>
+<script>alert('抢占成功，审核通过后，即可显示您的广告内容');location.replace('adv2.php')</script>
+<script>alert('你所在的用户组没有抢占广告位的权限！');history.back(-1)</script>";
+抢占首页文字广告位置
+注：抢占方式：先抢先得；每个用户只限抢占一个广告位。抢占成功后，广告位占用期限为 <b>{#showadvdate}</b> 天。到期后可重新参与抢占。
+火爆招商A区
+暂无信息！联系管理员，在管理员后台，广告管理，大类名为“首页”，小类名为“A” 的类别下添加广告位，添加后这里方可抢占
+<div><input name='Submit' type='button'  disabled value='收费广告位，不可抢占'></div>
+{#nextuser}抢得此位置，广告内容正在审核中
+抢占这个位置
+{#day}天后可抢占

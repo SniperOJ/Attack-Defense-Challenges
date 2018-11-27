@@ -1,0 +1,1 @@
+index-A1|||首页|||A区第一行|||10|||10|||4|||<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>|||<td><a href="{#link}"><img src="{#img}" alt="{#title}"></a></td>|||</table>

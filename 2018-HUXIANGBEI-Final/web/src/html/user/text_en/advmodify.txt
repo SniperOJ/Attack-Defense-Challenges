@@ -1,0 +1,17 @@
+﻿function CheckForm(){
+if (document.myform.title.value==""){
+alert('Title cannot be empty');
+document.myform.title.focus();
+return false;
+} 
+
+if (document.myform.link.value==""){
+alert('url cannot be empty');
+document.myform.link.focus();
+return false;
+}
+
+}||| 
+Modify showroom advertising||| 
+<script>alert('Illegal operation! Warning: your operation has been recorded! Be careful with your users and IP！');history.back(-1);</script>||| 
+Categories:||| Focus image ads||| title||| Link address:||| Upload pictures:||| Click to replace the picture||| Upload pictures||| release

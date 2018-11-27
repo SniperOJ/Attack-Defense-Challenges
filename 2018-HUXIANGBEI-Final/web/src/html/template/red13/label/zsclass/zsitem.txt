@@ -1,0 +1,18 @@
+﻿zsitem|||0|||8|||1|||<div>|||<div class='titlezs'> 
+<span>{#zssmallclass:15}</span>
+<h3><a href=zs.php?b={#classid}>{#classname}</a></h3>
+</div> 
+
+<div class="content1" style="height:390px"> 
+    <div style="float:left;width:180px">			
+    <div style="font-weight:bold;">● 最新招商产品</div>
+    {@zsshow.new}				  
+    </div>
+    
+    <div style="float:left;width:960px;margin:0 10px">                
+    <div style="height:300px;background-color:#FFFFFF;">		
+    {@zsshow.zsimgforitem}			
+    </div>
+</div>
+
+</div>|||</div>

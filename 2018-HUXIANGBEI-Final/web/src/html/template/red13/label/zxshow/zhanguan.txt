@@ -1,0 +1,8 @@
+zhanguan|||2|||empty|||1|||0|||10|||id|||8|||30|||2|||<table><tr>|||<td>
+<table cellspacing='1' cellpadding='1' class=bgcolor2>
+<tr><td bgcolor=#ffffff height=120 width=120 align=center>
+<a href=show.php?id={#id} target=_blank><img src={#img} border=0 onload=resizeimg(120,120,this) /></a>
+</td></tr>
+<tr><td align=center>{#title}</td></tr>
+</table>
+</td>|||</table>

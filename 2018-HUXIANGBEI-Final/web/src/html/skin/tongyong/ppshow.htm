@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>{#pagetitle}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="keywords" content="{#pagekeywords}">
+<meta name="description" content="{#pagedescription}">
+<script language="JavaScript" type="text/JavaScript"  src="/zs/zsshow.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script>
+$(function(){
+$("#getcode_math").click(function(){
+		$(this).attr("src",'/one/code_math.php?' + Math.random());
+	});
+});
+$(document).ready(function(){  
+	$("#tel").blur(function() { //jquery 中change()函数  
+	$("#ts_tel").load(encodeURI("/ajax/dl_liuyan_check_ajax.php?action=checktel&id="+$("#tel").val()));
+	}); 
+ 
+});
+</script>
+<link href="{#siteurl}/skin/{#skin}/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div id="pagebody">
+
+      <div class="station">{#station}</div>
+	<div class="ztcontent">
+	  <table width="100%" border="0" cellpadding="5" cellspacing="1" class="bgcolor3">
+        <tr bgcolor="#FFFFFF">
+          <td width="70%" valign="top" bgcolor="#FFFFFF">
+		  <table width="100%" border="0" cellpadding="7" cellspacing="1" class="bgcolor3">
+              <tr>
+                <td width="12%" align="center" class="bgcolor1">品牌名称</td>
+                <td width="88%" bgcolor="#FFFFFF">{#ppname}</td>
+              </tr>
+              <tr>
+                <td align="center" class="bgcolor1">公司名称</td>
+                <td bgcolor="#FFFFFF">{#comane}</td>
+              </tr>
+              <tr>
+                <td align="center" class="bgcolor1">点击次数</td>
+                <td bgcolor="#FFFFFF">{#hit}</td>
+              </tr>
+              <tr>
+                <td align="center" class="bgcolor1">更新时间</td>
+                <td bgcolor="#FFFFFF">{#sendtime}</td>
+              </tr>
+          </table></td>
+          <td align="center" valign="top" bgcolor="#FFFFFF" style="padding-left:8px"><a href='{#img}' ><img src='{#img}' alt='{#ppname}' onload="resizeimg(120,120,this)" border='0'/></a><br />
+            <br />
+            <input class="botton" onclick="window.location.href='#liuyan'" value="留言加盟" type="button" name="Submit" /></td>
+        </tr>
+      </table>
+	</div>
+			
+    <div class="titleA" style="margin-top:10px"> 品牌介绍</div> 
+<div class="ztcontent"> 
+{#sm} 
+</div>  			
+    <div class="titleA" style="margin-top:10px" > <a name="liuyan" id="liuyan"></a>加盟留言</div> 
+<div class="ztcontent">         
+<FORM onSubmit="return CheckForms();" method="post" name="ly" action="/zt/liuyan_save.php">
+ <table class="bgcolor3" border="0" cellspacing="1" cellpadding="5" width="100%">
+   <tbody>
+     <tr>
+       <td width="14%" align="right" class="bgcolor1">留言内容 <font color="#ff0000">*</font></td>
+       <td width="86%" class="bgcolor1"><table border="0" cellspacing="0" cellpadding="0" width="100%">
+           <tbody>
+             <tr>
+               <td width="35%">{textarea}<br />
+						<input name="contents2" id="contents2" style="display:none" />
+			<span id="ts_contents"></span>
+                 <input id="saver" value="{#saver}" type="hidden" name="saver" />
+<input id="fromurl" value="{#fromurl}" type="hidden" name="fromurl" /></td>
+               <td width="65%"><input id="chcontent1" onclick="showinfo('content',1);document.ly.contents.focus();" value="愿加盟“{#ppname}”这个品牌，请与我联系。" type="checkbox" name="chcontent" />
+                 <label id="content1" for="chcontent1">愿加盟“{#ppname}”这个品牌，请与我联系。</label>
+                 <br />
+                 <input id="chcontent2" onclick="showinfo('content',2);document.ly.contents.focus();" value="有什么支持？" type="checkbox" name="chcontent" />
+                 <label id="content2" for="chcontent2">有什么支持？</label>
+                 <br />
+                 <input id="chcontent3" onclick="showinfo('content',3);document.ly.contents.focus();" value="请寄给我详细资料。" type="checkbox" name="chcontent" />
+                 <label id="content3" for="chcontent3">请寄给我详细资料。</label>
+                 <br />
+                 <input id="chcontent4" onclick="showinfo('content',4);document.ly.contents.focus();" value="请寄给我样品。" type="checkbox" name="chcontent" />
+                 <label id="content4" for="chcontent4">请寄给我样品。</label></td>
+             </tr>
+           </tbody>
+       </table></td>
+     </tr>
+   </tbody>
+ </table>
+ 
+ <div style="padding: 5px;" class="bgcolor1">填写联系方式</div>
+
+ <table class="bgcolor3" border="0" cellspacing="1" cellpadding="5" width="100%" >
+   <tbody>
+
+     <tr>
+       <td width="14%" align="right" class="bgcolor1">联 系 人 <font color="#ff0000">*</font></td>
+       <td width="86%" class="bgcolor1"><input name="name" id="name" onblur="check_somane()" value="{#somane}" size="30" maxlength="50" />
+				<input name="name2" id="name2" style="display:none" />
+			<span id="ts_name"></span>       </td>
+     </tr>
+     <tr>
+       <td class="bgcolor1" align="right">联系电话/手机 <font color="#ff0000">*</font></td>
+       <td class="bgcolor1"><input name="tel" id="tel" value="{#phone}" size="30" maxlength="50" /> 
+				<input name="tel2" id="tel2" style="display:none" />
+			<span id="ts_tel"></span>       </td>
+     </tr>
+     <tr>
+       <td class="bgcolor1" align="right">电子邮箱：</td>
+       <td class="bgcolor1"><input id="email" maxlength="50" size="30" name="email" onblur="check_email()" />
+				<input name="email2" id="email2" style="display:none" />
+			<span id="ts_email"></span>        </td>
+     </tr>
+	  <tr>
+                <td align="right" class="bgcolor1">答案 <font color="#FF0000">*</font></td>
+                <td class="bgcolor1"><input name="yzm" type="text" id="yzm" onblur="check_yzm()"  size="10" maxlength="50" style="width:60px"/>
+                 <input name="yzm2" id="yzm2" style="display:none" />
+			<span id="ts_yzm"></span>
+                <img src="/one/code_math.php" align="absmiddle" id="getcode_math" title="看不清，点击换一张" /></td>
+	  </tr>
+   </tbody>
+ </table>
+ 		  <div class="bgcolor2 center padding10"><input  value="填好了，发送" type="submit" name="tj" id="tj" class="botton"/></div>
+	    
+	</form>	
+</div>				
+
+</div>
+
+</div>
+{#sitebottom}
+</body>
+</html>

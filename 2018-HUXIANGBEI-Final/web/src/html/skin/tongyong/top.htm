@@ -1,0 +1,31 @@
+ <SCRIPT LANGUAGE="JavaScript"> 
+function AddFavorite(sURL, sTitle) 
+{ 
+try { window.external.addFavorite(sURL, sTitle); } 
+catch (e) { 
+		try { window.sidebar.addPanel(sTitle, sURL, ""); } 
+		catch (e) { alert("加入收藏失败，请使用Ctrl+D进行添加"); }
+  			} 
+}
+</SCRIPT>
+<div class="top2">
+
+<div class="company">
+	<div class="main"> 
+		<span>
+		<form action="{#siteurl}/zs/search.php" method="get" name="myform2" id="myform2">
+		  <input name="keyword" type="text" class="biaodan"/>
+                    <input type="submit" name="Submit" class="btn" value="搜索" />
+        </form>
+		</span>
+		<div class="companyname">{#comane}</div>	
+	</div> 
+</div> 
+<div style="clear:both"></div>
+<div class="nav"><div class="main"> {#showdaohang}</div></div> 
+
+</div>
+
+<div class="bannerbg">  
+<div class="main"> {#showbanner}</div>
+</div>

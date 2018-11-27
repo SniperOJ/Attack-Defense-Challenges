@@ -1,0 +1,1 @@
+initem_class|||empty|||empty|||0|||0|||10|||id|||16|||30|||0|||<ul>|||<li>[<a href=zx.php?b={#bigclassid}&s={#smallclassid}>{#smallclassname}</a>] <A href=show.php?id={#id}>{#title}</A></li>|||</ul>

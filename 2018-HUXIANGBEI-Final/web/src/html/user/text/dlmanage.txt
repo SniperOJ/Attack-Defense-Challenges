@@ -1,0 +1,14 @@
+﻿产品名称： 
+查找 
+信息管理
+暂无信息
+<td width="10%" height="25" class="border">产品名称或标题</td><td width="10%" align="center" class="border">接收人用户名</td><td width="5%" align="center" class="border">意向区域</td><td width="5%" align="center" class="border">更新时间</td><td width="5%" align="center" class="border">信息状态</td><td width="5%" align="center" class="border">操作</td><td width="5%" align="center" class="border">删除</td>
+发送给：
+已查看
+<font color=red>未查看</font>
+无接收人
+已审核
+<font color=red>待审</font>
+修改
+全选
+删除

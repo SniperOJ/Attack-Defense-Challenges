@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta content="{#pagedescription}" name="description" />
+<meta content="{#pagekeywords}" name="keywords" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/js/qt.js"></script> 
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody">
+<div class="right"> 
+<div class="titles"> 您查看过的产品</div>
+<div class="content1">{#showcookiezs:3,60,60}</div>
+</div>
+
+<div class="left"> 
+<div class="station2">{#station}</div>
+
+<div class="left_content">
+<img src="/image/arrow.gif" /> <strong>按分类浏览</strong>
+<div class="boxbigclass">{#zsclass}</div>
+</div>
+
+<div class="left_content">
+<div style="text-align:right;">
+<form name="form1" method="get" action="/zs/zs_list.php">
+{#form_sx}{#form_qy}{#form_sj}{#form_img}{#form_vip}<input type=submit value="筛选"/><input name="b" type="hidden" value="{#b}" />
+<input name="s" type="hidden" value="{#s}"/>{#form_px}{#showselectpage}{#form_xs}
+</form>
+</div>
+{zs}
+<form action='/zs/contrast.php' method='post' name='form2' target='_blank'>
+<div style='padding:5px 10px 15px 5px'>
+<img src='/image/ico-db.gif' width='14' height='16'>
+<input type='submit' name='Submit' value='对比选中' onClick="return anyCheck(this.form,'duibi')">
+</div> 
+
+<div class="content4">
+{loop_window}
+<li>
+<table width='130' height='130' border='0' cellpadding='0' cellspacing='1' class='bgcolor2'>
+<tr>
+<td align='center' bgcolor='#FFFFFF'> 
+<a href='{#url}' target='_blank'>
+<img src="{#img}"  border='0'>
+</a>
+</td>
+</tr>
+</table>
+<input name='id[]' type='checkbox' id='id' value='{#id}' onClick="return anyCheck(this.form,'xuanzhe')"><br/>
+{#proname:10}
+</li>
+{/loop_window}
+
+{loop_list}
+<div id='Layer{#i}' class='hiddiv'></div>
+<table  width='100%' border='0' cellspacing='0' cellpadding='0' >
+<tr onClick='setbgcolor(this)'> 
+<td width='30' align='center'> <input name='id[]' type='checkbox' id='id' value='{#id}' onClick="return anyCheck(this.form,'xuanzhe')"> 
+</td>
+<td width='157' align='center'><table width='130' height='130' border='0' cellpadding='0' cellspacing='1' class='bordercccccc'>
+<tr> 
+<td align='center' onMouseOver="showfilter(Layer{#i});window.document.getElementById('Layer{#i}').innerHTML='<img src={#imgbig} width=400>'" onMouseOut='showfilter(Layer{#i})'>
+<a href='{#url}'><img src="{#img}"></a>
+</td>
+</tr>
+</table></td>
+<td width='800'><table width='100%' border='0' cellspacing='0' cellpadding='0'>
+<tr> 
+<td height='30' colspan='2'><a href='{#url}' style='font-size:14px;font-weight:bold;'>{#proname:20}</a>{#dl_num}{#elite}</td>
+</tr>
+<tr>
+<td width='60%' valign='top' style='padding-right:10px'> 包装规格：{#gg}<br>
+产品特点：{#prouse}<br>零售价格：{#pricels} 
+<div>
+<a href='{#zturl}#contact' target='_blank'><img src='/image/lxfs.gif' width='80' height='20' border='0'></a>
+<a href='{#url}#dl_liuyan' target='_blank'><img src='/image/ico_dl.gif' width='80' height='20' border='0'></a>
+<a href=javascript:window.external.addFavorite('{#siteurl}/{#url}','{#proname}')><img src='/image/ico_sc.gif' width='80' height='20'  border='0'></a> 
+{#qq}
+</div>
+</td>
+<td width='40%' valign='top'> <a href='{#zturl}' target='_blank'>{#comane}</a>
+{#grouppic}{#renzheng}
+<br>招商区域：{#province}{#city} <br>
+更新时间：{#sendtime}</td>
+</tr>
+</table> </td></tr>
+</table>
+<div class='boxxian'></div>
+{/loop_list}
+</div>
+</form>
+<div style='clear:both'></div>
+<div class='fenyei'>{#fenyei}</div>
+{/zs}
+
+</div>
+			
+</div>
+</div>
+{#sitebottom}
+</div>
+</body>
+</html>

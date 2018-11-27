@@ -1,0 +1,9 @@
+﻿My financial records
+No information
+<td width="42" align="center" class="border">Serial number</td><td width="144" class="border">abstract</td><td width="123" class="border">Amount(￥)</td><td width="213" class="border">Posting time</td><td width="254" class="border">Remarks</td>
+
+
+
+
+
+

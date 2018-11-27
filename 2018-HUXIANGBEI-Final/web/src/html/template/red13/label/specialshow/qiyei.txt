@@ -1,0 +1,8 @@
+qiyei|||1|||名企直击|||1|||0|||10|||id|||8|||30|||2|||<table cellspacing='0' cellpadding='5'><tr>|||<td>
+<table cellspacing='1' cellpadding='1' class=bgcolor2>
+<tr><td bgcolor=#ffffff height=200 width=400 align=center>
+<a href=show.php?id={#id} target=_blank><img src={#imgbig} border=0 onload=resizeimg(400,200,this) /></a>
+</td></tr>
+<tr><td align=center>【企业】{#title}</td></tr>
+</table>
+</td>|||</table>

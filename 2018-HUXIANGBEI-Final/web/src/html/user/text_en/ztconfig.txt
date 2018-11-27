@@ -1,0 +1,25 @@
+﻿Showroom setting|||
+//定义正则表达式部分
+var strP=/^\d+$/;
+if(!strP.test(document.myform.mobile.value)) {
+alert("Here must be numbers！"); 
+document.myform.mobile.focus(); 
+return false; 
+}
+|||
+//定义正则表达式部分
+var strP=/^\d+$/;
+if(!strP.test(document.myform.bannerheight.value)) {
+alert("Here must be numbers！"); 
+document.myform.bannerheight.focus(); 
+return false; 
+}
+|||
+<script>alert('Successful update settings');location.href='ztconfig.php'</script>|||
+User configuration record does not exist, has been automatically repaired, please refresh the page|||
+<script>alert('Individual users do not have this permission');history.back()'</script>|||
+Banner animation effect settings|||
+Banner background map custom |||Click to replace the picture.|||Upload pictures|||Use default pictures|||Banner background map custom|||You do not have permission to use the user group, can not use this function|||Banner height setting|||
+Corporate name|||Explicit way:|||left|||Center|||Right|||Not showing the company name on banner|||Font color:|||white|||black|||Navigation column settings|||
+Home|||Brand information|||Company profile|||Company news|||Recruitment Information|||Qualification certificate|||Contact information|||Online Message|||Statistical code:|||Baidu map code:|||Make Baidu maps, get map code|||Update settings|||
+Bound phone|||<strong> bound mobile phone (free) <br></strong> set the state fixed phone number|||Your user group does not have the power to bind the phone

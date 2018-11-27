@@ -1,0 +1,15 @@
+img1|||empty|||0|||1|||0|||0|||3|||id|||14|||1|||<table border="0" cellspacing="0" cellpadding="0">|||<tr>
+<td height="104px" width="104px"> 
+<table border="0" cellspacing="1" cellpadding="0" class="bgcolor2">
+<tr>
+<td bgcolor="#FFFFFF" align="center" height="96" width="96">
+<A href="show.php?id={#id}" target="_blank"><img src="{#img}" border="0" onload=resizeimg(90,90,this)></A>
+</td>
+</tr>
+</table>
+</td>
+<td>
+<div><A href="show.php?id={#id}" target="_blank" style="color:#ff6600;font-weight:bold">{#title}</a></div>
+<div>{#content}</div>
+</td>
+</tr>|||</table>

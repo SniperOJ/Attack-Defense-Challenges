@@ -1,0 +1,12 @@
+﻿if (document.myform.title.value==""){
+    alert("The name of the certificate can not be empty！");
+	document.myform.title.focus();
+	return false;
+  }
+  if (document.myform.img.value=="")
+  {
+    alert("Please upload documents！");
+	return false;
+  }
+|||
+Modify qualification certificate|||Upload qualification certificate:|||Upload pictures|||Qualification certificate name:|||Save changes|||Click to replace the picture.

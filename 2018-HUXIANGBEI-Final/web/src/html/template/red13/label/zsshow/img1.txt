@@ -1,0 +1,10 @@
+img1|||empty|||empty|||0|||1|||0|||0|||20|||sendtime|||5|||10|||<table border="0" cellspacing="0" cellpadding="5" width='100%'><tr>|||<td width="10%" align="center" height="120px"> 
+<table border="0" cellspacing="1" cellpadding="0" class="bgcolor2">
+<tr>
+<td bgcolor="#FFFFFF" align="center" height="120" width="120">
+<A href="show.php?id={#id}" target="_blank"><img src="{#img}" border="0" onload=resizeimg(100,100,this)>
+<br>{#proname}</A>
+</td>
+</tr>
+</table>
+</td>|||</table>

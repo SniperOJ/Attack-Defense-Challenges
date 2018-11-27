@@ -1,0 +1,2 @@
+all_content|||0|||999|||timefororder|||16|||0|||0||||||<div class="titles"><span><a href="#ding">↑返回到顶部</a></span><a name="{#id}"></a>{#title}</div>
+<div class="content1">{#content}</div>|||

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}" />
+<meta name="description" content="{#pagedescription}" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<link href="/template/{#siteskin}/jdimg.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jdimg.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	  	$.focus("#focus001");
+		$.focus("#focus002");
+	});
+</script>
+<style type="text/css">
+.focus {width:270px; height:300px;}
+.focus img{border:0;width:270px; height:240px;}
+.focus ul li {width:270px; height:300px;  }
+.focus .btnBg {background-color:#cccccc; display:block;}
+</style>
+</head>
+<body>
+{#sitetop}
+<div class="main">
+
+<div class="pagebody">
+<div class="left">
+<div class="titles">最近更新</div>
+<div class="content">  {@jobshow.new}</div>
+</div>
+<div class="right">
+ 
+<div class="titles">热门招聘</div>
+<div class="content1">
+{@jobshow.hot}
+</div>
+
+<div class="titles">按工作地区检索</div>
+<div class="content1">
+{#province:job,5}
+</div>
+
+
+</div>
+</div>
+
+<div class="bordercccccc">
+{@jobclass.item}
+</div>
+
+{#sitebottom}
+</div>
+</body>
+</html>

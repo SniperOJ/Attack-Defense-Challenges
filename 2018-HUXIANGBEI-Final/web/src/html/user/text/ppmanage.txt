@@ -1,0 +1,11 @@
+﻿<script>alert('个人用户没有此权限');history.back(-1);</script>
+品牌名称：
+查找 
+品牌信息管理
+暂无信息
+<td width="10%" class="border">名称</td><td width="5%" align="center" class="border">所属类别</td><td width="5%" height="25" align="center" class="border">图片</td><td width="5%" align="center" class="border">更新时间</td><td width="5%" align="center" class="border">信息状态</td><td width="5%" align="center" class="border">修改</td><td width="5%" align="center" class="border">删除</td>
+已审
+<font color=red>待审</font>
+修改
+全选
+删除

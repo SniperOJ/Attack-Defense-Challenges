@@ -1,0 +1,4 @@
+﻿<script>alert('Individual users do not have this permission');history.back()</script>|||
+<script lanage='javascript'>alert('This information already exists, please do not release duplicate information！');location.replace('specialadd.php')</script>
+|||
+Add success|||Successful modification|||Did not handle any information|||Title：|||Continue to add|||modify|||Return|||preview

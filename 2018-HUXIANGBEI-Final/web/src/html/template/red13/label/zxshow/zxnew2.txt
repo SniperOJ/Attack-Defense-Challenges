@@ -1,0 +1,1 @@
+zxnew2|||empty|||empty|||0|||0|||10|||id|||13|||30|||0|||<ul>|||<LI><span title="发布时间">[{#sendtime}]</span>[<a href=zx.php?b={#bigclassid}>{#bigclassname}</a>] <A href=show.php?id={#id}>{#title}</A></LI>|||</ul>

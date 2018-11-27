@@ -1,0 +1,69 @@
+@charset "utf-8";
+div, address, blockquote, iframe, ul, ol,h1, h2, h3, h4, h5,h6, p, pre, caption,form,legend,fieldset,textarea{margin: 0;padding: 0;font-weight: normal;font-style: normal;font-family: inherit;font-size: 100%;}
+ul{list-style:none;}
+img{border:0px}
+body {background:url(image/bodybg.jpg) repeat 0 0;background-color:#ccc;margin: 0px;font-size:14px;line-height: 25px;word-break:break-all;font-family: Arial, Helvetica, sans-serif,宋体,simsun;color:#666666}
+a{color: #666666;text-decoration: none;}
+a:hover {color: #ff0000;text-decoration: underline;}
+.bgcolor1 {background-color: #f9f9f9;color: #666666;}
+.bgcolor2 {background-color: #f1f1f1;color: #666666;}
+.bgcolor3 {background-color: #dddddd;}
+.padding10{padding:10px}
+.center{text-align:center}
+.boxuserreg{color:#FF0000;background:url(/image/error.gif) no-repeat 0 center;padding-left:20px}
+.titleleft{color:#FFF;background:url(image/nav_a.png) repeat-x 0 center;height:38px;line-height:38px;font-family: "微软雅黑";padding-left:10px}
+.contentleft{background-color:#fff;padding:10px;border-left:solid 1px #dddddd;border-right:solid 1px #ddd}
+.titleA {height:38px;line-height:38px;font-size:14px;color:#666666;font-family: "微软雅黑";background:url(image/titleAbg.gif) repeat-x 0 0;padding-left:10px}
+.ztcontent{background-color:#EEE;padding:20px}
+.botton {height:30px;width:200px;cursor: hand;}
+/*主容器*/
+.main{width:1000px;margin:0 auto;text-align:left;}
+.top{background: url(image/topbg.gif) repeat-x 0px 0px;background-color:#222222;padding:0px 10px;height:40px;line-height:40px;color:#cccccc}
+.top span{float:right;	}
+.top a{color:#FFF;	}
+.top2{background: url(image/top2bg.jpg) repeat-x 0px 0px;background-color:#aaa;height:200px}
+#pagebody {}
+#bodyleft{width:230px;float:left;}
+#bodyright{width:730px;float:right;}
+.copyright{color:#FFF;text-align:center;line-height:60px;height:110px;background-color:#333;background: url(image/bottombg.png) no-repeat center bottom;}
+.copyright a{color:#FFF}
+/*导航条*/
+.nav {color: #333;font-family: "微软雅黑";margin-bottom:0px;}
+.nav ul {height:60px;}
+.nav li{float:left;width:110px;margin-right:1px}
+.nav a {display:block;height:60px;line-height:60px;text-align: center;font-size: 15px;color:#FFF;background: url(image/nav_a.png) repeat-x 0px 0px;}
+.nav a:hover,.current a{background: url(image/nav_a_hover.png) repeat-x 0px 0px;color:#FFF;text-decoration: none;}
+
+.company{zoom: 1; overflow:auto;line-height: 140px;height:140px;color: #333;}
+.company span{float:right;}
+.companyname{float:left;font-family: "黑体";font-size: 40px;text-align:left;}
+.bannerbg{padding:0px 0 0 0}
+.banner{background: url(image/banner.jpg) no-repeat center center;font-family: "黑体";font-size: 28px;height:380px;line-height:120px;color: #000000;font-weight: normal;font-style: italic;text-align:left;padding:0px 10px 0px 10px}
+.banner span{float:right;font-size:14px;}
+
+.hiddiv{float:left;position:absolute;Visibility:hidden;Filter:revealTrans(duration=0.5, transition=19);border: solid 1px #e8e8e8;margin:5px 0px 0px 158px;padding: 1px;background-color:white;}
+.station {background: url(image/title_bg.jpg) repeat-x 0 0;border: solid #dddddd 1px;border-bottom:0px;font-family: "宋体";height:39px;line-height:39px;padding:0px 10px;margin-bottom:10px}
+.station  span{float:right;padding:5px 10px 0 0;}
+.lxfsbg {}
+.lxfsbg li{}	
+.fenyei {text-align: center;margin:8px 0px 8px 0px;font-family: "宋体"}
+.fenyei a{border:solid 1px #dddddd;background-color:#f1f1f1;margin:0px 1px;padding:2px 5px;}
+.fenyei a:hover{border:solid 1px #FF9900;background-color:#FFCC00;}
+.fenyei span{border:solid 1px #666;background-color:#666;margin:0 1px;padding:2px 5px;color:#FFFFFF;font-weight:bold;float:none}
+#gsjjimg{margin:0 10px 0px 0px;border:solid 1px #dddddd;width:200px}
+
+#gsjjimg{margin:0 10px 0px 0px;border:solid 1px #dddddd;width:200px}
+.news_title{font-size:20px;color:#000000; line-height:35px; font-family:"黑体";text-align:center}
+.news_title_next{text-align:center;border-bottom:solid 1px #dddddd;font-size:9pt;margin-bottom:10px}
+.news_content_next{text-align:center;border-top:solid 1px #dddddd;font-size:9pt;margin-top:10px}
+/*滚动图片效果*/
+#boxgd {background: #FFF;overflow:hidden;width: 920px;height:137px;}
+#boxgd img {border: 0px solid #d7d7d7;height:120px}
+#inboxgd {float: left;width: 2000%;}
+#boxgd1 {float: left;}
+#boxgd2 {float: left;}
+.boxshipin{zoom: 1; overflow:auto;}
+.boxshipin li{float:left;margin:0 10px;text-align:center}
+.biaodan {background: url(image/biaodanbg.png) no-repeat 0 center;border:0;height:40px;line-height:40px;width:280px;padding:0 10px;outline:none;color:#333}
+.btn {FONT-SIZE: 16px; background: url(image/buttonbg.png) no-repeat 0 center;CURSOR: hand; COLOR: black;border:0;height:40px;line-height:35px;width:90px;color:#ccc;
+text-align:center;font-family: "微软雅黑"}

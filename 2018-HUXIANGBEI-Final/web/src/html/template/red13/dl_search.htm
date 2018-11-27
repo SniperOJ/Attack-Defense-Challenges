@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}"/>
+<meta name="description" content="{#pagedescription}"/>
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<script src="/js/msgbox.js" type="text/javascript" language="JavaScript"></script>
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody">
+<div class="left">
+<div class="station2">
+ {#station}
+
+</div>
+<div class="left_content" style="margin-bottom:8px">
+<form name="myform" method="get" action="?">
+          <table width="100%" border="0" cellspacing="0" cellpadding="8">
+            <tr> 
+              <td align="right">代理品种：</td>
+              <td><input name="keyword" type="text"  id="keyword" value="{#formkeyword}" size="50" maxlength="50"/> 
+                <input name="Submit" type="submit" id="Submit2" value="搜索" /></td>
+            </tr>
+            <tr> 
+              <td width="15%" align="right">代理省份：</td>
+              <td width="85%">{#formprovince}{#formcity}{#formxiancheng}</td>
+          
+            <tr> 
+              <td align="right">所属类别：</td>
+              <td>{#formbigclass}</td>
+            </tr>
+            {#selected}
+          </table>
+        </form>
+
+</div>
+<div class="left_content"> 
+{dl}
+<form action="" method="post" name="form1" target="_blank">
+{#showselectpage}
+<select name='FileExt' id='FileExt'>
+<option selected='selected' value='xls'>选择下载文件类型</option>
+<option value='xls'>excel表格文件</option>
+<option value='doc'>word文件</option>
+</select>
+<input type="{#buttontype}" value='下载选中的信息' onClick="{#dl_download_url}">
+<input type="{#buttontype}" value='打印选中的信息' onClick="{#dl_print_url}"/>
+<input type="{#buttontype}" value='发邮件' onClick="{#dl_sendmail_url}"/>
+<input type="{#buttontype}" value='发手机短信' onClick="{#dl_sendsms_url}"/>
+<input name="sql" type="hidden" id="sql" value="{#sql}" />
+<table width="100%" border="0" cellspacing="1" cellpadding="5" class='bgcolor3'> 
+  <tr class='bgcolor2'>
+    <td><strong>
+      <input name='chkAll' type='checkbox' id='chkAll2' onclick='CheckAll(this.form)' value='checkbox' checked='checked' />
+意向公司|产品</strong></td>
+    <td><strong> 联系人</strong></td>
+    <td><strong>意向区域</strong></td>
+    <td><strong>电话 </strong></td>
+    <td><strong>详细内容</strong></td>
+    <td><strong>发布日期</strong></td>
+  </tr>
+  {loop}
+  <tr {changebgcolor}>
+    <td><input name='id[]' type='checkbox' value='{#id}' checked='CHECKED' />{#gs}|{#cp}</td>
+    <td>{#dls}</td>
+    <td>{#qy}</td>
+	<td>{#tel}</td>
+    <td>{#content}</td>
+    <td>{#sendtime}</td>
+  </tr>
+  {/loop}
+</table>
+</form>
+<div class="fenyei">{#fenyei}</div>
+{/dl}
+ </div>			
+
+</div>
+<div class="right">
+<div class="titles">按热门词搜索</div>
+<div class="content1">{#keyword:dl,32,4}</div>
+<div class="titles">按代理区域搜索</div>
+<div class="content1">{#province:dl,4}</div>
+</div>
+</div>
+{#sitebottom}
+</div>
+</body>
+</html>

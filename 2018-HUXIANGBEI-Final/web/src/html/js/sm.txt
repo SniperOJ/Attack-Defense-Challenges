@@ -1,0 +1,10 @@
+slider.js 首页大图片焦点广告效果
+jquery.lazyload.js 延迟加载长页面中的图片插件
+msgbox.js 用户登陆模态窗口
+scrolltop.js 首页返回顶部
+scrollleft.js首页向左滚动视频效果
+CloudCarousel.1.0.5.js 图片圆形滚动效果
+jquery.mousewheel.js鼠标滚动插件
+showbigimg.js 招商产品显示页鼠标放在上面显示放大图效果
+showbigimg.css招商产品显示页鼠标放在上面显示放大图效果CSS文件
+float.js 在inc/fly.php中有调用

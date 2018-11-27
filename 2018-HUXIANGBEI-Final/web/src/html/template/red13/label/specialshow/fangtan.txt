@@ -1,0 +1,8 @@
+fangtan|||1|||访谈|||1|||0|||10|||id|||8|||30|||3|||<table cellspacing='0' cellpadding='5'><tr>|||<td>
+<table cellspacing='1' cellpadding='1' class=bgcolor2>
+<tr><td bgcolor=#ffffff height=160 width=300 align=center>
+<a href=show.php?id={#id} target=_blank><img src={#imgbig} border=0 onload=resizeimg(300,160,this) /></a>
+</td></tr>
+<tr><td align=center>【访谈】{#title}</td></tr>
+</table>
+</td>|||</table>

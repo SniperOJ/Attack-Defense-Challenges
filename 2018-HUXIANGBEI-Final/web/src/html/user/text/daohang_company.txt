@@ -1,0 +1,52 @@
+﻿完善注册信息|||
+<script>alert('成功完善了注册信息，获得金币')</script>|||
+<script language=JavaScript>alert('操作成功！进入下一步');location.href='daohang_skin.php'</script>|||
+
+if (document.myform.province.value==""){
+    alert("请选择公司所在省份！");
+	document.myform.province.focus();
+	return false;
+  } 
+    if (document.myform.city.value==""){
+    alert("请选择公司所在城市！");
+	document.myform.city.focus();
+	return false;
+  } 
+if (document.myform.content.value==""){
+    alert("请填写公司简介！");
+	document.myform.content.focus();
+	return false;
+  }
+  if (document.myform.content.value=="" ||document.myform.content.value=="&nbsp;"){
+    alert("请填写公司简介！");
+	document.myform.content.focus();
+	return false;
+  }
+ if (document.myform.kind.value==""){
+    alert("请选择经营模式！");
+	document.myform.kind.focus();
+	return false;
+  }
+//定义正则表达式部分
+var strP=/^\d+$/;
+if(!strP.test(document.myform.qq.value) && document.myform.qq.value!="") {
+alert("QQ只能填数字！"); 
+document.myform.qq.focus(); 
+return false; 
+}|||
+完善注册信息|||
+恭喜您成为本站注册会员！<br>请完善您的公司简介信息，以便生成您公司的展厅页面。&gt;&gt;&gt; <a href="daohang_skin.php" target="_self">跳过此步以后再填</a>|||
+<font color="#FF0000"><strong>提示：</strong>公司简介信息尚未填写！<br>请完善您的公司简介信息，以提高公司诚信度。</font>|||
+公司所在地区：|||
+详细地址：|||
+公司网站：|||
+企业类别：|||
+请选择大类|||
+请选择小类|||
+公司简介：|||
+上传公司形象图片：<br>（不要超过{#maximgsize}K）|||上传图片|||
+联系人性别：|||
+先生|||
+女士|||
+联系人QQ号：|||
+联系人手机：|||填好了，提交信息！

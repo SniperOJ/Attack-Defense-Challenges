@@ -1,0 +1,3 @@
+zhitem|||0|||4|||1||||||<div class='titles'><span><a href='zh.php?b={#classid}'> 更多...</a></span>{#classname}</div>
+<div class="content1">
+{@zhshow.new3}</div>|||

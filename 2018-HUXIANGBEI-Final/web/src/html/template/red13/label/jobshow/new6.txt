@@ -1,0 +1,1 @@
+new6|||empty|||empty|||6|||hit|||20|||0|||<ul>|||<LI>【招聘】<A href=show.php?id={#id}>{#title}</A></LI>|||</ul>

@@ -1,0 +1,3 @@
+﻿<script language=JavaScript>alert('Successful operation! Go to the next step');location.href='daohang_end.php'</script>|||
+Please select Gallery template style|||
+Choose this

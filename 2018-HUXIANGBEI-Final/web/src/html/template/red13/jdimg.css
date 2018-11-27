@@ -1,0 +1,14 @@
+.focus {width:270px; height:176px; overflow:hidden; position:relative;}
+.focus img{border:0;width:270px; height:176px;}
+.focus ul { position:absolute;}
+.focus ul li {float:left; width:270px; height:176px; overflow:hidden; position:relative; background-color:#FFF;}
+.focus ul li div {position:absolute; overflow:hidden;}
+.focus .btnBg {position:absolute; width:270px; height:30px; left:0; bottom:0; background-color:#000; display:block;}
+.focus .btn {position:absolute; width:270px; height:20px; padding:0px 5px 0px 5px; right:0; bottom:5px; text-align:right;}
+.focus .btn span {display:inline-block; _display:inline; _zoom:1; width:20px; height:20px; line-height:20px; text-align:center; _font-size:0; margin-left:5px; cursor:pointer; background:#FFF;}
+.focus .btn span.on {background:#FFF;}
+.focus .preNext {width:15px; height:30px; position:absolute; top:40%; background:url(image/sprite.png) no-repeat 0 0; cursor:pointer;}
+.focus .pre {left:0;}
+.focus .next {right:0; background-position:right top;}
+.focus .divtitlebg{position:absolute;left:0px;top:0px;z-index:9;background-color:#ffffff;width:100%;height:30px;opacity:0.3;filter:alpha(opacity=30)}
+.focus .divtitle{position:absolute;left:0px;top:0px;z-index:10;width:100%;height:30px;line-height:30px;color:#000000;text-align:center}

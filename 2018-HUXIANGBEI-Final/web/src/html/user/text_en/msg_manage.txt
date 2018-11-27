@@ -1,0 +1,9 @@
+﻿Mail / SMS content settings
+Add email / SMS content
+No information
+<td width="10%" height="25" align="center" class="border">ID</td><td width="50%" align="center" class="border">content</td><td width="10%" align="center" class="border">Default SMS template</td><td width="20%" height="20" align="center" class="border">operation</td>
+Default template
+Set as default
+modify
+delete
+

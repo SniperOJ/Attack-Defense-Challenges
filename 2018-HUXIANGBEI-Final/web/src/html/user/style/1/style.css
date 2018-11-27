@@ -1,0 +1,52 @@
+@charset "utf-8";
+div, address, blockquote, iframe, ul, ol,h1, h2, h3, h4, h5, h6, p, pre, caption,form, legend, fieldset, textarea{margin: 0;padding: 0;font-weight: normal;font-style: normal;font-family: inherit;font-size: 100%;}
+ul,li{list-style:none;}
+body{font-size: 14px;background-color: #F3F5F9;margin: 0px;font-family: "微软雅黑";color:#333333;line-height:25px}
+a{color: #025BAD;text-decoration: none;}
+a:hover {color: #FF3300;text-decoration: underline;}
+/*主容器*/
+.main{width:1200px;margin:0 auto;text-align:left;}
+.pagebody {width: 100%;}
+.left {width: 160px;float: left;}
+.right {width: 1030px;float: right;}
+.lefttitle{padding:10px 0 0 0px;height:30px;line-height:30px;font-weight:bold;text-align:center;}
+.leftcontent{background-color: #FFF;padding:0 0 5px 0;margin-bottom:0px;box-shadow: 0 0 6px 0 #B4CCEB;margin-bottom:10px;-webkit-border-radius: 5px;-moz-border-radius:5px;}
+.leftcontent li { color: #b4cceb; height:30px; line-height:30px;text-align:center;}
+.border {background-color: #FFF;padding:5px;}
+.border2 {background-color: #FFF;padding:5px;}
+.border3 {background-color: #FFF;border:solid 1px #b4cceb}
+.fenyei {text-align: right;padding:5px;}
+.admintitle {font-weight: bold;font-size:15px;text-align: left;border-bottom:solid 1px #ddd;	padding:0 0 10px 0px;line-height:25px;	margin-bottom:10px}
+.admintitle span{float:right;font-weight: normal;}
+.tstitle {background-color: #025BAD;color: #FFFFFF;font-weight: bold;text-align: center;height: 25px;}
+.docolor {color: #CCCCCC;}
+.buttons {background-color: #FF5721;border:0px;height:25px;line-height:25px;cursor: hand;color: #FFF;font-family: "微软雅黑";-webkit-border-radius: 12px;-moz-border-radius:12px;padding:0px 6px}
+.buttons:hover {background:#FF6721;}
+.textbg {background-color: #666;border:0px;height:25px;line-height:25px;cursor: hand;color: #FFF;font-family: "微软雅黑";-webkit-border-radius: 12px;-moz-border-radius:12px;padding:0px 6px}
+.help {cursor: help;}
+.userbar {background-color: #FFF;-webkit-border-radius: 4px;-moz-border-radius:4px;padding:3px 10px;margin:10px 0;box-shadow: 0 0 6px 0 #B4CCEB;}
+.menu { background:#FFFFFF url("image/manage_top_bg.gif");height:46px;}
+.system_logo { float:left; height:40px;width:160px;margin:3px 0 0 5px;background:url("image/logo.gif") no-repeat 0 0}
+/*- Menu Tabs 6--------------------------- */
+#tabs {float:left;width:auto;line-height:16px;}
+#tabs ul {margin:0;padding:14px 10px 0 0px !important;*padding:14px 10px 0 0px !important;padding:14px 10px 0 0px;list-style:none; }
+#tabs li {float:left;display:block;margin:0 3px;padding:0;}
+#tabs a {float:left;background:url("image/manage_tab.gif") no-repeat;background-position:left -40px;margin:0;padding:0 0 0 4px;text-decoration:none;font-weight:bold;color:#025bad;}
+#tabs a span {float:left;display:block;background:url("image/manage_tab.gif") no-repeat right top;padding:8px 12px 8px 10px;color:#025bad;}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#tabs a span {float:none;}
+/* End IE5-Mac hack */
+#tabs a:hover {color:#025bad;}
+#tabs a:hover span {color:#025bad; }
+.bgcolor {background-color: #b4cceb;}
+.bgcolor1 {background-color: #FFF;}
+.borderforimg {border: 1px solid #ccccccc;cursor: hand;background-color: #FFFFFF;}
+.box{margin:1px;padding:10px;background-color:#FFF;border:solid 1px #b4cceb}
+.center{text-align:center}
+.biaodan {border: 1px solid #ccc;padding:2px 2px;height:25px;line-height:20px;-webkit-border-radius: 3px;-moz-border-radius:3px;}
+.content{background-color:#FFF;box-shadow: 0 0 6px 0 #B4CCEB;padding:20px;-webkit-border-radius: 5px;-moz-border-radius:5px;}
+.fieldsetstyle{border:solid 1px #dddddd;padding:5px;-webkit-border-radius: 3px;-moz-border-radius:3px;}
+.current2{background:url("image/current2.png") no-repeat right center}
+.current2 a{color:#FF3300}
+.current1{background:url("image/current.png") no-repeat right center}
+.current1 a{color:#025bad}

@@ -1,0 +1,41 @@
+﻿修改密码|||
+if (document.form1.oldpassword.value=="" ){
+    alert("旧密码不能为空！");
+	document.form1.oldpassword.focus();
+	return false;
+  }
+if (document.form1.password.value=="" ){
+    alert("新密码不能为空！");
+	document.form1.password.focus();
+	return false;
+  }
+if (document.form1.pwdconfirm.value=="" ){
+    alert("确认新密码不能为空！");
+	document.form1.pwdconfirm.focus();
+	return false;
+  }  
+if (document.form1.password.value !=""){
+		//创建正则表达式
+    	var re=/^[0-9a-zA-Z]{4,14}$/; //只输入数字和字母的正则
+    	if(document.form1.password.value.search(re)==-1){
+		alert("密码只能为字母和数字，字符介于4到14个。");
+		document.form1.password.value="";
+		document.form1.password.focus();
+		return false;
+    	}
+	}	
+if (document.form1.password.value !="" && document.form1.pwdconfirm.value !=""){
+	if (document.form1.password.value!=document.form1.pwdconfirm.value){
+	alert ("两次密码输入不一致，请重新输入。");
+	//document.form1.pass.value='';
+	document.form1.pwdconfirm.value='';
+	document.form1.pwdconfirm.focus();
+	return false;
+	}	
+	}
+|||
+<li>你输入的旧密码不对，没有权限修改！</li>|||修改密码成功—|||
+<table width='100%'><tr><td style='font-size:14px;line-height:25px'>{#username}：<br>&nbsp;&nbsp;&nbsp;&nbsp;您好！<br>您的密码修改成功<br>用户名：{#username} 新密码为：{#password} &nbsp;&nbsp;<br>如非本人操作请及时登录网站修改你的密码。<a href='{#siteurl}/user/login.php'>现在登录>>></a></td></tr></table>|||
+{#username}：您好！您的密码修改成功<br>用户名：{#username} 新密码为：{#password}<br>如非本人操作请及时登录网站修改你的密码。|||
+<SCRIPT language=JavaScript>alert('成功修改密码！');history.go(-1)</SCRIPT>|||
+用户名：|||旧密码：|||新密码：|||确认新密码：|||保存修改结果

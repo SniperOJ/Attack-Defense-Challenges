@@ -1,0 +1,4 @@
+﻿<script>alert('个人用户没有此权限');history.back()</script>|||
+<script>alert('请选择小类');</script>|||
+<script>alert('您已发布过该信息，请不要发布重复的信息！');location.href='ppmanage.php'</script>|||
+成功|||失败|||名称：|||继续添加|||修改|||返回|||预览

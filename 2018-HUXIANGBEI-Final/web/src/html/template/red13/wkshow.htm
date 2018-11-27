@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{#pagetitle}</title>
+<link href="/template/{#siteskin}/wangkan/css/liquid-green.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/template/{#siteskin}/wangkan/js/liquid.js"></script>
+<script type="text/javascript" src="/template/{#siteskin}/wangkan/js/swfobject.js"></script>
+<script type="text/javascript">
+//flippingbook.js start
+function FlippingBook() {
+	this.pages = [];
+	this.zoomPages = [];
+	this.printPages = [];
+	this.contents = [];
+
+	this.stageWidth = "100%";
+	this.stageHeight = "100%";
+	
+	this.settings = {
+			bookWidth: 640,
+			bookHeight: 480,
+			pagesSet: this.pages,
+			zoomPagesSet: this.zoomPages,
+			printPagesSet: this.printPages,
+			scaleContent: true,
+			preserveProportions: false,
+			centerContent: true,
+			hardcover: false,
+			hardcoverThickness: 3,
+			hardcoverEdgeColor: 0xFFFFFF,
+			highlightHardcover: true,
+			frameWidth: 0,
+			frameColor: 0xFFFFFF,
+			frameAlpha: 100,
+			firstPageNumber: 1,
+			autoFlipSize: 50,
+			navigationFlipOffset: 30,
+			flipOnClick: true,
+			handOverCorner: true,
+			handOverPage: true,
+			alwaysOpened: false,
+			staticShadowsType: "Asymmetric", // Asymmetric, Symmetric, Default
+			staticShadowsDepth: 1,
+			staticShadowsLightColor: 0xFFFFFF, // works for "Symmetric" shadows only
+			staticShadowsDarkColor: 0x000000,
+			dynamicShadowsDepth: 1,
+			dynamicShadowsLightColor: 0xFFFFFF, // works for "dark" pages only
+			dynamicShadowsDarkColor: 0x000000,
+			moveSpeed: 2,
+			closeSpeed: 3,
+			gotoSpeed: 3,
+			rigidPageSpeed: 5,
+			flipSound: "",
+			hardcoverSound: "",
+			preloaderType: "Thin", // "Progress Bar", "Round", "Thin", "Dots", "Gradient Wheel", "Gear Wheel", "Line", "Animated Book", "None"
+			pageBackgroundColor: 0x99CCFF,
+			loadOnDemand: true,
+			allowPagesUnload: true,
+			showUnderlyingPages: false,
+			playOnDemand: true,
+			freezeOnFlip: false,
+			darkPages: false,
+			smoothPages: false,
+			rigidPages: false,
+			flipCornerStyle: "manually",// "first page only", "each page", "manually"
+			flipCornerPosition: "bottom-right",// "bottom-right","top-right","bottom-left","top-left"
+			flipCornerAmount: 50,
+			flipCornerAngle: 20,
+			flipCornerRelease: true,
+			flipCornerVibrate: true,
+			flipCornerPlaySound: false,
+			zoomEnabled: true,
+			zoomPath: "/uploadfiles/{#large_img_dir}/",
+			zoomImageWidth: 900,
+			zoomImageHeight: 1165,
+			zoomOnClick: true,
+			zoomUIColor: 0x8f9ea6,
+			zoomHint: "Double click for zooming.",
+			zoomHintEnabled: false,
+			centerBook: true,		
+			useCustomCursors: true,
+			dropShadowEnabled: true,
+			dropShadowHideWhenFlipping: true,
+			backgroundColor: 0xFFFFFF,
+			backgroundImage: "/template/{#siteskin}/wangkan/img/bookBackground.jpg",
+			backgroundImagePlacement: "fit", //  "top left", "center", "fit"
+			printEnabled: true,
+			printTitle: "Print Pages",
+			downloadURL: "",
+			downloadTitle: "Download PDF",
+			downloadSize: "Size: 4.7 Mb",
+			downloadComplete: "Complete",
+			extXML: ""
+		};
+		
+		this.containerId = "fbContainer";
+		this.forwardButtonId = "fbForwardButton";
+		this.backButtonId = "fbBackButton";
+		this.zoomButtonId = "fbZoomButton";
+		this.printButtonId = "fbPrintButton";
+		this.downloadButtonId = "fbDownloadButton";
+		this.currentPagesId = "fbCurrentPages";
+		this.totalPagesId = "fbTotalPages";
+		this.contentsMenuId = "fbContentsMenu";		
+};
+
+FlippingBook.prototype.create = function(){
+	this.settings.pagesSet = this.pages;
+	this.settings.zoomPagesSet = this.zoomPages;
+	this.settings.printPagesSet = this.printPages;
+	
+	if( location.hash.substr(1) != "" )
+		this.settings.firstPageNumber = location.hash.substr(1);
+	
+	this.addLoadEvent( this.onWindowLoad );
+	swfobject.embedSWF("/template/{#siteskin}/wangkan/FlippingBook.swf", this.containerId, this.stageWidth, this.stageHeight, "8.0.0", "/template/{#siteskin}/wangkan/js/expressInstall.swf", this.settings, {allowScriptAccess: "always", bgcolor:  "#" + this.settings.backgroundColor.toString( 16 ) });
+}
+
+FlippingBook.prototype.getFlippingBookReference = function() {
+	return this.getObjectReference( this.containerId );
+}
+
+FlippingBook.prototype.getObjectReference = function( id ) {
+	return document.getElementById( id );
+}
+
+FlippingBook.prototype.flipForward = function() {
+	flippingBook.getFlippingBookReference().flipForward();
+}
+
+FlippingBook.prototype.flipBack = function() {
+	flippingBook.getFlippingBookReference().flipBack();
+}
+
+FlippingBook.prototype.zoomButtonClick = function() {
+	if( flippingBook.getFlippingBookReference().isZoomedIn() )
+		flippingBook.zoomOut();
+	else
+		flippingBook.zoomIn();
+}
+
+FlippingBook.prototype.zoomIn = function() {
+	this.getFlippingBookReference().zoomIn();
+}
+
+FlippingBook.prototype.zoomOut = function() {
+	this.getFlippingBookReference().zoomOut();
+}
+
+FlippingBook.prototype.print = function() {	
+	flippingBook.getFlippingBookReference().print();
+}
+
+FlippingBook.prototype.downloadFile = function() {	
+	if( flippingBook.settings.downloadURL )
+		flippingBook.getFlippingBookReference().downloadFile();
+}
+
+FlippingBook.prototype.onWindowLoad = function(){	
+	var forwardButton = flippingBook.getObjectReference( flippingBook.forwardButtonId );
+	if( forwardButton ){
+		forwardButton.style.cursor = "pointer";
+		forwardButton.onclick = flippingBook.flipForward;
+	}
+	
+	var backButton = flippingBook.getObjectReference( flippingBook.backButtonId );
+	if( backButton ){
+		backButton.style.cursor = "pointer";
+		backButton.onclick = flippingBook.flipBack;
+	}
+	
+	var zoomButton = flippingBook.getObjectReference( flippingBook.zoomButtonId );
+	if( zoomButton ){
+		zoomButton.style.cursor = "pointer";
+		zoomButton.onclick = flippingBook.zoomButtonClick;
+	}
+	
+	var printButton = flippingBook.getObjectReference( flippingBook.printButtonId );
+	if( printButton ){
+		printButton.style.cursor = "pointer";
+		printButton.onclick = flippingBook.print;
+	}
+
+	var downloadButton = flippingBook.getObjectReference( flippingBook.downloadButtonId );
+	if( downloadButton ){
+		downloadButton.style.cursor = "pointer";
+		downloadButton.onclick = flippingBook.downloadFile;
+	}
+	
+	flippingBook.buildContentsMenu();
+}
+
+FlippingBook.prototype.onPutPage = function( leftPageNumber, rightPageNumber ){
+	this.updatePagination( leftPageNumber, rightPageNumber );
+	this.updateContentsMenu( leftPageNumber, rightPageNumber );
+}
+
+FlippingBook.prototype.updatePagination = function( leftPageNumber, rightPageNumber ){
+	var leftPageExists = ( leftPageNumber != undefined );
+	var rightPageExists = ( rightPageNumber != undefined );
+			
+	var pageNumberString = leftPageNumber + "-" + rightPageNumber;
+	if( !leftPageExists )
+		pageNumberString = rightPageNumber;	
+	if( !rightPageExists )
+		pageNumberString = leftPageNumber;
+
+	this.getObjectReference( this.currentPagesId ).innerHTML = pageNumberString;
+	this.getObjectReference( this.totalPagesId ).innerHTML = " / " + this.getFlippingBookReference().totalPages();	
+}
+
+FlippingBook.prototype.buildContentsMenu = function(){
+	var contentsSelect = this.getObjectReference( this.contentsMenuId );
+	
+	if( contentsSelect ){
+		for( var i = 0; i < this.contents.length; i++ )
+			contentsSelect.options[i] = new Option(this.contents[i][0], this.contents[i][1]);
+			
+		contentsSelect.onchange = this.onContentsChange;
+	}
+}
+
+FlippingBook.prototype.onContentsChange = function(){
+	var contentsSelect = flippingBook.getObjectReference( flippingBook.contentsMenuId );
+	var pageNumber = contentsSelect.options[contentsSelect.selectedIndex].value;
+	
+	if( pageNumber )
+		flippingBook.getFlippingBookReference().flipGotoPage( pageNumber );
+}
+
+FlippingBook.prototype.updateContentsMenu = function( leftPageNumber, rightPageNumber ){
+	var contentsSelect = flippingBook.getObjectReference( flippingBook.contentsMenuId );
+
+	if( contentsSelect ){
+		for( var i = 0; i < this.contents.length - 1; i++ ){
+			var minPage = contentsSelect.options[i].value;
+			var maxPage = contentsSelect.options[i+1].value;
+			var leftOK = false;
+			var rightOK = false;
+			
+			if( leftPageNumber )
+				leftOK = ( Number( leftPageNumber ) >=  minPage && Number( leftPageNumber ) <= maxPage );
+			else
+				leftOK = true;
+
+			if( rightPageNumber )
+				rightOK = ( Number( rightPageNumber ) >=  minPage && Number( rightPageNumber ) <= maxPage );
+			else
+				rightOK = true;
+				
+			if( leftOK && rightOK )	
+				break;
+		}	
+		contentsSelect.selectedIndex = i;
+	}
+}
+
+FlippingBook.prototype.getWindowHeight = function() {
+	var windowHeight = 0;
+	
+
+	if (typeof(window.innerHeight) == 'number' ) {
+		windowHeight=window.innerHeight;
+	}
+	else {
+		if (document.documentElement &&	document.documentElement.clientHeight) {
+				windowHeight = document.documentElement.clientHeight;
+		}
+		else {
+			if (document.body&&document.body.clientHeight) {
+				windowHeight=document.body.clientHeight;
+			}
+		}
+	}
+	
+	return windowHeight;
+}
+
+FlippingBook.prototype.addLoadEvent = function ( fn ) {
+	if (typeof window.addEventListener != "undefined") {
+		window.addEventListener("load", fn, false);
+	}
+	else if (typeof document.addEventListener != "undefined") {
+		document.addEventListener("load", fn, false);
+	}
+	else if (typeof window.attachEvent != "undefined") {
+		window.attachEvent("onload", fn);
+	}
+	else if (typeof window.onload == "function") {
+		var fnOld = window.onload;
+		window.onload = function() {
+			fnOld();
+			fn();
+		};
+	}
+	else {
+		window.onload = fn;
+	}
+}
+
+FlippingBook.prototype.handleWheel = function ( delta ){
+	this.getFlippingBookReference().onWheelScroll( delta );
+}
+
+flippingBook = new FlippingBook();
+
+function wheel(event){
+	var delta = 0;
+	if (!event) event = window.event;
+	if (event.wheelDelta) {
+		delta = event.wheelDelta/120; 
+		if (window.opera) delta = -delta;
+	} else if (event.detail) {
+		delta = -event.detail/3;
+	}
+	if (delta)
+		flippingBook.handleWheel(delta);
+        if (event.preventDefault)
+                event.preventDefault();
+        event.returnValue = false;
+}
+
+if (window.addEventListener)
+	window.addEventListener('DOMMouseScroll', wheel, false);
+window.onmousewheel = document.onmousewheel = wheel;
+//flippingbook.js end
+
+flippingBook.pages = [
+{#pages}
+];
+
+flippingBook.contents = [
+{#contents}
+];
+
+// define custom book settings here
+flippingBook.settings.bookWidth = 956;
+flippingBook.settings.bookHeight =650;
+flippingBook.settings.pageBackgroundColor = 0x5b7414;
+flippingBook.settings.backgroundColor = 0x83a51c;
+flippingBook.settings.zoomUIColor = 0x919d6c;
+flippingBook.settings.useCustomCursors = false;
+flippingBook.settings.dropShadowEnabled = false,
+flippingBook.settings.zoomImageWidth = 992;
+flippingBook.settings.zoomImageHeight = 1403;
+flippingBook.settings.downloadURL = "http://www.page-flip.com/new-demos/03-kitchen-gorenje-2008/kitchen_gorenje_2008.pdf";
+flippingBook.settings.flipSound = "/template/{#siteskin}/wangkan/sounds/02.mp3";
+flippingBook.settings.flipCornerStyle = "first page only";
+flippingBook.settings.zoomHintEnabled = false;
+flippingBook.create();
+</script>
+
+</head>
+<body>
+	<div id="fbContainer">
+    	<a class="altlink" href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"><div id="altmsg">Download Adobe Flash Player.</div></a>
+    </div>
+   	<div id="fbFooter">
+		<div id="fbContents">
+   			目录：<select id="fbContentsMenu" name="fbContentsMenu"></select>
+			<span class="fbPaginationMinor">当前页&nbsp;</span>
+			<span id="fbCurrentPages">1</span>
+			<span id="fbTotalPages" class="fbPaginationMinor"></span>
+		</div>
+		<div id="fbMenu">
+			<img src="/template/{#siteskin}/wangkan/img/btnZoom.gif" width="36" height="40" border="0" id="fbZoomButton" /><img src="/template/{#siteskin}/wangkan/img/btnPrint.gif" width="36" height="40" border="0" id="fbPrintButton" /><img src="/template/{#siteskin}/wangkan/img/btnDownload.gif" width="36" height="40" border="0" id="fbDownloadButton" /><img src="/template/{#siteskin}/wangkan/img/btnDiv.gif" width="13" height="40" border="0" /><img src="/template/{#siteskin}/wangkan/img/btnPrevious.gif" width="36" height="40" border="0" id="fbBackButton" /><img src="/template/{#siteskin}/wangkan/img/btnNext.gif" width="36" height="40" border="0" id="fbForwardButton" /></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+zxitem|||0|||6|||3|||<table width="100%" border="0" cellspacing="10" cellpadding="0"><tr>|||<td style='width:33%;' valign="top">
+<div class='titles'><span><a href='zx.php?b={#bigclassid}'> 更多...</a></span>{#classname}</div>
+<div class='content2' >
+{@zxshow.initem}
+</div>
+</td>|||</table>

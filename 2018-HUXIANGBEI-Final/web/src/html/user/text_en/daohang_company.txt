@@ -1,0 +1,52 @@
+﻿Improve registration information|||
+<script>alert('Successfully improve the registration information, access to gold coins')</script>|||
+<script language=JavaScript>alert('Successful operation! Go to the next step');location.href='daohang_skin.php'</script>|||
+
+if (document.myform.province.value==""){
+    alert("Please select the province where the company is located！");
+	document.myform.province.focus();
+	return false;
+  } 
+    if (document.myform.city.value==""){
+    alert("Please select the city where the company is located！");
+	document.myform.city.focus();
+	return false;
+  } 
+if (document.myform.content.value==""){
+    alert("Please fill in the company profile！");
+	document.myform.content.focus();
+	return false;
+  }
+  if (document.myform.content.value=="" ||document.myform.content.value=="&nbsp;"){
+    alert("Please fill in the company profile！");
+	document.myform.content.focus();
+	return false;
+  }
+ if (document.myform.kind.value==""){
+    alert("Please select the business model！");
+	document.myform.kind.focus();
+	return false;
+  }
+//定义正则表达式部分
+var strP=/^\d+$/;
+if(!strP.test(document.myform.qq.value) && document.myform.qq.value!="") {
+alert("QQ can only fill in numbers！"); 
+document.myform.qq.focus(); 
+return false; 
+}|||
+Improve registration information|||
+Congratulations on becoming a registered member of this website! <br> please perfect your company profile information, in order to generate your company's exhibition hall page.&gt;&gt;&gt; <a href="daohang_skin.php" target="_self">Skip this step and then fill out</a>|||
+<font color="#FF0000"><strong>prompt：</strong>Company profile information is not yet complete! <br> please perfect your company profile information, to improve the integrity of the company.</font>|||
+The company located in |||
+Detailed address |||
+The company website |||
+Enterprise class |||
+Please select the categories |||
+Please select a small class of |||
+Company profile |||
+Upload image <br> (no more than {#maximgsize}K ||| upload pictures|||
+Contact gender |||
+Mr. |||
+Ms. |||
+Contact QQ number |||
+Mobile phone contacts ||| submit information!

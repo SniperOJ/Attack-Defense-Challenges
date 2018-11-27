@@ -1,0 +1,3 @@
+﻿<script lanage='javascript'>alert('This information already exists, please do not release duplicate information！');location.replace('zxadd.php')</script>
+|||
+Release success|||Release failure|||Title：|||Continue to add|||modify|||Return|||preview

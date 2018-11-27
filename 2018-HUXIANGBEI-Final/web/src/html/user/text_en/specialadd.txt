@@ -1,0 +1,23 @@
+﻿if (document.myform.bigclassid.value==""){
+    alert("Please select a large class name！");
+	document.myform.bigclassid.focus();
+	return false;
+  }
+if (document.myform.title.value==""){
+    alert("Title cannot be empty！");
+	document.myform.title.focus();
+	return false;
+  } 
+|||
+Publish thematic information|||category|||Please select a large category|||Do not specify a small class|||Title|||Chain news|||Link address|||Sources of information:|||content|||SEO optimization settings|||Keywords|||Description|||Browse permissions settings|||All users
+|||<option value="0">Please select whether the user is free of the integral view</option>
+                  <option value="0" >No permissions users can not use integral view</option>
+                  <option value="10" >Pay me 10 points can be viewed</option>
+                  <option value="20" >Pay me 20 points can be viewed</option>
+                  <option value="30" >Pay me 30 points can be viewed</option>
+                  <option value="50" >Pay me 50 points can be viewed</option>
+                  <option value="100" >Pay me 100 points can be viewed</option>
+                  <option value="200" >Pay me 200 points can be viewed</option>
+                  <option value="500" >Pay me 500 points can be viewed</option>
+                  <option value="1000">Pay me 1000 points can be viewed</option>
+|||Release

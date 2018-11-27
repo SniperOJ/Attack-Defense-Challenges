@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>{#pagetitle}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="keywords" content="{#pagekeywords}">
+<meta name="description" content="{#pagedescription}">
+<script type="text/javascript" src="/js/qt.js"></script>
+<link href="{#siteurl}/skin/{#skin}/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+{#sitetop}
+<div class="main">
+
+<div id="pagebody">
+
+	  <div class="titleA">招商信息</div>
+          <div class="ztcontent">
+		  {loop}
+            <table style="MARGIN-BOTTOM: 10px" class="bgcolor3" border="0" cellspacing="1" 
+cellpadding="4" width="100%">
+              <tbody>
+                <tr>
+                  <td bgcolor="#ffffff" width="70%"><table class="bgcolor3" border="0" cellspacing="1" cellpadding="5" width="100%" 
+      height="270">
+                      <tbody>
+                        <tr>
+                          <td class="bgcolor1" width="19%" align="middle">产品名称</td>
+                          <td style="FONT-WEIGHT: bold" bgcolor="#ffffff" width="81%"><a 
+            href="{#link}">{#proname}</a> </td>
+                        </tr>
+                        <tr>
+                          <td class="bgcolor1" align="middle">主要特点</td>
+                          <td bgcolor="#ffffff">{#prouse}</td>
+                        </tr>
+                        <tr>
+                          <td class="bgcolor1" align="middle">规格</td>
+                          <td bgcolor="#ffffff">{#gg}</td>
+                        </tr>
+                        <tr>
+                          <td class="bgcolor1" align="middle">招商区域</td>
+                          <td bgcolor="#ffffff">{#city}</td>
+                        </tr>
+                      </tbody>
+                  </table></td>
+                  <td bgcolor="#ffffff" width="30%" align="middle"><table class="bgcolor3" border="0" cellspacing="1" cellpadding="0" width="270" 
+      height="270">
+                      <tbody>
+                        <tr>
+                          <td bgcolor="#ffffff" align="middle">
+						  <a  href="{#link}" target="_blank">
+			<img  border="0" alt="{#proname}" src="{#img}" onload="resizeimg(240,240,this)"/></a></td>
+                        </tr>
+                      </tbody>
+                  </table></td>
+                </tr>
+              </tbody>
+            </table>
+			{/loop}
+			<div class="fenyei">{#fenyei}</div>
+          </div>
+</div>
+
+</div>
+{#sitebottom}
+</body>
+</html>

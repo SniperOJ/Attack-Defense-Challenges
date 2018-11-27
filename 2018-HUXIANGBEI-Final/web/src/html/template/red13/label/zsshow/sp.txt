@@ -1,0 +1,2 @@
+sp|||empty|||empty|||0|||1|||1|||0|||20|||id|||10|||1|||<div class="boxshipin">|||<li><A href="show.php?id={#id}" target="_blank"><img src="{#img}" border="0" width="132" height="80"><br>{#proname}</A></li>
+|||</div>

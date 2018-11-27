@@ -1,0 +1,10 @@
+﻿if (document.myform.cp.value==""){alert("Please fill out the intended product！");document.myform.cp.focus();return false;}
+if (document.myform.classid.value==""){alert("Please select a product category！");document.myform.classid.focus();return false;}  
+if (document.myform.province.value=="Please select provinces"){alert("Please select the intention of the provinces！");document.myform.province.focus();return false;}
+if (document.myform.content.value==""){alert("Please fill in the self introduction！");document.myform.content.focus();return false;}
+if (document.myform.truename.value==""){alert("Please fill in the real name！");document.myform.truename.focus();return false;}  
+if (document.myform.tel.value==""){alert("Please fill in the phone number.！");document.myform.tel.focus();return false;}  
+if (document.myform.yzm.value==""){alert("Please enter the answer to the validation question！");document.myform.yzm.focus();return false;}|||
+Modify {#channeldl} information|||Intentional product|||Product categories|||Please select category|||Intentional area|||Selected city|||Delete selected city|||introduce oneself to|||Identity:|||company|||personal|||corporate name：|||name|||Telephone|||Address：|||E-mail：
+|||answer|||Can not see, click for a change|||Modify|||
+(can only write the name of the product, do not write the content such as contact, otherwise it will be directly deleted)

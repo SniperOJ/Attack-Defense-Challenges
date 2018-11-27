@@ -1,0 +1,18 @@
+﻿function CheckForm(){
+  if (document.myform2.content.value==""){
+    alert("内容不能为空！");
+	//document.myform.content.focus();
+	return false;
+  } 
+if (document.myform2.content.value !=""){
+    var re=/^[\u4e00-\u9fa5]{2,10}$/; //只输入汉字的正则
+    	if(document.myform2.content.value.search(re)==-1){
+	alert("内容只能为汉字！");
+	return false;
+	}
+}   
+}|||
+已返馈的信息|||暂无信息|||内容/回复|||删除|||内容：|||回复：|||暂无回复|||全选|||删除|||我要返馈信息|||
+内容 <font color="#FF0000">（必填）</font>：|||发布|||
+<script lanage='javascript'>alert('此信息已存在，请不要发布重复的信息！');</script>
+

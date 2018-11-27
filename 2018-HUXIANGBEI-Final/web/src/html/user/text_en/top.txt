@@ -1,0 +1,17 @@
+﻿product
+message
+Advertisement
+Qualification
+Finance
+Member
+password
+Showroom
+Home
+<img src='/image/pic.gif' border='0' >My showroom
+<img src="/image/ico6.gif" width="11" height="13" border="0">Operation instructions
+<img src="/image/ding.gif" width="11" height="13" border="0">Safe exit
+Hello!
+Service time:
+my permissions
+user does not exist
+You have not landed

@@ -1,0 +1,9 @@
+﻿Message in the exhibition hall
+No information
+<td width="373" class="border">Part content</td><td width="201" class="border">Time</td><td width="190" class="border">is view</td><td width="77" align="center" class="border">operation</td><td width="77" align="center" class="border">delete</td>
+<font color=red>Not viewed</font>
+Already view
+See
+Select
+delete
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}"/>
+<meta name="description" content="{#pagedescription}"/>
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody">
+<div class="left">
+
+<div class="station2">
+ <span>
+ {#numperpage}
+</span>
+{#station}
+</div>
+<div class="left_content"> 
+<img src="/image/arrow.gif" /> 
+        <strong>按分类浏览</strong> 
+<div class="boxbigclass">
+{#zhclass}
+</div>
+</div>
+
+<div class="content">
+{loop}
+<div class='bigword'> 【展会】<a href='{#zhurl}'>{#title}</a></div>
+<div class='InfoContent'>展会时间：{#timestart}至{#timeend}<br />展会地点：{#address}</div>
+{/loop}
+<div class='fenyei'>{#fenyei}</div> 
+
+        
+</div>
+</div>
+<div class="right">
+
+<div class="titles"> 按展会时间搜索</div>
+<div class="content1">
+{#sj}     
+</div>
+
+<div class="titles"> 按展会地点搜索</div>
+<div class="content1">
+{#province:zh,5}     
+</div>
+
+<div class="titles">展会承办单位</div>
+<div class="content1">
+{@companyshow.zhgs}        
+        
+</div>
+
+      <script language="JavaScript" type="text/JavaScript" src="imgadv.php?classname=展会频道右侧&style=S"></script>
+</div>
+</div>
+{#sitebottom}
+</div>
+</body>
+</html>
+

@@ -1,0 +1,52 @@
+﻿修改注册信息|||
+if (document.myform.province.value==""){
+    alert("请选择公司所在省份！");
+	document.myform.province.focus();
+	return false;
+  } 
+  if (document.myform.city.value==""){
+    alert("请选择公司所在城市！");
+	document.myform.city.focus();
+	return false;
+  } 
+if (document.myform.content.value==""){
+    alert("请填写公司简介！");
+	return false;
+  }
+if (document.myform.content.value=="该公司暂无简介信息"){
+    alert("请填写公司简介！");
+	document.myform.content.focus();
+	return false;
+  }
+if (document.myform.b.value==""){
+    alert("请选择大类！");
+	document.myform.b.focus();
+	return false;
+  } 
+//定义正则表达式部分
+var strP=/^\d+$/;
+if(!strP.test(document.myform.qq.value)  && document.myform.qq.value!="") {
+alert("QQ只能填数字！"); 
+document.myform.qq.focus(); 
+return false; 
+}   
+
+if (document.myform.flv.value != "")//这里输入框不为空
+{
+var FileType = "flv,swf";   //这里是允许的后缀名，注意要小写
+var FileName = document.myform.flv.value
+FileName = FileName.substring(FileName.lastIndexOf('.')+1, FileName.length).toLowerCase(); //这里把后缀名转为小写了，不然一个后缀名会有很多种大小写组合
+if (FileType.indexOf(FileName) == -1){
+	document.myform.flv.focus();
+	document.myform.flv.style.backgroundColor="FFCC00";
+	alert("请填写flv或swf格式的文件地址！");
+	return false;
+	}
+}
+|||
+<li>公司简介不能为空</li>|||<li>此电话号码已被使用！</li>|||
+<SCRIPT language=JavaScript>alert('会员资料修改成功！');location.href='manage.php'</SCRIPT>|||
+用户名|||姓名|||性别|||男|||女|||E-mail|||QQ|||QQ绑定登录网站|||(已绑定。点击可取消绑定) |||未绑定QQ登录|||手机|||保存修改结果|||
+修改公司信息|||公司名称|||企业类别|||请选择大类|||请选择小类|||下无子类|||所在地区|||公司地址|||公司网站|||公司电话|||公司传真|||公司简介|||公司形象图片|||
+点击可更换图片|||上传图片|||公司形象视频上传|||点击重新上传视频|||添加视频|||
+<p><img src="../image/jx.gif" width="48" height="48" /><br />仅限收费会员</p><p><span class='buttons'>现在审请？</span><br /></p>|||

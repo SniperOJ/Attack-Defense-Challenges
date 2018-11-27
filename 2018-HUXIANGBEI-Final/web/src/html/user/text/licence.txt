@@ -1,0 +1,9 @@
+﻿资质证书管理
+添加
+暂无信息
+<td width="29%" class="border"> 资质证书名称</td><td width="35%" align="center" class="border">证件</td><td width="14%" align="center" class="border">审核</td><td width="13%" align="center" class="border">管理</td><td width="9%" align="center" class="border">删除</td>
+已审
+<font color=red>待审</font>
+修改
+全选
+删除

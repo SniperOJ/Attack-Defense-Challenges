@@ -1,0 +1,3 @@
+zsitem2|||0|||8|||1|||<div class="boxitem" id="B">
+        <ul>|||<li><a id="B{#i}" href="###" onmouseover="javascript:doClick(this,'B','current1')" {#title_style}>{#classname}</a></li>|||</ul> 
+</div>

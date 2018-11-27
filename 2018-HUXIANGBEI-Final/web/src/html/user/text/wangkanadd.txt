@@ -1,0 +1,14 @@
+﻿<script>alert('个人用户没有此权限');history.back()</script>
+|||
+if (document.myform.bigclassid.value==""){
+    alert("请选择网刊类别！");
+	document.myform.bigclassid.focus();
+	return false;
+  }	  
+if (document.myform.title.value==""){
+    alert("网刊名称不能为空！");
+	document.myform.title.focus();
+	return false;
+  } |||
+
+发布网刊信息|||所属类别<font color="#FF0000">（必填）</font>：|||请选择类别|||名称<font color="#FF0000">（必填）</font>：||| ||| |||内容：|||发 布

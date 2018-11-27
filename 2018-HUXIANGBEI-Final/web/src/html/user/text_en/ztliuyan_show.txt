@@ -1,0 +1,18 @@
+﻿Message details in the exhibition hall
+There is no relevant information
+Contacts：
+Telephone：
+Email：
+<script>alert('Illegal operation! Warning: your operation has been recorded！');history.back(-1);</script>
+Exhibition hall message
+Title：
+Content:
+Message time:
+Contact information
+Click to view contact. Note: you need to pay the gold：
+View gallery message
+<script>alert('系System Tip: your account has been less than {#jf_lookmessage} gold, temporarily unable to view！')</script>
+Upgrade to VIP members, contact information at any time to view!
+Your user group does not have access to the message!
+Upgrade to VIP member
+

@@ -1,0 +1,41 @@
+﻿Modify password|||
+if (document.form1.oldpassword.value=="" ){
+    alert("Old password can not be empty！");
+	document.form1.oldpassword.focus();
+	return false;
+  }
+if (document.form1.password.value=="" ){
+    alert("The new password can not be empty！");
+	document.form1.password.focus();
+	return false;
+  }
+if (document.form1.pwdconfirm.value=="" ){
+    alert("Confirm that the new password cannot be empty！");
+	document.form1.pwdconfirm.focus();
+	return false;
+  }  
+if (document.form1.password.value !=""){
+		//创建正则表达式
+    	var re=/^[0-9a-zA-Z]{4,14}$/; //只输入数字和字母的正则
+    	if(document.form1.password.value.search(re)==-1){
+		alert("Passwords can only be letters and numbers, the characters ranged from 4 to 14");
+		document.form1.password.value="";
+		document.form1.password.focus();
+		return false;
+    	}
+	}	
+if (document.form1.password.value !="" && document.form1.pwdconfirm.value !=""){
+	if (document.form1.password.value!=document.form1.pwdconfirm.value){
+	alert ("Two password entered is not consistent, please re-enter");
+	//document.form1.pass.value='';
+	document.form1.pwdconfirm.value='';
+	document.form1.pwdconfirm.focus();
+	return false;
+	}	
+	}
+|||
+<li>You entered the old password is incorrect, no permissions to modify!</li>|||Modify password success—|||
+<table width='100%'><tr><td style='font-size:14px;line-height:25px'>{#username}：<br>&nbsp;&nbsp;&nbsp;&nbsp;Hello!<br>Your password changed successfully<br>username：{#username} new password：{#password} &nbsp;&nbsp;<br>If not myself, please visit the site in time to change your password.<a href='{#siteurl}/user/login.php'>Now landing>>></a></td></tr></table>|||
+{#username}：Hello! Your password changed successfully<br>username：{#username} new password：{#password}<br>If not myself, please visit the site in time to change your password.|||
+<SCRIPT language=JavaScript>alert('Successfully modify the password!');history.go(-1)</SCRIPT>|||
+user name：|||Old password:|||New password:|||Confirm new password:|||Save changes

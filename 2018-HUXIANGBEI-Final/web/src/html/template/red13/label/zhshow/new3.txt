@@ -1,0 +1,10 @@
+new3|||empty|||0|||10|||id|||16|||1|||<table width="100%" border="0" cellspacing="1" cellpadding="4" class="bgcolor2">
+<tr bgcolor=#ffffff> 
+          <td width="38%"><strong>展会名称</strong></td>
+          <td width="24%"><strong>展会时间</strong></td>
+          <td width="38%"><strong>展会地点</strong></td>
+</tr>|||<tr bgcolor=#FFFFFF> 
+<td><A href=show.php?id={#id}>{#title}</A></td>
+<td>{#timestart}至{#timeend}</td>
+<td title="{#address}">{#address}</td>
+</tr>|||</table>

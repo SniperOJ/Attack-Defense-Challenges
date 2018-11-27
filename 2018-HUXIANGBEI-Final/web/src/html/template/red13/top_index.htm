@@ -1,0 +1,140 @@
+<script language="JavaScript" src="/js/qt.js"></script>
+<script type="text/javascript">
+IsPC();
+</script>
+<div class="main">
+<div class="top1">
+<span>
+{case1}您好！<b>{#username}</b>&nbsp;[ <a href='/user/index.php'>进入用户中心</a>&nbsp;|&nbsp;<a href='/user/logout.php'>安全退出</a> ]&nbsp;{/case1}
+{case2}
+<img src='/image/user.gif'>您好！客人 [<a href={#linklogin} target='_blank'>请登录</a>]&nbsp;[<a href={#linkreg} target='_blank'>免费注册</a>]&nbsp;
+<a href='/3/qq_connect2.0/index.php'><img src='/image/Connect_logo_2.png' border='0'></a>
+{/case2}
+</span>
+<script language="JavaScript" src="/js/language.js"></script>
+ |  <a href="/help.php" target="_blank" style="color:#666">使用帮助</a>
+|  <a href="#" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('{#siteurl}');" style="color:#666666">设为首页</a>
+|  <a href="javascript:window.external.addFavorite('{#siteurl}','{#sitename}');" style="color:#666666">收藏本站</a>
+|  <font color=red> 客服电话:{#kftel}</font>
+本程序唯一销售QQ：<a target=blank href=http://wpa.qq.com/msgrd?v=1&uin={#kfqq}&Site={#sitename}&Menu=yes><img border="0" src=http://wpa.qq.com/pa?p=1:{#kfqq}:4 alt="在线客服QQ" /> </a>      
+</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+      <td width="380" height="80"><a href="{#siteurl}"><img src="{#logourl}" border="0" alt="{#sitekeyword}" onload="resizeimg(200,200,this)"></a></td>
+    <td>
+		  <div class="boxsearch" id="D"> 
+          <ul>
+        <li onClick="javascript:doClick(this,'D','current_search')" id="D1" {#zs_style}>招商</li>
+        <li onClick="javascript:doClick(this,'D','current_search')" id="D2" {#dl_style}>代理</li>
+		<li onClick="javascript:doClick(this,'D','current_search')" id="D3" {#pp_style}>品牌</li>
+		<li onClick="javascript:doClick(this,'D','current_search')" id="D4" {#company_style}>公司</li>
+        <li onClick="javascript:doClick(this,'D','current_search')" id="D5" {#zh_style}>展会</li>
+		<li onclick="javascript:doClick(this,'D','current_search')" id="D6" {#special_style}>专题</li>
+		<li onClick="javascript:doClick(this,'D','current_search')" id="D7" {#zx_style}>资讯</li>
+		<li onClick="javascript:doClick(this,'D','current_search')" id="D8" {#job_style}>招聘</li>
+          </ul>
+       	</div> 
+		         
+        <div class="boxsearch2"> 
+		  <div id="D_con1" {#zs_style2} style='display:none'>
+		<form name="myform" method="get" action="/zs/search.php"> 
+              <input name="keyword" type="text" class="biaodan3"  onfocus="javascript:if (this.value=='输入招商产品名称') {this.value=''}" value="输入招商产品名称" ><input name="search" type="submit" value="" class="buttons_search2" border="0" />
+      </form>
+	  </div>
+	   
+		  <div id="D_con2" {#dl_style2} style='display:none'>
+		  <form name="myform" method="get" action="/dl/search.php"> 
+        <input name="keyword" type="text"  class="biaodan3"  onfocus="javascript:if (this.value=='输入代理产品名称') {this.value=''}" value="输入代理产品名称" /><input name="search" type="submit" value="" class="buttons_search2" border="0" />
+       </form>
+	  </div>
+	  	    <div id="D_con3" {#pp_style2} style='display:none'>
+	<form name="myform" method="get" action="/pp/search.php"> 
+    <input name="keyword" type="text"  class="biaodan3"  onfocus="javascript:if (this.value=='输入品牌名') {this.value=''}"  value="输入品牌名" /><input name="search" type="submit" value="" class="buttons_search2" border="0" />
+     </form>
+	 </div>
+		  <div id="D_con4" {#company_style2} style='display:none'>
+		  <form name="myform" method="get" action="/company/search.php"> 
+        <input name="keyword" type="text"  class="biaodan3"  onfocus="javascript:if (this.value=='输入公司名') {this.value=''}"  value="输入公司名" /><input name="search" type="submit" value="" class="buttons_search2" border="0" />
+       </form>
+	  </div>
+		  <div id="D_con5" {#zh_style2} style='display:none'>
+		  <form name="myform" method="get" action="/zh/search.php"> 
+        <input name="keyword" type="text"  class="biaodan3"  onfocus="javascript:if (this.value=='输入展会信息关键词') {this.value=''}"  value="输入展会信息关键词" /><input name="search4" type="submit" value="" class="buttons_search2" border="0" />
+       </form>
+	  </div>
+	  
+	<div id="D_con6" {#special_style2} style='display:none'>
+         <form action="/special/search.php" method="post" name="myform" id="myform">
+         <input name="keyword" type="text"  class="biaodan3" onfocus="javascript:if (this.value=='输入专题信息关键词') {this.value=''}"  value="输入专题信息关键词" />
+         <input name="search" type="submit" value="" class="buttons_search2" border="0" />
+         </form>
+       </div>  
+	  
+		  <div id="D_con7" {#zx_style2} style='display:none'>
+		  <form name="myform" method="post" action="/zx/search.php"> 
+        <input name="keyword" type="text"  class="biaodan3" onfocus="javascript:if (this.value=='输入资讯信息关键词') {this.value=''}"  value="输入资讯信息关键词" /><input name="search" type="submit" value="" class="buttons_search2" border="0" />
+       </form>
+	  </div>
+	  	  	  <div id="D_con8" {#job_style2} style='display:none'>
+		  <form name="myform" method="post" action="/job/search.php"> 
+        <input name="keyword" type="text"  class="biaodan3" onfocus="javascript:if (this.value=='输入职位关键词') {this.value=''}"  value="输入职位关键词" /><input name="search" type="submit" value="" class="buttons_search2" border="0" />
+       </form>
+	  </div>
+        </div>
+	</td>
+    <td width="70" align="center"><div id="fbzs"><a href="{#siteurl}/user/index.php?gotopage=zsadd.php" target="_blank"></a></div></td>
+    <td width="70" align="center"><div id="fbdl"><a href="{#siteurl}/dl/dladd.php" target="_blank"></a></div></td>
+    <td width="70" align="center"><div id="hyzx"><a href="{#siteurl}/user/"></a></div> </td>
+  </tr>
+</table>
+{#showannounce:3,90}
+<div class="nav"> 
+<ul>
+<li class="current"><a href='{#siteurl}'>首页</a></li>
+<li><a href='/zs'>招商</a></li>
+<li><a href='/dl'>代理</a></li>
+<li><a href="/zx">资讯</a></li>
+<li><a href='/company'>企业</a></li>
+<li><a href='/zh'>展会</a></li>
+<li><a href="/special">专题</a></li>
+<li><a href='/pp'>品牌</a></li>
+<li><a href='/job'>招聘</a></li>
+<li><a href='/zs/order.php'>排行榜</a></li>
+<li><a href='/zs/zs_list.php?sx=5'>OTC</a></li>
+<li><a href='/zs/zs_list.php?sx=6'>处方药</a></li>
+</ul>
+</div>
+<div class="item2"> 
+<a href='/zsclass/class.php?b=zhongyaozhaoshang'>中成药</a>
+| <a href='/zsclass/class.php?b=xiyaozhaoshang'>西药</a>
+| <a href='/zsclass/class.php?b=baojianpinzhaoshang'>保健品</a>
+| <a href='/zsclass/class.php?b=yiliaoqixiezhaoshang'>医疗器械</a>
+| <a href='/zs/order.php'>排行榜</a>
+| <a href='/zs/zs_list.php?sx=5'>OTC招商</a>
+| <a href='/zs/zs_list.php?sx=6'>处方药招商</a>
+| <a href="/zx/class.php?b=54">警示平台</a>
+| <a href="/zx/class.php?b=55">营销文库</a>
+| <a href="/zx/class.php?b=56">医药知识</a>
+| <a href="/zx/class.php?b=58">两性知识</a>
+| <a href="/zx/class.php?b=36">天天保健</a> 
+</div>
+<div class="boxarea">
+<li><a href='/area/show.php?province=beijing'>北京</a></li><li><a href='/area/show.php?province=shanghai'>上海</a></li>
+<li><a href='/area/show.php?province=tianjin'>天津</a></li><li><a href='/area/show.php?province=chongqing'>重庆</a></li>
+<li><a href='/area/show.php?province=hebei'>河北</a></li><li><a href='/area/show.php?province=shanxi'>山西</a></li>
+<li><a href='/area/show.php?province=liaoning'>辽宁</a></li><li><a href='/area/show.php?province=jilin'>吉林</a></li>
+<li><a href='/area/show.php?province=heilongjiang'>黑龙江</a></li><li><a href='/area/show.php?province=jiangshu'>江苏</a></li>
+<li><a href='/area/show.php?province=zejinag'>浙江</a></li><li><a href='/area/show.php?province=anhui'>安徽</a></li>
+<li><a href='/area/show.php?province=fujian'>福建</a></li><li><a href='/area/show.php?province=jiangxi'>江西</a></li>
+<li><a href='/area/show.php?province=shandong'>山东</a></li><li><a href='/area/show.php?province=henan'>河南</a></li>
+<li><a href='/area/show.php?province=hubei'>湖北</a></li><li><a href='/area/show.php?province=hunan'>湖南</a></li>
+<li><a href='/area/show.php?province=guangdong'>广东</a></li><li><a href='/area/show.php?province=guangxi'>广西</a></li>
+<li><a href='/area/show.php?province=neimenggu'>内蒙古</a></li><li><a href='/area/show.php?province=hainan'>海南</a></li>
+<li><a href='/area/show.php?province=shichuan'>四川</a></li><li><a href='/area/show.php?province=guizhou'>贵州</a></li>
+<li><a href='/area/show.php?province=yunnan'>云南</a></li><li><a href='/area/show.php?province=xizhang'>西藏</a></li>
+<li><a href='/area/show.php?province=shanxisheng'>陕西</a></li><li><a href='/area/show.php?province=ganshu'>甘肃</a></li>
+<li><a href='/area/show.php?province=ningxia'>宁夏</a></li><li><a href='/area/show.php?province=qinghai'>青海</a></li>
+<li><a href='/area/show.php?province=xinjiang'>新疆</a></li>
+</div>
+</div>
+<iframe width="0" height="0" frameborder="0" scrolling="no" name="forgg"></iframe>

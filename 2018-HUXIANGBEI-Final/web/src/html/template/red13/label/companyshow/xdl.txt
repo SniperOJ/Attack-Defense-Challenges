@@ -1,0 +1,14 @@
+xdl|||empty|||0|||1|||0|||0|||16|||lastlogintime|||12|||4|||<table width="100%" border="0" cellspacing="1" cellpadding="8" class="bgcolor3">
+<tr>|||<td width="25%" bgcolor="#FFFFFF" >
+
+<table  border="0" cellspacing="0" cellpadding="0" >
+<tr> 
+<td bgcolor='#FFFFFF' class="bordercccccc" width="90px" height="90px" align="center">
+<a href='show.php?id={#id}'>
+<img src='{#img}'  border="0" onload="resizeimg(90,90,this)"/></a>
+</td>
+<td valign="top" style="padding-left:5px"><a href='show.php?id={#id}'><font color="#ff6600">{#title}</font></a><br/>{#content}</td>
+</tr>
+</table>
+
+</td>|||</table>

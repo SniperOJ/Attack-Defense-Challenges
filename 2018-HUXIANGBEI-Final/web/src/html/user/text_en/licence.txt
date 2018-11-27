@@ -1,0 +1,9 @@
+﻿Qualification certificate management
+Add to
+No information
+<td width="29%" class="border"> Qualification certificate name</td><td width="35%" align="center" class="border">Certificates</td><td width="14%" align="center" class="border">To examine</td><td width="13%" align="center" class="border">manage</td><td width="9%" align="center" class="border">delete</td>
+Already examine
+<font color=red>Not audited</font>
+modify
+Select
+delete

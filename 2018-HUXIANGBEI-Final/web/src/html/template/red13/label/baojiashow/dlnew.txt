@@ -1,0 +1,1 @@
+dlnew|||empty|||15|||id|||6|||0|||<ul>|||<LI><span style="width:120px">价格：{#price}</span>【报价】<A href=show.php?id={#id}>{#cp}</A></LI>|||</ul>

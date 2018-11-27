@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>FlippingBook电子杂志书去版权,翻页图片全部外调 珍藏版</title>
+<meta name="description" content="flash特效制作FlippingBook电子杂志书去版权，这边电子杂志书翻页图片全部外调，支持放大缩小、下载PDF、打印等功能。站长珍藏版给力推荐。" />
+<link href="css/liquid-green.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/liquid.js"></script>
+<script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript" src="js/flippingbook.js"></script>
+<script type="text/javascript">
+flippingBook.pages = [
+	"pages/page-001.jpeg",
+	"pages/page-002.jpeg",
+	"pages/page-003.jpeg",
+	"pages/page-004.jpeg",
+	"pages/page-005.jpeg",
+	"pages/page-006.jpeg",
+	"pages/page-007.jpeg",
+	"pages/page-008.jpeg",
+	"pages/page-009.jpeg",
+	"pages/page-010.jpeg",
+	"pages/page-011.jpeg"
+];
+
+
+flippingBook.contents = [
+			[ "1版", 1 ],
+	
+			[ "2-3版", 2 ],
+			
+			[ "4-5版", 4 ],
+			
+			[ "6-7版", 6 ],
+			
+			[ "8-9版", 8 ],
+			
+			[ "10-11版", 10 ],
+			
+			[ "12-13版", 12 ],
+			
+			[ "14-15版", 14 ],
+			
+			[ "16-17版", 16 ],
+			
+			[ "18-19版", 18 ],
+			
+			[ "20-21版", 20 ],
+			
+			[ "22-23版", 22 ],
+			
+			[ "24-25版", 24 ],
+			
+			[ "26-27版", 26 ],
+			
+			[ "28-29版", 28 ],
+			
+			[ "30-31版", 30 ],
+			
+			[ "32-33版", 32 ],
+			
+			[ "34-35版", 34 ],
+			
+			[ "36-37版", 36 ],
+			
+			[ "38-39版", 38 ],
+			
+			[ "40-41版", 40 ],
+			
+			[ "42-43版", 42 ],
+			
+			[ "44-45版", 44 ],
+			
+			[ "46-47版", 46 ],
+			
+			[ "48-49版", 48 ],
+			
+			[ "50-51版", 50 ],
+			
+			[ "52-53版", 52 ],
+			
+			[ "54-55版", 54 ],
+			
+			[ "56-57版", 56 ],
+			
+			[ "58-59版", 58 ],
+			
+			[ "60-61版", 60 ],
+			
+			[ "62-63版", 62 ],
+			
+			[ "64-65版", 64 ],
+			
+			[ "66-67版", 66 ],
+			
+			[ "68-69版", 68 ],
+			
+			[ "70-71版", 70 ],
+			
+			[ "72-73版", 72 ],
+			
+			[ "74-75版", 74 ],
+			
+			[ "76-77版", 76 ],
+			
+			[ "78-79版", 78 ],
+			
+			[ "80-81版", 80 ],
+			
+			[ "82-83版", 82 ],
+			
+			[ "84版", 84 ]
+
+];
+
+// define custom book settings here
+flippingBook.settings.bookWidth = 956;
+flippingBook.settings.bookHeight =650;
+flippingBook.settings.pageBackgroundColor = 0x5b7414;
+flippingBook.settings.backgroundColor = 0x83a51c;
+flippingBook.settings.zoomUIColor = 0x919d6c;
+flippingBook.settings.useCustomCursors = false;
+flippingBook.settings.dropShadowEnabled = false,
+flippingBook.settings.zoomImageWidth = 992;
+flippingBook.settings.zoomImageHeight = 1403;
+flippingBook.settings.downloadURL = "http://www.page-flip.com/new-demos/03-kitchen-gorenje-2008/kitchen_gorenje_2008.pdf";
+flippingBook.settings.flipSound = "sounds/02.mp3";
+flippingBook.settings.flipCornerStyle = "first page only";
+flippingBook.settings.zoomHintEnabled = false;
+
+// default settings can be found in the flippingbook.js file
+flippingBook.create();
+</script>
+
+</head>
+<body>
+	<div id="fbContainer">
+    	<a class="altlink" href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"><div id="altmsg">Download Adobe Flash Player.</div></a>
+    </div>
+   	<div id="fbFooter">
+		<div id="fbContents">
+   			目录：<select id="fbContentsMenu" name="fbContentsMenu"></select>
+			<span class="fbPaginationMinor">当前页&nbsp;</span>
+			<span id="fbCurrentPages">1</span>
+			<span id="fbTotalPages" class="fbPaginationMinor"></span>
+		</div>
+		<div id="fbMenu">
+			<img src="img/btnZoom.gif" width="36" height="40" border="0" id="fbZoomButton" /><img src="img/btnPrint.gif" width="36" height="40" border="0" id="fbPrintButton" /><img src="img/btnDownload.gif" width="36" height="40" border="0" id="fbDownloadButton" /><img src="img/btnDiv.gif" width="13" height="40" border="0" /><img src="img/btnPrevious.gif" width="36" height="40" border="0" id="fbBackButton" /><img src="img/btnNext.gif" width="36" height="40" border="0" id="fbForwardButton" /></div>
+</div>
+</body>
+</html>

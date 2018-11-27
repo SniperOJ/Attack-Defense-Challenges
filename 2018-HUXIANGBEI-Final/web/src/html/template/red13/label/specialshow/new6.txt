@@ -1,0 +1,4 @@
+new6|||empty|||empty|||0|||0|||10|||id|||12|||0|||2|||<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>|||<td width="50%" height="25">
+【资讯】<a href=show.php?id={#id} target=_blank>{#title}</a>
+</td>|||</table>

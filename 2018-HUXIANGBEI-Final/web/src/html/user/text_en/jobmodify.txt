@@ -1,0 +1,25 @@
+﻿<script>alert('Individual users do not have this permission');history.back()</script>
+|||
+	ischecked=false;
+ 	for(var i=0;i<document.myform.bigclassid.length;i++){ 
+		if(document.myform.bigclassid[i].checked==true)  {
+		 ischecked=true ;
+   		} 
+	}
+	if(document.myform.bigclassid.checked==true)  {
+		 ischecked=true ;
+   		} 
+ 	if (ischecked==false){
+	alert("Please select category！");	
+    return false;
+	}	
+  if (document.myform.jobname.value==""){
+	document.myform.jobname.focus();
+    document.myform.jobname.value='This cannot be empty.';
+    document.myform.jobname.select();
+	document.myform.jobname.style.backgroundColor="FFCC00";
+	return false;
+  } 
+	
+|||
+Modify Recruitment Information|||Job category|||Please select a large class|||Please select a small class|||position|||content|||Work place|||Fill out, release

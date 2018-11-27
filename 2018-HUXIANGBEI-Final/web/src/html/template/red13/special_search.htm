@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}" />
+<meta name="description" content="{#pagedescription}" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="main">
+{#sitetop}
+<div class="pagebody">
+<div class="left">
+<div class="station2">{#station}</div>
+<div class="box"> 
+ <form action="?" method="post" name="myform" id="form1">
+  <table width="100%" border="0" cellspacing="0" cellpadding="8">
+    <tr> 
+      <td width="27%" align="right">关 键 词：</td>
+      <td width="73%"><input name="keyword" type="text" id="keyword3" value="{#keyword}" size="50" maxlength="255"  /> 
+        <input type="submit" name="Submit2" value="搜索" /></td>
+    </tr>
+    <tr> 
+      <td align="right">所属类别：</td>
+      <td>{#formbigclass}{#formsmallclass}</td>
+    </tr>
+	{#selected}
+  </table>
+        </form>
+</div>	
+<div class="boxA">
+
+{loop}
+<ul>
+<li style='font-size:14px;margin:6px 0;'><span title='发布时间'>{#sendtime}</span>{#listimg}<a href='{#link}'>{#title}</a></li>
+</ul>
+{/loop}
+</div>
+
+<div class='fenyei'>{#fenyei}</div>
+
+</div>
+<div class="right">
+
+<div class="titles"><span>&nbsp;</span><h3>热门专题</h3></div>
+<div class="content1">
+{@specialshow.showzxhot}
+</div>
+
+<div class="titles"><span>&nbsp;</span><h3>最近更新</h3></div>
+<div class="content1">
+{@specialshow.new}
+</div>
+
+</div>
+</div>
+</div>
+{#sitebottom}
+</body>
+</html>

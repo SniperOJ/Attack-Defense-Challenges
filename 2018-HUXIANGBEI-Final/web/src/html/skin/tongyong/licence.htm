@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}">
+<meta name="description" content="{#pagedescription}">
+<script type="text/javascript" src="/js/gg.js"></script>
+<link href="{#siteurl}/skin/{#skin}/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+{#sitetop}
+<div class="main">
+
+<div id="pagebody">
+<div class="titleA">资质证书</div>
+<div class="ztcontent">
+<TABLE border=0 cellSpacing=1 cellPadding=5 width="100%">
+  <TR>
+  {loop}
+    <TD align=middle>
+      <TABLE class=bgcolor2 border=0 cellSpacing=1 cellPadding=1>
+        <TR>
+          <TD bgColor=#ffffff height=120 width=120 align=middle>
+		  <A href="{#link}" target=_blank><IMG alt="{#title}"  src="{#img}"></A></TD></TR>
+        <TR>
+         <TD align=middle>{#title}</TD>
+		 </TR>
+	</TABLE>
+</TD>
+{tr}
+{/loop}
+
+</TR>
+</TABLE>
+</div>
+</div>
+
+</div>
+{#sitebottom}
+</body>
+</html>

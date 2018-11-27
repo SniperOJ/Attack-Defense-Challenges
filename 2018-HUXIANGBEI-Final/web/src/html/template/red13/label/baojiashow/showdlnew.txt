@@ -1,0 +1,1 @@
+showdlnew|||empty|||10|||id|||10|||0|||<ul>|||<LI>【报价】<A href=show.php?id={#id}>{#cp}</A>价格：{#price}{#danwei}</LI>|||</ul>

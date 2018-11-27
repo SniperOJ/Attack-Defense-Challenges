@@ -1,0 +1,9 @@
+﻿展厅内留言
+暂无信息
+<td width="40%" class="border">部分内容</td><td width="20%" class="border">留言时间</td><td width="10%" class="border" align="center">状态</td><td width="10%" align="center" class="border">操作</td><td width="10%" align="center" class="border"><label for="chkAll" style="text-decoration: underline;cursor: hand;">全选</label></td>
+<span class="buttons">未读</span>
+已读
+查看
+全选
+删除
+

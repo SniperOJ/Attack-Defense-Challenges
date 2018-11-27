@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}"/>
+<meta name="description" content="{#pagedescription}"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody">
+<div class="left"> 
+	<div class="station2">
+	 <span>	 {#numperpage}
+</span>
+ {#station}
+
+	</div> 
+<div class="left_content"> 
+<form name="form1" method="get" action="?">
+  <table width="100%" border="0" cellspacing="0" cellpadding="8">
+    <tr>
+      <td width="15%" align="right">企业名称：</td>
+      <td width="85%"><input name="keyword" type="text"  id="keyword" value="{#form_keyword}" size="50" maxlength="225"/>
+          <input name="Submit2" type="submit" id="Submit2" value="搜索" /></td>
+    </tr>
+    <tr>
+      <td align="right">所属类别：</td>
+      <td>{#formbigclass} {#formsmallclass} </td>
+    </tr>
+    <tr>
+      <td align="right">所在区域：</td>
+      <td>{#formprovince}{#formcity}{#formxiancheng}</td>
+    </tr>
+    {#selected}
+  </table>
+</form>
+</div>	
+{loop}
+<div class='boxA' style='margin-bottom:8px'>   
+<div style='float:right;width:690px'>
+<ul style='padding:8px'>
+<li><a target='_blank' style='font-weight:bold' href='{#zturl}'>{#comane}</a>{#usergroup}</li>
+<li>展位地址：<a target='_blank' style='font-weight:bold' href='{#zturl}'>{#zturl}</a></li>
+<li>公司地址：{#address} </li>
+<li>联系电话：{#phone}</li>
+<li>主要产品：{#cp}</li>
+</ul>
+</div>
+<div>
+<table width='170' height='170' border='0' cellpadding='1' cellspacing='0'><tr><td align='center' class='bgcolor2'> <img src='{#img}' onload= 'resizeimg(160,160,this) '/></td></tr></table>
+</div>
+</div>
+{/loop}
+<div class='fenyei'> {#fenyei}</div>  
+</div>
+<div class="right">
+
+<div class="titles">按地区搜索</div>
+<div class="content1">
+{#province:company,5} 
+</div>
+
+<div class="titles"><a href="company.php">新注册企业</a></div>
+<div class="content1">{@companyshow.showgsnew} </div>
+<script language="JavaScript" type="text/JavaScript" src="imgadv.php?classname=展厅频道右侧&style=S"></script>
+</div>
+</div>
+{#sitebottom}  
+</div>
+</body>
+</html>

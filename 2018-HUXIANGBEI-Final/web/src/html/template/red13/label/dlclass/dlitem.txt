@@ -1,0 +1,6 @@
+dlitem|||0|||10|||4|||<table width="100%" border="0" cellspacing="10" cellpadding="0"><tr>|||<td style='width:25%;' valign="top">
+<div class='titles'><span><a href='dl.php?b={#classid}'> 更多...</a></span>{#classname}</div>
+<div class='content2' >
+{@dlshow.showdlnew}
+</div>
+</td>|||</table>

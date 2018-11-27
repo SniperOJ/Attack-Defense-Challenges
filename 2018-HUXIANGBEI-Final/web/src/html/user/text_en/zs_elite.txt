@@ -1,0 +1,22 @@
+﻿if (document.myform.eliteendtime.value==""){
+	document.myform.eliteendtime.focus();
+    alert('Please select expiration time');
+	return false;
+}
+if (document.myform.tag.value==""){
+	document.myform.tag.focus();
+    alert('Keywords cannot be empty');
+	return false;
+  }
+|||
+Time has expired|||
+This keyword has been successful products:|||
+Bid deadline to：|||
+Information bid|||
+产品ID：|||
+<script>alert('Success, billing time {#oldeliteendtime} to {#eliteendtime}, a total of {#day} days, {#jf_set_elite} gold coins / day, a total of {#jfpay} gold coins to pay');</script>|||
+<script>alert('Failure, your gold is less than {#jfpay};history.back()</script>|||
+<script>alert('Integral function off, unable to use this feature！');history.back(-1)</script>|||
+<script>alert('Your user group does not have this permission');history.back()'</script>|||
+<script>alert('Illegal operation! Warning: your operation has been recorded! Be careful with your users and IP！');history.back()'</script>|||
+Bid|||Product name|||Due time|||Integral / day|||Key words (tag)|||(a number of key words to "," separated)|||Submit

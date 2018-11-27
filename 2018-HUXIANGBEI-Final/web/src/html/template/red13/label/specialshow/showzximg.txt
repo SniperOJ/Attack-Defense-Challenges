@@ -1,0 +1,10 @@
+showzximg|||empty|||empty|||1|||0|||16|||hit|||6|||30|||8|||<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr>|||<td width="12%">
+<table width="100%" border="0" cellspacing="1" cellpadding="0" class="bgcolor2">
+  <tr>
+    <td bgcolor="#FFFFFF" align="center" height="140"><a href=show.php?id={#id} target=_blank><img src={#img} border=0 onload=resizeimg(120,120,this) /></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href=show.php?id={#id} target=_blank>{#title}</a></td>
+  </tr>
+</table>
+</td>|||</table>

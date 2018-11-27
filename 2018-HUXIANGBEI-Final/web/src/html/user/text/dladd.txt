@@ -1,0 +1,12 @@
+﻿if (document.myform.cp.value==""){alert("请填写意向产品！");document.myform.cp.focus();return false;}
+if (document.myform.classid.value==""){alert("请选择产品类别！");document.myform.classid.focus();return false;}  
+if (document.myform.province.value=="请选择省份"){alert("请选择意向省份！");document.myform.province.focus();return false;}
+if (document.myform.content.value==""){alert("请填写自我介绍！");document.myform.content.focus();return false;}
+if (document.myform.truename.value==""){alert("请填写真实姓名！");document.myform.truename.focus();return false;}  
+if (document.myform.tel.value==""){alert("请填写代联系电话！");document.myform.tel.focus();return false;}  
+if (document.myform.yzm.value==""){alert("请输入验证问题的答案！");document.myform.yzm.focus();return false;}|||
+发布{#channeldl}信息|||意向产品<font color="#FF0000">（必填）</font>：|||产品类别<font color="#FF0000">（必填）</font>：|||请选择类别|||
+意向区域<font color="#FF0000">（必填）</font>：|||已选城市|||删除已选城市|||自我介绍<font color="#FF0000">（必填）</font>：|||
+身份：|||公司|||个人|||公司名称：|||真实姓名<font color="#FF0000">（必填）</font>：|||电话<font color="#FF0000">（必填）</font>：|||地址：|||E-mail：
+|||答案<font color="#FF0000">（必填）</font>：|||看不清，点击换一张|||发 布|||
+(只能写产品名称，不要写联系方式等内容，否则会直接被删除)

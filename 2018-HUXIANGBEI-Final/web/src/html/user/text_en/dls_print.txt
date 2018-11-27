@@ -1,0 +1,8 @@
+﻿<div class="box center"> Tip: your user group does not have this permission!<br><br><input name="Submit22" type="button" class="buttons"  value="Upgrade to VIP member" onClick="location.href='/one/vipuser.php'"/></div>
+<img src="/image/ico-dy.gif" width="18" height="17" border="0"> Print
+<script lanage='javascript'>alert('Operation failed! \\n at least one piece of information is selected.');window.opener=null;window.close()</script>
+No information
+<td width="6%" height="30" align="center" class="x"><strong>Serial number</strong></td><td width="6%" class="x"><strong>contacts</strong></td><td width="14%" height="30" class="x"><strong>Intentional area</strong></td><td width="20%" height="30" class="x"><strong>Intentional product</strong></td><td width="34%" height="30" class="x"><strong>contact information</strong></td><td width="20%" height="30" class="x"><strong>Application time</strong></td>
+Telephone： 
+E-mail：
+

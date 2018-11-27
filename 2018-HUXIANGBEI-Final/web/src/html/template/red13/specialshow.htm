@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}"/>
+<meta name="description" content="{#pagedescription}" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<script src="/js/msgbox.js" type="text/javascript" language="JavaScript"></script>
+<script>
+//控制字体大小
+function fontZoom(size)
+{
+document.getElementById('fontzoom').style.fontSize=size+'px'
+}
+function printcontent()
+{       
+document.body.innerHTML=document.getElementById('BoxInfoTitle').innerHTML+'<br/>'+document.getElementById('fontzoom').innerHTML;
+window.print();
+}
+
+function checkform()
+{
+  if (document.form2.content.value=="")
+  {
+    alert("内容不能为空！");
+    //document.form2.content.focus();
+    return false;
+  }
+  
+   if (document.form2.yzm.value=="")
+  {
+    alert("请输入正确答案！");
+	document.form2.yzm.focus();
+	return false;
+  }
+  
+}
+
+</script>
+</head>
+<body>
+
+<div class="main">
+{#sitetop}
+<div class="station">{#station}</div>
+<div class="pagebody">
+    <div class="left"> 
+      <div class="box"> 
+        <div id="BoxInfoTitle">{#zxtitle}</div>
+        <div id="BoxInfoTitleNext"> 
+          {#zxsm}
+        </div>
+        <div id="fontzoom">
+          {#zxcontent}
+        </div>
+        <div style="text-align:center;padding:10px;"> 
+          <a href="javascript:printcontent()" target="_self"><img src="/image/ico-dy.gif" width="18" height="17" border="0" /> 
+          打印本文</a>&nbsp;&nbsp;<a href='#top'><img src="/image/ico-top.gif" width="16" height="16" border="0" />&nbsp;返回顶部</a>&nbsp;&nbsp; 
+          <a href="javascript:window.close()"><img src="/image/close.gif" width="16" height="16" border="0" /> 
+          关闭该页</a> 
+		  </div>
+      </div>
+
+<div class="box">
+{#nextid}
+</div>
+<div class="titles">网友评论</div>
+<div class="content1">
+{#pinglun}             
+</div>
+<div class="box">
+<form name="form2" id="form2" method="post" action="" onsubmit="return checkform()">
+          <div> 
+			 <div contenteditable="true" id="divtextarea" onblur="AddContentFromDiv('content','divtextarea')" ></div>
+              
+            <input name="content" type="text" id="content" style="display:none" size="22" maxlength="255">
+              <input name="about" type="hidden" id="about4" value="{#id}" />
+              <input name="ip" type="hidden" id="ip4" value="{#getuserip}" />
+              <input name="action" type="hidden" id="ip" value="addpinglun" />
+              <span style="text-align:right">
+              <input name="user" type="hidden"  id="username3" tabindex="1" value="{#pinglunren}" size="17" />
+            </span></div>
+            <div style="text-align:right">
+              <span class="bgcolor1">答案
+              <input name="yzm" type="text" id="yzm" value="" size="10" maxlength="50" style="width:60px"/>
+              <img src="/one/code_math.php"  align="absmiddle" id="getcode_math" title="看不清，点击换一张" /></span>
+              <input type="submit" name="Submit" value="发表评论" />
+          </div>
+        </form>			
+</div>
+</div>
+<div class="right"> 
+<div class="titles">热门</div>
+<div class="content1"> {@specialshow.showzxhot} </div> 
+
+<div class="titles">最新</div>
+<div class="content1"> {@specialshow.showzxnew} </div>  
+</div>
+</div>
+</div>
+{#sitebottom}
+</body>
+</html>

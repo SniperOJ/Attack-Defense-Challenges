@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>{#pagetitle}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="keywords" content="{#pagekeywords}">
+<meta name="description" content="{#pagedescription}">
+<script type="text/javascript" src="/js/gg.js"></script>
+<link href="{#siteurl}/skin/{#skin}/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+{#sitetop}
+<div class="main">
+
+<div id="pagebody">
+
+	  <div class="titleA">公司新闻</div>
+          <div class="ztcontent">
+		 
+            <table width="100%" border="0" cellspacing="1" cellpadding="8" class="bgcolor3">
+              <tr class="bgcolor1">
+                <td width="856">标题</td>
+                <td width="500">更新时间</td>
+              </tr>
+     {loop}         
+  <tr bgcolor="#FFFFFF">
+    <td><a href="{#link}">{#title}</a></td>
+    <td>{#sendtime}</td>
+  </tr> {/loop}
+            </table>
+           
+			<div class="fenyei">{#fenyei}</div>
+    </div>
+</div>
+
+</div>
+{#sitebottom}
+</body>
+</html>

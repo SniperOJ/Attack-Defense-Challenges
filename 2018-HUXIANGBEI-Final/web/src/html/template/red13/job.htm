@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta content="{#pagedescription}" name="description" />
+<meta content="{#pagekeywords}" name="keywords" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/js/qt.js"></script> 
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody">
+<div class="right"> 
+<div class="titles">热门职位</div>
+<div class="content1">
+{@jobshow.hot}		
+</div>
+
+
+</div>
+<div class="left"> 
+<div class="station2">
+{#station}
+ 
+</div>
+<div class="left_content">
+<img src="/image/arrow.gif" /> <strong>按分类浏览</strong>
+<div class="boxbigclass">
+{#class}
+</div>
+</div>
+<div class="content">
+<table width="100%" border="0" cellspacing="1" cellpadding="8" class="bgcolor3">
+  <tr class="bgcolor1">
+    <td width="260">职位</td>
+    <td>招聘单位</td>
+    <td>工作地点</td>
+    <td>更新时间</td>
+  </tr>
+  {loop}
+  <tr bgcolor="#FFFFFF">
+    <td><a href="{#url}" target="_blank">{#title}</a></td>
+    <td><a href="{#companyurl}" target="_blank">{#comane}</a></td>
+    <td>{#province}{#city}</td>
+    <td>{#sendtime}</td>
+  </tr>
+  {/loop}
+</table>
+	<div class="fenyei">{#fenyei}</div>	
+</div>
+	
+</div>
+</div>
+{#sitebottom}
+</div>
+</body>
+</html>

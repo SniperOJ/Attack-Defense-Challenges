@@ -1,0 +1,17 @@
+img2|||empty|||empty|||1|||0|||3|||id|||20|||100|||1|||<table border="0" cellspacing="0" cellpadding="0">|||<tr><td colspan="2" height=16><div class="x"></div></td></tr>
+<tr>
+<td height="120px" width="160px"> 
+<table border="0" cellspacing="1" cellpadding="0" class="bgcolor2">
+<tr>
+<td bgcolor="#FFFFFF" align="center" height="150px" width="150px"><A href="show.php?id={#id}" target="_blank"><img src="{#imgbig}" border="0" onload=resizeimg(120,120,this)></A></td>
+</tr>
+</table>
+</td>
+<td>
+<div class="bigbigword"><A href="show.php?id={#id}" target="_blank">{#title}</a></div>
+<div>{#content}</div>
+<div>类别：[<a href=zx.php?b={#bigclassid}>{#bigclassname}</a>] 更新：{#sendtime} 热度：({#hit}) </div>
+
+
+</td>
+</tr>|||</table>

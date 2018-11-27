@@ -1,0 +1,51 @@
+﻿Modify registration information|||
+if (document.myform.province.value==""){
+    alert("Please select the province where the company is located！");
+	document.myform.province.focus();
+	return false;
+  } 
+  if (document.myform.city.value==""){
+    alert("Please select the city where the company is located！");
+	document.myform.city.focus();
+	return false;
+  } 
+if (document.myform.content.value==""){
+    alert("Please fill in the company profile！");
+	return false;
+  }
+if (document.myform.content.value=="该公司暂无简介信息"){
+    alert("Please fill in the company profile！");
+	document.myform.content.focus();
+	return false;
+  }
+if (document.myform.b.value==""){
+    alert("Please select a large class！");
+	document.myform.b.focus();
+	return false;
+  } 
+//定义正则表达式部分
+var strP=/^\d+$/;
+if(!strP.test(document.myform.qq.value)  && document.myform.qq.value!="") {
+alert("QQ can only fill in numbers！"); 
+document.myform.qq.focus(); 
+return false; 
+}   
+
+if (document.myform.flv.value != "")//这里输入框不为空
+{
+var FileType = "flv,swf";   //这里是允许的后缀名，注意要小写
+var FileName = document.myform.flv.value
+FileName = FileName.substring(FileName.lastIndexOf('.')+1, FileName.length).toLowerCase(); //这里把后缀名转为小写了，不然一个后缀名会有很多种大小写组合
+if (FileType.indexOf(FileName) == -1){
+	document.myform.flv.focus();
+	document.myform.flv.style.backgroundColor="FFCC00";
+	alert("Please fill in the flv or swf format of the file address！");
+	return false;
+	}
+}
+|||
+<li>Company profile can not be empty</li>|||<li>This phone number has been used.！</li>|||
+<SCRIPT language=JavaScript>alert('Member data modification success！');location.href='manage.php'</SCRIPT>|||
+username|||name|||sex|||male|||female|||E-mail|||QQ|||QQ binding landing site|||(Bound. Click to cancel binding) |||Not bound QQ login|||Mobile|||Save changes|||
+Modify company information|||corporate name|||Enterprise class|||Please select a large class|||Please select a small class|||Under no sub class|||Local area|||Company address|||Company website|||Company telephone|||Company fax|||Company profile|||Company image.|||Click to replace the picture.|||Upload pictures|||Company image video upload|||Click to re upload the video|||Add video|||
+<p><img src="../image/jx.gif" width="48" height="48" /><br />Membership fee</p><p><span class='buttons'>Now trial please？</span><br /></p>

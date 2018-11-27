@@ -1,0 +1,11 @@
+img1|||empty|||empty|||1|||0|||1|||id|||12|||35|||1|||<table border="0" cellspacing="0" cellpadding="0">|||<tr>
+<td height="90px"> 
+<table border="0" cellspacing="1" cellpadding="0" class="bgcolor2">
+<tr>
+<td bgcolor="#FFFFFF" align="center" height="90px" width="100px"><A href="show.php?id={#id}" target="_blank"><img src="{#img}" border="0" onload=resizeimg(90,90,this)></A></td>
+</tr>
+</table>
+</td>
+<td style='padding-left:5px'><A href="show.php?id={#id}" target="_blank">
+<b>{#title}</b><br>{#content}</a></td>
+</tr>|||</table>

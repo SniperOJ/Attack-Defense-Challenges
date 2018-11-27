@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#comane},{#companyshowtitle},{#sitename}</title>
+<meta name="keywords" content="{#comane},{#companyshowkeyword}">
+<meta name="description" content="{#comane},{#companyshowdescription}">
+<script type="text/javascript" src="{#siteurl}/zs/zsshow.js"></script>
+<link href="{#siteurl}/skin/{#skin}/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{#siteurl}/js/jquery.js"></script>
+
+<script type="text/javascript">
+$(function(){
+$("#getcode_math").click(function(){
+		$(this).attr("src",'{#siteurl}/one/code_math.php?' + Math.random());
+	});
+});
+
+$(document).ready(function(){  
+	$("#tel").blur(function() { //jquery 中change()函数  
+	$("#ts_tel").load(encodeURI("{#siteurl}/ajax/dl_liuyan_check_ajax.php?action=checktel&id="+$("#tel").val()));
+	}); 
+ 
+});
+</script>
+</head>
+<body>
+{#sitetop}
+<div class="main">
+{#showflyad}
+<div id="pagebody">
+<div class="titleA">公司简介</div>
+<div class="ztcontent">
+{#gsjj}
+</div>
+<div class="titleA">资质证书</div>
+<div class="ztcontent">
+<TABLE border=0 cellSpacing=1 cellPadding=5 width="100%">
+  <TR>
+  {licence}
+    <TD align=middle>
+      <TABLE class=bgcolor2 border=0 cellSpacing=1 cellPadding=1>
+        <TR>
+          <TD bgColor=#ffffff height=120 width=120 align=center>
+		  <A href="{#link}" target=_blank><IMG alt="{#title}" src="{#img}"></A></TD>
+        </TR>
+        <TR>
+         <TD align=center>{#title}</TD>
+		 </TR>
+	</TABLE>
+</TD>
+{tr}
+{/licence}
+
+</TR>
+</TABLE>
+</div>
+</div>
+{#kefu}
+</div>
+{#sitebottom}
+</body>
+</html>

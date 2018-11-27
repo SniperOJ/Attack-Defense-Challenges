@@ -1,0 +1,6 @@
+zxitem_s|||0|||6|||1|||<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>|||<td>
+<div class='titles'><span><a href='zt.php?b={#bigclassid}&s={#smallclassid}'> 更多...</a></span>{#classname}</div>
+<div class='content1' >
+{@specialshow.fangtan}
+</div>
+</td>|||</table>

@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta content="{#pagedescription}" name="description" />
+<meta content="{#pagekeywords}" name="keywords" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody" style="margin-bottom:8px">
+{#keyword:zs,30,15}
+</div>
+<div class="pagebody">
+<div class="right"> 
+<div class="titles">{#keyword}关注榜</div>
+<div class="content1">
+{#showzsforsearch}
+</div>
+
+<div class="titles">{#keyword}留言榜</div>
+<div class="content1">
+{#showzsorder}
+</div>
+
+<div class="titles"> 您查看过的产品</div>
+<div class="content1">
+{#showcookiezs:3,60,60}				
+</div>
+</div>
+<div class="left"> 
+<div class="station2">
+{#station}
+ 
+</div>
+
+
+<div class="left_content">
+	<form action="?" method="get" name="myform" id="myform">
+          <table border="0" cellpadding="7" cellspacing="0">
+            <tr> 
+              <td width="98" align="right">关 键 词：</td>
+              <td><input type="radio" name="yiju" value="Pname" {#Pname} />
+                按产品名称 
+                <input name="yiju" type="radio" value="Pcompany" {#Pcompany}/>
+                按招商厂家 
+                <input name="keyword" type="text"  id="keyword" value="{#formkeyword}" size="25" maxlength="255"/>
+              <input name="Submit3" type="submit"  value="搜索"  /></td>
+            </tr>
+            
+            <tr> 
+              <td align="right">招商区域：</td>
+              <td>{#formprovince}{#formcity}{#formxiancheng}</td>
+            </tr>
+			
+            <tr> 
+              <td align="right">所属类别：</td>
+              <td>{#formbigclass}{#formsmallclass} </td>
+            </tr>
+			
+            <tr> 
+              <td align="right">更新时间：</td>
+              <td> <a href="?sj=1">当天的</a> <a href="?sj=3">3天内的</a> <a href="?sj=7">7天内的</a> 
+                <a href="?sj=30">30天内的</a> <a href="?sj=90">90天内的</a></td>
+            </tr>
+            <tr> 
+              <td>&nbsp;</td>
+              <td> <a href="?tp=Yes">显有图的</a> <a href="?vip=Yes">VIP的</a> </td>
+            </tr>
+            {#selected}
+          </table>
+        </form>
+</div>
+
+<div class="left_content">
+{zs}
+<form action='/zs/contrast.php' method='post' name='form1' target='_blank'>
+<div style='padding:5px 10px 15px 5px'> 
+<img src='/image/ico-db.gif' width='14' height='16'> 
+<input type='submit' name='Submit' value='对比选中的信息' onClick="return anyCheck(this.form,'duibi');">
+共有{#totlenum}条符合条件的信息
+</div>
+
+<div class="content4">
+{loop_window}
+<li>
+<table width='130' height='130' border='0' cellpadding='0' cellspacing='1' class='bgcolor2'>
+<tr>
+<td align='center' bgcolor='#FFFFFF'> 
+<a href='{#url}' target='_blank'>
+<img src="{#img}"  border='0'>
+</a>
+</td>
+</tr>
+</table>
+<input name='id[]' type='checkbox' id='id' value='{#id}' onClick="return anyCheck(this.form,'xuanzhe')"><br/>
+{#proname:10}
+</li>
+{/loop_window}
+
+{loop_list}
+<div id='Layer{#i}' class='hiddiv'></div>
+<table  width='100%' border='0' cellspacing='0' cellpadding='0' >
+<tr onClick='setbgcolor(this)'> 
+<td width='30' align='center'> <input name='id[]' type='checkbox' id='id' value='{#id}' onClick="return anyCheck(this.form,'xuanzhe')"> 
+</td>
+<td width='157' align='center'><table width='130' height='130' border='0' cellpadding='0' cellspacing='1' class='bordercccccc'>
+<tr> 
+<td align='center' onMouseOver="showfilter(Layer{#i});window.document.getElementById('Layer{#i}').innerHTML='<img src={#imgbig} width=400>'" onMouseOut='showfilter(Layer{#i})'>
+<a href='{#url}'><img src="{#img}"></a>
+</td>
+</tr>
+</table></td>
+<td width='800'><table width='100%' border='0' cellspacing='0' cellpadding='0'>
+<tr> 
+<td height='30' colspan='2'><a href='{#url}' style='font-size:14px;font-weight:bold;'>{#proname:20}</a>{#dl_num}{#elite}</td>
+</tr>
+<tr>
+<td width='60%' valign='top' style='padding-right:10px'> 包装规格：{#gg}<br>
+产品特点：{#prouse}<br>零售价格：{#pricels} 
+<div>
+<a href='{#zturl}#contact' target='_blank'><img src='/image/lxfs.gif' width='80' height='20' border='0'></a>
+<a href='{#url}#dl_liuyan' target='_blank'><img src='/image/ico_dl.gif' width='80' height='20' border='0'></a>
+<a href=javascript:window.external.addFavorite('{#siteurl}/{#url}','{#proname}')><img src='/image/ico_sc.gif' width='80' height='20'  border='0'></a> 
+{#qq}
+</div></td>
+<td width='40%' valign='top'> <a href='{#zturl}' target='_blank'>{#comane}</a>
+{#grouppic}{#renzheng}
+<br>招商区域：{#province}{#city} <br>
+更新时间：{#sendtime}</td>
+</tr>
+</table> </td></tr>
+</table>
+<div class='boxxian'></div>
+{/loop_list}
+</div>
+</form>
+<div style='clear:both'></div>
+<div class='fenyei'>{#fenyei}</div>
+{/zs}
+</div>
+
+
+			
+</div>
+</div>
+{#sitebottom}
+</div>
+</body>
+</html>

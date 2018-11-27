@@ -1,0 +1,12 @@
+﻿if (document.myform.title.value==""){
+    alert("证件名称不能为空！");
+	document.myform.title.focus();
+	return false;
+  }
+  if (document.myform.img.value=="")
+  {
+    alert("请上传证件图片！");
+	return false;
+  }
+|||
+修改资质证书|||上传资质证书：|||上传图片|||资质证书名称：|||保存修改结果|||点击可更换图片

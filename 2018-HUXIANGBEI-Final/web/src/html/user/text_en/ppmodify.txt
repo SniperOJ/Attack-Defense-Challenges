@@ -1,0 +1,37 @@
+﻿ if (document.myform.name.value==""){
+	document.myform.name.focus();
+    document.myform.name.value='This cannot be empty';
+    document.myform.name.select();
+	document.myform.name.style.backgroundColor="FFFF00";
+	return false;
+  }
+ if (document.myform.sm.value==""){
+	document.myform.sm.focus();
+    document.myform.sm.value='This cannot be empty';
+    document.myform.sm.select();
+	document.myform.sm.style.backgroundColor="FFFF00";
+	return false;
+  }
+	ischecked=false;
+ 	for(var i=0;i<document.myform.bigclassid.length;i++){ 
+		if(document.myform.bigclassid[i].checked==true)  {
+		 ischecked=true ;
+   		} 
+	}
+   if(document.myform.bigclassid.checked==true)  {
+		 ischecked=true ;
+   	} 
+ 	if (ischecked==false){
+	alert("Please select a large category！");	
+    return false;
+	}
+	
+   if(document.myform.smallclassid.checked==true)  {
+		 ischecked=true ;
+   		} 
+ 	if (ischecked==false){
+	alert("Please select a small category！");	
+    return false;
+	}
+|||
+Modify brand information|||Name|||This cannot be empty.|||category|||Please select a large class|||Please select a small class|||introduce|||LOGO (less than {#maximgsize}K)|||Upload pictures|||Save changes|||Click to replace the picture.

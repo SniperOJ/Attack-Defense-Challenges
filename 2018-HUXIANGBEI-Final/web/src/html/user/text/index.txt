@@ -1,0 +1,19 @@
+﻿用户中心
+系统信息
+发送时间
+用户信息
+注册时间：
+您的金币：
+说明： <a href="/one/help.php#1032" target="_blank">关于金币</a>
+登录次数：
+提示：若感到登录次数不对，那么请及时 <a href="managepwd.php" target="_self">[更换登录密码]</a> 
+上次登录IP：
+提示：若并没有用此IP登录过网站，那么请及时 <a href="managepwd.php" target="_self">[更换登录密码]</a> 
+上次登录时间：
+提示：若在以上时间并没有登录过网站，那么请及时 <a href="managepwd.php" target="_self">[更换登录密码]</a>
+if(confirm("有新的意向留言要查看么？")) {window.location.href="dls_message_manage.php" }
+有
+条新的意向留言。
+查看
+if(confirm("有新的留言本留言!要查看么？")){window.location.href="ztliuyan.php" }
+条新的留言本留言。	

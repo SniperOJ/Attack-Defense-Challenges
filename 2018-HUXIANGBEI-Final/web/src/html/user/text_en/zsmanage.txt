@@ -1,0 +1,19 @@
+﻿<script>alert('Individual users do not have this permission');history.back(-1);</script>
+information management
+Product name:
+lookup
+One key refresh
+A key refresh function can make your information before the top, in order to improve the probability of being viewed.
+<script>alert('Successful operation');self.location='?';</script>
+<script>alert('Operation failed! Only to refresh {#refresh_number} times within a day！');history.back(-1);</script>
+No information
+<td width="107" class="border">Product name</td><td width="108" align="center" class="border">category</td><td width="93" height="25" align="center" class="border">Product picture</td><td width="86" align="center" class="border">region</td><td width="97" align="center" class="border">update time</td><td width="50" align="center" class="border">Already refresh</td><td width="57" align="center" class="border">Information state</td><td width="92" align="center" class="border">operation</td><td width="42" align="center" class="border">delete</td>
+Already examine
+<font color=red>Not audited</font>
+<br><font color=green title='Winning key words:{#tag}&#10;Winning time:{#elitestarttime}-{#eliteendtime}'>Bid</font>
+modify
+sort
+Bid
+Select
+delete
+

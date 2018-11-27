@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{#pagetitle}</title>
+<meta name="keywords" content="{#pagekeywords}" />
+<meta name="description" content="{#pagedescription}" />
+<link href="/template/{#siteskin}/style.css" rel="stylesheet" type="text/css">
+<link href="/template/{#siteskin}/jdimg.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jdimg.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	  	$.focus("#focus001");
+		$.focus("#focus002");
+	});
+</script>
+<style type="text/css">
+.focus {width:300px; height:440px;}
+.focus img{border:0;width:300px; height:440px;}
+.focus ul li {width:300px; height:440px;  }
+.focus .btnBg {background-color:#cccccc; display:block;}
+.focus .btnBg {width:300px;}
+.focus .btn {width:300px;}
+</style>
+</head>
+<body>
+{#sitetop}
+<div class="main">
+<div class="pagebody">
+<div class="left">
+      <div> 
+        <ul>
+          <li id="leftleft"> 
+          {@wangkanshow.jdimg2}
+          </li>
+          <li id="leftright">
+		 
+<div class="titles">最近更新</div>
+ <div class="content1">  
+			{@wangkanshow.new}
+			</div>
+          </li>
+        </ul>
+ </div>
+</div>
+<div class="right">
+<div class="titles">热门网刊</div>
+<div class="content1">{@wangkanshow.hot}</div>
+  
+</div>
+</div>
+{@wangkanclass.item}
+</div>
+{#sitebottom}
+</body>
+</html>

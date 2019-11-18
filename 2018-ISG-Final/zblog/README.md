@@ -20,6 +20,9 @@ chmod o+w /var/www/html/zb_users/plugin
 chmod o+w /var/www/html/zb_users/upload
 chmod o+w /var/www/html/zb_users/data
 chmod o+w /var/www/html/zb_users/logs
+chmod o+w /var/www/html/zb_users/cache
+chown www-data:www-data /var/www/html/zb_users/c_options.php
+chown a-w /var/www/html/zb_users/c_options.php
 # Disable apache Indexes
 <Directory /var/www>
         Options -Indexes -FollowSymLinks
